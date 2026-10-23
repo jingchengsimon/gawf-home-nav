@@ -13,7 +13,7 @@ a{color:inherit;text-underline-offset:3px}
 section{margin-top:48px}
 .result{width:100%;height:auto;display:block;margin:24px 0}
 .demo{margin:36px 0}
-.demo h3{display:flex;align-items:center;gap:12px;font-style:italic;font-weight:700}
+.demo h3{display:flex;align-items:center;gap:12px;font-style:normal;font-weight:700}
 .pair{position:relative;cursor:pointer}
 .model-name{margin:14px 0 8px;font-style:italic;font-weight:700}
 .model-row{position:relative;display:grid;grid-template-columns:27% 73%;align-items:center;gap:0}
