@@ -1,0 +1,63 @@
+{
+  "verified_on": "2026-10-23",
+  "paper": "https://arxiv.org/pdf/2111.09888",
+  "official_code": "https://github.com/allenai/embodied-clip",
+  "current_architecture": {
+    "paper_reference": "Section 3 and Figure 2 category-conditioned RoboTHOR ObjectNav; NOT Figure 5 zero-shot model",
+    "visual_encoder": "Frozen CLIP RN50, 2048x7x7 features; no attention pooling",
+    "goal": "learned 32-dimensional embedding of one of 12 target category IDs, not CLIP text",
+    "shared_goal_visual_encoder": "convolutional compression and goal combination, flattened 1568-dimensional recurrent input",
+    "baseline": "single-layer GRU512",
+    "variant": "single-layer GaWF1160, previous detached raw policy logits as feedback; feedback reset at episode boundary",
+    "heads": "same linear actor and critic design, input dimensions change from 512 to 1160",
+    "measured_trainable_policy_parameters": {
+      "gawf1": 3479807,
+      "gru1": 3480775
+    },
+    "parameter_match_scope": "all trainable policy parameters; frozen CLIP preprocessor excluded",
+    "relative_policy_parameter_difference": -0.00027809898657626535,
+    "shared_pair_protocol": "RGB + category, same CLIP normalization, goal encoder architecture, PPO configuration, training scene pool, evaluation episodes, budget, and step limit",
+    "light_training": "5M frame budget, 16 parallel training environments, 128 rollout, 500 step limit; this is not the paper 200M training protocol",
+    "simulator": "AI2-THOR 5.0.0; not claimed equivalent to historical paper build"
+  },
+  "tables": [
+    {
+      "table": 1,
+      "topic": "RoboTHOR ObjectNav, test metrics",
+      "current_pair": "Our common-validation SR/SPL can already be compared. These are validation results of light retraining, not paper test leaderboard values. Exact table additionally needs the corresponding test evaluation access and proximity metrics; original ImageNet and competitor rows are separate methods."
+    },
+    {
+      "table": 2,
+      "topic": "iTHOR 1-Phase Rearrangement",
+      "current_pair": "Requires rearrangement observations, actions, dataset, imitation training and both recurrent variants. Current RoboTHOR navigation checkpoints are insufficient."
+    },
+    {
+      "table": 3,
+      "topic": "Habitat ObjectNav on Matterport3D",
+      "current_pair": "Requires licensed Matterport3D data, Habitat ObjectNav model/task adapters, paired training and the appropriate evaluation split. Current RoboTHOR checkpoints are insufficient; this is not HM3D."
+    },
+    {
+      "table": 4,
+      "topic": "Habitat PointNav, 2019 protocol, CLIP vs ImageNet",
+      "current_pair": "Our RGB-only fixed-g0 DD-PPO pair can have its own validation table. It cannot reproduce this table: original uses ideal online GPS+Compass and CLIP/ImageNet encoder comparison, unlike current RGB-only fixed-g0 ResNet18 protocol."
+    },
+    {
+      "table": 5,
+      "topic": "Frozen visual-feature linear probes: object presence, localization, free space, reachability",
+      "current_pair": "The two agents use the same frozen CLIP backbone. Applying identical original probes to that same backbone does not test GRU versus GaWF. A recurrent-memory probe would be a newly defined experiment, requiring aligned histories, held-out labels and trained probes."
+    },
+    {
+      "table": 6,
+      "topic": "Zero-shot RoboTHOR ObjectNav, 8 seen / 4 unseen target categories",
+      "current_pair": "Requires Figure 5 text-goal architecture and new paired training restricted to 8 categories, evaluating 4 held-out categories. Current learned-category checkpoints trained on all 12 classes do not support this claim."
+    }
+  ],
+  "scope": "Audit only; no additional training, simulator execution, data download or leaderboard submission launched.",
+  "source_sha256": {
+    "scripts/embclip/light_config.py": "d4c7ced38f56e8374c224e3b98e5a47ace1b9b0906f37fbbdd145a9379b3eb6d",
+    "scripts/embclip/light_gawf1_config.py": "2e8a1474c4aa8032ca283d45bf1b51228175062863ae81fc0cbffce2931184db",
+    "scripts/embclip/light5m_gru1_config.py": "161de1c09a665266249f4b38e6b94136dff547ae1ea09cabe3f31483b24d01fe",
+    "scripts/embclip/light5m_gawf1_config.py": "bec27cff4bd4db712cc00153bf3b1eedbb209025b8ff927d58ba5ec316520e45",
+    "vendor/embclip-allenact/allenact_plugins/navigation_plugin/objectnav/models.py": "9674c00e2606a5a6848cfbdee98a9956226e36f06dcfc5e8e59ca67729151150"
+  }
+}

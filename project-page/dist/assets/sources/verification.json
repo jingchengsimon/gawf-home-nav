@@ -1,0 +1,500 @@
+{
+  "attribution_frames": 12,
+  "combined_videos": 12,
+  "episode_ids": [
+    "FloorPlan_Val1_1_GarbageCan_0",
+    "FloorPlan_Val1_1_GarbageCan_2",
+    "FloorPlan_Val2_5_GarbageCan_9",
+    "FloorPlan_Val3_1_HousePlant_2",
+    "FloorPlan_Val1_3_Mug_8",
+    "FloorPlan_Val2_2_Laptop_1"
+  ],
+  "individual_videos": 24,
+  "paired_trials": 12,
+  "scenes": [
+    "FloorPlan_Val1_1",
+    "FloorPlan_Val1_3",
+    "FloorPlan_Val2_2",
+    "FloorPlan_Val2_5",
+    "FloorPlan_Val3_1"
+  ],
+  "source_analysis": "nav-robothor-embclip-project-matched-gradcam-sjc-v2-20261023",
+  "source_suite": "nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023",
+  "status": "pass",
+  "targets": [
+    "GarbageCan",
+    "HousePlant",
+    "Laptop",
+    "Mug"
+  ],
+  "videos": [
+    {
+      "asset": "assets/videos/FloorPlan_Val1_1_GarbageCan_0/gru1_rollout0.mp4",
+      "bytes": 25901301,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "501",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "f3a61995903ed1df849282c3e9cc30f0aa9538555b895ce3f2a53978ad53de5a",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val1_1_GarbageCan_0/gru1_rollout0.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val1_1_GarbageCan_0/gawf1_rollout0.mp4",
+      "bytes": 5353842,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "105",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "c7bb2b7619622fa21b3748c562aaa4f7dc29a79bd66810414df7c8741a62dafe",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val1_1_GarbageCan_0/gawf1_rollout0.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val1_1_GarbageCan_0/paired_rollout0.mp4",
+      "bytes": 32191976,
+      "probe": {
+        "codec_name": "h264",
+        "height": 940,
+        "nb_read_frames": "501",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "0a04c86dc19036d885c9634f74b7b6fe42d86557fbe6c2e85043d0cf6817674a",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val1_1_GarbageCan_0/paired_rollout0.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val1_1_GarbageCan_0/gru1_rollout1.mp4",
+      "bytes": 11151072,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "219",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "aa0e5ba4e66db11b844c69946938d84c0bfbb778a5bf1aef0670644a158c8b4f",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val1_1_GarbageCan_0/gru1_rollout1.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val1_1_GarbageCan_0/gawf1_rollout1.mp4",
+      "bytes": 14119574,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "288",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "511e743f545405d6056fdbcad6b4e0065b3417aa15721157ed2b480c63705413",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val1_1_GarbageCan_0/gawf1_rollout1.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val1_1_GarbageCan_0/paired_rollout1.mp4",
+      "bytes": 26388429,
+      "probe": {
+        "codec_name": "h264",
+        "height": 940,
+        "nb_read_frames": "288",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "43f7e6a87043959ae61e9ec27ac56f89dd3e24116f22472a8cef79d5da55c969",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val1_1_GarbageCan_0/paired_rollout1.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val1_1_GarbageCan_2/gru1_rollout0.mp4",
+      "bytes": 18725450,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "372",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "8943a18ff71488ae15503aa0d32874888fa3f3372b22091295d0cd3e8b9c1af1",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val1_1_GarbageCan_2/gru1_rollout0.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val1_1_GarbageCan_2/gawf1_rollout0.mp4",
+      "bytes": 7842432,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "186",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "bba73b21c438c3eee2e3c84eeabb917c9da37769a4415b97b419a0d242919980",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val1_1_GarbageCan_2/gawf1_rollout0.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val1_1_GarbageCan_2/paired_rollout0.mp4",
+      "bytes": 27444611,
+      "probe": {
+        "codec_name": "h264",
+        "height": 940,
+        "nb_read_frames": "372",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "29f0c6ddf55e8a2e8edc517e9d2d630a8bca23330176f0650c3eff429a1fcf39",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val1_1_GarbageCan_2/paired_rollout0.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val1_1_GarbageCan_2/gru1_rollout1.mp4",
+      "bytes": 12402189,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "257",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "9229eb82aab1151748bb371f1a5fda18602c1673c4b78cdf1672ad6316c0d165",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val1_1_GarbageCan_2/gru1_rollout1.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val1_1_GarbageCan_2/gawf1_rollout1.mp4",
+      "bytes": 14727460,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "305",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "eae8b3a4f9a9cc04dbd690901e4ccc9aad15cddb11cf16dc97d7f644b454169d",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val1_1_GarbageCan_2/gawf1_rollout1.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val1_1_GarbageCan_2/paired_rollout1.mp4",
+      "bytes": 28052662,
+      "probe": {
+        "codec_name": "h264",
+        "height": 940,
+        "nb_read_frames": "305",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "ca936b6bf7e74b3a914ae598943b812633d0085ceb01d89f6343bb7f2013641f",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val1_1_GarbageCan_2/paired_rollout1.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val2_5_GarbageCan_9/gru1_rollout0.mp4",
+      "bytes": 14683462,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "300",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "87ab4ea171601d0c76c6ed377a7321a03f5cb7c5ad38782adb8867ba8dd41496",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val2_5_GarbageCan_9/gru1_rollout0.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val2_5_GarbageCan_9/gawf1_rollout0.mp4",
+      "bytes": 2249912,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "47",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "2c73211c197164172f4fe2fa72414a780be577f195e03306072a76b1bbd63fbc",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val2_5_GarbageCan_9/gawf1_rollout0.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val2_5_GarbageCan_9/paired_rollout0.mp4",
+      "bytes": 17570138,
+      "probe": {
+        "codec_name": "h264",
+        "height": 940,
+        "nb_read_frames": "300",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "f969d0a19dd62596841dd76216700e0880776e496b7a047dce1a73069601096d",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val2_5_GarbageCan_9/paired_rollout0.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val2_5_GarbageCan_9/gru1_rollout1.mp4",
+      "bytes": 875593,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "16",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "5c1644b35227ccaa1c4c7ef46d7e83482f95cd8edaf2041bd8141d0643e8815f",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val2_5_GarbageCan_9/gru1_rollout1.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val2_5_GarbageCan_9/gawf1_rollout1.mp4",
+      "bytes": 1443365,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "27",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "57efe3b65a259d5d619463e1d01ecaef6b58bdb0985a3be210f8f255e9c5a4bb",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val2_5_GarbageCan_9/gawf1_rollout1.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val2_5_GarbageCan_9/paired_rollout1.mp4",
+      "bytes": 2453230,
+      "probe": {
+        "codec_name": "h264",
+        "height": 940,
+        "nb_read_frames": "27",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "9285826bad8b1bc780674dc93fdb2b22e559982c5e21a86d4f8426fa929d530a",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val2_5_GarbageCan_9/paired_rollout1.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val3_1_HousePlant_2/gru1_rollout0.mp4",
+      "bytes": 24977023,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "501",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "ac80dfff50f0c392491270fefd621670ee2be194204548017782b3c374286835",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val3_1_HousePlant_2/gru1_rollout0.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val3_1_HousePlant_2/gawf1_rollout0.mp4",
+      "bytes": 1654753,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "33",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "9ed0fa08502d40e4939983fcb81ad6a882c718711b0c3cf48c4ad1508751573c",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val3_1_HousePlant_2/gawf1_rollout0.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val3_1_HousePlant_2/paired_rollout0.mp4",
+      "bytes": 27603954,
+      "probe": {
+        "codec_name": "h264",
+        "height": 940,
+        "nb_read_frames": "501",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "77c2c6c0303478390b1d798da6913148d06a5bc0d1b9dc52969fbf83de7c69b5",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val3_1_HousePlant_2/paired_rollout0.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val3_1_HousePlant_2/gru1_rollout1.mp4",
+      "bytes": 24924012,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "501",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "f1a31a4dbafb37b618dc8163091c2bc5500d96362c49113c6cc063729411fa47",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val3_1_HousePlant_2/gru1_rollout1.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val3_1_HousePlant_2/gawf1_rollout1.mp4",
+      "bytes": 3171777,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "65",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "195f811162641eec7da914e002f59252142ddb492ff6b446d8f5f6b5340c5915",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val3_1_HousePlant_2/gawf1_rollout1.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val3_1_HousePlant_2/paired_rollout1.mp4",
+      "bytes": 29095979,
+      "probe": {
+        "codec_name": "h264",
+        "height": 940,
+        "nb_read_frames": "501",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "a125fee7dd619b92bbd2505b1292adea8cd5133504f7c5cf2f71dff0903586cc",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val3_1_HousePlant_2/paired_rollout1.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val1_3_Mug_8/gru1_rollout0.mp4",
+      "bytes": 688688,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "13",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "7cf509db968d6061e4a4e70f97cfd171aaf8fa3facf49c8d3e61a857c39b6bfe",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val1_3_Mug_8/gru1_rollout0.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val1_3_Mug_8/gawf1_rollout0.mp4",
+      "bytes": 1096760,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "20",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "975d951d67b222ebbf67a5009961bf660f332e5a4fcd9248237e7d6797c9c516",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val1_3_Mug_8/gawf1_rollout0.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val1_3_Mug_8/paired_rollout0.mp4",
+      "bytes": 1876727,
+      "probe": {
+        "codec_name": "h264",
+        "height": 940,
+        "nb_read_frames": "20",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "e33785d8d90dd7dff523f089c5a82b9879c20972048bc0ad0890b6447cad37e2",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val1_3_Mug_8/paired_rollout0.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val1_3_Mug_8/gru1_rollout1.mp4",
+      "bytes": 590777,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "11",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "d99c59b3564684397157e2128a9e5a1effdd7b62f667e04aa355753796da0ddf",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val1_3_Mug_8/gru1_rollout1.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val1_3_Mug_8/gawf1_rollout1.mp4",
+      "bytes": 1046770,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "20",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "ceb744d47803ef31f37fe3f62bbfe285b5ac5497c1029622f9d630266c8dd02d",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val1_3_Mug_8/gawf1_rollout1.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val1_3_Mug_8/paired_rollout1.mp4",
+      "bytes": 1724432,
+      "probe": {
+        "codec_name": "h264",
+        "height": 940,
+        "nb_read_frames": "20",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "9ae65ef0e8a78f70bf7efa63a11effc2fdd03b0fd985b78a258be3cec5c3ea22",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val1_3_Mug_8/paired_rollout1.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val2_2_Laptop_1/gru1_rollout0.mp4",
+      "bytes": 1434958,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "28",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "1e9c7b47f0f59e2ba55aaf8351344424719d3f0c53895c23cc1a95e98efc716d",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val2_2_Laptop_1/gru1_rollout0.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val2_2_Laptop_1/gawf1_rollout0.mp4",
+      "bytes": 25430695,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "501",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "1debc519e307f21b18c557e350e6557518074af57e3557ce4988be4baaee2412",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val2_2_Laptop_1/gawf1_rollout0.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val2_2_Laptop_1/paired_rollout0.mp4",
+      "bytes": 28567776,
+      "probe": {
+        "codec_name": "h264",
+        "height": 940,
+        "nb_read_frames": "501",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "9fdb360146814e21409a3f6d3e4a89f936612056590d44141b8b67948bf31c3e",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val2_2_Laptop_1/paired_rollout0.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val2_2_Laptop_1/gru1_rollout1.mp4",
+      "bytes": 1689590,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "33",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "8fd3324b86f8aa49a51d47ac624b92da4fc21d70156dd6536fb4d65f06f77ca7",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val2_2_Laptop_1/gru1_rollout1.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val2_2_Laptop_1/gawf1_rollout1.mp4",
+      "bytes": 9013190,
+      "probe": {
+        "codec_name": "h264",
+        "height": 470,
+        "nb_read_frames": "183",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "8b5a7f6e65d4a711b13f59875c08b2654a881805740424ee54d6139f900470bd",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val2_2_Laptop_1/gawf1_rollout1.mp4"
+    },
+    {
+      "asset": "assets/videos/FloorPlan_Val2_2_Laptop_1/paired_rollout1.mp4",
+      "bytes": 11238338,
+      "probe": {
+        "codec_name": "h264",
+        "height": 940,
+        "nb_read_frames": "183",
+        "r_frame_rate": "12/1",
+        "width": 1000
+      },
+      "sha256": "92e73d57dd4ab711898b876852067c80319c2b47ba6d7da8c629daa3f4f59ece",
+      "source": "results/nav-robothor-embclip-project-sixepisodes-twoseeds-sjc-v2-20261023/FloorPlan_Val2_2_Laptop_1/paired_rollout1.mp4"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "status": "pass",
+  "date": "2026-10-23",
+  "case_order": [
+    "Apple",
+    "GarbageCan",
+    "HousePlant",
+    "Vase"
+  ],
+  "demos_before_results": true,
+  "paired_cases": 4,
+  "individual_videos": 8,
+  "gradient_grid": {
+    "rows": 2,
+    "columns": 12,
+    "panels": 24,
+    "overlays_only": true,
+    "separate_raw_rgb_panels": 0,
+    "nonzero_maps": 24,
+    "comparison_mode": "individual_terminal",
+    "baseballbat_different_episodes_marked": true
+  },
+  "github": "https://github.com/jingchengsimon/gawf-home-nav",
+  "repository_visibility": "PUBLIC",
+  "footer_links": 0,
+  "synchronized_apple_playback_seconds": [
+    0.024615,
+    0.023672
+  ],
+  "intro_alignment": "center",
+  "later_text_alignment": "left",
+  "broken_images": [],
+  "video_errors": [],
+  "horizontal_overflow": false,
+  "screenshots": [
+    "preview-gradient-grid.jpg",
+    "preview-grouped.jpg"
+  ]
+}

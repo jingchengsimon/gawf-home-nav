@@ -1,0 +1,22 @@
+[
+  {
+    "path": "vendor/embclip-allenact",
+    "url": "https://github.com/allenai/embodied-clip.git",
+    "commit": "855fe741ddecaaf2492966d52d3f130e58d3c48f"
+  },
+  {
+    "path": "vendor/habitat-lab-2020",
+    "url": "https://github.com/facebookresearch/habitat-lab.git",
+    "commit": "959bd45431edd8024832a877bdc8218015d97a7e"
+  },
+  {
+    "path": "vendor/habitat-sim",
+    "url": "https://github.com/facebookresearch/habitat-sim.git",
+    "commit": "c8887c8cf421b6df2d77489d42f4e20488e184eb"
+  },
+  {
+    "path": "vendor/habitat-challenge-2020",
+    "url": "https://github.com/facebookresearch/habitat-challenge.git",
+    "commit": "ddf1575532aecc4df2f4cd4c5db173b8eada3e1e"
+  }
+]

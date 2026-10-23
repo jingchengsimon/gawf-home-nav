@@ -1,0 +1,24 @@
+{
+  "simulator_seed_rule": "1000 + alphabetically sorted category index; same seed for both model re-renderings",
+  "simulator_seeds": {
+    "AlarmClock": 1000,
+    "Apple": 1001,
+    "BaseballBat": 1002,
+    "BasketBall": 1003,
+    "Bowl": 1004,
+    "GarbageCan": 1005,
+    "HousePlant": 1006,
+    "Laptop": 1007,
+    "Mug": 1008,
+    "SprayBottle": 1009,
+    "Television": 1010,
+    "Vase": 1011
+  },
+  "action_sampling": "None in attribution run; recorded validation action histories are replayed",
+  "training_seeds": {
+    "gru1": 1,
+    "gawf1": 3
+  },
+  "reference_validation_cli_seed": 0,
+  "raw_rendering": "Logged poses are evaluator-only. Original evaluation pixel hashes were not recorded, so re-renderings are not claimed pixel-identical."
+}

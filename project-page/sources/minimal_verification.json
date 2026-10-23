@@ -1,0 +1,65 @@
+{
+  "status": "pass",
+  "paired_cases": 4,
+  "objects": [
+    "Apple",
+    "GarbageCan",
+    "HousePlant",
+    "Vase"
+  ],
+  "videos": [
+    {
+      "asset": "assets/minimal-videos/FloorPlan_Val3_4_Apple_1/gru1-95b7938ed1f9.mp4",
+      "sha256": "2a35b43fe43306294171e1697bfd56be3b2d2b2e39559b4675511e59e5f784e9",
+      "frames": 35
+    },
+    {
+      "asset": "assets/minimal-videos/FloorPlan_Val3_4_Apple_1/gawf1-18c152719c56.mp4",
+      "sha256": "019ef9a88e1ac8255cb6f1b51286e478a7217581294afce5d091950efedb8f80",
+      "frames": 13
+    },
+    {
+      "asset": "assets/minimal-videos/FloorPlan_Val1_1_GarbageCan_0/gru1-021adb45b086.mp4",
+      "sha256": "3a24cf9f8cb453ebe8149e7beb92c2cb2a06717fe4b28984b00554ddb45e8858",
+      "frames": 501
+    },
+    {
+      "asset": "assets/minimal-videos/FloorPlan_Val1_1_GarbageCan_0/gawf1-4a0d0047fe81.mp4",
+      "sha256": "fabb1205537856d21a35181ad1b0c6abb5f90275bf01f3adc079aa568dbe8ebe",
+      "frames": 103
+    },
+    {
+      "asset": "assets/minimal-videos/FloorPlan_Val3_1_HousePlant_2/gru1-fc4e5adb9b5c.mp4",
+      "sha256": "58864599b4c92a5a49895ab812b92948a3d1097b162f97229ab383c2478fdd7f",
+      "frames": 501
+    },
+    {
+      "asset": "assets/minimal-videos/FloorPlan_Val3_1_HousePlant_2/gawf1-a782f8bfbe66.mp4",
+      "sha256": "797049874c6eb62dfcf2087379d82065b0b40eba9ba3395d3362a5ec907b80cc",
+      "frames": 33
+    },
+    {
+      "asset": "assets/minimal-videos/FloorPlan_Val2_1_Vase_3/gru1-c28d0916ad65.mp4",
+      "sha256": "e24c521b3516fc7251c56a752e399aa82b4ad4c37c6621d9322ffa3028aa08e5",
+      "frames": 24
+    },
+    {
+      "asset": "assets/minimal-videos/FloorPlan_Val2_1_Vase_3/gawf1-237cba0fac62.mp4",
+      "sha256": "f6a987eb6dab6674081134bd2a7ad42a76da6f1fef21f4327ebee8fd38ef34a5",
+      "frames": 72
+    }
+  ],
+  "display": "No baked-in text; heading and image play controls; individual gray/red timelines",
+  "fairness": "Same episode, actual initial pose, action seed and simulator seed; initial RGB difference below recorded thresholds",
+  "attribution": "24 End-action Grad-CAM overlays from individual pose-replayed successful validation histories; BaseballBat different episodes marked",
+  "gradient_grid": {
+    "rows": 2,
+    "columns": 12,
+    "panels": 24,
+    "overlays_only": true,
+    "separate_raw_rgb_panels": 0,
+    "nonzero_maps": 24,
+    "comparison_mode": "individual_terminal",
+    "baseballbat_different_episodes_marked": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "name": "pointnav2020-gibsonv2-light-rgbd-resnet18-v1",
+  "status": "smoke_pending",
+  "relationship_to_formal": "Independent reduced protocol; results are not Challenge 2020 DD-PPO results",
+  "training_scenes": [
+    "Convoy", "Eagerville", "Haxtun", "Nuevo", "Reyno", "Sawpit", "Seward", "Sumas"
+  ],
+  "scene_selection": "Eight lowest SHA256(scene_name) among the 72 Gibson v2 train content scenes, then sorted alphabetically",
+  "evaluation_scenes": ["Cantwell", "Eastville", "Edgemere", "Scioto"],
+  "evaluation_selection": "Four lowest SHA256(scene_name) among the 14 Gibson v2 val content scenes, then sorted alphabetically",
+  "observation": "Noisy 256x144 RGB-D, fixed initial-frame pointgoal, previous action and recurrent state; no online GPS, Compass, pose, map, or simulator info",
+  "task": "Official v2 embodiment, actions, noise, reward, 500-step limit and 0.36m success radius",
+  "models": ["LSTM512x2", "parameter-matched GaWF x2"],
+  "visual_backbone": "resnet18",
+  "environments_per_gpu": 2,
+  "rollout_steps_per_environment": 64,
+  "pilot_target_global_frames_per_seed": 1000000,
+  "pilot_target_note": "Provisional common budget; do not submit formal jobs before SJC throughput and learning checks"
+}

@@ -1,0 +1,84 @@
+{
+  "comparison_mode": "individual_terminal",
+  "completion_evidence": {
+    "return_code": 0,
+    "summary_sha256": "87877e31d4260d8ed38c3023b6fc79c76bed499f1d9f0ec85ce28ba33c4c5264"
+  },
+  "derived_from": "nav-robothor-embclip-twelve-goal-gradcam-sjc-v2-20261023",
+  "execution": {
+    "physical_gpu_index": 0,
+    "session": "embclip-twelve-goal-gradcam-v3-20261023"
+  },
+  "experiment_id": "nav-robothor-embclip-twelve-goal-gradcam-sjc-v3-20261023",
+  "host": "sjc-remote",
+  "input_files": {
+    "selection.json": "184e47eff51f8477186449bfd7cd9f2dd9062d563c8e04ca7d8814d13784881c"
+  },
+  "mode": "offline_attribution",
+  "policies": [
+    {
+      "checkpoint_path": "results/nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed1-20261021/allenact/checkpoints/ObjectNav-RoboTHOR-EmbCLIP-Light-GRU1-512-5M/2026-10-21_00-07-19/exp_ObjectNav-RoboTHOR-EmbCLIP-Light-GRU1-512-5M__stage_00__steps_000005001216.pt",
+      "checkpoint_sha256": "c4cd40c7c04d74ea238d21b7549250ed56cbf690e492f9d40c942286b91014b3",
+      "common_validation_spl": 0.0975898813334596,
+      "common_validation_sr": 0.16264722378014582,
+      "evaluation_experiment_id": "nav-robothor-embclip-light-gru1-eval-val1800-sjc-v1-seed1-20261022",
+      "evaluation_metrics_sha256": "ca7e7ade0cd6249670c6f68b369dccd43f021d7e0cdd25145b5cc74b8c43d196",
+      "model": "gru1",
+      "seed": 1,
+      "training_experiment_id": "nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed1-20261021"
+    },
+    {
+      "checkpoint_path": "results/nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed3-20261022/allenact/checkpoints/ObjectNav-RoboTHOR-EmbCLIP-Light-GaWF1-1160-5M/2026-10-22_08-10-39/exp_ObjectNav-RoboTHOR-EmbCLIP-Light-GaWF1-1160-5M__stage_00__steps_000005001216.pt",
+      "checkpoint_sha256": "a1437e0b5f7d2d016dba8f8dff204af6ec534317d768470fdd821a84526725a8",
+      "common_validation_spl": 0.11484905823267892,
+      "common_validation_sr": 0.2501402131239484,
+      "evaluation_experiment_id": "nav-robothor-embclip-light-gawf1-eval-val1800-sjc-v1-seed3-20261023",
+      "evaluation_metrics_sha256": "b738968708bc449b04414404b40c8f654eae005b1ab4f301fde53c1960fa42fd",
+      "model": "gawf1",
+      "seed": 3,
+      "training_experiment_id": "nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed3-20261022"
+    }
+  ],
+  "recording_runner_sha256": "915c197dd4de861d28cb0c937efb4bd0bff978b807e5ffa93fb59ce7a7fd0bcd",
+  "recording_suite": "results/nav-robothor-embclip-minimal-terminal-candidates-sjc-v1-20261023",
+  "result_path": "results/nav-robothor-embclip-twelve-goal-gradcam-sjc-v3-20261023",
+  "runner_sha256": "2ce373a3414607875bb8059b54b88103964276a5249f407cbe12bcb8761320e2",
+  "schema_version": 1,
+  "selection_rule": "Prefer a common successful episode, then GaWF success length 6..200 and shortest GaWF length, deterministic ID tie break. BaseballBat uses separate successful episodes; no saliency-based selection.",
+  "selection_sha256": "184e47eff51f8477186449bfd7cd9f2dd9062d563c8e04ca7d8814d13784881c",
+  "source_files": {
+    "scripts/embclip/canonical_core/gawf.py": "69ee77f9ebc5f01da1706c8f1adc8a1e801446b2a152b18a2ad4f0f4de359934",
+    "scripts/embclip/canonical_core/rnn.py": "1b832c6b35c75e9d1660fee0194993ead225e6e86990ee6ddb8c7d0442cf0848",
+    "scripts/embclip/light5m_gawf1_config.py": "bec27cff4bd4db712cc00153bf3b1eedbb209025b8ff927d58ba5ec316520e45",
+    "scripts/embclip/light5m_gru1_config.py": "161de1c09a665266249f4b38e6b94136dff547ae1ea09cabe3f31483b24d01fe",
+    "scripts/embclip/light_config.py": "d4c7ced38f56e8374c224e3b98e5a47ace1b9b0906f37fbbdd145a9379b3eb6d",
+    "scripts/embclip/light_gawf1_config.py": "2e8a1474c4aa8032ca283d45bf1b51228175062863ae81fc0cbffce2931184db",
+    "scripts/embclip/sjc_config.py": "7df8367c3979343b16b237ed657a8d4035ef42db582ffe43301ce82564928fe9"
+  },
+  "status": "complete",
+  "units": [
+    {
+      "name": "twelve-successful-terminal-goals",
+      "result_path": "results/nav-robothor-embclip-twelve-goal-gradcam-sjc-v3-20261023",
+      "status": "complete"
+    }
+  ],
+  "user_authorization": "Public GitHub repository and separate model successful terminal views; mark BaseballBat different episode",
+  "validation_files": {
+    "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val1_1.json.gz": "6cd66a9ee88cffc585dc2a22ed5f7c6ba1f321bbae61c17724cecfe3c456e669",
+    "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val1_2.json.gz": "6a081aa3974e86c9c5ce81f8a76ed3f7d2d9f5895a8eba41654002ec5bf42e93",
+    "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val1_3.json.gz": "36dc011afb3a820d6d1e0a7bb358272326e9bf8221628639d9bc95de0726c6bf",
+    "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val1_4.json.gz": "f6fb94677d057140c9755d33fd8f2fecbe8c678a5917a3713bae4ee6955144bf",
+    "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val1_5.json.gz": "a640bc6cb79ab3339365619ad210248761534c1b189f4d2d36ea59112a793fe0",
+    "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val2_1.json.gz": "4c90f5e0f15bfe4e2d2ad066787523516beabd5f9483fd52516168d0bbf66e95",
+    "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val2_2.json.gz": "e8c1e02090ff5002a16eaa78afed8b9c38dfd18088ec05fd611cf01db017d7d1",
+    "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val2_3.json.gz": "f5bd12ec00b0602b4178d4dc633061d53a7b754e8126c4866d1f4849d968166b",
+    "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val2_4.json.gz": "7fd145a886498dbf34161acb3395cd17d7afb5592a0ee54aa01d57691c2d1fa2",
+    "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val2_5.json.gz": "b9cf331bacf84b10c7541226d99314d0ed70ddcf4b83174720a74927f4e1331e",
+    "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val3_1.json.gz": "310e6e3f37d21d6663578c588d1b608ee60371d9fdad132f40427eb9f7ef8677",
+    "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val3_2.json.gz": "758211a1630c92674f3aec57d93505c3bfa904238ce1225ad45262c0bbb9eed7",
+    "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val3_3.json.gz": "43219cb8a3926d5f2342755d2ce513c6d676c39950c1c61a65148d5e08768abc",
+    "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val3_4.json.gz": "b27472955f33a4542a012b5bb02155a098abe87c2a706ec2944394d1598cbd9a",
+    "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val3_5.json.gz": "4f5e50324032d21c5b10463e6803959fac367cba9510a1637a2dccd75dc9b1e7"
+  }
+}

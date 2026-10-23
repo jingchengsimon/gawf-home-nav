@@ -1,0 +1,18 @@
+{
+  "protocol_id": "pointnav2020-gibsonv2-light-rgb-fixedgoal-resnet18-v1",
+  "relationship_to_rgbd": "Independent RGB-only protocol; RGB-D checkpoints and validation scores are not comparable results",
+  "dataset": "The same Gibson PointNav v2 episodes and licensed Gibson Habitat scene files as light RGB-D",
+  "training_scenes": ["Convoy", "Eagerville", "Haxtun", "Nuevo", "Reyno", "Sawpit", "Seward", "Sumas"],
+  "validation_scenes": ["Cantwell", "Eastville", "Edgemere", "Scioto"],
+  "policy_observations": ["rgb", "pointgoal"],
+  "goal_protocol": "pointgoal is the constant initial-frame goal cue g0, repeated without online updates",
+  "internal_state": "previous self-issued action and recurrent state",
+  "online_gps_compass_pose_depth_map_metadata": false,
+  "training_reward": "Official NavRLEnv geodesic shaping remains training supervision; reward and info are not policy inputs",
+  "models": ["LSTM512x2", "GaWF512x2"],
+  "visual_backbone": "resnet18",
+  "image_size": [256, 144],
+  "environments_per_gpu": 2,
+  "rollout_steps_per_environment": 64,
+  "target_global_frames_per_seed": 1000000
+}

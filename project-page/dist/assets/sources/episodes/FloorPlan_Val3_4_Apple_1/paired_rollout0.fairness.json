@@ -1,0 +1,13 @@
+{
+  "fraction_pixels_difference_over_20": 0.0,
+  "initial_rgb_mae_255": 0.00021944444444444444,
+  "policy_seed": 0,
+  "same_actual_pose": true,
+  "same_episode": true,
+  "same_initial_rgb_sha256": false,
+  "simulator_seed": 1000,
+  "thresholds": {
+    "fraction_pixels_over_20": 0.01,
+    "mae_255": 1.0
+  }
+}

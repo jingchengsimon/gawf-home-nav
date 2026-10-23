@@ -1,0 +1,33 @@
+{
+  "comparison": "same episode and initial pose; each model uses its own terminal RGB, prior action and actual recurrent state; visual inputs differ",
+  "limits": "local gradient sensitivity, not intrinsic attention or a causal comparison under identical inputs",
+  "method": "End-action log-probability Grad-CAM at each model's own successful final decision view",
+  "normalization": "each positive map divided by its own positive maximum for spatial visualization; brightness is not compared across models; zero maps remain zero",
+  "records": [
+    {
+      "episode_id": "FloorPlan_Val3_3_GarbageCan_3",
+      "models": {
+        "gawf1": {
+          "decision_step": 34,
+          "gradient_l2": 0.0019737076945602894,
+          "native_forward_delta": 0.00025272369384765625,
+          "probe_sha256": "d26929a6fc76cadd3d990f5038dfc800ec014d50de3a64158254706a17358274"
+        },
+        "gru1": {
+          "decision_step": 115,
+          "gradient_l2": 0.6753262281417847,
+          "native_forward_delta": 0.0002815723419189453,
+          "probe_sha256": "ce31d63b9631952f3b7abd601a63a2d0b6cc9eaa3d37694b93321767558d2676"
+        }
+      },
+      "plot": "FloorPlan_Val3_3_GarbageCan_3.png",
+      "raw_positive_max_by_model": {
+        "gawf1": 0.00017017743084579706,
+        "gru1": 0.05129344016313553
+      },
+      "target": "GarbageCan"
+    }
+  ],
+  "status": "complete",
+  "weights_updated": false
+}

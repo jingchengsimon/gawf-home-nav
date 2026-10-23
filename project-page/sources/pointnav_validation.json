@@ -1,0 +1,65 @@
+{
+  "created_at": "2026-10-23T11:52:22.402987-04:00",
+  "protocol": "pointnav2020-gibsonv2-light-rgb-fixedgoal-resnet18-v1",
+  "dataset": "Gibson PointNav v2 val",
+  "scenes": [
+    "Cantwell",
+    "Eastville",
+    "Edgemere",
+    "Scioto"
+  ],
+  "episodes_per_model": 284,
+  "plot": "mean bar plus seed scatter",
+  "models": {
+    "lstm2": {
+      "summary": {
+        "checkpoint_global_frames": 1000064,
+        "checkpoint_sha256": "a7659d8d23f8eb99fcb25e566a9de36fb3fd098d32b4fb886cff7c5d95ebab0b",
+        "completed_at": "2026-10-23T10:52:21.480494-04:00",
+        "completed_episodes": 284,
+        "experiment_id": "nav-pointnav2020-gibsonv2-rgb-light-lstm2-evalval284-sjc-v1-seed0-20261023",
+        "metrics": {
+          "distance_to_goal": 6.523510148407707,
+          "softspl": 0.0913529357188652,
+          "spl": 0.0,
+          "success": 0.0
+        },
+        "source_experiment_id": "nav-pointnav2020-gibsonv2-rgb-light-lstm2-formal1m-sjc-v1-seed0-20261022",
+        "status": "complete",
+        "validation_scenes": [
+          "Cantwell",
+          "Eastville",
+          "Edgemere",
+          "Scioto"
+        ]
+      },
+      "summary_sha256": "9e6945012170859de21026b5a210546f6b0c5de5c5c6f1f856b96ef46588c030",
+      "exit_sha256": "a53f3faa5e58cf00c5ae3a63a6466b396b73910968f4194fd343e58d070e4dc7"
+    },
+    "gawf2": {
+      "summary": {
+        "checkpoint_global_frames": 1000064,
+        "checkpoint_sha256": "85d71606d0aaca374e98103e25f9693643625e4846331796ffbf2b3115952e84",
+        "completed_at": "2026-10-23T11:21:56.518097-04:00",
+        "completed_episodes": 284,
+        "experiment_id": "nav-pointnav2020-gibsonv2-rgb-light-gawf2-evalval284-sjc-v1-seed0-20261023",
+        "metrics": {
+          "distance_to_goal": 6.158192088381505,
+          "softspl": 0.040603626430639986,
+          "spl": 0.0002589009248747879,
+          "success": 0.0035211267605633804
+        },
+        "source_experiment_id": "nav-pointnav2020-gibsonv2-rgb-light-gawf2-formal1m-sjc-v1-seed0-20261022",
+        "status": "complete",
+        "validation_scenes": [
+          "Cantwell",
+          "Eastville",
+          "Edgemere",
+          "Scioto"
+        ]
+      },
+      "summary_sha256": "166bdcc5b75db8ce871bdd34715568f9c83ef3d3d0f9e80a02ef4083397e22fb",
+      "exit_sha256": "98067457bd5ffd43b6b8f23440f0b21c8cc6091b110e9c20ccbe131b8128610a"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# Python 3.9 + pinned Habitat-Sim 0.2.5 headless are installed through Conda.
+# Original 2020 Habitat Lab/Baselines are loaded from the pinned vendor source.
+numpy==1.23.5
+scipy==1.10.1
+numba==0.57.1
+numpy-quaternion==2022.4.3
+attrs==23.2.0
+gym==0.10.9
+yacs==0.1.8
+opencv-python-headless==4.8.1.78
+Pillow==9.5.0
+imageio==2.31.6
+imageio-ffmpeg==0.4.9
+moviepy==1.0.3
+tqdm==4.66.5
+ifcfg==0.24
+tensorboard==2.13.0
+protobuf==3.20.3

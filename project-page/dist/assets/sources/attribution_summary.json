@@ -1,0 +1,251 @@
+{
+  "causal_limit": "local gradient sensitivity, not attention weights or evidence of causal mechanism",
+  "history": "both models teacher-forced through the same GRU1 RGB, goal and prior-action history; separate recurrent states reset to zero",
+  "method": "Grad-CAM of selected action log probability w.r.t. frozen CLIP RN50 final 2048x7x7 feature map",
+  "normalization": "one shared positive CAM scale per frame across both models; zero maps remain zero",
+  "records": [
+    {
+      "action_index": 1,
+      "episode_id": "FloorPlan_Val1_1_GarbageCan_0",
+      "models": {
+        "gawf1": {
+          "action_log_probability": -0.003525257110595703,
+          "gradient_l2": 0.010967214591801167,
+          "native_vs_inference_logprob_max_delta": 0.0005221366882324219
+        },
+        "gru1": {
+          "action_log_probability": -0.0018606185913085938,
+          "gradient_l2": 0.0011913841590285301,
+          "native_vs_inference_logprob_max_delta": 6.103515625e-05
+        }
+      },
+      "plot": "FloorPlan_Val1_1_GarbageCan_0_step0.png",
+      "shared_history_sha256": "d050b1c09a1013f3293eb253bb67c0370abdd4a997200df915b82967ac13fe06",
+      "shared_positive_cam_max": 0.0005071075865998864,
+      "step": 0
+    },
+    {
+      "action_index": 0,
+      "episode_id": "FloorPlan_Val1_1_GarbageCan_0",
+      "models": {
+        "gawf1": {
+          "action_log_probability": -0.03811454772949219,
+          "gradient_l2": 0.09468778967857361,
+          "native_vs_inference_logprob_max_delta": 0.00025844573974609375
+        },
+        "gru1": {
+          "action_log_probability": -0.03720235824584961,
+          "gradient_l2": 0.042635537683963776,
+          "native_vs_inference_logprob_max_delta": 0.0004067420959472656
+        }
+      },
+      "plot": "FloorPlan_Val1_1_GarbageCan_0_step16.png",
+      "shared_history_sha256": "d050b1c09a1013f3293eb253bb67c0370abdd4a997200df915b82967ac13fe06",
+      "shared_positive_cam_max": 0.005974281579256058,
+      "step": 16
+    },
+    {
+      "action_index": 1,
+      "episode_id": "FloorPlan_Val1_1_GarbageCan_2",
+      "models": {
+        "gawf1": {
+          "action_log_probability": -13.571561813354492,
+          "gradient_l2": 1.9524037837982178,
+          "native_vs_inference_logprob_max_delta": 0.000301361083984375
+        },
+        "gru1": {
+          "action_log_probability": -0.00945901870727539,
+          "gradient_l2": 0.009002388454973698,
+          "native_vs_inference_logprob_max_delta": 0.00015974044799804688
+        }
+      },
+      "plot": "FloorPlan_Val1_1_GarbageCan_2_step0.png",
+      "shared_history_sha256": "261d12168dd505f4ca18641daaa1a50a40b86f98e4acc843c8f4ef69bb803150",
+      "shared_positive_cam_max": 0.0700034648180008,
+      "step": 0
+    },
+    {
+      "action_index": 1,
+      "episode_id": "FloorPlan_Val1_1_GarbageCan_2",
+      "models": {
+        "gawf1": {
+          "action_log_probability": -2.062509298324585,
+          "gradient_l2": 1.0821702480316162,
+          "native_vs_inference_logprob_max_delta": 0.00025391578674316406
+        },
+        "gru1": {
+          "action_log_probability": -0.3705761432647705,
+          "gradient_l2": 0.33015352487564087,
+          "native_vs_inference_logprob_max_delta": 0.00017547607421875
+        }
+      },
+      "plot": "FloorPlan_Val1_1_GarbageCan_2_step16.png",
+      "shared_history_sha256": "261d12168dd505f4ca18641daaa1a50a40b86f98e4acc843c8f4ef69bb803150",
+      "shared_positive_cam_max": 0.06142721697688103,
+      "step": 16
+    },
+    {
+      "action_index": 1,
+      "episode_id": "FloorPlan_Val2_5_GarbageCan_9",
+      "models": {
+        "gawf1": {
+          "action_log_probability": -0.17165374755859375,
+          "gradient_l2": 0.5265759229660034,
+          "native_vs_inference_logprob_max_delta": 0.0002899169921875
+        },
+        "gru1": {
+          "action_log_probability": -0.011396408081054688,
+          "gradient_l2": 0.018647750839591026,
+          "native_vs_inference_logprob_max_delta": 0.00025463104248046875
+        }
+      },
+      "plot": "FloorPlan_Val2_5_GarbageCan_9_step0.png",
+      "shared_history_sha256": "f12ce8d2a0f1a20394256045fad5d910373a66338fddb1cafa7cf9e5a1181957",
+      "shared_positive_cam_max": 0.030513225123286247,
+      "step": 0
+    },
+    {
+      "action_index": 1,
+      "episode_id": "FloorPlan_Val2_5_GarbageCan_9",
+      "models": {
+        "gawf1": {
+          "action_log_probability": -6.540042877197266,
+          "gradient_l2": 1.7313350439071655,
+          "native_vs_inference_logprob_max_delta": 0.00016355514526367188
+        },
+        "gru1": {
+          "action_log_probability": -0.005121707916259766,
+          "gradient_l2": 0.002742392010986805,
+          "native_vs_inference_logprob_max_delta": 0.0002942085266113281
+        }
+      },
+      "plot": "FloorPlan_Val2_5_GarbageCan_9_step16.png",
+      "shared_history_sha256": "f12ce8d2a0f1a20394256045fad5d910373a66338fddb1cafa7cf9e5a1181957",
+      "shared_positive_cam_max": 0.09752750396728516,
+      "step": 16
+    },
+    {
+      "action_index": 1,
+      "episode_id": "FloorPlan_Val3_1_HousePlant_2",
+      "models": {
+        "gawf1": {
+          "action_log_probability": -0.767242431640625,
+          "gradient_l2": 1.804933786392212,
+          "native_vs_inference_logprob_max_delta": 0.00016689300537109375
+        },
+        "gru1": {
+          "action_log_probability": -0.007359504699707031,
+          "gradient_l2": 0.004066889174282551,
+          "native_vs_inference_logprob_max_delta": 5.53131103515625e-05
+        }
+      },
+      "plot": "FloorPlan_Val3_1_HousePlant_2_step0.png",
+      "shared_history_sha256": "603b73750ea415caa7aa842d67033de9b0ebe3a67b8bc2db554bf0c7b9ce5929",
+      "shared_positive_cam_max": 0.03668385371565819,
+      "step": 0
+    },
+    {
+      "action_index": 2,
+      "episode_id": "FloorPlan_Val3_1_HousePlant_2",
+      "models": {
+        "gawf1": {
+          "action_log_probability": -1.2317967414855957,
+          "gradient_l2": 1.3535205125808716,
+          "native_vs_inference_logprob_max_delta": 0.00015091896057128906
+        },
+        "gru1": {
+          "action_log_probability": -1.2625739574432373,
+          "gradient_l2": 1.2257670164108276,
+          "native_vs_inference_logprob_max_delta": 0.0003986358642578125
+        }
+      },
+      "plot": "FloorPlan_Val3_1_HousePlant_2_step16.png",
+      "shared_history_sha256": "603b73750ea415caa7aa842d67033de9b0ebe3a67b8bc2db554bf0c7b9ce5929",
+      "shared_positive_cam_max": 0.0553218275308609,
+      "step": 16
+    },
+    {
+      "action_index": 1,
+      "episode_id": "FloorPlan_Val1_3_Mug_8",
+      "models": {
+        "gawf1": {
+          "action_log_probability": -8.006649017333984,
+          "gradient_l2": 1.6804168224334717,
+          "native_vs_inference_logprob_max_delta": 9.72747802734375e-05
+        },
+        "gru1": {
+          "action_log_probability": -0.005023002624511719,
+          "gradient_l2": 0.005336676724255085,
+          "native_vs_inference_logprob_max_delta": 6.532669067382812e-05
+        }
+      },
+      "plot": "FloorPlan_Val1_3_Mug_8_step0.png",
+      "shared_history_sha256": "be66f399ff49821de917c215b2b0e0f229603c0a5d631dbf25bd5a8b3239797e",
+      "shared_positive_cam_max": 0.03407181426882744,
+      "step": 0
+    },
+    {
+      "action_index": 3,
+      "episode_id": "FloorPlan_Val1_3_Mug_8",
+      "models": {
+        "gawf1": {
+          "action_log_probability": -17.22652244567871,
+          "gradient_l2": 2.9304521083831787,
+          "native_vs_inference_logprob_max_delta": 0.0005731582641601562
+        },
+        "gru1": {
+          "action_log_probability": -0.4823005199432373,
+          "gradient_l2": 0.4515269994735718,
+          "native_vs_inference_logprob_max_delta": 0.00011360645294189453
+        }
+      },
+      "plot": "FloorPlan_Val1_3_Mug_8_step11.png",
+      "shared_history_sha256": "be66f399ff49821de917c215b2b0e0f229603c0a5d631dbf25bd5a8b3239797e",
+      "shared_positive_cam_max": 0.03852604329586029,
+      "step": 11
+    },
+    {
+      "action_index": 1,
+      "episode_id": "FloorPlan_Val2_2_Laptop_1",
+      "models": {
+        "gawf1": {
+          "action_log_probability": -9.541091918945312,
+          "gradient_l2": 3.360407590866089,
+          "native_vs_inference_logprob_max_delta": 0.0001621246337890625
+        },
+        "gru1": {
+          "action_log_probability": -0.008579730987548828,
+          "gradient_l2": 0.01563248038291931,
+          "native_vs_inference_logprob_max_delta": 0.000278472900390625
+        }
+      },
+      "plot": "FloorPlan_Val2_2_Laptop_1_step0.png",
+      "shared_history_sha256": "ce3d8c2f44cda2920dcc8218d7f390502060df0926a5887f084421a26ba9a3f5",
+      "shared_positive_cam_max": 0.01076123770326376,
+      "step": 0
+    },
+    {
+      "action_index": 2,
+      "episode_id": "FloorPlan_Val2_2_Laptop_1",
+      "models": {
+        "gawf1": {
+          "action_log_probability": -0.6631174087524414,
+          "gradient_l2": 0.9349652528762817,
+          "native_vs_inference_logprob_max_delta": 0.000164031982421875
+        },
+        "gru1": {
+          "action_log_probability": -0.21717071533203125,
+          "gradient_l2": 0.1455053985118866,
+          "native_vs_inference_logprob_max_delta": 0.0004999637603759766
+        }
+      },
+      "plot": "FloorPlan_Val2_2_Laptop_1_step16.png",
+      "shared_history_sha256": "ce3d8c2f44cda2920dcc8218d7f390502060df0926a5887f084421a26ba9a3f5",
+      "shared_positive_cam_max": 0.009663833305239677,
+      "step": 16
+    }
+  ],
+  "status": "complete",
+  "target_action_source": "action actually sampled by GRU1 seed1 rollout seed0; both models receive the same action target",
+  "weights_updated": false
+}

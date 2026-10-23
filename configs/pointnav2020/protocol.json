@@ -1,0 +1,77 @@
+{
+  "protocol_id": "pointnav2020-rgbd-fixedgoal-ddppo-lstm2-gibson-v2",
+  "selected_on": "2026-10-19",
+  "training_host": "amarel",
+  "policy_observations": [
+    "rgb",
+    "depth",
+    "pointgoal"
+  ],
+  "goal_protocol": "constant initial-frame polar goal provided at every step",
+  "online_gps_compass_pose": false,
+  "reward_or_info_as_policy_input": false,
+  "training_reward": "official NavRLEnv: geodesic progress - 0.001 + 2.5 * SPL; legacy SUCCESS_MEASURE default is spl; reward/info never enter policy",
+  "sources": {
+    "habitat-lab-2020": "959bd45431edd8024832a877bdc8218015d97a7e",
+    "habitat-challenge-2020": "ddf1575532aecc4df2f4cd4c5db173b8eada3e1e"
+  },
+  "official_task_source": "vendor/habitat-challenge-2020/configs/challenge_pointnav2020_v2.local.rgbd.yaml",
+  "official_trainer_source": "vendor/habitat-challenge-2020/configs/ddppo_pointnav.yaml",
+  "allowed_task_overrides": [
+    "DATASET.SPLIT",
+    "DATASET.DATA_PATH",
+    "DATASET.SCENES_DIR"
+  ],
+  "allowed_trainer_overrides": [
+    "BASE_TASK_CONFIG_PATH",
+    "TENSORBOARD_DIR",
+    "VIDEO_DIR",
+    "CHECKPOINT_FOLDER",
+    "EVAL_CKPT_PATH_DIR"
+  ],
+  "runtime": {
+    "source": "vendor/habitat-lab-2020",
+    "environment_leaf": ".envs/pointnav2020",
+    "installed": false,
+    "validated": false,
+    "note": "Legacy training source selected; simulator and dependency compatibility must be validated in a dedicated environment. Existing v0.2.5 demo environment is not a validated 2020 training environment."
+  },
+  "resources": {
+    "target_gpus": "select_from_available_slurm_resources",
+    "environments_per_gpu": 4,
+    "ppo_steps": 64,
+    "slurm_submission_prepared": false,
+    "training_budget_approved": false,
+    "smoke_authorized": true
+  },
+  "datasets": [
+    {
+      "name": "Gibson Habitat-sim scenes, train+val",
+      "access": "license completed by user; official post-license URL supplied",
+      "download_entry": "https://github.com/StanfordVL/GibsonEnv/blob/master/gibson/data/README.md#download-gibson-database-of-spaces",
+      "selection": "Download Gibson Database for Habitat-sim; Habitat GLB train/val package, e.g. gibson_habitat_trainval.zip if offered",
+      "destination": "data/scene_datasets/gibson/",
+      "coverage": "all scene_id files referenced by PointNav Gibson v2 train and val",
+      "size_note": "2020 challenge documentation lists historical Habitat Challenge Data as 1.5 GB; newer trainval packages may differ; actual granted archive and measured size govern",
+      "url": "https://dl.fbaipublicfiles.com/habitat/data/scene_datasets/gibson_habitat_trainval.zip",
+      "http_content_length": 10833075327
+    },
+    {
+      "name": "PointNav Gibson v2 episodes",
+      "access": "public",
+      "url": "https://dl.fbaipublicfiles.com/habitat/data/datasets/pointnav/gibson/v2/pointnav_gibson_v2.zip",
+      "destination": "data/datasets/pointnav/gibson/v2/",
+      "splits": [
+        "train",
+        "val"
+      ],
+      "documented_size_mb": 274,
+      "downloaded": false,
+      "http_content_length": 287231037
+    }
+  ],
+  "status": "deploying_data_and_isolated_training_runtime",
+  "training_submitted": false,
+  "smoke_accepted": false,
+  "gawf_integrated": false
+}

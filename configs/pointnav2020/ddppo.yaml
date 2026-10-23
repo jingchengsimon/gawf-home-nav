@@ -1,0 +1,51 @@
+# Official 2020 protocol; project paths only. This file does not submit training.
+BASE_TASK_CONFIG_PATH: configs/pointnav2020/task.yaml
+TRAINER_NAME: ddppo
+ENV_NAME: NavRLEnv
+SIMULATOR_GPU_ID: 0
+TORCH_GPU_ID: 0
+VIDEO_OPTION: []
+TENSORBOARD_DIR: logs/REQUIRES_EXPERIMENT_ID/tensorboard
+VIDEO_DIR: results/REQUIRES_EXPERIMENT_ID/video
+TEST_EPISODE_COUNT: -1
+EVAL_CKPT_PATH_DIR: results/REQUIRES_EXPERIMENT_ID/checkpoints
+NUM_PROCESSES: 4
+SENSORS:
+- RGB_SENSOR
+- DEPTH_SENSOR
+CHECKPOINT_FOLDER: results/REQUIRES_EXPERIMENT_ID/checkpoints
+NUM_UPDATES: 10000
+LOG_INTERVAL: 10
+CHECKPOINT_INTERVAL: 50
+RL:
+  SLACK_REWARD: -0.001
+  SUCCESS_REWARD: 2.5
+  PPO:
+    clip_param: 0.2
+    ppo_epoch: 2
+    num_mini_batch: 2
+    value_loss_coef: 0.5
+    entropy_coef: 0.01
+    lr: 0.00025
+    eps: 1e-5
+    max_grad_norm: 0.2
+    num_steps: 64
+    use_gae: true
+    gamma: 0.99
+    tau: 0.95
+    use_linear_clip_decay: false
+    use_linear_lr_decay: false
+    reward_window_size: 50
+    use_normalized_advantage: false
+    hidden_size: 512
+  DDPPO:
+    sync_frac: 0.6
+    distrib_backend: GLOO
+    pretrained_weights: data/ddppo-models/gibson-2plus-resnet50.pth
+    pretrained: false
+    pretrained_encoder: false
+    train_encoder: true
+    reset_critic: true
+    backbone: resnet50
+    rnn_type: LSTM
+    num_recurrent_layers: 2

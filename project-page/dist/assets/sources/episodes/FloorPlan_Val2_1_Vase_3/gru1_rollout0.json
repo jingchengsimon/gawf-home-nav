@@ -1,0 +1,399 @@
+{
+  "action_sampling_seed": 0,
+  "actions": [
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 2,
+      "name": "RotateRight"
+    },
+    {
+      "index": 2,
+      "name": "RotateRight"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 3,
+      "name": "End"
+    }
+  ],
+  "actor_inputs": [
+    "rgb_clip_resnet",
+    "goal_object_type_ind",
+    "recurrent_state"
+  ],
+  "checkpoint_sha256": "c4cd40c7c04d74ea238d21b7549250ed56cbf690e492f9d40c942286b91014b3",
+  "episode": {
+    "id": "FloorPlan_Val2_1_Vase_3",
+    "initial_horizon": 30,
+    "initial_orientation": 300,
+    "initial_position": {
+      "x": 2.75,
+      "y": 0.9009996652603149,
+      "z": -3.5
+    },
+    "object_type": "Vase",
+    "scene": "FloorPlan_Val2_1",
+    "shortest_path": [
+      {
+        "x": 2.75,
+        "y": 0.006180524826049805,
+        "z": -3.5
+      },
+      {
+        "x": 2.669999837875366,
+        "y": 0.006180524826049805,
+        "z": -3.7799999713897705
+      },
+      {
+        "x": 2.549999952316284,
+        "y": 0.006180524826049805,
+        "z": -3.9599997997283936
+      },
+      {
+        "x": 2.2750000953674316,
+        "y": 0.006180524826049805,
+        "z": -4.025000095367432
+      }
+    ],
+    "shortest_path_length": 0.7901146346258547
+  },
+  "evaluator_only": [
+    "top_down_image",
+    "agent_pose",
+    "shortest_path",
+    "metrics"
+  ],
+  "map_projection": {
+    "camera": {
+      "x": 5.566799640655518,
+      "y": 2.6132566928863525,
+      "z": -2.3768393993377686
+    },
+    "height": 300,
+    "orthographic_size": 4.87999963760376,
+    "target_positions": [
+      {
+        "x": 1.4165387153625488,
+        "y": 0.4434010088443756,
+        "z": -3.9557151794433594
+      }
+    ],
+    "width": 400
+  },
+  "model": "gru1",
+  "simulator_seed": 1000,
+  "simulator_seed_action": "SetRandomSeed",
+  "spl": 0.0,
+  "start_actual": {
+    "horizon": 30.00000762939453,
+    "position": {
+      "x": 2.75,
+      "y": 0.9009996652603149,
+      "z": -3.5
+    },
+    "yaw": 300.0
+  },
+  "start_rgb_sha256": "5e4cca1ea165d713ff3e2e2cbe08a0e1c2c5ad1c025222d9601c255ef9c8851f",
+  "steps": 23,
+  "success": false,
+  "terminal_probe_sha256": "f590a64baed181df3cd2d52969ff8baf0ebf78c712f4c2131f93de511976f69b",
+  "training_seed": 1,
+  "trajectory": [
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 300.0
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 270.9674987792969
+    },
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 240.97006225585938
+    },
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 211.08543395996094
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 181.183837890625
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 151.25013732910156
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 122.50331115722656
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 91.40363311767578
+    },
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 61.355072021484375
+    },
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 31.326025009155273
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 1.2794687747955322
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 331.6764831542969
+    },
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 301.70367431640625
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 271.29974365234375
+    },
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 241.70565795898438
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 211.84056091308594
+    },
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 181.29391479492188
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 211.53277587890625
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 241.71875
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 211.24185180664062
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 180.73350524902344
+    },
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 150.51182556152344
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 120.8235855102539
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 2.75,
+        "y": 0.9009996652603149,
+        "z": -3.5
+      },
+      "yaw": 120.8235855102539
+    }
+  ],
+  "video": "results/nav-robothor-embclip-minimal-terminal-candidates-sjc-v1-20261023/FloorPlan_Val2_1_Vase_3/gru1_rollout0.mp4",
+  "video_sha256": "b5dfd9b28a76c0e88921f65b0e04f0348494257667be72e314169371d1e81b10"
+}
