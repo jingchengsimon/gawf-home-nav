@@ -2,24 +2,12 @@
   "status": "pass",
   "paired_cases": 4,
   "objects": [
-    "Bowl",
     "GarbageCan",
     "HousePlant",
+    "Laptop",
     "SprayBottle"
   ],
   "videos": [
-    {
-      "asset": "assets/minimal-videos/FloorPlan_Val2_1_Bowl_8/gru1-e7cbfcf8f35e.mp4",
-      "sha256": "42f051bad39f01a045c918f2a078bf17b851a8b29ff0f013d9aa25e15822b291",
-      "frames": 14,
-      "duration": 1.166016
-    },
-    {
-      "asset": "assets/minimal-videos/FloorPlan_Val2_1_Bowl_8/gawf1-2f5c0a861f07.mp4",
-      "sha256": "fcaea57ca01b09d6653eab2c3f564331ff4dfacb06cb1cf96da09947dd68cba8",
-      "frames": 24,
-      "duration": 2.0
-    },
     {
       "asset": "assets/minimal-videos/FloorPlan_Val3_3_GarbageCan_5/gru1-0589d1dd47e2.mp4",
       "sha256": "ba13ea60ca9f8be21ac1c1f590094fe704d294f7597baf9f94a11e81d3f36cf2",
@@ -45,6 +33,18 @@
       "duration": 2.75
     },
     {
+      "asset": "assets/minimal-videos/FloorPlan_Val1_5_Laptop_3/gru1-5fa852b54e0f.mp4",
+      "sha256": "1e7e98351e50078e4914f7cf263f42d49e0ec6b9c18a163e08c1a5df8f5d0efd",
+      "frames": 156,
+      "duration": 13.0
+    },
+    {
+      "asset": "assets/minimal-videos/FloorPlan_Val1_5_Laptop_3/gawf1-fe7473926600.mp4",
+      "sha256": "68ca319523df7b047d22a90265a068168a0a398dbb795def842c8b3ac5639b30",
+      "frames": 32,
+      "duration": 2.666667
+    },
+    {
       "asset": "assets/minimal-videos/FloorPlan_Val1_2_SprayBottle_8/gru1-7d6de7f1e56b.mp4",
       "sha256": "96b9797b19e657ba184b87fa087b4b646e0c5b9545fcb8f963de457db29a9216",
       "frames": 265,
@@ -58,7 +58,7 @@
     }
   ],
   "display": "No baked-in text; heading and image play controls; individual gray/red timelines",
-  "fairness": "Same episode, actual initial pose, action seed and simulator seed; initial RGB difference below recorded thresholds",
+  "fairness": "Each pair shares episode and starting pose. Laptop replays unchanged logged validation actions/poses from evaluation seed0; original per-action RNG states and pixels were not saved. Other cases are autonomous shared-seed rollouts.",
   "attribution": "24 genuine End-action Grad-CAM maps with 24 original RGB panels; 22 pose-replayed terminal states and actual GaWF HousePlant/Vase terminal states. Illustrative selected maps; source arrays unchanged.",
   "gradient_grid": {
     "figures": 2,
@@ -425,5 +425,25 @@
       "GarbageCan": "Both last RGB frames clearly contain the garbage can.",
       "SprayBottle": "Existing selected successful endpoints retained."
     }
+  },
+  "long_route_replacement": {
+    "episode_id": "FloorPlan_Val1_5_Laptop_3",
+    "horizontal_travel_m": {
+      "gawf1": 3.2379848990933735,
+      "gru1": 4.0098135523289775
+    },
+    "limits": "Re-rendered RGB, not original pixels. No policy actions are regenerated or edited. Original evaluation seed0; per-action RNG states unavailable.",
+    "mode": "logged_validation_pose_replay",
+    "steps": {
+      "gawf1": 31,
+      "gru1": 155
+    },
+    "success": {
+      "gawf1": true,
+      "gru1": true
+    },
+    "target": "Laptop",
+    "terminal_target_visually_verified": true,
+    "unchanged_source_metrics": true
   }
 }

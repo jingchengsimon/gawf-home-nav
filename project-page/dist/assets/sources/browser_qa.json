@@ -1,10 +1,10 @@
 {
   "status": "pass",
-  "date": "2026-10-23",
+  "date": "2026-10-24",
   "case_order": [
-    "Bowl",
     "GarbageCan",
     "HousePlant",
+    "Laptop",
     "SprayBottle"
   ],
   "demos_before_results": false,
@@ -173,5 +173,49 @@
   "title": "FEEDBACK-GATED MODULATION SUPPORTS VISUAL NAVIGATION",
   "author": "Jingcheng Shi",
   "italic_find_heading": "GarbageCan",
-  "separate_video_and_gradcam_episodes_explained": true
+  "separate_video_and_gradcam_episodes_explained": true,
+  "long_route_revision": {
+    "case_order": [
+      "GarbageCan",
+      "HousePlant",
+      "Laptop",
+      "SprayBottle"
+    ],
+    "date": "2026-10-24",
+    "historical_attempts_preserved": true,
+    "new_test_scores": false,
+    "performance_table_changed": false,
+    "playback": {
+      "both_ended": true,
+      "durations_seconds": [
+        13.0,
+        2.666667
+      ],
+      "fps": 12,
+      "shared_button": true,
+      "shorter_holds_final_frame": true,
+      "video_errors": []
+    },
+    "replacement": {
+      "episode_id": "FloorPlan_Val1_5_Laptop_3",
+      "horizontal_travel_m": {
+        "gawf1": 3.2379848990933735,
+        "gru1": 4.0098135523289775
+      },
+      "limits": "Re-rendered RGB, not original pixels. No policy actions are regenerated or edited. Original evaluation seed0; per-action RNG states unavailable.",
+      "mode": "logged_validation_pose_replay",
+      "steps": {
+        "gawf1": 31,
+        "gru1": 155
+      },
+      "success": {
+        "gawf1": true,
+        "gru1": true
+      },
+      "target": "Laptop",
+      "terminal_target_visually_verified": true,
+      "unchanged_source_metrics": true
+    },
+    "status": "pass"
+  }
 }

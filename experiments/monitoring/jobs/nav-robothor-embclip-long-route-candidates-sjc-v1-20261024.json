@@ -1,0 +1,109 @@
+{
+  "completion_evidence": {
+    "return_code": 0,
+    "summary_sha256": "21777e93944aa3d68c8b577d2348481721169b000a1380385706c16789c62fc8"
+  },
+  "episodes": [
+    {
+      "dataset_path": "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val2_2.json.gz",
+      "dataset_sha256": "e8c1e02090ff5002a16eaa78afed8b9c38dfd18088ec05fd611cf01db017d7d1",
+      "episode_id": "FloorPlan_Val2_2_Laptop_1"
+    },
+    {
+      "dataset_path": "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val2_5.json.gz",
+      "dataset_sha256": "b9cf331bacf84b10c7541226d99314d0ed70ddcf4b83174720a74927f4e1331e",
+      "episode_id": "FloorPlan_Val2_5_BasketBall_7"
+    },
+    {
+      "dataset_path": "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val1_5.json.gz",
+      "dataset_sha256": "a640bc6cb79ab3339365619ad210248761534c1b189f4d2d36ea59112a793fe0",
+      "episode_id": "FloorPlan_Val1_5_Laptop_3"
+    },
+    {
+      "dataset_path": "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val2_2.json.gz",
+      "dataset_sha256": "e8c1e02090ff5002a16eaa78afed8b9c38dfd18088ec05fd611cf01db017d7d1",
+      "episode_id": "FloorPlan_Val2_2_Television_4"
+    }
+  ],
+  "execution": {
+    "action_noise": true,
+    "actor_inputs": [
+      "RGB",
+      "goal_category",
+      "recurrent_state"
+    ],
+    "ai2thor_version": "5.0.0",
+    "map_and_pose": "evaluator_only",
+    "material_randomization": false,
+    "max_steps": 500,
+    "physical_gpu_index": 0,
+    "policy_sampling": "categorical multinomial with dedicated seeded CUDA generator",
+    "recording_fps": 12,
+    "sampler_mirroring": false,
+    "session": "embclip-long-route-20261024",
+    "text_overlays": false
+  },
+  "expected_pairs": 4,
+  "experiment_id": "nav-robothor-embclip-long-route-candidates-sjc-v1-20261024",
+  "host": "sjc-remote",
+  "mode": "qualitative_video",
+  "policies": [
+    {
+      "checkpoint_path": "results/nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed1-20261021/allenact/checkpoints/ObjectNav-RoboTHOR-EmbCLIP-Light-GRU1-512-5M/2026-10-21_00-07-19/exp_ObjectNav-RoboTHOR-EmbCLIP-Light-GRU1-512-5M__stage_00__steps_000005001216.pt",
+      "checkpoint_sha256": "c4cd40c7c04d74ea238d21b7549250ed56cbf690e492f9d40c942286b91014b3",
+      "common_validation_spl": 0.0975898813334596,
+      "common_validation_sr": 0.16264722378014582,
+      "evaluation_experiment_id": "nav-robothor-embclip-light-gru1-eval-val1800-sjc-v1-seed1-20261022",
+      "evaluation_metrics_sha256": "ca7e7ade0cd6249670c6f68b369dccd43f021d7e0cdd25145b5cc74b8c43d196",
+      "model": "gru1",
+      "seed": 1,
+      "training_experiment_id": "nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed1-20261021"
+    },
+    {
+      "checkpoint_path": "results/nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed3-20261022/allenact/checkpoints/ObjectNav-RoboTHOR-EmbCLIP-Light-GaWF1-1160-5M/2026-10-22_08-10-39/exp_ObjectNav-RoboTHOR-EmbCLIP-Light-GaWF1-1160-5M__stage_00__steps_000005001216.pt",
+      "checkpoint_sha256": "a1437e0b5f7d2d016dba8f8dff204af6ec534317d768470fdd821a84526725a8",
+      "common_validation_spl": 0.11484905823267892,
+      "common_validation_sr": 0.2501402131239484,
+      "evaluation_experiment_id": "nav-robothor-embclip-light-gawf1-eval-val1800-sjc-v1-seed3-20261023",
+      "evaluation_metrics_sha256": "b738968708bc449b04414404b40c8f654eae005b1ab4f301fde53c1960fa42fd",
+      "model": "gawf1",
+      "seed": 3,
+      "training_experiment_id": "nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed3-20261022"
+    }
+  ],
+  "result_path": "results/nav-robothor-embclip-long-route-candidates-sjc-v1-20261024",
+  "rollout_seeds": [
+    0
+  ],
+  "runner_sha256": "915c197dd4de861d28cb0c937efb4bd0bff978b807e5ffa93fb59ce7a7fd0bcd",
+  "schema_version": 1,
+  "seed_preflight": "nav-robothor-embclip-project-map-seedprobe-sjc-v1-seed0-20261023",
+  "selection": {
+    "candidate_rule": "Fixed four longer-route candidates selected from validation identities before recording; verify actual translation distance, success and terminal target visibility. Keep all outcomes; no action rerolls.",
+    "checkpoint_rule": "highest common-validation SR over all five completed seeds per model, then SPL and lower seed",
+    "recording_rule": "one prespecified policy seed0 and simulator seed1000 for both policies; no action rerolls",
+    "reference_snapshot": "results/embclip-val1800-gru5-gawf5-20261023/snapshot.json",
+    "reference_snapshot_sha256": "28076d9f9d6b858d2af080f91e15ac83ed4fe82d41bda7de1f3565cff5654643"
+  },
+  "simulator_seeds": [
+    1000
+  ],
+  "source_files": {
+    "scripts/embclip/canonical_core/gawf.py": "69ee77f9ebc5f01da1706c8f1adc8a1e801446b2a152b18a2ad4f0f4de359934",
+    "scripts/embclip/canonical_core/rnn.py": "1b832c6b35c75e9d1660fee0194993ead225e6e86990ee6ddb8c7d0442cf0848",
+    "scripts/embclip/light5m_gawf1_config.py": "bec27cff4bd4db712cc00153bf3b1eedbb209025b8ff927d58ba5ec316520e45",
+    "scripts/embclip/light5m_gru1_config.py": "161de1c09a665266249f4b38e6b94136dff547ae1ea09cabe3f31483b24d01fe",
+    "scripts/embclip/light_config.py": "d4c7ced38f56e8374c224e3b98e5a47ace1b9b0906f37fbbdd145a9379b3eb6d",
+    "scripts/embclip/light_gawf1_config.py": "2e8a1474c4aa8032ca283d45bf1b51228175062863ae81fc0cbffce2931184db",
+    "scripts/embclip/sjc_config.py": "7df8367c3979343b16b237ed657a8d4035ef42db582ffe43301ce82564928fe9"
+  },
+  "status": "complete",
+  "units": [
+    {
+      "name": "long-route-candidates",
+      "result_path": "results/nav-robothor-embclip-long-route-candidates-sjc-v1-20261024",
+      "status": "complete"
+    }
+  ],
+  "user_authorization": "Replace the short Bowl example with a longer navigation route, preferably both successful with GaWF markedly faster and a clear terminal target."
+}

@@ -1,0 +1,144 @@
+{
+  "challenge": "https://github.com/allenai/robothor-challenge",
+  "existing_table": "Val remains unchanged on HTML pending approved Test results.",
+  "html_results_updated": false,
+  "official_build_commit": "bad5bc2b250615cb766ffb45d455c211329af17e",
+  "official_build_source": "https://github.com/allenai/robothor-challenge/blob/main/robothor_challenge/scripts/download_thor_build.py",
+  "paper": "https://arxiv.org/html/2111.09888v2",
+  "preflight_experiment_id": "nav-robothor-embclip-render-sjc-testaccess-v1-20261024",
+  "preflight_summary_sha256": "ac2c1d33802afa2a0b52b1875bde4c84aaa4bc1df12e25f0026bb00244cc1e2b",
+  "scoring_service": {
+    "observed_error": "curl: (6) Could not resolve host: leaderboard.allenai.org",
+    "official_test_scores_obtained": false,
+    "url": "https://leaderboard.allenai.org/robothor_objectnav/submissions/public"
+  },
+  "tables": [
+    {
+      "checkpoint_scope": "all five final 5001216-step seeds per model are eligible once Test access is resolved",
+      "light_gawf1": null,
+      "light_gru1": null,
+      "official": {
+        "spl_percent": 20,
+        "spl_prox_percent": 20,
+        "sr_percent": 47,
+        "sr_prox_percent": 48
+      },
+      "reason": "2040 Test episodes in 10 scenes are present; shortest paths are hidden. Current 5.0.0 simulator lacks challenge scenes. Official Challenge build and official scoring access must be verified.",
+      "status": "blocked",
+      "table": 1,
+      "task": "RoboTHOR ObjectNav Challenge Test"
+    },
+    {
+      "official": {
+        "energy": 0.89,
+        "fixed_strict": 0.17,
+        "misplaced": 0.88,
+        "success_rate": 0.08
+      },
+      "reason": "Different paired-observation task, interaction actions, architecture and imitation-learning training; current RoboTHOR ObjectNav policies cannot perform this task.",
+      "status": "not_supported_by_existing_checkpoints",
+      "table": 2,
+      "task": "iTHOR 1-phase Room Rearrangement"
+    },
+    {
+      "official": {
+        "goal_distance": 7.92,
+        "soft_spl": 0.2,
+        "spl_percent": 8,
+        "sr_percent": 18
+      },
+      "reason": "Different simulator, MP3D scenes, 21-goal vocabulary and task definition. Requires corresponding trained policies and dataset access.",
+      "status": "not_supported_by_existing_checkpoints",
+      "table": 3,
+      "task": "Habitat MP3D ObjectNav Test-Standard"
+    },
+    {
+      "official": {
+        "goal_distance": 0.4,
+        "spl_percent": 87,
+        "sr_percent": 97
+      },
+      "reason": "Paper uses CLIP PointNav plus ideal GPS/Compass. Existing RGB-only fixed-g0 DD-PPO is a different protocol and encoder; RoboTHOR policies are not PointNav models.",
+      "status": "not_supported_by_existing_checkpoints",
+      "table": 4,
+      "task": "Habitat Gibson PointNav Val with ideal GPS+Compass"
+    },
+    {
+      "official_clip_average_pool": {
+        "free_space_accuracy": 0.315,
+        "object_localization_f1": 0.452,
+        "object_presence_f1": 0.53,
+        "reachability_accuracy": 0.677
+      },
+      "reason": "Probes assess the frozen CLIP backbone, which both current policies share. Five navigation seeds do not supply these trained probes or their labelled test data; repeating the same frozen encoder does not measure the recurrent replacement.",
+      "status": "requires_new_probe_data_and_training",
+      "table": 5,
+      "task": "Visual primitive linear probes on separate iTHOR data"
+    },
+    {
+      "official": {
+        "seen_sr": 0.17,
+        "unseen_sr": 0.081
+      },
+      "reason": "Requires a CLIP text encoder policy trained on only 8 goal categories with 4 held out. Current learned 12-category embedding policies trained on all 12 categories cannot be relabelled zero-shot.",
+      "status": "not_supported_by_existing_checkpoints",
+      "table": 6,
+      "task": "Zero-shot RoboTHOR ObjectNav"
+    }
+  ],
+  "test_episode_count": 2040,
+  "test_files": [
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge1_1.json.gz",
+      "sha256": "a9058b71aad7fe3379671d836fd5f5d9fbf1c74750692d08f9f851c7389e50b0"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge1_2.json.gz",
+      "sha256": "9a164ba990192b34c1a377fccf03c69571786005e9606df4177e24e1da79a669"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge2_1.json.gz",
+      "sha256": "88372627df15414125e01e525a9a62888691aae16a8ba6ce424529032e25f0c9"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge2_2.json.gz",
+      "sha256": "9fa9af6bdd952a0c71c51094c565011226874d8910941f3d04155b67d516fd49"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge3_1.json.gz",
+      "sha256": "52c9ee3760bc0821b7de711ccd35786b2bb698cf33d905dbb5e1954a67bb5d84"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge3_2.json.gz",
+      "sha256": "35e99e3bf67a57f18326b7324137099bd916f8da94c187e43b26e8ce08ca3848"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge4_1.json.gz",
+      "sha256": "040d382edf9775a8ffb1adff81fd49a2dad9fd0dfcde4eecdd0520e066cf6a9d"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge4_2.json.gz",
+      "sha256": "608c899d0be0a189bb9284ea7857cd434dfe32156fb67f39db7d9521732a0de9"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge5_1.json.gz",
+      "sha256": "051e6b03e25ad4f23ed9cc6b81fabce53e0f0267f3bab82e243a263eeb1c605d"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge5_2.json.gz",
+      "sha256": "8cac2cc93057c4ad533574c1928b6a77363ada41073ec15c634fef9374a2e75c"
+    }
+  ],
+  "test_scene_count": 10,
+  "weights_updated": false
+}

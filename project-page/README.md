@@ -27,8 +27,12 @@ name. Each model has a full trajectory, a live trajectory and its RGB view. One
 image-mounted play control and an icon beside each object heading start both
 videos; either control pauses the pair. Each method has a gray timeline with a
 red elapsed portion. The shorter video holds its last frame until the longer one
-finishes. Four object cases are shown: Bowl, GarbageCan, HousePlant and SprayBottle.
-Bowl replaces BaseballBat; the GaWF terminal bowl is clearly visible.
+finishes. Four object cases are shown: GarbageCan, HousePlant, Laptop and SprayBottle.
+Laptop replaces the short Bowl case: both succeed, GRU 155 steps and GaWF 31, with
+4.01 m and 3.24 m of logged horizontal travel respectively. Both terminal images clearly
+show the target. This case re-renders actual validation poses and unchanged logged
+actions; it does not claim original RGB pixels or a new autonomous policy run.
+The original evaluation seed is 0; per-action RNG states were not saved.
 GarbageCan uses a both-successful matched episode (GRU 95 steps, GaWF 47).
 HousePlant retains a selected baseline failure; SprayBottle remains unchanged.
 All source candidates are retained.
@@ -51,8 +55,11 @@ the original media remain in `dist/assets/videos/`.
 
 ## Scientific boundary
 
-Paired videos share an episode, actual initial pose, simulator build, sensors,
-noise configuration, step limit and seed values. Top-down views, true poses and
+Paired comparisons share an episode, initial pose and simulator build. The three
+autonomous recording cases share sensors, noise configuration, step limit and
+seed values. Laptop instead re-renders the saved successful validation poses;
+End repeats the last pose because the official logger does not append a new pose
+for that action. No policy actions or published metrics are recomputed in replay. Top-down views, true poses and
 object markers are evaluator-only. RoboTHOR policy inputs are RGB, target category
 and permitted self-generated recurrent/action history. PointNav uses RGB and a
 fixed initial goal cue. Distance-based rewards remain training supervision.
@@ -101,6 +108,7 @@ Figure 5 is a separate zero-shot architecture with a CLIP text branch.
 ```text
 scripts/embclip/eval_light5m_remaining_sjc.py
 scripts/embclip/record_minimal_suite_sjc.py
+scripts/embclip/render_logged_navigation_sjc.py
 scripts/embclip/analyze_terminal_views_sjc.py
 scripts/embclip/analyze_twelve_goals_sjc.py
 scripts/embclip/analyze_visible_gradcam_candidates_sjc.py
@@ -182,3 +190,21 @@ the original paper’s RoboTHOR-Test reference (200M training, SR 47%, SPL 20%)
 with its split separated from our common-Val rows and no invented standard deviation.
 Video and Grad-CAM examples use different episodes; both sections now say so.
 `comparison_consistency.json` records the exact identities and selected outcomes.
+
+## Longer-route revision
+
+Laptop uses verified successful validation trajectories from GRU1 seed1 and GaWF1
+seed3. The renderer runs as a frozen `runner.py` beside an unmodified
+`recording_helpers.py` copy of `record_minimal_suite_sjc.py`, with both hashes in
+the registered manifest. It checks checkpoint and metrics hashes, pose/action
+counts, replayed position and orientation, and terminal target visibility.
+The End frame repeats the unchanged terminal pose according to AllenAct logging.
+Local media transfer checks all 17 source files against their byte sizes and
+SHA256 before promotion. All live candidate attempts and failed rendering
+preflights remain in separate SJC leaves.
+
+No Test score is added in this revision. The installed 5.0.0 build cannot load
+Challenge Test scenes; the public Test data hides shortest paths, and the
+legacy scoring endpoint did not resolve during preflight. Table 1–6 eligibility
+and the official comparison values are recorded in
+`experiments/deployment/embclip-test-table-audit-20261024.json`.

@@ -99,5 +99,23 @@
     "Bowl": "GaWF last RGB clearly contains the bowl on the table.",
     "GarbageCan": "Both last RGB frames clearly contain the garbage can.",
     "SprayBottle": "Existing selected successful endpoints retained."
+  },
+  "long_route_replacement": {
+    "both_successful": true,
+    "episode_id": "FloorPlan_Val1_5_Laptop_3",
+    "horizontal_travel_m": {
+      "gawf1": 3.2379848990933735,
+      "gru1": 4.0098135523289775
+    },
+    "limits": "Re-rendered RGB at logged poses, not original pixels; no policy rerun. Original evaluation seed0; per-action RNG states were not saved.",
+    "mode": "logged_validation_pose_replay",
+    "new_object": "Laptop",
+    "old_object": "Bowl",
+    "source_experiment": "nav-robothor-embclip-validation-pose-replay-sjc-v5-20261024",
+    "steps": {
+      "gawf1": 31,
+      "gru1": 155
+    },
+    "terminal_target_visually_checked": true
   }
 }

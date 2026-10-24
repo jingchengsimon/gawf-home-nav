@@ -1,0 +1,81 @@
+{
+  "completion_evidence": {
+    "preflight_summary_sha256": "ac2c1d33802afa2a0b52b1875bde4c84aaa4bc1df12e25f0026bb00244cc1e2b",
+    "simulator_commit": "f0825767cd50d69f666c7f282e54abfe58f1e917",
+    "test_scene_loaded": false
+  },
+  "execution": {
+    "ai2thor_version": "5.0.0",
+    "physical_gpu_index": 1,
+    "scene": "FloorPlan_test-challenge1_1",
+    "simulator_commit": "f0825767cd50d69f666c7f282e54abfe58f1e917"
+  },
+  "expected_units": 1,
+  "experiment_id": "nav-robothor-embclip-render-sjc-testaccess-v1-20261024",
+  "failure": "AI2-THOR 5.0.0 build does not contain FloorPlan_test-challenge1_1. Official Test scoring also needs hidden shortest paths.",
+  "host": "sjc-remote",
+  "mode": "preflight",
+  "runner_sha256": "10353b95e575df659d742de44b9623c472cebd9af68f7b0f57009b30454c508c",
+  "runner_source": "scripts/embclip/render_check_sjc.py",
+  "schema_version": 1,
+  "status": "failed",
+  "test_data": [
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge1_1.json.gz",
+      "sha256": "a9058b71aad7fe3379671d836fd5f5d9fbf1c74750692d08f9f851c7389e50b0"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge1_2.json.gz",
+      "sha256": "9a164ba990192b34c1a377fccf03c69571786005e9606df4177e24e1da79a669"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge2_1.json.gz",
+      "sha256": "88372627df15414125e01e525a9a62888691aae16a8ba6ce424529032e25f0c9"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge2_2.json.gz",
+      "sha256": "9fa9af6bdd952a0c71c51094c565011226874d8910941f3d04155b67d516fd49"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge3_1.json.gz",
+      "sha256": "52c9ee3760bc0821b7de711ccd35786b2bb698cf33d905dbb5e1954a67bb5d84"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge3_2.json.gz",
+      "sha256": "35e99e3bf67a57f18326b7324137099bd916f8da94c187e43b26e8ce08ca3848"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge4_1.json.gz",
+      "sha256": "040d382edf9775a8ffb1adff81fd49a2dad9fd0dfcde4eecdd0520e066cf6a9d"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge4_2.json.gz",
+      "sha256": "608c899d0be0a189bb9284ea7857cd434dfe32156fb67f39db7d9521732a0de9"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge5_1.json.gz",
+      "sha256": "051e6b03e25ad4f23ed9cc6b81fabce53e0f0267f3bab82e243a263eeb1c605d"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge5_2.json.gz",
+      "sha256": "8cac2cc93057c4ad533574c1928b6a77363ada41073ec15c634fef9374a2e75c"
+    }
+  ],
+  "units": [
+    {
+      "name": "official-test-scene-access",
+      "result_path": "results/nav-robothor-embclip-render-sjc-testaccess-v1-20261024",
+      "status": "failed"
+    }
+  ]
+}
