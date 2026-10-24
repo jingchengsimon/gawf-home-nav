@@ -15,7 +15,9 @@ will fail. The code is published at https://github.com/jingchengsimon/gawf-home-
 
 ## Presentation
 
-The page uses locally bundled Noto Sans, one text size and black text. Demos are ordered by object
+The page uses locally bundled Noto Sans with a clear heading hierarchy.
+Descriptions remain 16px; Results is 30px, part headings 22px, case headings
+18px and centered gray captions 14px. Demos are ordered by object
 name. Each model has a full trajectory, a live trajectory and its RGB view. One
 image-mounted play control and an icon beside each object heading start both
 videos; either control pauses the pair. Each method has a gray timeline with a
@@ -29,10 +31,12 @@ annotations are omitted from the visible page. Detailed provenance remains in
 `dist/assets/sources/protocol.json`, the experiment manifests and result receipts.
 All source recordings, including unselected and unsuccessful cases, are retained
 in their SJC result leaves. Selected videos and small source snapshots are mirrored
-locally. A two-row teaser combines the HousePlant full trajectories with AlarmClock,
-BaseballBat and SprayBottle Grad-CAM overlays. Results contains a quantitative
-table placeholder, I. four paired navigation demos, and II. two RGB/gradient grids.
-Each visual section has a short introduction and one shared caption.
+locally. A two-row teaser combines the enlarged HousePlant full trajectories with AlarmClock,
+BaseballBat and SprayBottle Grad-CAM overlays. Results contains I. Performance (a quantitative table placeholder),
+II. four paired navigation demos, and III. two RGB/gradient grids.
+A dashed line separates Trajectory and Grad-CAM groups in the teaser.
+Each visual section has a short introduction and one shared caption. Text-to-image
+gaps are halved while the 48px margins between result parts are retained.
 Existing quantitative and training figures are retained as assets but are not displayed.
 The title links to the public GitHub repository; there is no footer link list.
 The earlier page source and figures are in `archive/20261023-before-minimal/`;

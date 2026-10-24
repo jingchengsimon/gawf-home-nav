@@ -18,6 +18,7 @@ def main():
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     from matplotlib.font_manager import FontProperties
+    from matplotlib.lines import Line2D
 
     summary_path = SOURCE / 'summary.json'
     summary = json.loads(summary_path.read_text())
@@ -27,19 +28,21 @@ def main():
     plant = next(row for row in project['demos'] if row['target'] == 'HousePlant')
     records = {row['target']: row for row in summary['records']}
     font = FontProperties(fname=DIST / 'assets/fonts/noto-sans-400.ttf', size=16)
-    fig = plt.figure(figsize=(14.8, 6.1), facecolor='white')
-    grid = fig.add_gridspec(2, 5, width_ratios=[.80, 1.34, 1, 1, 1],
-                           left=.003, right=.997, top=.91, bottom=.015,
+    fig = plt.figure(figsize=(14.8, 7.2), facecolor='white')
+    grid = fig.add_gridspec(2, 5, width_ratios=[.60, 1.72, 1, 1, 1],
+                           left=.003, right=.997, top=.84, bottom=.015,
                            wspace=.065, hspace=.08)
     checks = []
+    first_row = []
     for row, model in enumerate(('gru1', 'gawf1')):
         label = fig.add_subplot(grid[row, 0]); label.axis('off')
-        label.text(0, .5, 'EmbCLIP' if row == 0 else 'EmbCLIP-\nGaWF',
-                   ha='left', va='center', fontproperties=font, color='black')
+        label.text(1, .5, 'EmbCLIP' if row == 0 else 'EmbCLIP-\nGaWF',
+                   ha='right', va='center', fontproperties=font, color='black')
         path = DIST / next(r for r in plant['models'] if r['model'] == model)['final_path']
         ax = fig.add_subplot(grid[row, 1]); ax.imshow(plt.imread(path)); ax.axis('off')
+        ax.set_anchor('W')
         if row == 0:
-            ax.set_title('House Plant', fontproperties=font, pad=12)
+            first_row.append(ax)
         checks.append(dict(model=model, kind='full_trajectory', episode_id=plant['episode_id'],
                            source=str(path.relative_to(ROOT)), sha256=digest(path)))
         for column, (target, title) in enumerate((('AlarmClock', 'Alarm Clock'),
@@ -58,14 +61,28 @@ def main():
                       alpha=.48, extent=(-.5, 223.5, 223.5, -.5), interpolation='bilinear')
             ax.axis('off')
             if row == 0:
-                ax.set_title(title, fontproperties=font, pad=12)
+                first_row.append(ax)
             checks.append(dict(model=model, kind='gradcam_overlay', target=target,
                                episode_id=record['episode_id'], cam_sha256=digest(cam_path),
                                rgb_sha256=digest(rgb_path)))
+    # Align headings above panels despite their different aspect ratios.
+    for ax, title in zip(first_row, ('House Plant', 'Alarm Clock', 'Baseball Bat', 'Spray Bottle')):
+        bounds = ax.get_position()
+        fig.text((bounds.x0+bounds.x1)/2, .86, title, ha='center', va='bottom', fontproperties=font)
+    trajectory, first_cam, _, last_cam = [ax.get_position() for ax in first_row]
+    fig.text((trajectory.x0+trajectory.x1)/2, .945, 'Trajectory',
+             ha='center', va='bottom', fontproperties=font)
+    fig.text((first_cam.x0+last_cam.x1)/2, .945, 'Grad-CAM',
+             ha='center', va='bottom', fontproperties=font)
+    divider = (trajectory.x1+first_cam.x0)/2
+    fig.add_artist(Line2D([divider, divider], [.015, .985], transform=fig.transFigure,
+                          color='#666', linewidth=1, linestyle=(0, (3, 3))))
     output = DIST / 'assets/teaser-summary.png'
     fig.savefig(output, dpi=180, facecolor='white'); plt.close(fig)
     receipt = dict(rows=2, visual_columns=4, label_columns=1, source_summary_sha256=digest(summary_path),
                    raw_rgb_columns=0, image_sha256=digest(output), panels=checks,
+                   layout=dict(width_ratios=[.60, 1.72, 1, 1, 1],
+                               group_titles=['Trajectory', 'Grad-CAM'], dashed_separator=True),
                    normalization='Same as full figures: per-map positive maximum, jet overlay alpha 0.48.',
                    comparison='Paired trajectory episode; Grad-CAM uses own successful views, different BaseballBat episodes.')
     (DIST / 'assets/sources/teaser-summary.json').write_text(json.dumps(receipt, indent=2) + '\n')

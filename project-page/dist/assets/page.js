@@ -5,7 +5,7 @@ const playIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l16 9-1
 const pauseIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h5v18H5zm9 0h5v18h-5z"/></svg>';
 function demo(e){
  const section=document.createElement('article');section.className='demo';
- const heading=document.createElement('h3');heading.textContent=`Find ${e.target}`;
+ const heading=document.createElement('h4');heading.textContent=`Find ${e.target}`;
  const titlePlay=document.createElement('button');titlePlay.className='control title-play';titlePlay.type='button';heading.append(titlePlay);section.append(heading);
  const pair=document.createElement('div');pair.className='pair';
  const videos=[],fills=[];

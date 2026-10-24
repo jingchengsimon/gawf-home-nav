@@ -89,7 +89,7 @@
     "label_columns": 1,
     "source_summary_sha256": "9d7eaadf092b17eff67182da40d530a43035c3620c8769401f618b5c04880b6a",
     "raw_rgb_columns": 0,
-    "image_sha256": "2194d82cbf021a52fe1f0773e508d722e80751e94c8a0824438196ae2f218d41",
+    "image_sha256": "21a3bb3df22ec47b89cf23724cc8a49e2752b2b04b6ffef879d3b224975b4889",
     "panels": [
       {
         "model": "gru1",
@@ -154,9 +154,35 @@
         "rgb_sha256": "57f14193c70180c3ef12bf4db97b434db5b9bfd4334ab56463d54ad32b24108e"
       }
     ],
+    "layout": {
+      "width_ratios": [
+        0.6,
+        1.72,
+        1,
+        1,
+        1
+      ],
+      "group_titles": [
+        "Trajectory",
+        "Grad-CAM"
+      ],
+      "dashed_separator": true
+    },
     "normalization": "Same as full figures: per-map positive maximum, jet overlay alpha 0.48.",
     "comparison": "Paired trajectory episode; Grad-CAM uses own successful views, different BaseballBat episodes."
   },
   "layout_reference": "codebook_layout_reference.json",
-  "font_reference": "codebook_font_reference.json"
+  "font_reference": "codebook_font_reference.json",
+  "typography_px": {
+    "page_title": 32,
+    "Results": 30,
+    "part_heading": 22,
+    "case_heading": 18,
+    "description": 16,
+    "caption": 14
+  },
+  "captions_style": {
+    "color": "#666",
+    "text_align": "center"
+  }
 }

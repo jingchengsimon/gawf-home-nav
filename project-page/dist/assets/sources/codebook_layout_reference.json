@@ -15,13 +15,31 @@
       "AlarmClock Grad-CAM",
       "BaseballBat Grad-CAM",
       "SprayBottle Grad-CAM"
-    ]
+    ],
+    "group_titles": [
+      "Trajectory",
+      "Grad-CAM"
+    ],
+    "dashed_separator": true
   },
   "results_order": [
-    "quantitative placeholder",
-    "I. navigation behavior",
-    "II. Grad-CAM"
+    "I. Performance placeholder",
+    "II. navigation behavior",
+    "III. Grad-CAM"
   ],
   "captions": "One below the complete trajectory gallery and one below the complete Grad-CAM gallery.",
-  "quantitative_values": "Intentionally absent; em dash placeholders are not scores."
+  "quantitative_values": "Intentionally absent; em dash placeholders are not scores.",
+  "typography_px": {
+    "page_title": 32,
+    "Results": 30,
+    "part_heading": 22,
+    "case_heading": 18,
+    "description": 16,
+    "caption": 14
+  },
+  "captions_style": {
+    "color": "#666",
+    "text_align": "center"
+  },
+  "spacing": "Text-to-image gaps halved; navigation and Grad-CAM part margins remain 48px."
 }

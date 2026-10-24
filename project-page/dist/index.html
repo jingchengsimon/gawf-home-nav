@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Feedback-gated memory for visual navigation</title>
 <meta name="description" content="EmbCLIP and EmbCLIP-GaWF navigate the same RoboTHOR tasks using RGB observations.">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v=496f6efe9331">
 </head>
 <body><main>
 <header class="intro">
@@ -13,28 +13,31 @@
 <p>We compare <a href="https://github.com/allenai/embodied-clip">EmbCLIP</a> with EmbCLIP-GaWF on unseen RoboTHOR environments. Both agents receive RGB images and a target object category.</p>
 </header>
 <figure class="teaser">
-<img src="assets/teaser-summary.png" alt="Two model rows compare HousePlant trajectories and Alarm Clock, Baseball Bat and Spray Bottle Grad-CAM overlays.">
+<img src="assets/teaser-summary.png?v=21a3bb3df22e" alt="Two model rows compare HousePlant trajectories and Alarm Clock, Baseball Bat and Spray Bottle Grad-CAM overlays.">
 <figcaption>Navigation trajectories and visual sensitivity for EmbCLIP and EmbCLIP-GaWF on RoboTHOR Object Goal Navigation. Grad-CAM uses each agent’s successful view; Baseball Bat uses different episodes.</figcaption>
 </figure>
 <section id="results">
 <h2>Results</h2>
+<section id="performance">
+<h3>I. Performance</h3>
 <table class="quantitative">
 <caption>Quantitative comparisons on RoboTHOR Object Goal Navigation. Results will be added.</caption>
 <thead><tr><th scope="col">Model</th><th scope="col">SR</th><th scope="col">SPL</th></tr></thead>
 <tbody><tr><th scope="row">EmbCLIP</th><td>—</td><td>—</td></tr><tr><th scope="row">EmbCLIP-GaWF</th><td>—</td><td>—</td></tr></tbody>
 </table>
+</section>
 <section id="navigation">
-<h3>I. Recurrent Feedback Guides Navigation Toward the Object Goal</h3>
+<h3>II. Recurrent Feedback Guides Navigation Toward the Object Goal</h3>
 <p>We compare the agents’ behavior on paired Object Goal Navigation tasks. These selected examples show EmbCLIP-GaWF reaching the target while EmbCLIP stops early or follows a longer route.</p>
 <div id="demo-gallery"></div>
 <p class="section-caption">Paired trajectories and synchronized first-person views. Each pair uses the same episode, starting pose and random seeds.</p>
 </section>
 <section id="attention">
-<h3>II. Grad-CAM Reveals Visual Cues Behind the Stopping Decision</h3>
+<h3>III. Grad-CAM Reveals Visual Cues Behind the Stopping Decision</h3>
 <p>We analyze the trained agents with Grad-CAM to inspect visual information associated with stopping. The selected successful terminal views show each model’s sensitivity when the target is visible.</p>
 <div id="attribution-gallery"></div>
 <p class="section-caption">Grad-CAM at successful stops, using each model’s own view and history. Colors are normalized per map; warm regions indicate positive contribution to stopping. Baseball Bat uses different episodes.</p>
 </section>
 </section>
-</main><script src="assets/project-data.js"></script><script src="assets/page.js"></script></body>
+</main><script src="assets/project-data.js"></script><script src="assets/page.js?v=9431978ddaac"></script></body>
 </html>

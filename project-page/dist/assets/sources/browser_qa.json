@@ -32,6 +32,7 @@
   "horizontal_overflow": false,
   "screenshots": [
     "preview-results-teaser.png",
+    "preview-results-hierarchy.png",
     "preview-results-gradcam.png"
   ],
   "page_content": [
@@ -44,15 +45,15 @@
     "intro",
     "teaser",
     "results",
-    "quantitative placeholder",
-    "I. navigation",
-    "II. Grad-CAM"
+    "I. Performance",
+    "II. navigation",
+    "III. Grad-CAM"
   ],
   "training_and_result_figures_displayed": false,
   "playback_checks": {
     "SprayBottle": [
-      0.146686,
-      0.146081
+      0.420755,
+      0.419471
     ]
   },
   "pause_verified": true,
@@ -100,7 +101,12 @@
       "BaseballBat Grad-CAM",
       "SprayBottle Grad-CAM"
     ],
-    "raw_rgb_columns": 0
+    "raw_rgb_columns": 0,
+    "dashed_separator": true,
+    "group_titles": [
+      "Trajectory",
+      "Grad-CAM"
+    ]
   },
   "quantitative_table": {
     "status": "placeholder",
@@ -116,5 +122,22 @@
       "\u2014"
     ]
   },
-  "visual_section_captions": 2
+  "visual_section_captions": 2,
+  "typography_px": {
+    "page_title": 32,
+    "Results": 30,
+    "part_heading": 22,
+    "case_heading": 18,
+    "description": 16,
+    "caption": 14
+  },
+  "captions_style": {
+    "color": "#666",
+    "text_align": "center"
+  },
+  "result_part_margins_px": [
+    48,
+    48
+  ],
+  "text_to_image_spacing": "halved"
 }
