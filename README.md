@@ -57,7 +57,7 @@ separate from historical RGB-D or GPS/compass results.
 | --- | --- |
 | RoboTHOR models | [GRU config](scripts/embclip/light5m_gru1_config.py), [GaWF adapter](scripts/embclip/light_gawf1_config.py), [canonical GaWF core](scripts/embclip/canonical_core/gawf.py) |
 | PointNav core configuration | [RGB-only protocol](configs/pointnav2020/light_rgb/protocol.json), [task](configs/pointnav2020/light_rgb/task.yaml), [DD-PPO](configs/pointnav2020/light_rgb/ddppo.yaml) |
-| Grad-CAM | [analysis](scripts/embclip/analyze_terminal_views_sjc.py), [figure](scripts/embclip/plot_twelve_goal_gradcam.py) |
+| Grad-CAM | [analysis](scripts/embclip/analyze_twelve_goals_sjc.py), [selection](scripts/embclip/assemble_terminal_gradcam_selection.py), [figure](scripts/embclip/plot_twelve_goal_gradcam.py) |
 | Trajectory visualization | [recording](scripts/embclip/record_minimal_suite_sjc.py), [replay](scripts/embclip/render_logged_navigation_sjc.py) |
 
 Setup and execution details: [RoboTHOR](docs/ROBOTHOR_EMBCLIP.md) and

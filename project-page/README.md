@@ -106,10 +106,9 @@ Figure 5 is a separate zero-shot architecture with a CLIP text branch.
 ## Source entry points
 
 ```text
-scripts/embclip/eval_light5m_remaining_sjc.py
+scripts/embclip/eval_light5m_sjc.py
 scripts/embclip/record_minimal_suite_sjc.py
 scripts/embclip/render_logged_navigation_sjc.py
-scripts/embclip/analyze_terminal_views_sjc.py
 scripts/embclip/analyze_twelve_goals_sjc.py
 scripts/embclip/analyze_visible_gradcam_candidates_sjc.py
 scripts/embclip/sample_terminal_gradcam_sjc.py
@@ -125,6 +124,11 @@ Simulator recording and model analysis run only on SJC. New execution sources ar
 frozen copies in independent result leaves. Matplotlib figures are regenerated
 locally from verified source snapshots. Media asset names include a source and
 transform fingerprint to avoid reusing videos from different recordings.
+
+The twelve-category Grad-CAM workflow is analysis (`analyze_twelve_goals_sjc.py`),
+verified example selection (`assemble_terminal_gradcam_selection.py`), then figure
+rendering (`plot_twelve_goal_gradcam.py`). Candidate-analysis scripts supply the
+selected replacement views. Earlier terminal-view diagnostics remain in history.
 
 ## Layout and wording reference
 
@@ -239,7 +243,7 @@ The page shows no curvature or additional protocol prose.
 ## Result headings and model-name styling
 
 Part I is “EmbCLIP-GaWF Performs Better Under Lightweight Training”; Part III
-is “EmbCLIP-GaWF Encodes Important Task-Relevant Information”. Model names have
+is “EmbCLIP-GaWF Responds to Task-Relevant Visual Cues”. Model names have
 no extra bold styling in HTML prose, captions or table rows; video labels are bold. Numeric
 result emphasis and the existing figure artwork are retained. Object Goal
 Navigation is the shared task family with Codebook; our RoboTHOR training and
