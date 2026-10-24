@@ -1,0 +1,9 @@
+{
+  "episode_id": "FloorPlan_Val1_2_SprayBottle_8",
+  "action_sampling_seed": 0,
+  "simulator_seed": 1000,
+  "gawf_success": true,
+  "source_video_sha256": "f0dc2a3fa59f8099b49450839f2a587fe2e1e5c7a71fdefe3f666d78e0b3e5ab",
+  "terminal_rgb_review": "Large turquoise spray bottle and white trigger clearly visible on glass table in the actual final RGB frame.",
+  "review": "Exact final recorded frame inspected, not inferred from success metric."
+}

@@ -2,10 +2,10 @@
   "status": "pass",
   "date": "2026-10-23",
   "case_order": [
-    "Apple",
+    "BaseballBat",
     "GarbageCan",
     "HousePlant",
-    "Vase"
+    "SprayBottle"
   ],
   "demos_before_results": true,
   "paired_cases": 4,
@@ -25,17 +25,15 @@
   "github": "https://github.com/jingchengsimon/gawf-home-nav",
   "repository_visibility": "PUBLIC",
   "footer_links": 0,
-  "synchronized_apple_playback_seconds": [
-    0.024615,
-    0.023672
-  ],
   "intro_alignment": "center",
   "later_text_alignment": "left",
   "broken_images": [],
   "video_errors": [],
   "horizontal_overflow": false,
   "screenshots": [
-    "preview-visible-gradcam.jpg"
+    "preview-baseballbat-demo.jpg",
+    "preview-spraybottle-demo.jpg",
+    "preview-plant-gradcam-updated.jpg"
   ],
   "page_content": [
     "navigation videos",
@@ -48,53 +46,48 @@
   ],
   "training_and_result_figures_displayed": false,
   "playback_checks": {
-    "Apple": [
-      0.267469,
-      0.266304
+    "BaseballBat": [
+      0.293637,
+      0.292399
     ],
-    "GarbageCan": [
-      0.802789,
-      0.802795
-    ],
-    "HousePlant": [
-      0.540117,
-      0.54003
-    ],
-    "Vase": [
-      0.357259,
-      0.35707
+    "SprayBottle": [
+      0.378659,
+      0.378027
     ]
   },
   "pause_verified": true,
-  "image_control_resume_verified": [
-    6.074223,
-    6.074211
-  ],
   "preview_lifecycle": "detached local HTTP server retained for video playback after the chat turn",
   "model_names": {
     "font_style": "normal",
     "font_weight": "400"
   },
-  "vase_replacement": {
-    "episode_id": "FloorPlan_Val1_1_Vase_6",
-    "browser_full_playback_verified": true,
-    "terminal_times": [
-      0.583008,
-      18.5
-    ],
-    "both_ended": true,
-    "blue_vase_visible_in_final_rgb": true,
-    "fair_initial_pose_verified": true
-  },
   "gradient_example_review": {
     "AlarmClock": "Recognizable complete clock face visible in GaWF terminal RGB.",
-    "HousePlant": "Long green leaves and pot clearly recognizable in GaWF terminal RGB; no target-centered CAM claim for this panel.",
+    "HousePlant": "Actual successful GaWF End view with recognizable leaves and pot; unchanged positive Grad-CAM concentrated on green leaves.",
     "Laptop": "GaWF screen/hinge clearly visible and covered by warm peak.",
     "Vase": "Blue vase clearly visible; genuine GaWF End-action Grad-CAM overlaps its body."
   },
-  "gradient_example_source": "assets/sources/visible_gradcam_selection.json",
+  "gradient_example_source": "assets/sources/plant_gradcam_selection.json",
   "gradient_images": [
-    "assets/gradcam-rgb-visible-1.png",
-    "assets/gradcam-rgb-visible-2.png"
-  ]
+    "assets/gradcam-rgb-plant-1.png",
+    "assets/gradcam-rgb-plant-2.png"
+  ],
+  "navigation_replacements": {
+    "BaseballBat": {
+      "both_ended_after_full_browser_playback": true,
+      "terminal_times": [
+        0.75,
+        4.5
+      ]
+    },
+    "SprayBottle": {
+      "synchronized_start_verified": true,
+      "gaWF_terminal_target_visually_verified": true,
+      "both_ended_after_full_browser_playback": true,
+      "terminal_times": [
+        22.083008,
+        4.166667
+      ]
+    }
+  }
 }

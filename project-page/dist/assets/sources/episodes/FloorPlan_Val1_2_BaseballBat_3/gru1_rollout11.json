@@ -1,0 +1,199 @@
+{
+  "action_sampling_seed": 11,
+  "actions": [
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 3,
+      "name": "End"
+    }
+  ],
+  "actor_inputs": [
+    "rgb_clip_resnet",
+    "goal_object_type_ind",
+    "recurrent_state"
+  ],
+  "checkpoint_sha256": "c4cd40c7c04d74ea238d21b7549250ed56cbf690e492f9d40c942286b91014b3",
+  "episode": {
+    "id": "FloorPlan_Val1_2_BaseballBat_3",
+    "initial_horizon": 30,
+    "initial_orientation": 90,
+    "initial_position": {
+      "x": 4.0,
+      "y": 0.9009996652603149,
+      "z": -4.25
+    },
+    "object_type": "BaseballBat",
+    "scene": "FloorPlan_Val1_2",
+    "shortest_path": [
+      {
+        "x": 4.0,
+        "y": 0.009881913661956787,
+        "z": -4.25
+      },
+      {
+        "x": 3.869999885559082,
+        "y": 0.009881913661956787,
+        "z": -4.139999866485596
+      },
+      {
+        "x": 3.739999771118164,
+        "y": 0.009881913661956787,
+        "z": -4.009999752044678
+      }
+    ],
+    "shortest_path_length": 0.35414196221688776
+  },
+  "evaluator_only": [
+    "top_down_image",
+    "agent_pose",
+    "shortest_path",
+    "metrics"
+  ],
+  "map_projection": {
+    "camera": {
+      "x": 5.566800117492676,
+      "y": 2.6132566928863525,
+      "z": -2.3768389225006104
+    },
+    "height": 300,
+    "orthographic_size": 4.87999963760376,
+    "target_positions": [
+      {
+        "x": 3.821171522140503,
+        "y": 0.6779423952102661,
+        "z": -3.076934576034546
+      }
+    ],
+    "width": 400
+  },
+  "model": "gru1",
+  "simulator_seed": 1011,
+  "simulator_seed_action": "SetRandomSeed",
+  "spl": 0.0,
+  "start_actual": {
+    "horizon": 30.000003814697266,
+    "position": {
+      "x": 4.0,
+      "y": 0.9009996652603149,
+      "z": -4.25
+    },
+    "yaw": 90.0
+  },
+  "start_rgb_sha256": "16d5b8fb9f0fb199293f96d2fed7dd73e1766222e68a80218c5ad605d9210360",
+  "steps": 8,
+  "success": false,
+  "terminal_probe_sha256": "817e6f18560bd26869020ee041b4167b54ed5f7ee2b3e4b71dfca4eef3e92155",
+  "training_seed": 1,
+  "trajectory": [
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 4.0,
+        "y": 0.9009996652603149,
+        "z": -4.25
+      },
+      "yaw": 90.0
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 4.0,
+        "y": 0.9009996652603149,
+        "z": -4.25
+      },
+      "yaw": 60.05259323120117
+    },
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 4.0,
+        "y": 0.9009996652603149,
+        "z": -4.25
+      },
+      "yaw": 30.569860458374023
+    },
+    {
+      "horizon": 29.999998092651367,
+      "position": {
+        "x": 4.0,
+        "y": 0.9009996652603149,
+        "z": -4.25
+      },
+      "yaw": 0.7634763717651367
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 4.0,
+        "y": 0.9009996652603149,
+        "z": -4.25
+      },
+      "yaw": 330.5738830566406
+    },
+    {
+      "horizon": 29.999998092651367,
+      "position": {
+        "x": 4.0,
+        "y": 0.9009996652603149,
+        "z": -4.25
+      },
+      "yaw": 301.16082763671875
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 4.0,
+        "y": 0.9009996652603149,
+        "z": -4.25
+      },
+      "yaw": 270.1517639160156
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 4.0,
+        "y": 0.9009996652603149,
+        "z": -4.25
+      },
+      "yaw": 240.30299377441406
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 4.0,
+        "y": 0.9009996652603149,
+        "z": -4.25
+      },
+      "yaw": 240.30299377441406
+    }
+  ],
+  "video": "results/nav-robothor-embclip-baseballbat-demo-candidates-sjc-v2-20261023/FloorPlan_Val1_2_BaseballBat_3/gru1_rollout11.mp4",
+  "video_sha256": "a4e691081a290060f248f8ca4bd01f355d8017553006ff4c836771a7a433b9a7"
+}

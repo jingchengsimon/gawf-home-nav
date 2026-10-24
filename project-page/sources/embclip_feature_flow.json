@@ -1,0 +1,88 @@
+{
+  "verified_on": "2026-10-23",
+  "current_protocol": "Category-conditioned RoboTHOR EmbCLIP, not Figure 5 zero-shot ObjectNav",
+  "vision_backbone": {
+    "name": "CLIP RN50 ModifiedResNet",
+    "weights_frozen": true,
+    "input": "3 x 224 x 224",
+    "stem_convolution_shapes": [
+      [
+        32,
+        3,
+        3,
+        3
+      ],
+      [
+        32,
+        32,
+        3,
+        3
+      ],
+      [
+        64,
+        32,
+        3,
+        3
+      ]
+    ],
+    "residual_blocks": [
+      3,
+      4,
+      6,
+      3
+    ],
+    "downsampling": "anti-aliased average pooling",
+    "original_attention_projection_shape": [
+      1024,
+      2048
+    ],
+    "navigation_attention_pool": "Identity; preserve 2048 x 7 x 7 spatial feature maps"
+  },
+  "text_branch": {
+    "original_clip": "12-layer text Transformer, width 512, projected to 1024 dimensions",
+    "used_in_current_policy": false
+  },
+  "goal": {
+    "input": "one of twelve category IDs",
+    "learned_embedding": 32
+  },
+  "goal_visual_fusion": {
+    "visual_compression": "1x1 convolutions 2048 -> 128 -> 32",
+    "goal_tiling": "32 x 7 x 7",
+    "combined_channels": 64,
+    "combiner": "1x1 convolutions 64 -> 128 -> 32",
+    "flattened_dimensions": 1568
+  },
+  "memory": {
+    "baseline": "single-layer GRU512",
+    "variant": "single-layer GaWF1160 with previous detached raw policy logits as feedback",
+    "previous_state": "reset at episode boundary"
+  },
+  "heads": {
+    "actor": "linear projection to six action logits",
+    "critic": "linear projection to one value"
+  },
+  "heatmap": {
+    "feature_tensor": "CLIP RN50 final unpooled visual maps, 2048 x 7 x 7",
+    "score": "End-action log probability",
+    "gradient_path": [
+      "actor",
+      "GRU or GaWF with fixed prior state",
+      "goal-conditioned fusion convolutions",
+      "current CLIP feature tensor"
+    ],
+    "critic_used": false,
+    "full_history_backpropagation": false,
+    "backbone_weights_updated": false,
+    "interpretation": "CLIP supplies feature maps; downstream goal/history/policy processing determines their score gradients. The heatmap is not a raw CLIP activation map or a GRU feature map. Two independently trained policies and different terminal observations do not isolate the recurrent core contribution."
+  },
+  "sources": [
+    "vendor/embclip-allenact/allenact_plugins/clip_plugin/clip_preprocessors.py",
+    "vendor/embclip-allenact/allenact_plugins/navigation_plugin/objectnav/models.py",
+    "scripts/embclip/light_config.py",
+    "scripts/embclip/light_gawf1_config.py",
+    "https://arxiv.org/html/2111.09888v2",
+    "https://github.com/openai/CLIP/blob/main/clip/model.py"
+  ],
+  "inspection": "Layer counts and projection shapes read from existing RN50.pt on CPU; no downloads or inference for this structure inspection."
+}

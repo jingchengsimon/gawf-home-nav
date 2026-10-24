@@ -1,0 +1,14 @@
+{
+  "purpose": "Replace only HousePlant with a successful actual GaWF End state whose unchanged End-action Grad-CAM overlaps recognizable green leaves; all other published examples are retained. This is a selected illustration, not a localization benchmark.",
+  "replacements": {
+    "HousePlant": {
+      "candidate_id": "FloorPlan_Val2_5_HousePlant_3_rollout9",
+      "analysis": "results/nav-robothor-embclip-plant-terminal-samples-sjc-v1-20261023",
+      "reason": "Actual autonomous successful terminal RGB includes recognizable plant pot and leaves; the warm GaWF map covers the leaves without changing normalization or gradients."
+    }
+  },
+  "comparison": "Same HousePlant validation episode and initial pose; baseline keeps its previous successful pose-replayed terminal view. GaWF uses its own saved successful RGB, prior state and policy feedback from action seed9/simulator seed1009. Different terminal RGB/history does not isolate a recurrent-core causal effect.",
+  "original_analysis": "results/nav-robothor-embclip-visible-gradcam-selection-local-v1-20261023",
+  "source_candidates": "results/nav-robothor-embclip-plant-terminal-samples-sjc-v1-20261023",
+  "inference_boundary": "Poses and visibility labels used only by evaluator; model sees RGB/category and its own state."
+}

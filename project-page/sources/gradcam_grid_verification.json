@@ -31,7 +31,7 @@
         "GarbageCan"
       ],
       "comparison_mode": "individual_terminal",
-      "source_summary_sha256": "87a2dee623568fd348a0ac85ab378100ddd044dce144a5bed7d26c9790fe1336",
+      "source_summary_sha256": "9d7eaadf092b17eff67182da40d530a43035c3620c8769401f618b5c04880b6a",
       "image_sha256": "18f240ad9a9d118050057fcb06d5688e064944c6e43eda9a33db531dc1e130eb",
       "panels_verified": [
         {
@@ -175,8 +175,8 @@
         "Vase"
       ],
       "comparison_mode": "individual_terminal",
-      "source_summary_sha256": "87a2dee623568fd348a0ac85ab378100ddd044dce144a5bed7d26c9790fe1336",
-      "image_sha256": "ac4cb9a47d8a8056b855fb2dddb056218a2a2f37c8ae0323797c8d6a2ebab2c8",
+      "source_summary_sha256": "9d7eaadf092b17eff67182da40d530a43035c3620c8769401f618b5c04880b6a",
+      "image_sha256": "bed3587c7f2d138c0caf5ae772798ea6e2db216620bd42c93d6c5935fade893b",
       "panels_verified": [
         {
           "target": "HousePlant",
@@ -215,7 +215,7 @@
             "rgb",
             "gradient"
           ],
-          "positive_max": 0.02009470947086811,
+          "positive_max": 0.0004228264151606709,
           "episode_id": "FloorPlan_Val2_5_HousePlant_3"
         },
         {
@@ -303,7 +303,7 @@
   ],
   "visual_review": {
     "AlarmClock": "Recognizable complete clock face visible in GaWF terminal RGB.",
-    "HousePlant": "Long green leaves and pot clearly recognizable in GaWF terminal RGB; no target-centered CAM claim for this panel.",
+    "HousePlant": "Actual successful terminal RGB contains recognizable pot and green leaves; unchanged GaWF End-action Grad-CAM warm region overlaps leaves.",
     "Laptop": "GaWF screen/hinge clearly visible and covered by warm peak.",
     "Vase": "Blue vase clearly visible; genuine GaWF End-action Grad-CAM overlaps its body."
   },
@@ -320,5 +320,17 @@
     "source_receipt_sha256": "08dfbb0b5b9b6d59bfb31f7aee2a542bee2b876f26dec40054aeeb3a3391a925",
     "terminal_probe_sha256": "054d862543922ee457315a187b29d4ea615da24f402af5179db36cca646efda8"
   },
-  "illustrative_selection": true
+  "illustrative_selection": true,
+  "houseplant": {
+    "episode_id": "FloorPlan_Val2_5_HousePlant_3",
+    "steps": 13,
+    "action_sampling_seed": 9,
+    "simulator_seed": 1009,
+    "source_receipt_sha256": "18dc01dfa3e2f167cf32f312795a22589688bda6cdfed362f6c24bef45f6f996",
+    "source_analysis": "nav-robothor-embclip-plant-terminal-samples-sjc-v1-20261023",
+    "success": true,
+    "baseline_same_episode": true,
+    "initial_position_max_delta": 0.0,
+    "initial_yaw_delta": 0.0
+  }
 }

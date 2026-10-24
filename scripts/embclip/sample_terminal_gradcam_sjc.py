@@ -31,7 +31,9 @@ def main():
     original = ROOT / m['baseline_analysis']
     if sha(original / 'summary.json') != m['baseline_summary_sha256'] or json.loads((original / 'exit.json').read_text())['return_code'] != 0:
         raise RuntimeError('Unverified baseline maps')
-    baseline = next(r['models']['gru1'] for r in json.loads((original / 'summary.json').read_text())['records'] if r['target'] == 'Vase')
+    target = m.get('target', 'Vase')
+    baseline_prefix = m.get('baseline_prefix', target)
+    baseline = next(r['models']['gru1'] for r in json.loads((original / 'summary.json').read_text())['records'] if r['target'] == target and (not m.get('baseline_candidate_id') or r.get('candidate_id') == m['baseline_candidate_id']))
     policy = next(p for p in m['policies'] if p['model'] == 'gawf1')
     torch.set_num_threads(1);model, graph = helpers.load_bundle(policy)
     m['status'] = m['units'][0]['status'] = 'running';helpers.write(mp, m)
@@ -81,11 +83,11 @@ def main():
                             for kind in ('cam', 'rgb'):
                                 dest = out / (prefix + '_' + name + '_' + kind + '.npy')
                                 if name == 'gru1':
-                                    source = original / ('Vase_gru1_' + kind + '.npy')
+                                    source = original / (baseline_prefix + '_gru1_' + kind + '.npy')
                                     if sha(source) != baseline[kind+'_sha256']:raise RuntimeError('Baseline changed')
                                     shutil.copyfile(source, dest)
                                 models[name][kind+'_sha256'] = sha(dest)
-                        records.append(dict(target='Vase', candidate_id=prefix, same_successful_episode=baseline['episode_id']==e['id'], models=models))
+                        records.append(dict(target=target, candidate_id=prefix, same_successful_episode=baseline['episode_id']==e['id'], models=models))
                     print('FINISHED', prefix, len(actions), success, flush=True)
                     break
                 mem = next_mem;prev.fill_(action);mask.fill_(1)

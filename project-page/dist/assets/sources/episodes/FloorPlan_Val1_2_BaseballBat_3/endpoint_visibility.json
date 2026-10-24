@@ -1,0 +1,9 @@
+{
+  "episode_id": "FloorPlan_Val1_2_BaseballBat_3",
+  "action_sampling_seed": 11,
+  "simulator_seed": 1011,
+  "gawf_success": true,
+  "source_video_sha256": "e80251799fa140149eb832c3d73234d3c3beed52783d595f8fd21a26092f26ef",
+  "terminal_rgb_review": "Wooden baseball bat visibly runs down the left side of the actual final first-person RGB frame; partly cropped.",
+  "review": "Exact final recorded frame inspected, not inferred from success metric."
+}

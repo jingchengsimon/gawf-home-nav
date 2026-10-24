@@ -2,23 +2,23 @@
   "status": "pass",
   "paired_cases": 4,
   "objects": [
-    "Apple",
+    "BaseballBat",
     "GarbageCan",
     "HousePlant",
-    "Vase"
+    "SprayBottle"
   ],
   "videos": [
     {
-      "asset": "assets/minimal-videos/FloorPlan_Val3_4_Apple_1/gru1-95b7938ed1f9.mp4",
-      "sha256": "2a35b43fe43306294171e1697bfd56be3b2d2b2e39559b4675511e59e5f784e9",
-      "frames": 35,
-      "duration": 2.916016
+      "asset": "assets/minimal-videos/FloorPlan_Val1_2_BaseballBat_3/gru1-71f073c77872.mp4",
+      "sha256": "6da9473cb1b42bdb8e278f64220b6690927e70d207cddf7af4df87d00ffc113b",
+      "frames": 9,
+      "duration": 0.75
     },
     {
-      "asset": "assets/minimal-videos/FloorPlan_Val3_4_Apple_1/gawf1-18c152719c56.mp4",
-      "sha256": "019ef9a88e1ac8255cb6f1b51286e478a7217581294afce5d091950efedb8f80",
-      "frames": 13,
-      "duration": 1.083008
+      "asset": "assets/minimal-videos/FloorPlan_Val1_2_BaseballBat_3/gawf1-abcbf345a46e.mp4",
+      "sha256": "da709eadfbe3cb2fedf36dd3bf23c6ea6e6b86a11e2f7f12bfc0ebbf607b967d",
+      "frames": 54,
+      "duration": 4.5
     },
     {
       "asset": "assets/minimal-videos/FloorPlan_Val1_1_GarbageCan_0/gru1-021adb45b086.mp4",
@@ -45,21 +45,21 @@
       "duration": 2.75
     },
     {
-      "asset": "assets/minimal-videos/FloorPlan_Val1_1_Vase_6/gru1-fd158b7d4205.mp4",
-      "sha256": "e09028de0bb31eb1fda233cfaec66a30509ed969df50aa60353df0952b86767b",
-      "frames": 7,
-      "duration": 0.583008
+      "asset": "assets/minimal-videos/FloorPlan_Val1_2_SprayBottle_8/gru1-7d6de7f1e56b.mp4",
+      "sha256": "96b9797b19e657ba184b87fa087b4b646e0c5b9545fcb8f963de457db29a9216",
+      "frames": 265,
+      "duration": 22.083008
     },
     {
-      "asset": "assets/minimal-videos/FloorPlan_Val1_1_Vase_6/gawf1-582048aba797.mp4",
-      "sha256": "12203e272acd24c9343cb0bba0bafdf1f84eb0cae3e042e61329b3f226166c8c",
-      "frames": 222,
-      "duration": 18.5
+      "asset": "assets/minimal-videos/FloorPlan_Val1_2_SprayBottle_8/gawf1-9a3e978ef812.mp4",
+      "sha256": "607be8ae8b71096fd2ff87b1be09dcc3ce15440bd7d7941b26904e70178e63fd",
+      "frames": 50,
+      "duration": 4.166667
     }
   ],
   "display": "No baked-in text; heading and image play controls; individual gray/red timelines",
   "fairness": "Same episode, actual initial pose, action seed and simulator seed; initial RGB difference below recorded thresholds",
-  "attribution": "24 genuine End-action Grad-CAM maps with 24 original RGB panels; 23 pose-replayed terminal states and one actual GaWF Vase terminal state; BaseballBat different episodes marked",
+  "attribution": "24 genuine End-action Grad-CAM maps with 24 original RGB panels; 22 pose-replayed terminal states and actual GaWF HousePlant/Vase terminal states. Illustrative selected maps; source arrays unchanged.",
   "gradient_grid": {
     "figures": 2,
     "rows_per_figure": 4,
@@ -76,6 +76,9 @@
     "navigation videos",
     "gradient maps"
   ],
-  "vase_endpoint_review": "assets/sources/episodes/FloorPlan_Val1_1_Vase_6/endpoint_visibility.json",
-  "gradient_selection": "assets/sources/visible_gradcam_selection.json"
+  "gradient_selection": "assets/sources/plant_gradcam_selection.json",
+  "endpoint_reviews": [
+    "assets/sources/episodes/FloorPlan_Val1_2_BaseballBat_3/endpoint_visibility.json",
+    "assets/sources/episodes/FloorPlan_Val1_2_SprayBottle_8/endpoint_visibility.json"
+  ]
 }

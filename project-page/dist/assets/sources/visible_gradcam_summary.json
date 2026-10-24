@@ -49,8 +49,8 @@
       },
       "same_successful_episode": true,
       "target": "AlarmClock",
-      "source_analysis": "nav-robothor-embclip-visible-gradcam-candidates-sjc-v2-20261023",
-      "source_summary_sha256": "9739f6b8d49b7fdf55074b71514a3edf496a570b271a78a8492bfebc44a08859"
+      "source_analysis": "nav-robothor-embclip-visible-gradcam-selection-local-v1-20261023",
+      "source_summary_sha256": "87a2dee623568fd348a0ac85ab378100ddd044dce144a5bed7d26c9790fe1336"
     },
     {
       "models": {
@@ -97,8 +97,8 @@
         }
       },
       "target": "Apple",
-      "source_analysis": "nav-robothor-embclip-twelve-goal-gradcam-sjc-v3-20261023",
-      "source_summary_sha256": "87877e31d4260d8ed38c3023b6fc79c76bed499f1d9f0ec85ce28ba33c4c5264"
+      "source_analysis": "nav-robothor-embclip-visible-gradcam-selection-local-v1-20261023",
+      "source_summary_sha256": "87a2dee623568fd348a0ac85ab378100ddd044dce144a5bed7d26c9790fe1336"
     },
     {
       "models": {
@@ -145,8 +145,8 @@
         }
       },
       "target": "BaseballBat",
-      "source_analysis": "nav-robothor-embclip-twelve-goal-gradcam-sjc-v3-20261023",
-      "source_summary_sha256": "87877e31d4260d8ed38c3023b6fc79c76bed499f1d9f0ec85ce28ba33c4c5264"
+      "source_analysis": "nav-robothor-embclip-visible-gradcam-selection-local-v1-20261023",
+      "source_summary_sha256": "87a2dee623568fd348a0ac85ab378100ddd044dce144a5bed7d26c9790fe1336"
     },
     {
       "models": {
@@ -193,8 +193,8 @@
         }
       },
       "target": "BasketBall",
-      "source_analysis": "nav-robothor-embclip-twelve-goal-gradcam-sjc-v3-20261023",
-      "source_summary_sha256": "87877e31d4260d8ed38c3023b6fc79c76bed499f1d9f0ec85ce28ba33c4c5264"
+      "source_analysis": "nav-robothor-embclip-visible-gradcam-selection-local-v1-20261023",
+      "source_summary_sha256": "87a2dee623568fd348a0ac85ab378100ddd044dce144a5bed7d26c9790fe1336"
     },
     {
       "models": {
@@ -242,8 +242,8 @@
         }
       },
       "target": "Bowl",
-      "source_analysis": "nav-robothor-embclip-twelve-goal-gradcam-sjc-v3-20261023",
-      "source_summary_sha256": "87877e31d4260d8ed38c3023b6fc79c76bed499f1d9f0ec85ce28ba33c4c5264"
+      "source_analysis": "nav-robothor-embclip-visible-gradcam-selection-local-v1-20261023",
+      "source_summary_sha256": "87a2dee623568fd348a0ac85ab378100ddd044dce144a5bed7d26c9790fe1336"
     },
     {
       "models": {
@@ -285,33 +285,25 @@
         }
       },
       "target": "GarbageCan",
-      "source_analysis": "nav-robothor-embclip-twelve-goal-gradcam-sjc-v3-20261023",
-      "source_summary_sha256": "87877e31d4260d8ed38c3023b6fc79c76bed499f1d9f0ec85ce28ba33c4c5264"
+      "source_analysis": "nav-robothor-embclip-visible-gradcam-selection-local-v1-20261023",
+      "source_summary_sha256": "87a2dee623568fd348a0ac85ab378100ddd044dce144a5bed7d26c9790fe1336"
     },
     {
-      "candidate_id": "FloorPlan_Val2_5_HousePlant_3",
+      "candidate_id": "FloorPlan_Val2_5_HousePlant_3_rollout9",
       "models": {
         "gawf1": {
-          "cam_sha256": "c5c5b48ebced7821ab9cc6f1847705acd4a34d81b5134239c404e2d348ea9517",
-          "decision_step": 8,
-          "end_log_probability": -0.34617114067077637,
+          "action_sampling_seed": 9,
+          "cam_sha256": "7ad1e0ed716b10c814f422ad2df570647914a013556846d078f74aa4722f8c60",
+          "decision_step": 12,
+          "end_log_probability": -0.004380702972412109,
           "episode_id": "FloorPlan_Val2_5_HousePlant_3",
-          "gradient_l2": 0.3621194362640381,
-          "history_rgb_sha256": "09d5b0cc7537a90283420dce6f61ffff8270b2c210720e03ca518c3d1c0f4376",
-          "native_forward_delta": 0.0002968311309814453,
-          "reference_actions": [
-            2,
-            2,
-            2,
-            0,
-            0,
-            0,
-            0,
-            0,
-            3
-          ],
-          "rgb_sha256": "4bd95386686cfa0e75d9716550f23ed5ca24da81613ddcbacdee07a4508b23ea",
-          "terminal_rgb_sha256": "e01f5748c0fe92384a1a394867693b48adc3ea0a3ece38a851d6d6c68cbf4346"
+          "gradient_l2": 0.006329875905066729,
+          "native_forward_delta": 0.0003390312194824219,
+          "rgb_sha256": "1c220ca008da13ffc02b0b3c6b4166daeaffaefb107ebfd6a1ad8f1c2fd66e80",
+          "simulator_seed": 1009,
+          "source_receipt": "results/nav-robothor-embclip-plant-terminal-samples-sjc-v1-20261023/FloorPlan_Val2_5_HousePlant_3_rollout9.json",
+          "source_receipt_sha256": "18dc01dfa3e2f167cf32f312795a22589688bda6cdfed362f6c24bef45f6f996",
+          "terminal_probe_sha256": "0efc8f5363c9c918c18a4371e504b93fe15eaa076a32ea9fddc85ce96b14ecf1"
         },
         "gru1": {
           "cam_sha256": "c6a71c976c3078ffa0adf5ebceca05cd6f33ea8e72cb7fa94d16c0aa2e609609",
@@ -349,8 +341,8 @@
       },
       "same_successful_episode": true,
       "target": "HousePlant",
-      "source_analysis": "nav-robothor-embclip-visible-gradcam-candidates-sjc-v2-20261023",
-      "source_summary_sha256": "9739f6b8d49b7fdf55074b71514a3edf496a570b271a78a8492bfebc44a08859"
+      "source_analysis": "nav-robothor-embclip-plant-terminal-samples-sjc-v1-20261023",
+      "source_summary_sha256": "7e84f40adfe025360f10867b975848bacaff4865fa15539bce8886647b7a78ba"
     },
     {
       "candidate_id": "FloorPlan_Val3_2_Laptop_8",
@@ -404,8 +396,8 @@
       },
       "same_successful_episode": true,
       "target": "Laptop",
-      "source_analysis": "nav-robothor-embclip-visible-gradcam-candidates-sjc-v2-20261023",
-      "source_summary_sha256": "9739f6b8d49b7fdf55074b71514a3edf496a570b271a78a8492bfebc44a08859"
+      "source_analysis": "nav-robothor-embclip-visible-gradcam-selection-local-v1-20261023",
+      "source_summary_sha256": "87a2dee623568fd348a0ac85ab378100ddd044dce144a5bed7d26c9790fe1336"
     },
     {
       "models": {
@@ -529,8 +521,8 @@
         }
       },
       "target": "Mug",
-      "source_analysis": "nav-robothor-embclip-twelve-goal-gradcam-sjc-v3-20261023",
-      "source_summary_sha256": "87877e31d4260d8ed38c3023b6fc79c76bed499f1d9f0ec85ce28ba33c4c5264"
+      "source_analysis": "nav-robothor-embclip-visible-gradcam-selection-local-v1-20261023",
+      "source_summary_sha256": "87a2dee623568fd348a0ac85ab378100ddd044dce144a5bed7d26c9790fe1336"
     },
     {
       "models": {
@@ -591,8 +583,8 @@
         }
       },
       "target": "SprayBottle",
-      "source_analysis": "nav-robothor-embclip-twelve-goal-gradcam-sjc-v3-20261023",
-      "source_summary_sha256": "87877e31d4260d8ed38c3023b6fc79c76bed499f1d9f0ec85ce28ba33c4c5264"
+      "source_analysis": "nav-robothor-embclip-visible-gradcam-selection-local-v1-20261023",
+      "source_summary_sha256": "87a2dee623568fd348a0ac85ab378100ddd044dce144a5bed7d26c9790fe1336"
     },
     {
       "models": {
@@ -635,8 +627,8 @@
         }
       },
       "target": "Television",
-      "source_analysis": "nav-robothor-embclip-twelve-goal-gradcam-sjc-v3-20261023",
-      "source_summary_sha256": "87877e31d4260d8ed38c3023b6fc79c76bed499f1d9f0ec85ce28ba33c4c5264"
+      "source_analysis": "nav-robothor-embclip-visible-gradcam-selection-local-v1-20261023",
+      "source_summary_sha256": "87a2dee623568fd348a0ac85ab378100ddd044dce144a5bed7d26c9790fe1336"
     },
     {
       "candidate_id": "FloorPlan_Val1_1_Vase_1_rollout1",
@@ -679,8 +671,8 @@
       },
       "same_successful_episode": true,
       "target": "Vase",
-      "source_analysis": "nav-robothor-embclip-vase-terminal-samples-sjc-v1-20261023",
-      "source_summary_sha256": "8858a8c2699fa6e70c018d048a88b72bcf2aad9c90acde9379bca2a007517f78"
+      "source_analysis": "nav-robothor-embclip-visible-gradcam-selection-local-v1-20261023",
+      "source_summary_sha256": "87a2dee623568fd348a0ac85ab378100ddd044dce144a5bed7d26c9790fe1336"
     }
   ],
   "comparison_mode": "individual_terminal",
@@ -690,31 +682,19 @@
   "normalization": "Within-map positive maximum; identical rule for both models. Compare spatial distribution, not gradient brightness.",
   "weights_updated": false,
   "selection": {
-    "purpose": "Illustrative successful terminal views selected for recognizable target objects. Laptop and Vase are additionally selected for genuine target-overlapping End-action Grad-CAM, without altering maps, gradients, checkpoints or normalization. This selection does not estimate typical localization accuracy or causal model superiority.",
+    "purpose": "Replace only HousePlant with a successful actual GaWF End state whose unchanged End-action Grad-CAM overlaps recognizable green leaves; all other published examples are retained. This is a selected illustration, not a localization benchmark.",
     "replacements": {
-      "AlarmClock": {
-        "candidate_id": "FloorPlan_Val1_1_AlarmClock_7",
-        "reason": "Large recognizable alarm clock in both own successful terminal views; GaWF highlight covers clock face."
-      },
       "HousePlant": {
-        "candidate_id": "FloorPlan_Val2_5_HousePlant_3",
-        "reason": "Leaves and plant pot are clearly visible in model input; no claim that its stop map is centered on the plant."
-      },
-      "Laptop": {
-        "candidate_id": "FloorPlan_Val3_2_Laptop_8",
-        "reason": "Laptop screen and keyboard visible; GaWF high-response region covers screen/hinge."
-      },
-      "Vase": {
-        "candidate_id": "FloorPlan_Val1_1_Vase_1_rollout1",
-        "analysis": "results/nav-robothor-embclip-vase-terminal-samples-sjc-v1-20261023",
-        "reason": "Actual successful autonomous End decision; large blue vase visible and genuine positive Grad-CAM overlaps vase body."
+        "candidate_id": "FloorPlan_Val2_5_HousePlant_3_rollout9",
+        "analysis": "results/nav-robothor-embclip-plant-terminal-samples-sjc-v1-20261023",
+        "reason": "Actual autonomous successful terminal RGB includes recognizable plant pot and leaves; the warm GaWF map covers the leaves without changing normalization or gradients."
       }
     },
-    "comparison": "Each model uses its own successful terminal view and history; shared episode for eleven categories, BaseballBat uses different successful episodes. Vase GaWF uses a new fixed-seed autonomous rollout; the other entries are verified validation pose replays. Visual inputs and terminal states are not held identical.",
-    "source_candidates": "results/nav-robothor-embclip-visible-gradcam-candidates-sjc-v2-20261023",
-    "original_analysis": "results/nav-robothor-embclip-twelve-goal-gradcam-sjc-v3-20261023",
-    "inference_boundary": "No poses, maps, simulator labels or metrics enter either policy; evaluator metadata is used only for rendering and verification."
+    "comparison": "Same HousePlant validation episode and initial pose; baseline keeps its previous successful pose-replayed terminal view. GaWF uses its own saved successful RGB, prior state and policy feedback from action seed9/simulator seed1009. Different terminal RGB/history does not isolate a recurrent-core causal effect.",
+    "original_analysis": "results/nav-robothor-embclip-visible-gradcam-selection-local-v1-20261023",
+    "source_candidates": "results/nav-robothor-embclip-plant-terminal-samples-sjc-v1-20261023",
+    "inference_boundary": "Poses and visibility labels used only by evaluator; model sees RGB/category and its own state."
   },
-  "selection_sha256": "8a5d6016e0019248d7509767170f7c082e64f7ae40ac06222bca011d3de52ff1",
+  "selection_sha256": "fc4af014b1ca1255766e65e72029d7f5936b1c301343e32e77f4143b2dadd81c",
   "limits": "Illustrative examples selected partly for target visibility and target-aligned genuine End-action Grad-CAM; not a localization benchmark or a causal proof of navigation advantage."
 }

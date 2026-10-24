@@ -20,14 +20,15 @@ name. Each model has a full trajectory, a live trajectory and its RGB view. One
 image-mounted play control and an icon beside each object heading start both
 videos; either control pauses the pair. Each method has a gray timeline with a
 red elapsed portion. The shorter video holds its last frame until the longer one
-finishes. Four object cases are shown: Apple, GarbageCan, HousePlant and Vase. The Vase
-case uses FloorPlan_Val1_1_Vase_6; GaWF succeeds and the recorded terminal RGB
-visibly contains the blue vase.
+finishes. Four object cases are shown: BaseballBat, GarbageCan, HousePlant and SprayBottle.
+The new BaseballBat and SprayBottle cases have successful GaWF terminals whose
+RGB targets have been visually checked. All source candidates are retained.
 
 Video overlays, scene identifiers, seed selectors, score cards and developer
 annotations are omitted from the visible page. Detailed provenance remains in
 `dist/assets/sources/protocol.json`, the experiment manifests and result receipts.
 All source recordings, including unselected and unsuccessful cases, are retained
+in their SJC result leaves. Selected videos and small source snapshots are mirrored
 locally. The page currently shows four paired demos followed by two RGB/gradient grids.
 Quantitative and training figures are retained as assets but are not displayed.
 The title links to the public GitHub repository; there is no footer link list.
@@ -54,16 +55,15 @@ successful validation terminal view. Most views are re-rendered from logged pose
 with recurrent state reconstructed from that model's re-rendered RGB/action
 history. Eleven categories share an episode and initial pose; BaseballBat uses different successful episodes, marked
 on the page. Visual inputs and histories can differ, and re-rendering is not
-claimed pixel-identical to the original evaluation. The Vase GaWF panel uses an
-actual saved successful End decision from a new
-fixed-seed autonomous validation rollout; its baseline retains the original
-pose-replayed successful terminal view. Maps show local gradient
+claimed pixel-identical to the original evaluation. The Vase and HousePlant GaWF panels use actual saved successful End decisions
+from fixed-seed autonomous validation rollouts; their baselines retain verified
+pose-replayed successful terminal views. Maps show local gradient
 sensitivity, not intrinsic attention or a causal comparison holding observations
 fixed. No model weights are updated. Earlier diagnostics remain in local history.
 
 The displayed AlarmClock, HousePlant, Laptop and Vase examples are selected
 from successful terminal-view candidates after checking the visible RGB target;
-Laptop and Vase selection additionally considers overlap between the target and
+HousePlant, Laptop and Vase selection additionally considers overlap between the target and
 the unchanged End-action Grad-CAM. This is an illustrative selection, not a
 random sample or evidence of typical localization accuracy. Candidate histories,
 selection identities and source hashes are retained in the attribution receipt.
@@ -76,6 +76,11 @@ RGB using the same within-map maximum normalization rule for both models. It is
 not an individual input-channel activation, an object detector, or native policy
 attention. Red can reflect other context supporting stopping, so successful
 navigation does not guarantee a target-centered map.
+
+The exact backbone, fusion and recurrent dimensions are recorded in
+`dist/assets/sources/embclip_feature_flow.json`. The current RoboTHOR policy uses
+only the CLIP visual branch plus a learned category embedding; the paper's
+Figure 5 is a separate zero-shot architecture with a CLIP text branch.
 
 ## Source entry points
 
