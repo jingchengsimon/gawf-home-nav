@@ -188,7 +188,8 @@ and checked RGB frame are explicit arguments; no generative drawing is used.
 ## Presentation revision
 
 The hero title uses MODULATION and names Jingcheng Shi above the GitHub button.
-Model names are bold in prose, diagrams, maps and videos. Teaser group/model
+Model names are plain in prose, captions, table rows and HTML video labels.
+Artwork labels retain their existing bold type; section headings keep their hierarchy. Teaser group/model
 labels use 22pt bold; all four Find headings are italic and centered. The performance table includes
 the released official EmbCLIP checkpoint (130,091,717 steps), measured on the same
 Val episode set as our lightweight models. All three rows share the RoboTHOR label.
@@ -234,3 +235,13 @@ including per-episode values. The shared reference is not guaranteed globally
 shortest. Full coverage, identities, hashes and unrounded results are preserved in
 `sources/official_light_validation.json` and its public source snapshot.
 The page shows no curvature or additional protocol prose.
+
+## Result headings and model-name styling
+
+Part I is “EmbCLIP-GaWF Performs Better Under Lightweight Training”; Part III
+is “EmbCLIP-GaWF Encodes Important Task-Relevant Information”. Model names have
+no extra bold styling in HTML prose, captions, table rows or video labels. Numeric
+result emphasis and the existing figure artwork are retained. Object Goal
+Navigation is the shared task family with Codebook; our RoboTHOR training and
+GaWF recurrent feedback are distinct from its ProcTHOR training and codebook
+bottleneck, so the page does not call our representations codebook-bottlenecked.

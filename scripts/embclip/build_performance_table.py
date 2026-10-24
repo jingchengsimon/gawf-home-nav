@@ -59,7 +59,7 @@ def main():
             assert abs(mean-verified['mean_percent']) < 1e-12
             assert abs(std-verified['sample_std_percentage_points']) < 1e-12
         benchmark = '<th scope="rowgroup" rowspan="3">RoboTHOR</th>' if model == 'gru1' else ''
-        label = f'<strong>{name}</strong>'
+        label = name
         rows.append(f'<tr>{benchmark}<th scope="row">{label}</th>{"".join(cells)}</tr>')
     official = comparison['aggregates']['official']
     official_runs = [r for r in comparison['runs'] if r['model'] == 'official']
@@ -69,16 +69,16 @@ def main():
     stats['official'] = {metric: official['common_'+metric] for metric in ('sr', 'spl', 'sel')}
     assert all(record['sample_std_percentage_points'] is None for record in stats['official'].values())
     cells = ''.join(f'<td>{stats["official"][metric]["mean_percent"]:.2f}</td>' for metric in ('sr', 'spl', 'sel'))
-    rows.append('<tr class="budget-reference"><th scope="row"><strong>EmbCLIP</strong> (130M)</th>'+cells+'</tr>')
+    rows.append('<tr class="budget-reference"><th scope="row">EmbCLIP (130M)</th>'+cells+'</tr>')
     assert all(stats['gawf1'][m]['mean_percent'] > stats['gru1'][m]['mean_percent'] for m in ('sr', 'spl'))
     caption = ('We compare success rate (SR), success weighted by path length (SPL), and '
                'success weighted by episode length (SEL). SEL follows the metric introduced by '
                '<a href="https://embodied-codebook.github.io/">EmbCLIP-Codebook</a>.')
-    table = ('<section id="performance">\n<h3>I. Performance</h3>\n'
-             '<p>With lightweight 5M-step training (about 2.5% of <strong>EmbCLIP</strong>’s original '
+    table = ('<section id="performance">\n<h3>I. EmbCLIP-GaWF Performs Better Under Lightweight Training</h3>\n'
+             '<p>With lightweight 5M-step training (about 2.5% of EmbCLIP’s original '
              '<a href="https://arxiv.org/html/2111.09888v2">200M-step budget</a>), '
-             '<strong>EmbCLIP-GaWF</strong> achieves higher overall '
-             'success rate (SR) and success weighted by path length (SPL) than equally trained <strong>EmbCLIP</strong>.</p>\n'
+             'EmbCLIP-GaWF achieves higher overall '
+             'success rate (SR) and success weighted by path length (SPL) than equally trained EmbCLIP.</p>\n'
              '<div class="table-scroll"><table class="quantitative">\n'
              f'<caption>{caption}</caption>\n'
              '<thead><tr><th scope="col" rowspan="2">Benchmark</th>'

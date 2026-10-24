@@ -42,7 +42,7 @@ section{margin-top:48px}
 .demo{margin:18px 0}
 .demo h4{display:flex;align-items:center;justify-content:center;gap:12px;margin:20px 0 8px;font-style:italic;font-weight:700}
 .pair{position:relative;cursor:pointer}
-.model-name{margin:7px 0 4px;font-style:normal;font-weight:700}
+.model-name{margin:7px 0 4px;font-style:normal;font-weight:400}
 .authors{margin:8px 0 14px}
 .model-row{position:relative;display:grid;grid-template-columns:27% 73%;align-items:center;gap:0}
 .model-row img{width:100%;display:block}
