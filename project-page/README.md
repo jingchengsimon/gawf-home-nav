@@ -50,13 +50,32 @@ recorded in the source snapshots.
 The twelve goals are split across two four-by-six image grids. Each row has
 three adjacent RGB/Grad-CAM pairs, with one goal heading shared by each pair.
 Model labels use normal weight and upright text. The grids use each model's own
-successful validation terminal view, re-rendered from logged poses. Each recurrent state is reconstructed
-from that model's re-rendered RGB/action history. Eleven categories share an
-episode and initial pose; BaseballBat uses different successful episodes, marked
+successful validation terminal view. Most views are re-rendered from logged poses,
+with recurrent state reconstructed from that model's re-rendered RGB/action
+history. Eleven categories share an episode and initial pose; BaseballBat uses different successful episodes, marked
 on the page. Visual inputs and histories can differ, and re-rendering is not
-claimed pixel-identical to the original evaluation. Maps show local gradient
+claimed pixel-identical to the original evaluation. The Vase GaWF panel uses an
+actual saved successful End decision from a new
+fixed-seed autonomous validation rollout; its baseline retains the original
+pose-replayed successful terminal view. Maps show local gradient
 sensitivity, not intrinsic attention or a causal comparison holding observations
 fixed. No model weights are updated. Earlier diagnostics remain in local history.
+
+The displayed AlarmClock, HousePlant, Laptop and Vase examples are selected
+from successful terminal-view candidates after checking the visible RGB target;
+Laptop and Vase selection additionally considers overlap between the target and
+the unchanged End-action Grad-CAM. This is an illustrative selection, not a
+random sample or evidence of typical localization accuracy. Candidate histories,
+selection identities and source hashes are retained in the attribution receipt.
+
+The maps use gradients of the End-action log probability with respect to the
+frozen CLIP RN50 final 2048-channel 7-by-7 feature tensor. Spatially averaged
+gradients weight each channel, the weighted channels are summed, and negative
+values are removed. The 7-by-7 result is enlarged and overlaid on the original
+RGB using the same within-map maximum normalization rule for both models. It is
+not an individual input-channel activation, an object detector, or native policy
+attention. Red can reflect other context supporting stopping, so successful
+navigation does not guarantee a target-centered map.
 
 ## Source entry points
 
@@ -65,6 +84,9 @@ scripts/embclip/eval_light5m_remaining_sjc.py
 scripts/embclip/record_minimal_suite_sjc.py
 scripts/embclip/analyze_terminal_views_sjc.py
 scripts/embclip/analyze_twelve_goals_sjc.py
+scripts/embclip/analyze_visible_gradcam_candidates_sjc.py
+scripts/embclip/sample_terminal_gradcam_sjc.py
+scripts/embclip/assemble_terminal_gradcam_selection.py
 scripts/embclip/plot_twelve_goal_gradcam.py
 scripts/embclip/collect_project_training.py
 scripts/embclip/plot_gru1_gawf1_val.py

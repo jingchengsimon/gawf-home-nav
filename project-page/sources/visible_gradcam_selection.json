@@ -1,0 +1,26 @@
+{
+  "purpose": "Illustrative successful terminal views selected for recognizable target objects. Laptop and Vase are additionally selected for genuine target-overlapping End-action Grad-CAM, without altering maps, gradients, checkpoints or normalization. This selection does not estimate typical localization accuracy or causal model superiority.",
+  "replacements": {
+    "AlarmClock": {
+      "candidate_id": "FloorPlan_Val1_1_AlarmClock_7",
+      "reason": "Large recognizable alarm clock in both own successful terminal views; GaWF highlight covers clock face."
+    },
+    "HousePlant": {
+      "candidate_id": "FloorPlan_Val2_5_HousePlant_3",
+      "reason": "Leaves and plant pot are clearly visible in model input; no claim that its stop map is centered on the plant."
+    },
+    "Laptop": {
+      "candidate_id": "FloorPlan_Val3_2_Laptop_8",
+      "reason": "Laptop screen and keyboard visible; GaWF high-response region covers screen/hinge."
+    },
+    "Vase": {
+      "candidate_id": "FloorPlan_Val1_1_Vase_1_rollout1",
+      "analysis": "results/nav-robothor-embclip-vase-terminal-samples-sjc-v1-20261023",
+      "reason": "Actual successful autonomous End decision; large blue vase visible and genuine positive Grad-CAM overlaps vase body."
+    }
+  },
+  "comparison": "Each model uses its own successful terminal view and history; shared episode for eleven categories, BaseballBat uses different successful episodes. Vase GaWF uses a new fixed-seed autonomous rollout; the other entries are verified validation pose replays. Visual inputs and terminal states are not held identical.",
+  "source_candidates": "results/nav-robothor-embclip-visible-gradcam-candidates-sjc-v2-20261023",
+  "original_analysis": "results/nav-robothor-embclip-twelve-goal-gradcam-sjc-v3-20261023",
+  "inference_boundary": "No poses, maps, simulator labels or metrics enter either policy; evaluator metadata is used only for rendering and verification."
+}

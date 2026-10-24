@@ -35,8 +35,7 @@
   "video_errors": [],
   "horizontal_overflow": false,
   "screenshots": [
-    "preview-vase-visible.jpg",
-    "preview-rgb-gradient-pairs.jpg"
+    "preview-visible-gradcam.jpg"
   ],
   "page_content": [
     "navigation videos",
@@ -86,5 +85,16 @@
     "both_ended": true,
     "blue_vase_visible_in_final_rgb": true,
     "fair_initial_pose_verified": true
-  }
+  },
+  "gradient_example_review": {
+    "AlarmClock": "Recognizable complete clock face visible in GaWF terminal RGB.",
+    "HousePlant": "Long green leaves and pot clearly recognizable in GaWF terminal RGB; no target-centered CAM claim for this panel.",
+    "Laptop": "GaWF screen/hinge clearly visible and covered by warm peak.",
+    "Vase": "Blue vase clearly visible; genuine GaWF End-action Grad-CAM overlaps its body."
+  },
+  "gradient_example_source": "assets/sources/visible_gradcam_selection.json",
+  "gradient_images": [
+    "assets/gradcam-rgb-visible-1.png",
+    "assets/gradcam-rgb-visible-2.png"
+  ]
 }

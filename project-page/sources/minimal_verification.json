@@ -59,7 +59,7 @@
   ],
   "display": "No baked-in text; heading and image play controls; individual gray/red timelines",
   "fairness": "Same episode, actual initial pose, action seed and simulator seed; initial RGB difference below recorded thresholds",
-  "attribution": "24 unchanged End-action Grad-CAM maps with 24 original RGB panels from individual pose-replayed successful histories; BaseballBat different episodes marked",
+  "attribution": "24 genuine End-action Grad-CAM maps with 24 original RGB panels; 23 pose-replayed terminal states and one actual GaWF Vase terminal state; BaseballBat different episodes marked",
   "gradient_grid": {
     "figures": 2,
     "rows_per_figure": 4,
@@ -76,5 +76,6 @@
     "navigation videos",
     "gradient maps"
   ],
-  "vase_endpoint_review": "assets/sources/episodes/FloorPlan_Val1_1_Vase_6/endpoint_visibility.json"
+  "vase_endpoint_review": "assets/sources/episodes/FloorPlan_Val1_1_Vase_6/endpoint_visibility.json",
+  "gradient_selection": "assets/sources/visible_gradcam_selection.json"
 }

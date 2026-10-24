@@ -1,0 +1,144 @@
+{
+  "page": 1,
+  "rows": 4,
+  "columns": 6,
+  "panels": 24,
+  "rgb_panels": 12,
+  "gradient_panels": 12,
+  "goal_labels": 6,
+  "model_labels": "normal weight, upright, left aligned",
+  "layout": "three adjacent RGB/gradient pairs per row; one shared goal heading per pair",
+  "targets": [
+    "AlarmClock",
+    "Apple",
+    "BaseballBat",
+    "BasketBall",
+    "Bowl",
+    "GarbageCan"
+  ],
+  "comparison_mode": "individual_terminal",
+  "source_summary_sha256": "87a2dee623568fd348a0ac85ab378100ddd044dce144a5bed7d26c9790fe1336",
+  "image_sha256": "18f240ad9a9d118050057fcb06d5688e064944c6e43eda9a33db531dc1e130eb",
+  "panels_verified": [
+    {
+      "target": "AlarmClock",
+      "model": "gru1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.08674811571836472,
+      "episode_id": "FloorPlan_Val1_1_AlarmClock_7"
+    },
+    {
+      "target": "Apple",
+      "model": "gru1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.2453579306602478,
+      "episode_id": "FloorPlan_Val1_3_Apple_6"
+    },
+    {
+      "target": "BaseballBat",
+      "model": "gru1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.20476581156253815,
+      "episode_id": "FloorPlan_Val1_5_BaseballBat_5"
+    },
+    {
+      "target": "AlarmClock",
+      "model": "gawf1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.13455912470817566,
+      "episode_id": "FloorPlan_Val1_1_AlarmClock_7"
+    },
+    {
+      "target": "Apple",
+      "model": "gawf1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.17360201478004456,
+      "episode_id": "FloorPlan_Val1_3_Apple_6"
+    },
+    {
+      "target": "BaseballBat",
+      "model": "gawf1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.06626862287521362,
+      "episode_id": "FloorPlan_Val1_2_BaseballBat_3"
+    },
+    {
+      "target": "BasketBall",
+      "model": "gru1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.0018527144566178322,
+      "episode_id": "FloorPlan_Val1_2_BasketBall_6"
+    },
+    {
+      "target": "Bowl",
+      "model": "gru1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.021383006125688553,
+      "episode_id": "FloorPlan_Val1_5_Bowl_1"
+    },
+    {
+      "target": "GarbageCan",
+      "model": "gru1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.004155738279223442,
+      "episode_id": "FloorPlan_Val2_4_GarbageCan_4"
+    },
+    {
+      "target": "BasketBall",
+      "model": "gawf1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.0004736591945402324,
+      "episode_id": "FloorPlan_Val1_2_BasketBall_6"
+    },
+    {
+      "target": "Bowl",
+      "model": "gawf1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.07533718645572662,
+      "episode_id": "FloorPlan_Val1_5_Bowl_1"
+    },
+    {
+      "target": "GarbageCan",
+      "model": "gawf1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.04476364701986313,
+      "episode_id": "FloorPlan_Val2_4_GarbageCan_4"
+    }
+  ]
+}

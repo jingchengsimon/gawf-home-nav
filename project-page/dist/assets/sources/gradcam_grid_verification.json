@@ -1,0 +1,324 @@
+{
+  "status": "pass",
+  "figures": 2,
+  "rows_per_figure": 4,
+  "columns": 6,
+  "panels": 48,
+  "rgb_panels": 24,
+  "gradient_panels": 24,
+  "targets": 12,
+  "model_labels": "normal weight, upright, left aligned",
+  "shared_goal_heading_per_pair": true,
+  "baseballbat_different_episodes_marked": true,
+  "source_arrays_copied_without_change": true,
+  "receipts": [
+    {
+      "page": 1,
+      "rows": 4,
+      "columns": 6,
+      "panels": 24,
+      "rgb_panels": 12,
+      "gradient_panels": 12,
+      "goal_labels": 6,
+      "model_labels": "normal weight, upright, left aligned",
+      "layout": "three adjacent RGB/gradient pairs per row; one shared goal heading per pair",
+      "targets": [
+        "AlarmClock",
+        "Apple",
+        "BaseballBat",
+        "BasketBall",
+        "Bowl",
+        "GarbageCan"
+      ],
+      "comparison_mode": "individual_terminal",
+      "source_summary_sha256": "87a2dee623568fd348a0ac85ab378100ddd044dce144a5bed7d26c9790fe1336",
+      "image_sha256": "18f240ad9a9d118050057fcb06d5688e064944c6e43eda9a33db531dc1e130eb",
+      "panels_verified": [
+        {
+          "target": "AlarmClock",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.08674811571836472,
+          "episode_id": "FloorPlan_Val1_1_AlarmClock_7"
+        },
+        {
+          "target": "Apple",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.2453579306602478,
+          "episode_id": "FloorPlan_Val1_3_Apple_6"
+        },
+        {
+          "target": "BaseballBat",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.20476581156253815,
+          "episode_id": "FloorPlan_Val1_5_BaseballBat_5"
+        },
+        {
+          "target": "AlarmClock",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.13455912470817566,
+          "episode_id": "FloorPlan_Val1_1_AlarmClock_7"
+        },
+        {
+          "target": "Apple",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.17360201478004456,
+          "episode_id": "FloorPlan_Val1_3_Apple_6"
+        },
+        {
+          "target": "BaseballBat",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.06626862287521362,
+          "episode_id": "FloorPlan_Val1_2_BaseballBat_3"
+        },
+        {
+          "target": "BasketBall",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.0018527144566178322,
+          "episode_id": "FloorPlan_Val1_2_BasketBall_6"
+        },
+        {
+          "target": "Bowl",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.021383006125688553,
+          "episode_id": "FloorPlan_Val1_5_Bowl_1"
+        },
+        {
+          "target": "GarbageCan",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.004155738279223442,
+          "episode_id": "FloorPlan_Val2_4_GarbageCan_4"
+        },
+        {
+          "target": "BasketBall",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.0004736591945402324,
+          "episode_id": "FloorPlan_Val1_2_BasketBall_6"
+        },
+        {
+          "target": "Bowl",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.07533718645572662,
+          "episode_id": "FloorPlan_Val1_5_Bowl_1"
+        },
+        {
+          "target": "GarbageCan",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.04476364701986313,
+          "episode_id": "FloorPlan_Val2_4_GarbageCan_4"
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "rows": 4,
+      "columns": 6,
+      "panels": 24,
+      "rgb_panels": 12,
+      "gradient_panels": 12,
+      "goal_labels": 6,
+      "model_labels": "normal weight, upright, left aligned",
+      "layout": "three adjacent RGB/gradient pairs per row; one shared goal heading per pair",
+      "targets": [
+        "HousePlant",
+        "Laptop",
+        "Mug",
+        "SprayBottle",
+        "Television",
+        "Vase"
+      ],
+      "comparison_mode": "individual_terminal",
+      "source_summary_sha256": "87a2dee623568fd348a0ac85ab378100ddd044dce144a5bed7d26c9790fe1336",
+      "image_sha256": "ac4cb9a47d8a8056b855fb2dddb056218a2a2f37c8ae0323797c8d6a2ebab2c8",
+      "panels_verified": [
+        {
+          "target": "HousePlant",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.024606779217720032,
+          "episode_id": "FloorPlan_Val2_5_HousePlant_3"
+        },
+        {
+          "target": "Laptop",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.035407379269599915,
+          "episode_id": "FloorPlan_Val3_2_Laptop_8"
+        },
+        {
+          "target": "Mug",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.008142819628119469,
+          "episode_id": "FloorPlan_Val3_2_Mug_6"
+        },
+        {
+          "target": "HousePlant",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.02009470947086811,
+          "episode_id": "FloorPlan_Val2_5_HousePlant_3"
+        },
+        {
+          "target": "Laptop",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.10576912015676498,
+          "episode_id": "FloorPlan_Val3_2_Laptop_8"
+        },
+        {
+          "target": "Mug",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.02655685320496559,
+          "episode_id": "FloorPlan_Val3_2_Mug_6"
+        },
+        {
+          "target": "SprayBottle",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.010416090488433838,
+          "episode_id": "FloorPlan_Val3_4_SprayBottle_6"
+        },
+        {
+          "target": "Television",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.049840208142995834,
+          "episode_id": "FloorPlan_Val1_5_Television_3"
+        },
+        {
+          "target": "Vase",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.006023223511874676,
+          "episode_id": "FloorPlan_Val1_1_Vase_1"
+        },
+        {
+          "target": "SprayBottle",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.09591052681207657,
+          "episode_id": "FloorPlan_Val3_4_SprayBottle_6"
+        },
+        {
+          "target": "Television",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.13428674638271332,
+          "episode_id": "FloorPlan_Val1_5_Television_3"
+        },
+        {
+          "target": "Vase",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.07887203991413116,
+          "episode_id": "FloorPlan_Val1_1_Vase_1"
+        }
+      ]
+    }
+  ],
+  "visual_review": {
+    "AlarmClock": "Recognizable complete clock face visible in GaWF terminal RGB.",
+    "HousePlant": "Long green leaves and pot clearly recognizable in GaWF terminal RGB; no target-centered CAM claim for this panel.",
+    "Laptop": "GaWF screen/hinge clearly visible and covered by warm peak.",
+    "Vase": "Blue vase clearly visible; genuine GaWF End-action Grad-CAM overlaps its body."
+  },
+  "vase": {
+    "episode_id": "FloorPlan_Val1_1_Vase_1",
+    "action_sampling_seed": 1,
+    "simulator_seed": 1001,
+    "training_seed": 3,
+    "steps": 158,
+    "success": true,
+    "baseline_same_episode": true,
+    "baseline_initial_position_max_delta": 0.0,
+    "baseline_initial_yaw_delta": 0.0,
+    "source_receipt_sha256": "08dfbb0b5b9b6d59bfb31f7aee2a542bee2b876f26dec40054aeeb3a3391a925",
+    "terminal_probe_sha256": "054d862543922ee457315a187b29d4ea615da24f402af5179db36cca646efda8"
+  },
+  "illustrative_selection": true
+}
