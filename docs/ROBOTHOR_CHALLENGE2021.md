@@ -58,6 +58,39 @@ A working official scoring endpoint or organizer-provided official offline score
 is the remaining prerequisite. No full five-seed Test runs have been launched or
 reported as scored; no evaluation scores have been added to HTML.
 
+### Offline-scoring audit (2026-10-24)
+
+The public Challenge repository, its branches/issues, the official AI2-THOR metrics
+utilities, and the newer ProcTHOR/Codebook evaluation implementation were checked.
+No public official Challenge Test scorer or replacement submission endpoint was
+found. A fresh DNS query still returns NXDOMAIN for the documented submission host.
+
+The newer `allenai/object-nav-eval` loader explicitly skips RoboTHOR when loading
+the Test split; its RoboTHOR files contain only Val/minival. It cannot supply the
+missing Challenge Test scoring inputs.
+
+A registered bounded evaluator-only probe ran on the unchanged official build,
+with one Val positive control and one episode from each of the ten Test scenes.
+Val returned 48 object records and a valid shortest path. All ten Test scenes
+returned an empty object list and `GetShortestPath` returned `null`, even though
+the API's `lastActionSuccess` was true. `Stop` also returned true with no scoring
+payload; this flag is not navigation success. No policy was loaded for this probe.
+
+This is intentional in the official build: `AgentManager.stripMetadataForTest`
+clears object metadata and non-allowlisted action returns for `FloorPlan_test*`.
+The general `compute_single_spl` utility exists, but still requires the missing
+success label and shortest path. The audit does not modify or bypass this filter.
+
+Probe ID: `nav-robothor-embclip-challenge2021-offline-scoring-audit-sjc-v1-20261024`.
+Verified receipts and pinned source links:
+`experiments/deployment/sjc-embclip-challenge2021-offline-scoring-audit-20261024.json`.
+The requested ten full Test evaluations remain unlaunched because they could
+produce trajectories but not the requested official SR/SPL.
+
+Sources: [official Test metadata filter](https://github.com/allenai/ai2thor/blob/bad5bc2b250615cb766ffb45d455c211329af17e/unity/Assets/Scripts/AgentManager.cs#L74-L104),
+[official evaluation dataset loader](https://github.com/allenai/object-nav-eval/blob/main/main.py),
+[official Stop-status clarification](https://github.com/allenai/robothor-challenge/issues/30#issuecomment-1249883099).
+
 ## Sources and receipts
 
 - `scripts/embclip/challenge2021/prepare_runtime.py`: pinned download and setup.

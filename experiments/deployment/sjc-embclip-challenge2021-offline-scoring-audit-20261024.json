@@ -1,0 +1,71 @@
+{
+  "checked_at": "2026-10-24T14:18:11.247377+00:00",
+  "status": "blocked",
+  "reason": "Public Test data and unmodified official build withhold success visibility metadata and shortest paths; no public official Test scorer or replacement submission endpoint found.",
+  "test_evaluations_launched": 0,
+  "requested_model_seeds": {
+    "gru1": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "gawf1": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "probe_experiment_id": "nav-robothor-embclip-challenge2021-offline-scoring-audit-sjc-v1-20261024",
+  "probe_complete": true,
+  "verified_test_scenes": 10,
+  "val_positive_control": true,
+  "probe_receipts": [
+    {
+      "path": "experiments/monitoring/jobs/nav-robothor-embclip-challenge2021-offline-scoring-audit-sjc-v1-20261024.json",
+      "bytes": 1103,
+      "sha256": "9c8b705e17e73b411d889f04b4bb98a5ab075ee357fe81dc4906b172ac4dff6d"
+    },
+    {
+      "path": "results/nav-robothor-embclip-challenge2021-offline-scoring-audit-sjc-v1-20261024/summary.json",
+      "bytes": 16537,
+      "sha256": "7db9dc3303b16294b8f9fde966fe29d19dca5773393e1ad59e08f1cb7243fdaa"
+    },
+    {
+      "path": "results/nav-robothor-embclip-challenge2021-offline-scoring-audit-sjc-v1-20261024/checks.json",
+      "bytes": 14994,
+      "sha256": "555d5aa1cf578a4a3e13c3733f6f8ab9c4430da28d650fb2ede35b7a6d3874da"
+    }
+  ],
+  "official_sources": [
+    {
+      "url": "https://github.com/allenai/ai2thor/blob/bad5bc2b250615cb766ffb45d455c211329af17e/unity/Assets/Scripts/AgentManager.cs#L74-L104",
+      "finding": "stripMetadataForTest removes object metadata and shortest-path action returns."
+    },
+    {
+      "url": "https://github.com/allenai/object-nav-eval/blob/bfccfc0aee4637c4f863c460d224edf564244d86/main.py",
+      "finding": "Loader explicitly skips RoboTHOR Test; only RoboTHOR Val/minival supplied."
+    },
+    {
+      "url": "https://github.com/allenai/robothor-challenge/tree/f3c4f35bc397aff4d5236e269efe3ff41f6d218e",
+      "finding": "Public main branch has inference/submission conversion and Val metrics, but no Challenge Test scorer or hidden shortest-path labels."
+    }
+  ],
+  "dns_status": 3,
+  "public_source_hashes": {
+    "AgentManager.cs": "ed2acc2df3f4c6f222bb4e36d163c45f9f6ae79fc49d5a99e275f4fdd98e7990",
+    "objectnav-eval-readme.md": "f33878776a1700014cb96dac1bef072d9e3f3923476400ee7e34d5c207b34e47",
+    "StochasticRemoteFPSAgentController.cs": "7f0a6e751277c539eb78e771655d4e2b9f4dd37a20ee7a2eb8ca520e545f462f",
+    "objectnav-main.py": "04d98fe6cf46083c794fc7583556d75d7ed19e4111e3472363cc8994f71c8cc2",
+    "ai2thor-test-restrictions.cs": "46dfc5eb3540f538eff5e60d1f0b75bcbfaf938b201c7685d505ba75360c8b25",
+    "procthor_rl_constants.py": "325d03b7d81b381e49b8c37ce7c90050fee7a4c3daa785763dc11a756afc67bf",
+    "ai2thor-metrics.py": "8cfc1892c55f891ca78ee99b07e98b6e81fbb8d660b76299b57f12bbfc58757a",
+    "PhysicsRemoteFPSAgentController.cs": "749f2bafdd55c38970670c716490e792d7274a4965c440c6d0fba3f6ece1610f",
+    "procthor_objectnav/tasks/object_nav.py": "00ccf729953c899a83abe009c245e16faafae74016c158b34ce7ad0260681bbd",
+    "procthor_objectnav/experiments/base.py": "a4da17caa4da3b0d4e193044f25b8571d07b72a1726a3d8e2f3eec450d47e044"
+  },
+  "webpage_updated": false
+}

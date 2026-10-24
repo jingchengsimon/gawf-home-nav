@@ -1,0 +1,29 @@
+{
+  "completion_evidence": {
+    "checked_scenes": 11,
+    "return_code": 0,
+    "summary_sha256": "7db9dc3303b16294b8f9fde966fe29d19dca5773393e1ad59e08f1cb7243fdaa"
+  },
+  "execution": {
+    "full_evaluation": false,
+    "physical_gpu_index": 0,
+    "session": "offline-scoring-audit-20261024"
+  },
+  "expected_units": 1,
+  "experiment_id": "nav-robothor-embclip-challenge2021-offline-scoring-audit-sjc-v1-20261024",
+  "host": "sjc-remote",
+  "mode": "preflight",
+  "preflight_manifest": "experiments/monitoring/jobs/nav-robothor-embclip-challenge2021-preflight-sjc-v3-20261024.json",
+  "result_path": "results/nav-robothor-embclip-challenge2021-offline-scoring-audit-sjc-v1-20261024",
+  "runner_sha256": "129a5a494ae91776c82aa7bb85f94545505f664b3df15688cc34f952f03b26a0",
+  "runner_source": "scripts/embclip/challenge2021/check_offline_scoring.py",
+  "schema_version": 1,
+  "status": "complete",
+  "units": [
+    {
+      "name": "public-scoring-api-check",
+      "result_path": "results/nav-robothor-embclip-challenge2021-offline-scoring-audit-sjc-v1-20261024",
+      "status": "complete"
+    }
+  ]
+}
