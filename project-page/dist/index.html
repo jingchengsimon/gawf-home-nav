@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Feedback-gated memory for visual navigation</title>
 <meta name="description" content="EmbCLIP and EmbCLIP-GaWF navigate the same RoboTHOR tasks using RGB observations.">
-<link rel="stylesheet" href="assets/style.css?v=496f6efe9331">
+<link rel="stylesheet" href="assets/style.css?v=bf03817191d7">
 </head>
 <body><main>
 <header class="intro">
@@ -20,11 +20,12 @@
 <h2>Results</h2>
 <section id="performance">
 <h3>I. Performance</h3>
-<table class="quantitative">
-<caption>Quantitative comparisons on RoboTHOR Object Goal Navigation. Results will be added.</caption>
-<thead><tr><th scope="col">Model</th><th scope="col">SR</th><th scope="col">SPL</th></tr></thead>
-<tbody><tr><th scope="row">EmbCLIP</th><td>—</td><td>—</td></tr><tr><th scope="row">EmbCLIP-GaWF</th><td>—</td><td>—</td></tr></tbody>
-</table>
+<div class="table-scroll"><table class="quantitative">
+<caption>5M-frame training. Mean ± SD across five runs per model on 1,783 shared validation episodes.</caption>
+<thead><tr><th scope="col" rowspan="2">Benchmark</th><th scope="col" rowspan="2">Model</th><th scope="colgroup" colspan="2">Object navigation</th></tr>
+<tr><th scope="col">SR (%) ↑</th><th scope="col">SPL (%) ↑</th></tr></thead>
+<tbody><tr><th scope="rowgroup" rowspan="2">RoboTHOR-Val</th><th scope="row">EmbCLIP</th><td>13.38 ± 2.73</td><td>8.25 ± 1.40</td></tr><tr><th scope="row"><strong>EmbCLIP-GaWF</strong></th><td><strong>19.55 ± 3.09</strong></td><td><strong>10.10 ± 0.93</strong></td></tr></tbody>
+</table></div>
 </section>
 <section id="navigation">
 <h3>II. Recurrent Feedback Guides Navigation Toward the Object Goal</h3>

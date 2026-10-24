@@ -32,7 +32,7 @@ annotations are omitted from the visible page. Detailed provenance remains in
 All source recordings, including unselected and unsuccessful cases, are retained
 in their SJC result leaves. Selected videos and small source snapshots are mirrored
 locally. A two-row teaser combines the enlarged HousePlant full trajectories with AlarmClock,
-BaseballBat and SprayBottle Grad-CAM overlays. Results contains I. Performance (a quantitative table placeholder),
+BaseballBat and SprayBottle Grad-CAM overlays. Results contains I. Performance (SR/SPL mean ± sample SD),
 II. four paired navigation demos, and III. two RGB/gradient grids.
 A dashed line separates Trajectory and Grad-CAM groups in the teaser.
 Each visual section has a short introduction and one shared caption. Text-to-image
@@ -129,3 +129,18 @@ MPLCONFIGDIR=/tmp/gawf-project-mpl python scripts/embclip/plot_project_teaser.py
 
 The teaser uses the same overlay normalization as the full Grad-CAM grids.
 Its source hashes and panel identities are in `dist/assets/sources/teaser-summary.json`.
+
+## Performance table
+
+The table uses all five normally exited evaluation runs per model, restricted
+to the same intersection of 1,783 validation episode IDs across all ten runs.
+Individual runs cover 1,783 or 1,785 of the expected 1,800 episodes; this table
+does not claim full coverage. SR and SPL are percentages. The mean gives each
+seed equal weight; SD is the sample standard deviation across seeds (ddof=1),
+not SEM. The 5M label describes the 5,001,216-frame training checkpoints.
+
+Rebuild with `python scripts/embclip/build_performance_table.py`. The fresh
+read-only SJC collector snapshot, actual exit receipts and unrounded statistics
+are in `sources/performance_validation_snapshot.json`,
+`sources/performance_validation_exits.json` and `sources/performance_table.json`,
+with corresponding copies under `dist/assets/sources/`.

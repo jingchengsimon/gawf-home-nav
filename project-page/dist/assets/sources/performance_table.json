@@ -1,0 +1,70 @@
+{
+  "dataset": "RoboTHOR ObjectNav Val",
+  "training_frames": 5001216,
+  "common_episode_count": 1783,
+  "expected_episode_count": 1800,
+  "common_episode_ids_sha256": "970bc90fce9ac8b652c91ccc85d4609f3dfc8b1e33d46430e8e50d3f5b5a4656",
+  "seeds_per_model": 5,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "aggregation": "Per-seed SR/SPL on the intersection across all ten runs; equal-weight mean across seeds.",
+  "standard_deviation": "Sample standard deviation across seed scores (ddof=1), not SEM.",
+  "units": "Both means in percent; standard deviations in percentage points.",
+  "coverage": "All processes exited normally. Individual coverage is partial; only shared evaluated IDs enter the comparison.",
+  "source_snapshot_sha256": "58b42c312090251e9f50827ea387e66fd2bff3979fb1d8a8122dfa5657f46ef0",
+  "statistics": {
+    "gru1": {
+      "sr": {
+        "mean_percent": 13.381940549635447,
+        "std_percentage_points": 2.7308391231405302,
+        "per_seed_percent": [
+          14.582164890633765,
+          16.264722378014582,
+          14.918676388109928,
+          11.553561413348291,
+          9.590577678070668
+        ]
+      },
+      "spl": {
+        "mean_percent": 8.245579081831961,
+        "std_percentage_points": 1.3999476520159637,
+        "per_seed_percent": [
+          9.169395966167137,
+          9.75898813334596,
+          8.769812645525294,
+          6.898316757927258,
+          6.631381906194155
+        ]
+      }
+    },
+    "gawf1": {
+      "sr": {
+        "mean_percent": 19.551318003365115,
+        "std_percentage_points": 3.0912081211830196,
+        "per_seed_percent": [
+          17.498597868760516,
+          18.283791362871565,
+          18.11553561413348,
+          25.014021312394842,
+          18.844643858665172
+        ]
+      },
+      "spl": {
+        "mean_percent": 10.095966948535942,
+        "std_percentage_points": 0.9261766112859362,
+        "per_seed_percent": [
+          9.290187394900364,
+          10.133322114859151,
+          9.211747140117543,
+          11.484905823267892,
+          10.359672269534759
+        ]
+      }
+    }
+  }
+}

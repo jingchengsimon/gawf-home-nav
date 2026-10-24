@@ -23,12 +23,12 @@
     "dashed_separator": true
   },
   "results_order": [
-    "I. Performance placeholder",
+    "I. Performance SR/SPL table",
     "II. navigation behavior",
     "III. Grad-CAM"
   ],
   "captions": "One below the complete trajectory gallery and one below the complete Grad-CAM gallery.",
-  "quantitative_values": "Intentionally absent; em dash placeholders are not scores.",
+  "quantitative_values": "Verified same-episode metrics across five normally exited seeds per model; mean \u00b1 sample SD.",
   "typography_px": {
     "page_title": 32,
     "Results": 30,

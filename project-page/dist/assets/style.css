@@ -67,9 +67,14 @@ section{margin-top:48px}
 .teaser img{display:block;width:100%;height:auto}
 .teaser figcaption{margin-top:10px}
 #performance{margin-top:24px}
-.quantitative{margin:12px 0;border-collapse:collapse;width:100%;max-width:650px;text-align:left}
-.quantitative caption{margin-bottom:8px}
-.quantitative th,.quantitative td{padding:8px 24px 8px 0}
+.table-scroll{overflow-x:auto}
+.quantitative{margin:12px auto;border-collapse:collapse;width:100%;max-width:760px;min-width:560px;text-align:center;border-top:1.2px solid #333;border-bottom:1.2px solid #333}
+.quantitative caption{caption-side:bottom;padding-top:8px}
+.quantitative th,.quantitative td{padding:8px 12px;vertical-align:middle;font-variant-numeric:tabular-nums}
+.quantitative thead{border-bottom:1px solid #333}
+.quantitative thead th[colspan]{border-bottom:1px solid #333}
+.quantitative thead th[rowspan],.quantitative tbody th{text-align:left}
+.quantitative td{white-space:nowrap}
 .quantitative tbody th{font-weight:400}
 .section-caption{margin-top:12px}
 .demo:last-child,.attribution:last-child{margin-bottom:12px}
