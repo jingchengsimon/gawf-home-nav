@@ -15,7 +15,7 @@ will fail. The code is published at https://github.com/jingchengsimon/gawf-home-
 
 ## Presentation
 
-The page uses one font, one text size and black text. Demos are ordered by object
+The page uses locally bundled Noto Sans, one text size and black text. Demos are ordered by object
 name. Each model has a full trajectory, a live trajectory and its RGB view. One
 image-mounted play control and an icon beside each object heading start both
 videos; either control pauses the pair. Each method has a gray timeline with a
@@ -29,8 +29,11 @@ annotations are omitted from the visible page. Detailed provenance remains in
 `dist/assets/sources/protocol.json`, the experiment manifests and result receipts.
 All source recordings, including unselected and unsuccessful cases, are retained
 in their SJC result leaves. Selected videos and small source snapshots are mirrored
-locally. The page currently shows four paired demos followed by two RGB/gradient grids.
-Quantitative and training figures are retained as assets but are not displayed.
+locally. A two-row teaser combines the HousePlant full trajectories with AlarmClock,
+BaseballBat and SprayBottle Grad-CAM overlays. Results contains a quantitative
+table placeholder, I. four paired navigation demos, and II. two RGB/gradient grids.
+Each visual section has a short introduction and one shared caption.
+Existing quantitative and training figures are retained as assets but are not displayed.
 The title links to the public GitHub repository; there is no footer link list.
 The earlier page source and figures are in `archive/20261023-before-minimal/`;
 the original media remain in `dist/assets/videos/`.
@@ -103,3 +106,22 @@ Simulator recording and model analysis run only on SJC. New execution sources ar
 frozen copies in independent result leaves. Matplotlib figures are regenerated
 locally from verified source snapshots. Media asset names include a source and
 transform fingerprint to avoid reusing videos from different recordings.
+
+## Layout and wording reference
+
+Font assignments were checked against the [Codebook project page](https://embodied-codebook.github.io/)
+and its `static/css/index.css`: Noto Sans for body text; Google Sans for publication
+title, authors and teaser. This page uses only Noto Sans to retain a single typeface.
+The bundled fonts include their SIL Open Font License. New headings, descriptions
+and captions adapt the reference page’s analysis and behavior sections to our
+lightweight RoboTHOR comparison; they do not claim the Codebook mechanism,
+curvature or SEL measurements. Reference and font records are in `sources/`.
+
+Rebuild the teaser from the existing verified arrays and full trajectories with:
+
+```sh
+MPLCONFIGDIR=/tmp/gawf-project-mpl python scripts/embclip/plot_project_teaser.py
+```
+
+The teaser uses the same overlay normalization as the full Grad-CAM grids.
+Its source hashes and panel identities are in `dist/assets/sources/teaser-summary.json`.

@@ -21,8 +21,7 @@
   "attribution": [
     {
       "alt": "Original RGB and Grad-CAM pairs for Alarm Clock, Apple, Baseball Bat, Basketball, Bowl and Garbage Can; four rows, three goals per model row.",
-      "asset": "assets/gradcam-rgb-plant-1.png",
-      "note": "BaseballBat gradient maps use different episodes."
+      "asset": "assets/gradcam-rgb-plant-1.png"
     },
     {
       "alt": "Original RGB and Grad-CAM pairs for House Plant, Laptop, Mug, Spray Bottle, Television and Vase; four rows, three goals per model row.",

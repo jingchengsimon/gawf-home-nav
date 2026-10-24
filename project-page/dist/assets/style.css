@@ -1,6 +1,30 @@
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(fonts/noto-sans-400.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(fonts/noto-sans-600.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(fonts/noto-sans-700.ttf) format('truetype');
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:white;color:black;text-align:left;font:16px/1.6 Arial,Helvetica,sans-serif}
+body{margin:0;background:white;color:black;text-align:left;font:16px/1.6 'Noto Sans',Arial,sans-serif}
 main{max-width:1040px;margin:48px auto;padding:0 24px}
 h1,h2,h3,p,figcaption{font:inherit;color:inherit}
 h1,h2,h3{font-weight:600;margin:40px 0 16px}
@@ -35,3 +59,12 @@ section{margin-top:48px}
 .attribution img{display:block;width:100%}
 .references{margin-top:48px}
 @media(max-width:600px){main{margin:28px auto;padding:0 16px}.model-row{grid-template-columns:1fr}.full-path{width:58%!important;margin:0 auto 10px;padding:0}.play{width:46px;height:46px;left:50%;top:auto;bottom:calc(18.8vw - 13px);transform:translateX(-50%)}h1,h2,h3{margin-top:28px}}
+
+.teaser{margin:40px 0 48px}
+.teaser img{display:block;width:100%;height:auto}
+.teaser figcaption{margin-top:20px}
+.quantitative{margin:24px 0;border-collapse:collapse;width:100%;max-width:650px;text-align:left}
+.quantitative caption{text-align:left;margin-bottom:16px}
+.quantitative th,.quantitative td{padding:8px 24px 8px 0}
+.quantitative tbody th{font-weight:400}
+.section-caption{margin-top:24px}

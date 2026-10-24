@@ -7,7 +7,7 @@
     "HousePlant",
     "SprayBottle"
   ],
-  "demos_before_results": true,
+  "demos_before_results": false,
   "paired_cases": 4,
   "individual_videos": 8,
   "gradient_grid": {
@@ -31,28 +31,28 @@
   "video_errors": [],
   "horizontal_overflow": false,
   "screenshots": [
-    "preview-baseballbat-demo.jpg",
-    "preview-spraybottle-demo.jpg",
-    "preview-plant-gradcam-updated.jpg"
+    "preview-results-teaser.png",
+    "preview-results-gradcam.png"
   ],
   "page_content": [
+    "teaser summary",
+    "quantitative table placeholder",
     "navigation videos",
     "gradient maps"
   ],
   "sections": [
     "intro",
-    "demo-gallery",
-    "attention"
+    "teaser",
+    "results",
+    "quantitative placeholder",
+    "I. navigation",
+    "II. Grad-CAM"
   ],
   "training_and_result_figures_displayed": false,
   "playback_checks": {
-    "BaseballBat": [
-      0.293637,
-      0.292399
-    ],
     "SprayBottle": [
-      0.378659,
-      0.378027
+      0.146686,
+      0.146081
     ]
   },
   "pause_verified": true,
@@ -89,5 +89,32 @@
         4.166667
       ]
     }
-  }
+  },
+  "font": "Noto Sans locally bundled: 400, 600, 700",
+  "teaser": {
+    "rows": 2,
+    "visual_columns": 4,
+    "columns": [
+      "HousePlant trajectory",
+      "AlarmClock Grad-CAM",
+      "BaseballBat Grad-CAM",
+      "SprayBottle Grad-CAM"
+    ],
+    "raw_rgb_columns": 0
+  },
+  "quantitative_table": {
+    "status": "placeholder",
+    "models": 2,
+    "metrics": [
+      "SR",
+      "SPL"
+    ],
+    "values": [
+      "\u2014",
+      "\u2014",
+      "\u2014",
+      "\u2014"
+    ]
+  },
+  "visual_section_captions": 2
 }

@@ -1,0 +1,36 @@
+{
+  "reference": "https://embodied-codebook.github.io/",
+  "reference_stylesheet": "https://embodied-codebook.github.io/static/css/index.css",
+  "observed_families": {
+    "body": "Noto Sans",
+    "publication_title": "Google Sans",
+    "authors": "Google Sans",
+    "teaser": "Google Sans"
+  },
+  "page_font": "Noto Sans",
+  "font_source_css": "https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap",
+  "license_source": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosans/OFL.txt",
+  "files": [
+    {
+      "source": "https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A99d.ttf",
+      "path": "assets/fonts/noto-sans-400.ttf",
+      "sha256": "5be701a9511117e73603bdab95947feef4f18bd1851dbddc30659370b26c69f1",
+      "bytes": 556328,
+      "weight": 400
+    },
+    {
+      "source": "https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyAjBN9d.ttf",
+      "path": "assets/fonts/noto-sans-600.ttf",
+      "sha256": "d28e6da8972668eff5b2faacb865cab11195aba6b0683aee040d20a04928817b",
+      "bytes": 558412,
+      "weight": 600
+    },
+    {
+      "source": "https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyAaBN9d.ttf",
+      "path": "assets/fonts/noto-sans-700.ttf",
+      "sha256": "9f0ce911354e554bbac00c399dcea71c785962cebfd86e965656f0bd011dfca9",
+      "bytes": 558012,
+      "weight": 700
+    }
+  ]
+}

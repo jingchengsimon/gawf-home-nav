@@ -1,0 +1,27 @@
+{
+  "reference_page": "https://embodied-codebook.github.io/",
+  "reference_css": "https://embodied-codebook.github.io/static/css/index.css",
+  "adapted_sections": [
+    "Results",
+    "Codebook Encodes Only the Most Important Information to the Task",
+    "Our Agent Explores More Effectively and Travels in Smoother Trajectories",
+    "GradCAM Attention Visualization and trajectory captions"
+  ],
+  "adaptation": "Heading, analysis-paragraph and caption patterns adapted to the two existing lightweight RoboTHOR models. No Codebook module, curvature, SEL or aggregate advantage is claimed.",
+  "teaser": {
+    "rows": 2,
+    "columns": [
+      "HousePlant trajectory",
+      "AlarmClock Grad-CAM",
+      "BaseballBat Grad-CAM",
+      "SprayBottle Grad-CAM"
+    ]
+  },
+  "results_order": [
+    "quantitative placeholder",
+    "I. navigation behavior",
+    "II. Grad-CAM"
+  ],
+  "captions": "One below the complete trajectory gallery and one below the complete Grad-CAM gallery.",
+  "quantitative_values": "Intentionally absent; em dash placeholders are not scores."
+}

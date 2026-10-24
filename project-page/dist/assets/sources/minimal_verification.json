@@ -73,6 +73,8 @@
     "baseballbat_different_episodes_marked": true
   },
   "page_content": [
+    "teaser summary",
+    "quantitative table placeholder",
     "navigation videos",
     "gradient maps"
   ],
@@ -80,5 +82,81 @@
   "endpoint_reviews": [
     "assets/sources/episodes/FloorPlan_Val1_2_BaseballBat_3/endpoint_visibility.json",
     "assets/sources/episodes/FloorPlan_Val1_2_SprayBottle_8/endpoint_visibility.json"
-  ]
+  ],
+  "teaser": {
+    "rows": 2,
+    "visual_columns": 4,
+    "label_columns": 1,
+    "source_summary_sha256": "9d7eaadf092b17eff67182da40d530a43035c3620c8769401f618b5c04880b6a",
+    "raw_rgb_columns": 0,
+    "image_sha256": "2194d82cbf021a52fe1f0773e508d722e80751e94c8a0824438196ae2f218d41",
+    "panels": [
+      {
+        "model": "gru1",
+        "kind": "full_trajectory",
+        "episode_id": "FloorPlan_Val3_1_HousePlant_2",
+        "source": "project-page/dist/assets/minimal-videos/FloorPlan_Val3_1_HousePlant_2/gru1-fc4e5adb9b5c-path.png",
+        "sha256": "f6dbd073032095d3c31c69f744729ba20a4cd9ab90f863dd303d4f177d3eb69a"
+      },
+      {
+        "model": "gru1",
+        "kind": "gradcam_overlay",
+        "target": "AlarmClock",
+        "episode_id": "FloorPlan_Val1_1_AlarmClock_7",
+        "cam_sha256": "10d936adcc030a7c0189f7d4ce285f07252edec7fd51440c7487fbc3ac0b2fb8",
+        "rgb_sha256": "2d90a98e18e8c34fbb8248ef9f56b6bb679d412ed173361d2325d76fee1de5ea"
+      },
+      {
+        "model": "gru1",
+        "kind": "gradcam_overlay",
+        "target": "BaseballBat",
+        "episode_id": "FloorPlan_Val1_5_BaseballBat_5",
+        "cam_sha256": "511db5daa32f0d71846e17c39e6b078d9aae711d50354de19b223d7e7e5592f5",
+        "rgb_sha256": "24ce0637c76b8c4c08b2ecd218f246d4077325ffc001f32267994a87d4da97b6"
+      },
+      {
+        "model": "gru1",
+        "kind": "gradcam_overlay",
+        "target": "SprayBottle",
+        "episode_id": "FloorPlan_Val3_4_SprayBottle_6",
+        "cam_sha256": "e8141487103918a7a30933dee3fe5898158e08e98f18764bbaf1b0f70f879edb",
+        "rgb_sha256": "49fa0ea45c66a8b896f9be69fba7219a598ae78aff6e75fd6b73ced7c58284db"
+      },
+      {
+        "model": "gawf1",
+        "kind": "full_trajectory",
+        "episode_id": "FloorPlan_Val3_1_HousePlant_2",
+        "source": "project-page/dist/assets/minimal-videos/FloorPlan_Val3_1_HousePlant_2/gawf1-a782f8bfbe66-path.png",
+        "sha256": "ca5d83b638f4a551d9f0356d0ff55c5fe6506c73644dc7cd3ddd0a89f3733a06"
+      },
+      {
+        "model": "gawf1",
+        "kind": "gradcam_overlay",
+        "target": "AlarmClock",
+        "episode_id": "FloorPlan_Val1_1_AlarmClock_7",
+        "cam_sha256": "a3aea7ba3ed0879ee515102c4b0963970eef43e3c76e96d2132d691303c4b753",
+        "rgb_sha256": "4facabd2c7249352a5c6ba1449e4844ca1fdcbfeaa7938e029a2d5a6b882d75e"
+      },
+      {
+        "model": "gawf1",
+        "kind": "gradcam_overlay",
+        "target": "BaseballBat",
+        "episode_id": "FloorPlan_Val1_2_BaseballBat_3",
+        "cam_sha256": "a68d9b99a796cb92e5c9f9f6897979f79df2ca742977bc468eafe507cd081388",
+        "rgb_sha256": "a13657cde1d5501cedd979fc324c80e5aa266a9dc98e5e83db748ee3652665b5"
+      },
+      {
+        "model": "gawf1",
+        "kind": "gradcam_overlay",
+        "target": "SprayBottle",
+        "episode_id": "FloorPlan_Val3_4_SprayBottle_6",
+        "cam_sha256": "456cb047ad586c06ac26a3ca8f3af7c0c8b75eb181ffa3587c6b49ccb98af479",
+        "rgb_sha256": "57f14193c70180c3ef12bf4db97b434db5b9bfd4334ab56463d54ad32b24108e"
+      }
+    ],
+    "normalization": "Same as full figures: per-map positive maximum, jet overlay alpha 0.48.",
+    "comparison": "Paired trajectory episode; Grad-CAM uses own successful views, different BaseballBat episodes."
+  },
+  "layout_reference": "codebook_layout_reference.json",
+  "font_reference": "codebook_font_reference.json"
 }
