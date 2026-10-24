@@ -12,6 +12,10 @@ PAGE = ROOT / 'project-page'
 def main():
     snapshot_path = PAGE / 'sources/performance_validation_snapshot.json'
     snapshot = json.loads(snapshot_path.read_text())
+    behaviour_path = PAGE / 'sources/behaviour_metrics.json'
+    behaviour = json.loads(behaviour_path.read_text())
+    assert behaviour['common_episode_count'] == snapshot['common_episode_count']
+    assert behaviour['common_episode_ids_sha256'] == snapshot['common_episode_ids_sha256']
     exits = json.loads((PAGE / 'sources/performance_validation_exits.json').read_text())
     runs = snapshot['runs']
     assert len(runs) == len(exits) == 10
@@ -32,28 +36,37 @@ def main():
                                        per_seed_percent=values)
             value = f'{mean:.2f} ± {std:.2f}'
             cells.append(f'<td><strong>{value}</strong></td>' if model == 'gawf1' else f'<td>{value}</td>')
+        for metric, precision, best in [('curvature', 3, 'gru1'), ('sel', 2, 'gawf1')]:
+            record = behaviour['statistics'][model][metric]
+            stats[model][metric] = dict(**record, units='1/m' if metric == 'curvature' else 'percent')
+            if metric == 'sel':
+                stats[model][metric]['episode_count'] = behaviour['sel_episode_count']
+            value = f'{record["mean"]:.{precision}f} ± {record["std"]:.{precision}f}'
+            cells.append(f'<td><strong>{value}</strong></td>' if model == best else f'<td>{value}</td>')
         benchmark = '<th scope="rowgroup" rowspan="2">RoboTHOR-Val</th>' if model == 'gru1' else ''
         label = f'<strong>{name}</strong>'
         rows.append(f'<tr>{benchmark}<th scope="row">{label}</th>{"".join(cells)}</tr>')
     rows.append('<tr class="paper-reference"><th scope="rowgroup">RoboTHOR-Test</th>'
                 '<th scope="row"><strong>EmbCLIP</strong> (200M, paper)</th>'
-                '<td>47.00</td><td>20.00</td></tr>')
+                '<td>47.00</td><td>20.00</td><td>—</td><td>—</td></tr>')
     assert all(stats['gawf1'][m]['mean_percent'] > stats['gru1'][m]['mean_percent'] for m in ('sr', 'spl'))
-    caption = (f'5M-frame training. Mean ± SD across five runs per model on '
-               f'{snapshot["common_episode_count"]:,} shared validation episodes. '
-               'The 200M Test result is reported in <a href="https://arxiv.org/html/2111.09888v2">'
-               'the original paper, Table 1</a>; it is a separate split and protocol.')
+    caption = ('5M-frame training. Mean ± sample SD across five seeds. SR, SPL and planar curvature use '
+               f'{snapshot["common_episode_count"]:,} shared validation episodes; expert-normalized SEL uses '
+               f'{behaviour["sel_episode_count"]:,} with a successful shared reference. '
+               'The 200M Test result is from <a href="https://arxiv.org/html/2111.09888v2">'
+               'the original paper, Table 1</a>, on a separate split and protocol.')
     table = ('<section id="performance">\n<h3>I. Performance</h3>\n'
              '<p>With lightweight 5M-step training (about 2.5% of <strong>EmbCLIP</strong>’s original '
              '<a href="https://arxiv.org/html/2111.09888v2">200M-step budget</a>), '
              '<strong>EmbCLIP-GaWF</strong> achieves higher validation '
-             'SR and SPL than <strong>EmbCLIP</strong>.</p>\n'
+             'success rate (SR) and success weighted by path length (SPL) than <strong>EmbCLIP</strong>.</p>\n'
              '<div class="table-scroll"><table class="quantitative">\n'
              f'<caption>{caption}</caption>\n'
              '<thead><tr><th scope="col" rowspan="2">Benchmark</th>'
              '<th scope="col" rowspan="2">Model</th>'
-             '<th scope="colgroup" colspan="2">Object navigation</th></tr>\n'
-             '<tr><th scope="col">SR (%) ↑</th><th scope="col">SPL (%) ↑</th></tr></thead>\n'
+             '<th scope="colgroup" colspan="4">Object navigation</th></tr>\n'
+             '<tr><th scope="col">SR (%) ↑</th><th scope="col">SPL (%) ↑</th>'
+             '<th scope="col">Curvature (m⁻¹) ↓</th><th scope="col">SEL (%) ↑</th></tr></thead>\n'
              f'<tbody>{"".join(rows)}</tbody>\n</table></div>\n</section>')
     index = PAGE / 'dist/index.html'
     html, count = re.subn(r'<section id="performance">.*?</section>', table, index.read_text(), count=1, flags=re.S)
@@ -76,10 +89,13 @@ def main():
                    seeds_per_model=5, seeds=list(range(5)),
                    aggregation='Per-seed SR/SPL on the intersection across all ten runs; equal-weight mean across seeds.',
                    standard_deviation='Sample standard deviation across seed scores (ddof=1), not SEM.',
-                   units='Both means in percent; standard deviations in percentage points.',
+                   units='SR/SPL/SEL are percentages; curvature is 1/m. SD uses the same unit as each metric.',
                    coverage='All processes exited normally. Individual coverage is partial; only shared evaluated IDs enter the comparison.',
                    source_snapshot_sha256=hashlib.sha256(snapshot_path.read_bytes()).hexdigest(),
                    statistics=stats)
+    receipt['extra_metric_protocol'] = {k: behaviour[k] for k in
+        ('curvature_definition', 'stationary_limit', 'sel_definition', 'sel_episode_count', 'expert_summary_sha256')}
+    receipt['extra_metric_source_sha256'] = behaviour['source_sha256']
     for folder in (PAGE / 'sources', PAGE / 'dist/assets/sources'):
         (folder / 'performance_table.json').write_text(json.dumps(receipt, indent=2) + '\n')
     print(json.dumps(stats, indent=2))

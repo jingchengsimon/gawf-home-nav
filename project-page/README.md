@@ -133,8 +133,9 @@ and its `static/css/index.css`: Noto Sans for body text; Google Sans for publica
 title, authors and teaser. This page uses only Noto Sans to retain a single typeface.
 The bundled fonts include their SIL Open Font License. New headings, descriptions
 and captions adapt the reference page’s analysis and behavior sections to our
-lightweight RoboTHOR comparison; they do not claim the Codebook mechanism,
-curvature or SEL measurements. Reference and font records are in `sources/`.
+lightweight RoboTHOR comparison. Curvature and expert-normalized SEL follow our
+documented protocol in `../docs/VAL_BEHAVIOUR_METRICS.md`; Codebook numbers, linear
+probing and nearest-neighbor results are not claimed. Reference records are in `sources/`.
 
 Rebuild the teaser from the existing verified arrays and full trajectories with:
 
@@ -152,7 +153,10 @@ to the same intersection of 1,783 validation episode IDs across all ten runs.
 Individual runs cover 1,783 or 1,785 of the expected 1,800 episodes; this table
 does not claim full coverage. SR and SPL are percentages. The mean gives each
 seed equal weight; SD is the sample standard deviation across seeds (ddof=1),
-not SEM. The 5M label describes the 5,001,216-frame training checkpoints.
+not SEM. Curvature uses all 1,783 common episodes; expert-normalized SEL uses
+the same 1,516 expert-solved episodes for all ten runs. The built-in expert is
+not guaranteed globally shortest; failed references are never imputed as zero.
+The 5M label describes the 5,001,216-frame training checkpoints.
 
 Rebuild with `python scripts/embclip/build_performance_table.py`. The fresh
 read-only SJC collector snapshot, actual exit receipts and unrounded statistics

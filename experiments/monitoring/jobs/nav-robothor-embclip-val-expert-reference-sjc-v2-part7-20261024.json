@@ -1,0 +1,53 @@
+{
+  "completion_evidence": {
+    "checked_episodes": 181,
+    "return_code": 0,
+    "summary_sha256": "935aa24146b6a9d20bdeecfb228e3659405af92ed0f55261a17593bcb2513d4d",
+    "valid_reference_count": 153
+  },
+  "episode_ids_sha256": "c8ea2aafd9d51cf304d0ee04f3c1e7ecf082dbe12cd6c16f11077655790a148d",
+  "execution": {
+    "physical_gpu_index": 1,
+    "policy_weights_loaded": false
+  },
+  "expected_episodes": 181,
+  "expected_units": 1,
+  "experiment_id": "nav-robothor-embclip-val-expert-reference-sjc-v2-part7-20261024",
+  "host": "sjc-remote",
+  "mode": "preflight",
+  "purpose": "Shared noiseless simulator-expert action references for GRU1/GaWF1 five-seed SEL, evaluator only.",
+  "runner_sha256": "657269f935fe17b7a40ec7fd0e35b6159f9083c83a5e61335de717c2d6e2a49d",
+  "runner_source": "scripts/embclip/collect_val_expert_lengths_sjc.py",
+  "schema_version": 1,
+  "status": "complete",
+  "units": [
+    {
+      "name": "expert-shard-7",
+      "result_path": "results/nav-robothor-embclip-val-expert-reference-sjc-v2-part7-20261024",
+      "status": "complete"
+    }
+  ],
+  "validation": {
+    "dataset": "robothor-objectnav/val",
+    "episodes": 1800,
+    "files": {
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val1_1.json.gz": "6cd66a9ee88cffc585dc2a22ed5f7c6ba1f321bbae61c17724cecfe3c456e669",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val1_2.json.gz": "6a081aa3974e86c9c5ce81f8a76ed3f7d2d9f5895a8eba41654002ec5bf42e93",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val1_3.json.gz": "36dc011afb3a820d6d1e0a7bb358272326e9bf8221628639d9bc95de0726c6bf",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val1_4.json.gz": "f6fb94677d057140c9755d33fd8f2fecbe8c678a5917a3713bae4ee6955144bf",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val1_5.json.gz": "a640bc6cb79ab3339365619ad210248761534c1b189f4d2d36ea59112a793fe0",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val2_1.json.gz": "4c90f5e0f15bfe4e2d2ad066787523516beabd5f9483fd52516168d0bbf66e95",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val2_2.json.gz": "e8c1e02090ff5002a16eaa78afed8b9c38dfd18088ec05fd611cf01db017d7d1",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val2_3.json.gz": "f5bd12ec00b0602b4178d4dc633061d53a7b754e8126c4866d1f4849d968166b",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val2_4.json.gz": "7fd145a886498dbf34161acb3395cd17d7afb5592a0ee54aa01d57691c2d1fa2",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val2_5.json.gz": "b9cf331bacf84b10c7541226d99314d0ed70ddcf4b83174720a74927f4e1331e",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val3_1.json.gz": "310e6e3f37d21d6663578c588d1b608ee60371d9fdad132f40427eb9f7ef8677",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val3_2.json.gz": "758211a1630c92674f3aec57d93505c3bfa904238ce1225ad45262c0bbb9eed7",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val3_3.json.gz": "43219cb8a3926d5f2342755d2ce513c6d676c39950c1c61a65148d5e08768abc",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val3_4.json.gz": "b27472955f33a4542a012b5bb02155a098abe87c2a706ec2944394d1598cbd9a",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val3_5.json.gz": "4f5e50324032d21c5b10463e6803959fac367cba9510a1637a2dccd75dc9b1e7"
+    },
+    "scenes": 15,
+    "unique_episodes": 1800
+  }
+}

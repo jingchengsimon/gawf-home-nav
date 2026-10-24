@@ -33,7 +33,7 @@
   ],
   "aggregation": "Per-seed SR/SPL on the intersection across all ten runs; equal-weight mean across seeds.",
   "standard_deviation": "Sample standard deviation across seed scores (ddof=1), not SEM.",
-  "units": "Both means in percent; standard deviations in percentage points.",
+  "units": "SR/SPL/SEL are percentages; curvature is 1/m. SD uses the same unit as each metric.",
   "coverage": "All processes exited normally. Individual coverage is partial; only shared evaluated IDs enter the comparison.",
   "source_snapshot_sha256": "58b42c312090251e9f50827ea387e66fd2bff3979fb1d8a8122dfa5657f46ef0",
   "statistics": {
@@ -59,6 +59,31 @@
           6.898316757927258,
           6.631381906194155
         ]
+      },
+      "curvature": {
+        "mean": 0.09753265025179698,
+        "per_seed": [
+          0.12739152087044595,
+          0.10698480287361299,
+          0.10395846258297292,
+          0.10146369810809686,
+          0.047864766823856215
+        ],
+        "std": 0.02959957005339287,
+        "units": "1/m"
+      },
+      "sel": {
+        "mean": 7.42539470048861,
+        "per_seed": [
+          8.390350651899508,
+          8.313700556331508,
+          8.234608650399418,
+          6.183384814536898,
+          6.004928829275721
+        ],
+        "std": 1.2181303652011886,
+        "units": "percent",
+        "episode_count": 1516
       }
     },
     "gawf1": {
@@ -83,7 +108,40 @@
           11.484905823267892,
           10.359672269534759
         ]
+      },
+      "curvature": {
+        "mean": 0.13088910733279416,
+        "per_seed": [
+          0.11497591021791063,
+          0.10141505947717502,
+          0.10860241548028611,
+          0.16799065080156542,
+          0.16146150068703358
+        ],
+        "std": 0.03134422489196606,
+        "units": "1/m"
+      },
+      "sel": {
+        "mean": 7.946846453803765,
+        "per_seed": [
+          6.936573814504674,
+          7.57363529604253,
+          6.704973055793049,
+          10.16259172933323,
+          8.356458373345342
+        ],
+        "std": 1.3945873907129478,
+        "units": "percent",
+        "episode_count": 1516
       }
     }
-  }
+  },
+  "extra_metric_protocol": {
+    "curvature_definition": "Mean absolute planar curvature, numpy.gradient twice on logged x-z positions at action times; speed<=1e-4 m/step contributes 0; no interpolation or smoothing; 1/m.",
+    "stationary_limit": "In-place rotations have zero planar displacement and cannot be assessed by position curvature. Rotation counts and episode lengths are retained separately.",
+    "sel_definition": "Mean success * w/max(w,e); w is the shared noise-free ObjectNavExpertAction reference count, e is actual policy actions; both include End. Not guaranteed globally shortest or Codebook-equivalent.",
+    "sel_episode_count": 1516,
+    "expert_summary_sha256": "1ae33add4194d30495d61212c06754f85ebc1c7788f1f546fc6d5f6ddd138994"
+  },
+  "extra_metric_source_sha256": "60cfea09121cde1b49f52a8ee644f49a07550b4eadbe1b828dcd10f0e8ddf4b1"
 }

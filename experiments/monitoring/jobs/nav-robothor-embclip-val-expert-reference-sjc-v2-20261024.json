@@ -1,0 +1,76 @@
+{
+  "analysis_sha256": "fd2aed3d43bd5a2644be849248b9f40a15e801c21dae45f11e81474359999cd6",
+  "completion_evidence": {
+    "checked_episodes": 1783,
+    "return_code": 0,
+    "summary_sha256": "1ae33add4194d30495d61212c06754f85ebc1c7788f1f546fc6d5f6ddd138994",
+    "valid_reference_count": 1516
+  },
+  "execution": {
+    "actors_loaded": 0,
+    "physical_gpu_index": 1,
+    "workers": 8
+  },
+  "expected_episodes": 1783,
+  "expected_units": 8,
+  "experiment_id": "nav-robothor-embclip-val-expert-reference-sjc-v2-20261024",
+  "host": "sjc-remote",
+  "mode": "preflight",
+  "prior_episodes_path": "results/nav-robothor-embclip-val-expert-reference-sjc-v1-20261024/episodes.jsonl",
+  "prior_episodes_sha256": "e434773508729e3b08298dcb6d5bf786166ff2365838e40dfe6250a5301ca7a2",
+  "prior_manifest": "experiments/monitoring/jobs/nav-robothor-embclip-val-expert-reference-sjc-v1-20261024.json",
+  "result_path": "results/nav-robothor-embclip-val-expert-reference-sjc-v2-20261024",
+  "runner_sha256": "a3588ef2c4fcfd0df6ec127fe6e3a2fc3227a53a5da19354b7d3e6a5c1a30c33",
+  "schema_version": 1,
+  "status": "complete",
+  "units": [
+    {
+      "manifest_path": "experiments/monitoring/jobs/nav-robothor-embclip-val-expert-reference-sjc-v2-part0-20261024.json",
+      "name": "part0",
+      "result_path": "results/nav-robothor-embclip-val-expert-reference-sjc-v2-part0-20261024",
+      "status": "complete"
+    },
+    {
+      "manifest_path": "experiments/monitoring/jobs/nav-robothor-embclip-val-expert-reference-sjc-v2-part1-20261024.json",
+      "name": "part1",
+      "result_path": "results/nav-robothor-embclip-val-expert-reference-sjc-v2-part1-20261024",
+      "status": "complete"
+    },
+    {
+      "manifest_path": "experiments/monitoring/jobs/nav-robothor-embclip-val-expert-reference-sjc-v2-part2-20261024.json",
+      "name": "part2",
+      "result_path": "results/nav-robothor-embclip-val-expert-reference-sjc-v2-part2-20261024",
+      "status": "complete"
+    },
+    {
+      "manifest_path": "experiments/monitoring/jobs/nav-robothor-embclip-val-expert-reference-sjc-v2-part3-20261024.json",
+      "name": "part3",
+      "result_path": "results/nav-robothor-embclip-val-expert-reference-sjc-v2-part3-20261024",
+      "status": "complete"
+    },
+    {
+      "manifest_path": "experiments/monitoring/jobs/nav-robothor-embclip-val-expert-reference-sjc-v2-part4-20261024.json",
+      "name": "part4",
+      "result_path": "results/nav-robothor-embclip-val-expert-reference-sjc-v2-part4-20261024",
+      "status": "complete"
+    },
+    {
+      "manifest_path": "experiments/monitoring/jobs/nav-robothor-embclip-val-expert-reference-sjc-v2-part5-20261024.json",
+      "name": "part5",
+      "result_path": "results/nav-robothor-embclip-val-expert-reference-sjc-v2-part5-20261024",
+      "status": "complete"
+    },
+    {
+      "manifest_path": "experiments/monitoring/jobs/nav-robothor-embclip-val-expert-reference-sjc-v2-part6-20261024.json",
+      "name": "part6",
+      "result_path": "results/nav-robothor-embclip-val-expert-reference-sjc-v2-part6-20261024",
+      "status": "complete"
+    },
+    {
+      "manifest_path": "experiments/monitoring/jobs/nav-robothor-embclip-val-expert-reference-sjc-v2-part7-20261024.json",
+      "name": "part7",
+      "result_path": "results/nav-robothor-embclip-val-expert-reference-sjc-v2-part7-20261024",
+      "status": "complete"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "status": "pass",
+  "common_episodes": 1783,
+  "sel_shared_episodes": 1516,
+  "missing_expert_references": 267,
+  "models": [
+    "gru1",
+    "gawf1"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "tests": [
+    "straight path",
+    "stationary path",
+    "short path",
+    "circle curvature",
+    "rigid-transform invariance",
+    "independent per-episode SEL recomputation",
+    "same SEL coverage for all ten runs"
+  ],
+  "behaviour_metrics_sha256": "60cfea09121cde1b49f52a8ee644f49a07550b4eadbe1b828dcd10f0e8ddf4b1",
+  "source_files": {
+    "scripts/embclip/collect_val_expert_lengths_sjc.py": "657269f935fe17b7a40ec7fd0e35b6159f9083c83a5e61335de717c2d6e2a49d",
+    "scripts/embclip/run_val_reference_batch_sjc.py": "a3588ef2c4fcfd0df6ec127fe6e3a2fc3227a53a5da19354b7d3e6a5c1a30c33",
+    "scripts/embclip/summarize_val_behaviour.py": "fd2aed3d43bd5a2644be849248b9f40a15e801c21dae45f11e81474359999cd6"
+  },
+  "public_page_scope": "Captions, analysis text and added metric columns; existing SR/SPL unchanged.",
+  "reference": "https://arxiv.org/html/2311.04193#S4.SS1.SSS1",
+  "upstream_code_commit": "ed4feaf4944a01ad1d8b12a3dfc46f2c9cb4c992"
+}
