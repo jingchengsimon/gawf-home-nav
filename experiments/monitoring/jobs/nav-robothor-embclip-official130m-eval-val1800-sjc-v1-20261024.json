@@ -1,0 +1,70 @@
+{
+  "config_sha256": "c9bb07604376861da9fe9dba0d7437dcd3c09662cce4c912bd7f78dee5199b5f",
+  "execution": {
+    "evaluation_seed": 0,
+    "num_test_processes": 15,
+    "physical_gpu_index": 0,
+    "session": "embclip-official130m-val-20261024",
+    "test_on_validation": true
+  },
+  "expected_episodes": 1800,
+  "expected_units": 1,
+  "experiment_id": "nav-robothor-embclip-official130m-eval-val1800-sjc-v1-20261024",
+  "host": "sjc-remote",
+  "mode": "checkpoint_eval",
+  "model": {
+    "family": "gru1",
+    "provenance": "official released EmbCLIP"
+  },
+  "purpose": "Official released long-budget checkpoint evaluated under the existing lightweight validation protocol; no webpage changes.",
+  "runner_sha256": "dd43935348a01e944504e17c818767fd7be2f431166cead24ddf592b7dd8bdf8",
+  "runner_source": "scripts/embclip/eval_official_val_sjc.py",
+  "schema_version": 1,
+  "source": {
+    "source_files": {
+      "scripts/embclip/eval_light5m_sjc.py": "09ffde1ae954cf41add25c944d1058ea52ba9b92e206b0ce5d2383bd0dbba2d0",
+      "scripts/embclip/light5m_gru1_config.py": "161de1c09a665266249f4b38e6b94136dff547ae1ea09cabe3f31483b24d01fe",
+      "scripts/embclip/light_config.py": "d4c7ced38f56e8374c224e3b98e5a47ace1b9b0906f37fbbdd145a9379b3eb6d",
+      "scripts/embclip/light_gru1_config.py": "787636d1222750cfee511cb7e78592773eb0782f9ea9d48d3513d6ce4d88eb14",
+      "scripts/embclip/sjc_config.py": "7df8367c3979343b16b237ed657a8d4035ef42db582ffe43301ce82564928fe9"
+    }
+  },
+  "source_checkpoint": {
+    "actual_training_steps": 130091717,
+    "paper_training_budget": 200000000,
+    "path": "assets/embclip-robothor/checkpoints/clip-rn50-gru-130091717.pt",
+    "sha256": "b7867c833412212d1921ef3b66baae64d0eec18c6a8825ba4a2c5808407d50a2",
+    "url": "https://prior-model-weights.s3.us-east-2.amazonaws.com/embodied-ai/navigation/exp_Objectnav-RoboTHOR-RGB-ClipResNet50GRU-DDPPO__stage_00__steps_000130091717.pt"
+  },
+  "status": "running",
+  "units": [
+    {
+      "name": "official-released-gru1-val",
+      "result_path": "results/nav-robothor-embclip-official130m-eval-val1800-sjc-v1-20261024",
+      "status": "running"
+    }
+  ],
+  "validation": {
+    "dataset": "robothor-objectnav/val",
+    "episodes": 1800,
+    "files": {
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val1_1.json.gz": "6cd66a9ee88cffc585dc2a22ed5f7c6ba1f321bbae61c17724cecfe3c456e669",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val1_2.json.gz": "6a081aa3974e86c9c5ce81f8a76ed3f7d2d9f5895a8eba41654002ec5bf42e93",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val1_3.json.gz": "36dc011afb3a820d6d1e0a7bb358272326e9bf8221628639d9bc95de0726c6bf",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val1_4.json.gz": "f6fb94677d057140c9755d33fd8f2fecbe8c678a5917a3713bae4ee6955144bf",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val1_5.json.gz": "a640bc6cb79ab3339365619ad210248761534c1b189f4d2d36ea59112a793fe0",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val2_1.json.gz": "4c90f5e0f15bfe4e2d2ad066787523516beabd5f9483fd52516168d0bbf66e95",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val2_2.json.gz": "e8c1e02090ff5002a16eaa78afed8b9c38dfd18088ec05fd611cf01db017d7d1",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val2_3.json.gz": "f5bd12ec00b0602b4178d4dc633061d53a7b754e8126c4866d1f4849d968166b",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val2_4.json.gz": "7fd145a886498dbf34161acb3395cd17d7afb5592a0ee54aa01d57691c2d1fa2",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val2_5.json.gz": "b9cf331bacf84b10c7541226d99314d0ed70ddcf4b83174720a74927f4e1331e",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val3_1.json.gz": "310e6e3f37d21d6663578c588d1b608ee60371d9fdad132f40427eb9f7ef8677",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val3_2.json.gz": "758211a1630c92674f3aec57d93505c3bfa904238ce1225ad45262c0bbb9eed7",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val3_3.json.gz": "43219cb8a3926d5f2342755d2ce513c6d676c39950c1c61a65148d5e08768abc",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val3_4.json.gz": "b27472955f33a4542a012b5bb02155a098abe87c2a706ec2944394d1598cbd9a",
+      "data/embclip-robothor/robothor-objectnav/val/episodes/FloorPlan_Val3_5.json.gz": "4f5e50324032d21c5b10463e6803959fac367cba9510a1637a2dccd75dc9b1e7"
+    },
+    "scenes": 15,
+    "unique_episodes": 1800
+  }
+}

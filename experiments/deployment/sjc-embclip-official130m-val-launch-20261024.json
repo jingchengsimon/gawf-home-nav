@@ -1,0 +1,39 @@
+{
+  "source_files": {
+    "scripts/embclip/eval_official_val_sjc.py": "dd43935348a01e944504e17c818767fd7be2f431166cead24ddf592b7dd8bdf8",
+    "scripts/embclip/official_val_config.py": "c9bb07604376861da9fe9dba0d7437dcd3c09662cce4c912bd7f78dee5199b5f",
+    "scripts/embclip/compare_official_light_val.py": "babb18df5a2895c83572b8535365862d13a2e3f80b565151adbe0c306b25cf52"
+  },
+  "checkpoint": {
+    "steps": 130091717,
+    "sha256": "b7867c833412212d1921ef3b66baae64d0eec18c6a8825ba4a2c5808407d50a2"
+  },
+  "light_snapshot_sha256": "f88283834b8048300dbb70a3237f64ad710b1faf97c6e333c45868a30aafbabf",
+  "webpage_changed": false,
+  "observed_at": "2026-10-24T10:26:52.440369-04:00",
+  "status": "running",
+  "progress": {
+    "completed_episodes": 118,
+    "expected_episodes": 1800,
+    "status": "running",
+    "updated_at": "2026-10-24T10:26:40.378732-04:00"
+  },
+  "training_seed_in_official_checkpoint": 1405170581,
+  "user_followup": "User chose background continuation; no further waiting, automation or continuous monitoring.",
+  "experiment_id": "nav-robothor-embclip-official130m-eval-val1800-sjc-v1-20261024",
+  "source_url": "https://github.com/allenai/embodied-clip/blob/main/readme_files/baselines_robothor_objectnav.md#using-pretrained-models",
+  "receipts": [
+    {
+      "path": "experiments/monitoring/jobs/nav-robothor-embclip-official130m-eval-val1800-sjc-v1-20261024.json",
+      "sha256": "10de1b812c0ee6456f861406cbb3ccf1c9eeadf739c819c0dd9c036dc068d008"
+    },
+    {
+      "path": "results/nav-robothor-embclip-official130m-eval-val1800-sjc-v1-20261024/progress.json",
+      "sha256": "4622bcbac5f67381bb191fdf3e2d6b8cbf0f88490befa360707a9a760bec3bd6"
+    },
+    {
+      "path": "results/nav-robothor-embclip-official130m-eval-val1800-sjc-v1-20261024/launch.json",
+      "sha256": "cbd2c4e3e61241206dc231751d13c161f89df74ccb4c8ac5dbe30ffd31cf062f"
+    }
+  ]
+}
