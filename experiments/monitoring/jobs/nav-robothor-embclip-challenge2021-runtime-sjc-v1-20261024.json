@@ -1,0 +1,31 @@
+{
+  "completion_evidence": {
+    "build_commit": "bad5bc2b250615cb766ffb45d455c211329af17e",
+    "executable_sha256": "19d9b4735933c6ff013a05831a69acd3a10269b2934b38e51ff641b0202e01b1",
+    "return_code": 0,
+    "summary_sha256": "ee4711c12f145dcef1c199d22713ef68029c357d568fa0b1a9c62a0bfa7a8651"
+  },
+  "execution": {
+    "downloads_authorized": true,
+    "session": "embclip-test2021-setup-20261024",
+    "shared_dependencies": "read-only existing training packages; isolated pinned simulator client has precedence",
+    "target_assets": "assets/embclip-robothor-challenge2021",
+    "target_environment": ".envs/embclip-robothor-challenge2021"
+  },
+  "experiment_id": "nav-robothor-embclip-challenge2021-runtime-sjc-v1-20261024",
+  "host": "sjc-remote",
+  "mode": "environment_setup",
+  "result_path": "results/nav-robothor-embclip-challenge2021-runtime-sjc-v1-20261024",
+  "runner_sha256": "ee5a2046befbcb10be57d2c381e4c5ad8c6daf7c625ee09937405c3ebec8cbb3",
+  "runner_source": "scripts/embclip/challenge2021/prepare_runtime.py",
+  "schema_version": 1,
+  "status": "complete",
+  "units": [
+    {
+      "name": "official-challenge-runtime",
+      "result_path": "results/nav-robothor-embclip-challenge2021-runtime-sjc-v1-20261024",
+      "status": "complete"
+    }
+  ],
+  "user_authorization": "User approved independent official Challenge Test adaptation, download of the official build, and attempted official scoring. Preserve current training/Val environment."
+}

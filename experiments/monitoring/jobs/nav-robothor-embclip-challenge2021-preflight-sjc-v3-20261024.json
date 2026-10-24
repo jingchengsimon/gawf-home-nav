@@ -1,0 +1,200 @@
+{
+  "adapter_sha256": "e5d67670c942132947ba51324c38d157a2f9d27635cc656bca34ce51e91cb6cf",
+  "all_seed_checkpoints": [
+    {
+      "checkpoint_path": "results/nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed0-20261021/allenact/checkpoints/ObjectNav-RoboTHOR-EmbCLIP-Light-GRU1-512-5M/2026-10-21_00-06-21/exp_ObjectNav-RoboTHOR-EmbCLIP-Light-GRU1-512-5M__stage_00__steps_000005001216.pt",
+      "checkpoint_sha256": "0a4cd980ae2b537a3133a102af1c8dcae5c2b3da57c1723d779c9ef09b8504f1",
+      "model": "gru1",
+      "seed": 0,
+      "training_experiment_id": "nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed0-20261021"
+    },
+    {
+      "checkpoint_path": "results/nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed1-20261021/allenact/checkpoints/ObjectNav-RoboTHOR-EmbCLIP-Light-GRU1-512-5M/2026-10-21_00-07-19/exp_ObjectNav-RoboTHOR-EmbCLIP-Light-GRU1-512-5M__stage_00__steps_000005001216.pt",
+      "checkpoint_sha256": "c4cd40c7c04d74ea238d21b7549250ed56cbf690e492f9d40c942286b91014b3",
+      "model": "gru1",
+      "seed": 1,
+      "training_experiment_id": "nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed1-20261021"
+    },
+    {
+      "checkpoint_path": "results/nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed2-20261022/allenact/checkpoints/ObjectNav-RoboTHOR-EmbCLIP-Light-GRU1-512-5M/2026-10-22_08-49-33/exp_ObjectNav-RoboTHOR-EmbCLIP-Light-GRU1-512-5M__stage_00__steps_000005001216.pt",
+      "checkpoint_sha256": "28dde2881edc109cfb356fee74f4750511ac117f0359c1b8a61678cd272333bf",
+      "model": "gru1",
+      "seed": 2,
+      "training_experiment_id": "nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed2-20261022"
+    },
+    {
+      "checkpoint_path": "results/nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed3-20261022/allenact/checkpoints/ObjectNav-RoboTHOR-EmbCLIP-Light-GRU1-512-5M/2026-10-22_08-10-39/exp_ObjectNav-RoboTHOR-EmbCLIP-Light-GRU1-512-5M__stage_00__steps_000005001216.pt",
+      "checkpoint_sha256": "1da0e502f3ea6f96e56e0af56a867c92c49ea89e22b108a30c11f359bf7d3f84",
+      "model": "gru1",
+      "seed": 3,
+      "training_experiment_id": "nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed3-20261022"
+    },
+    {
+      "checkpoint_path": "results/nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed4-20261022/allenact/checkpoints/ObjectNav-RoboTHOR-EmbCLIP-Light-GRU1-512-5M/2026-10-22_08-10-39/exp_ObjectNav-RoboTHOR-EmbCLIP-Light-GRU1-512-5M__stage_00__steps_000005001216.pt",
+      "checkpoint_sha256": "8ba2e20cc50bf0543a4b7c57deacdf0c78a72c8209581a0c95afcd671ca113c7",
+      "model": "gru1",
+      "seed": 4,
+      "training_experiment_id": "nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed4-20261022"
+    },
+    {
+      "checkpoint_path": "results/nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed0-20261021/allenact/checkpoints/ObjectNav-RoboTHOR-EmbCLIP-Light-GaWF1-1160-5M/2026-10-21_02-51-30/exp_ObjectNav-RoboTHOR-EmbCLIP-Light-GaWF1-1160-5M__stage_00__steps_000005001216.pt",
+      "checkpoint_sha256": "fa1a09b38c00e7c2955bc23faa2befc4785b39fc2c50e52243529475f4a65462",
+      "model": "gawf1",
+      "seed": 0,
+      "training_experiment_id": "nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed0-20261021"
+    },
+    {
+      "checkpoint_path": "results/nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed1-20261021/allenact/checkpoints/ObjectNav-RoboTHOR-EmbCLIP-Light-GaWF1-1160-5M/2026-10-21_00-06-40/exp_ObjectNav-RoboTHOR-EmbCLIP-Light-GaWF1-1160-5M__stage_00__steps_000005001216.pt",
+      "checkpoint_sha256": "8bbd34c756118530e0e84deff6b94abd7ae385ae665db91505015d4d751047f8",
+      "model": "gawf1",
+      "seed": 1,
+      "training_experiment_id": "nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed1-20261021"
+    },
+    {
+      "checkpoint_path": "results/nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed2-20261022/allenact/checkpoints/ObjectNav-RoboTHOR-EmbCLIP-Light-GaWF1-1160-5M/2026-10-22_09-12-36/exp_ObjectNav-RoboTHOR-EmbCLIP-Light-GaWF1-1160-5M__stage_00__steps_000005001216.pt",
+      "checkpoint_sha256": "2a775c87fccd5dc87c55c09eae06ca7a2024fda0df79b52b47ad6497f504511d",
+      "model": "gawf1",
+      "seed": 2,
+      "training_experiment_id": "nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed2-20261022"
+    },
+    {
+      "checkpoint_path": "results/nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed3-20261022/allenact/checkpoints/ObjectNav-RoboTHOR-EmbCLIP-Light-GaWF1-1160-5M/2026-10-22_08-10-39/exp_ObjectNav-RoboTHOR-EmbCLIP-Light-GaWF1-1160-5M__stage_00__steps_000005001216.pt",
+      "checkpoint_sha256": "a1437e0b5f7d2d016dba8f8dff204af6ec534317d768470fdd821a84526725a8",
+      "model": "gawf1",
+      "seed": 3,
+      "training_experiment_id": "nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed3-20261022"
+    },
+    {
+      "checkpoint_path": "results/nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed4-20261022/allenact/checkpoints/ObjectNav-RoboTHOR-EmbCLIP-Light-GaWF1-1160-5M/2026-10-22_08-10-39/exp_ObjectNav-RoboTHOR-EmbCLIP-Light-GaWF1-1160-5M__stage_00__steps_000005001216.pt",
+      "checkpoint_sha256": "a9979336f7fdf60af49a4820237d32599c8909b91dbf31b949a728aae6ae49f2",
+      "model": "gawf1",
+      "seed": 4,
+      "training_experiment_id": "nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed4-20261022"
+    }
+  ],
+  "completion_evidence": {
+    "return_code": 0,
+    "summary_sha256": "3419e21a68a5637a66550fe566329a32758924aa797c0c5112e8752b70a20a9f"
+  },
+  "equivalence_runner_sha256": "e884f0367b178f1364b2255744e7c70a04c67a2243508a9f4fa643d8e8df8320",
+  "execution": {
+    "full_evaluation": false,
+    "official_scores_available": false,
+    "physical_gpu_index": 0,
+    "policy_smoke_max_steps": 20,
+    "session": "embclip-test2021-preflight-v3-20261024"
+  },
+  "expected_units": 1,
+  "experiment_id": "nav-robothor-embclip-challenge2021-preflight-sjc-v3-20261024",
+  "host": "sjc-remote",
+  "mode": "preflight",
+  "official_config": {
+    "height": 480,
+    "initialize": {
+      "agentMode": "locobot",
+      "agentType": "stochastic",
+      "continuousMode": true,
+      "fieldOfView": 63.453048374758716,
+      "gridSize": 0.25,
+      "rotateStepDegrees": 30,
+      "snapToGrid": false,
+      "visibilityDistance": 1.0
+    },
+    "max_steps": 500,
+    "width": 640
+  },
+  "policies": [
+    {
+      "checkpoint_path": "results/nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed1-20261021/allenact/checkpoints/ObjectNav-RoboTHOR-EmbCLIP-Light-GRU1-512-5M/2026-10-21_00-07-19/exp_ObjectNav-RoboTHOR-EmbCLIP-Light-GRU1-512-5M__stage_00__steps_000005001216.pt",
+      "checkpoint_sha256": "c4cd40c7c04d74ea238d21b7549250ed56cbf690e492f9d40c942286b91014b3",
+      "model": "gru1",
+      "seed": 1,
+      "training_experiment_id": "nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed1-20261021"
+    },
+    {
+      "checkpoint_path": "results/nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed3-20261022/allenact/checkpoints/ObjectNav-RoboTHOR-EmbCLIP-Light-GaWF1-1160-5M/2026-10-22_08-10-39/exp_ObjectNav-RoboTHOR-EmbCLIP-Light-GaWF1-1160-5M__stage_00__steps_000005001216.pt",
+      "checkpoint_sha256": "a1437e0b5f7d2d016dba8f8dff204af6ec534317d768470fdd821a84526725a8",
+      "model": "gawf1",
+      "seed": 3,
+      "training_experiment_id": "nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed3-20261022"
+    }
+  ],
+  "result_path": "results/nav-robothor-embclip-challenge2021-preflight-sjc-v3-20261024",
+  "runner_sha256": "da8290f15bd7b13b53601caa340d4f7b0d3d93def722fc0395e1f57a73c02ba9",
+  "runner_source": "scripts/embclip/challenge2021/preflight.py",
+  "runtime_receipt": "results/nav-robothor-embclip-challenge2021-runtime-sjc-v1-20261024/summary.json",
+  "schema_version": 1,
+  "source_files": {
+    "scripts/embclip/canonical_core/gawf.py": "69ee77f9ebc5f01da1706c8f1adc8a1e801446b2a152b18a2ad4f0f4de359934",
+    "scripts/embclip/canonical_core/rnn.py": "1b832c6b35c75e9d1660fee0194993ead225e6e86990ee6ddb8c7d0442cf0848",
+    "scripts/embclip/light5m_gawf1_config.py": "bec27cff4bd4db712cc00153bf3b1eedbb209025b8ff927d58ba5ec316520e45",
+    "scripts/embclip/light5m_gru1_config.py": "161de1c09a665266249f4b38e6b94136dff547ae1ea09cabe3f31483b24d01fe",
+    "scripts/embclip/light_config.py": "d4c7ced38f56e8374c224e3b98e5a47ace1b9b0906f37fbbdd145a9379b3eb6d",
+    "scripts/embclip/light_gawf1_config.py": "2e8a1474c4aa8032ca283d45bf1b51228175062863ae81fc0cbffce2931184db",
+    "scripts/embclip/light_gru1_config.py": "787636d1222750cfee511cb7e78592773eb0782f9ea9d48d3513d6ce4d88eb14",
+    "scripts/embclip/sjc_config.py": "7df8367c3979343b16b237ed657a8d4035ef42db582ffe43301ce82564928fe9",
+    "vendor/embclip-allenact/allenact_plugins/clip_plugin/clip_preprocessors.py": "1f3ab3f2faadb33f5f96afadc1c6757e2b303b4cbb6fae3ef7386f42977acee1",
+    "vendor/embclip-allenact/projects/objectnav_baselines/experiments/clip/mixins.py": "37698640978ad6e23bc111d9e89f7235fbd75f7dea713c5e1e2bdf919c3adee6",
+    "vendor/embclip-allenact/projects/objectnav_baselines/experiments/robothor/objectnav_robothor_base.py": "7fb563c404e22937cadebf6159939507bfcdecde63b2ce9d8577114876a08b15"
+  },
+  "status": "complete",
+  "test_data": [
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge1_1.json.gz",
+      "sha256": "a9058b71aad7fe3379671d836fd5f5d9fbf1c74750692d08f9f851c7389e50b0"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge1_2.json.gz",
+      "sha256": "9a164ba990192b34c1a377fccf03c69571786005e9606df4177e24e1da79a669"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge2_1.json.gz",
+      "sha256": "88372627df15414125e01e525a9a62888691aae16a8ba6ce424529032e25f0c9"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge2_2.json.gz",
+      "sha256": "9fa9af6bdd952a0c71c51094c565011226874d8910941f3d04155b67d516fd49"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge3_1.json.gz",
+      "sha256": "52c9ee3760bc0821b7de711ccd35786b2bb698cf33d905dbb5e1954a67bb5d84"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge3_2.json.gz",
+      "sha256": "35e99e3bf67a57f18326b7324137099bd916f8da94c187e43b26e8ce08ca3848"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge4_1.json.gz",
+      "sha256": "040d382edf9775a8ffb1adff81fd49a2dad9fd0dfcde4eecdd0520e066cf6a9d"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge4_2.json.gz",
+      "sha256": "608c899d0be0a189bb9284ea7857cd434dfe32156fb67f39db7d9521732a0de9"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge5_1.json.gz",
+      "sha256": "051e6b03e25ad4f23ed9cc6b81fabce53e0f0267f3bab82e243a263eeb1c605d"
+    },
+    {
+      "episodes": 204,
+      "path": "data/embclip-robothor/robothor-objectnav/test/episodes/FloorPlan_test-challenge5_2.json.gz",
+      "sha256": "8cac2cc93057c4ad533574c1928b6a77363ada41073ec15c634fef9374a2e75c"
+    }
+  ],
+  "units": [
+    {
+      "name": "policy-equivalence-and-official-test-preflight",
+      "result_path": "results/nav-robothor-embclip-challenge2021-preflight-sjc-v3-20261024",
+      "status": "complete"
+    }
+  ]
+}

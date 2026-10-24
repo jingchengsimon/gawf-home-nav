@@ -1,0 +1,114 @@
+{
+  "checkpoint_count": 10,
+  "equivalence": {
+    "adapter_sha256": "e5d67670c942132947ba51324c38d157a2f9d27635cc656bca34ce51e91cb6cf",
+    "checks": [
+      {
+        "checkpoint_sha256": "c4cd40c7c04d74ea238d21b7549250ed56cbf690e492f9d40c942286b91014b3",
+        "max_output_and_state_difference": 0.0,
+        "model": "gru1",
+        "reset_steps": [
+          0,
+          3
+        ],
+        "seed": 1,
+        "sensors_and_goal_mapping_identical": true,
+        "sequence_steps": 4,
+        "state_parameters_identical": true
+      },
+      {
+        "checkpoint_sha256": "a1437e0b5f7d2d016dba8f8dff204af6ec534317d768470fdd821a84526725a8",
+        "max_output_and_state_difference": 0.0,
+        "model": "gawf1",
+        "reset_steps": [
+          0,
+          3
+        ],
+        "seed": 3,
+        "sensors_and_goal_mapping_identical": true,
+        "sequence_steps": 4,
+        "state_parameters_identical": true
+      }
+    ],
+    "method": "Original constructors versus architecture-only adapter; identical state dictionaries, RGB/category observations, action probabilities, critic outputs and all recurrent memories.",
+    "status": "pass",
+    "weights_updated": false
+  },
+  "full_test_runs_completed": 0,
+  "full_test_runs_started": 0,
+  "html_modified": false,
+  "missing_prerequisite": "A working official Challenge scoring endpoint or an organizer-provided official offline scoring package. Public Test records intentionally omit shortest paths.",
+  "official_sources": {
+    "build_script": "https://github.com/allenai/robothor-challenge/blob/main/robothor_challenge/scripts/download_thor_build.py",
+    "readme": "https://github.com/allenai/robothor-challenge"
+  },
+  "official_submission_endpoint": "https://leaderboard.allenai.org/robothor_objectnav/submissions/public",
+  "official_test_scores_available": false,
+  "policy_smoke_scope": [
+    {
+      "max_preflight_steps": 20,
+      "model": "gru1",
+      "preflight_only": true,
+      "steps": 11,
+      "training_seed": 1
+    },
+    {
+      "max_preflight_steps": 20,
+      "model": "gawf1",
+      "preflight_only": true,
+      "steps": 20,
+      "training_seed": 3
+    }
+  ],
+  "preflight_experiment_id": "nav-robothor-embclip-challenge2021-preflight-sjc-v3-20261024",
+  "preflight_summary_sha256": "3419e21a68a5637a66550fe566329a32758924aa797c0c5112e8752b70a20a9f",
+  "runtime": {
+    "ai2thor_version": "2.7.2",
+    "archive_bytes": 579427830,
+    "archive_sha256": "fba7b5f2fbb7a48f37d39cbf17d0d9301092945aaa0dd7215b20a85a421c287c",
+    "build_commit": "bad5bc2b250615cb766ffb45d455c211329af17e",
+    "executable": "assets/embclip-robothor-challenge2021/build/thor-Linux64-bad5bc2b250615cb766ffb45d455c211329af17e",
+    "executable_sha256": "19d9b4735933c6ff013a05831a69acd3a10269b2934b38e51ff641b0202e01b1",
+    "python": ".envs/embclip-robothor-challenge2021/bin/python",
+    "runtime": ".envs/embclip-robothor-challenge2021",
+    "shared_dependencies": "Existing training site-packages are read-only, after new runtime site-packages on sys.path.",
+    "status": "complete",
+    "torch_version": "1.13.1+cu117",
+    "training_runtime_unchanged": true,
+    "weights_updated": false
+  },
+  "scoring_dns": {
+    "AD": false,
+    "Authority": [
+      {
+        "TTL": 300,
+        "data": "ns-1711.awsdns-21.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400",
+        "name": "allenai.org.",
+        "type": 6
+      }
+    ],
+    "CD": false,
+    "Comment": "Response from 205.251.198.175.",
+    "Question": [
+      {
+        "name": "leaderboard.allenai.org.",
+        "type": 1
+      }
+    ],
+    "RA": true,
+    "RD": true,
+    "Status": 3,
+    "TC": false
+  },
+  "source_sha256": {
+    "scripts/embclip/challenge2021/check_policy_equivalence.py": "e884f0367b178f1364b2255744e7c70a04c67a2243508a9f4fa643d8e8df8320",
+    "scripts/embclip/challenge2021/policy_adapter.py": "e5d67670c942132947ba51324c38d157a2f9d27635cc656bca34ce51e91cb6cf",
+    "scripts/embclip/challenge2021/preflight.py": "da8290f15bd7b13b53601caa340d4f7b0d3d93def722fc0395e1f57a73c02ba9",
+    "scripts/embclip/challenge2021/prepare_runtime.py": "ee5a2046befbcb10be57d2c381e4c5ad8c6daf7c625ee09937405c3ebec8cbb3"
+  },
+  "status": "preflight_passed_official_scoring_unavailable",
+  "test_episode_count": 2040,
+  "test_scene_count": 10,
+  "upstream_challenge_tree_sha": "f3c4f35bc397aff4d5236e269efe3ff41f6d218e",
+  "weights_updated": false
+}
