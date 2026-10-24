@@ -155,3 +155,18 @@ of the paper’s 200M RoboTHOR budget (97.5% fewer environment steps per seed),
 with a link to Section 4.1. This excludes CLIP pretraining and does not imply
 matching the paper’s full-training or test protocol. Checkpoint/configuration,
 optimizer and recorded-demo checks are in `sources/training_budget_audit.json`.
+
+## Method figure
+
+The Method section follows the teaser and precedes Results. Its three panels
+reuse the supplied PDF’s left GaWF cell and Figure 2 of EmbCLIP. The cell’s
+internal artwork is imported unchanged. The two architecture panels retain the
+original Figure 2 paths, with Model renamed GRU/GaWF and the input photograph
+replaced by the same verified RoboTHOR Laptop RGB frame. The GaWF panel adds
+a delayed feedback arrow. The description identifies this signal as previous
+detached raw policy logits; no model parameters or training configuration change.
+The figure and source hashes are recorded in `sources/method_figure.json`.
+
+`scripts/build_method_figure.py` uses pypdf, reportlab, numpy, Pillow and Poppler
+to compose existing PDF artwork and render the static web image. Its source PDFs
+and checked RGB frame are explicit arguments; no generative drawing is used.

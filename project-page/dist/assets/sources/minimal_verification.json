@@ -263,5 +263,52 @@
       }
     }
   },
-  "training_budget_note": "5M vs 200M environment steps per seed; approximately 2.5% of the original budget and 97.5% fewer steps."
+  "training_budget_note": "5M vs 200M environment steps per seed; approximately 2.5% of the original budget and 97.5% fewer steps.",
+  "method_figure": {
+    "panels": [
+      "Unchanged extracted GaWF cell",
+      "EmbCLIP Figure 2 with GRU label",
+      "EmbCLIP Figure 2 with GaWF label and delayed policy feedback"
+    ],
+    "source_cell": {
+      "filename": "FAWRNN_Diagram (1).pdf",
+      "page": 1,
+      "crop_top_origin_pt": [
+        5,
+        95,
+        164,
+        310
+      ],
+      "sha256": "6411110f777df99bea173a24ec9807f944f986e93eba4ea189acdc42f43275ec",
+      "internal_structure_edited": false
+    },
+    "source_architecture": {
+      "url": "https://arxiv.org/pdf/2111.09888",
+      "figure": 2,
+      "page": 3,
+      "crop_top_origin_pt": [
+        49,
+        76,
+        287,
+        184
+      ],
+      "sha256": "a7c7ae676e4b54c71f1612b378304c062952a6d22b585825a8084581efea92dc"
+    },
+    "frame": {
+      "target": "Laptop",
+      "source": "Laptop_gawf1_rgb.npy",
+      "png_sha256": "6b17ef44513626fef06e7fa63986355fe5632b8d81f6ba6dc6461f6ae432ce53",
+      "source_array_sha256": "16927a507bd7fc6cbd5387390ae0e4ec36bcc6c48bdd7093ebd3be51b3e2dd3d",
+      "episode_id": "FloorPlan_Val3_2_Laptop_8",
+      "identical_in_both_architecture_panels": true
+    },
+    "edits": [
+      "Model to GRU or GaWF",
+      "Original input photo to recorded RoboTHOR RGB",
+      "GaWF-only arrow from actor output toward recurrent gates, marked t-1"
+    ],
+    "feedback": "Previous detached raw policy logits, not sampled actions or privileged observations.",
+    "model_parameters_modified": false,
+    "image_sha256": "102c3e88b3bb48ad18eccc1e4d70e1b306d131f8ee3f484a71f8ac6d0fe916c7"
+  }
 }

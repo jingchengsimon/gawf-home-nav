@@ -79,3 +79,6 @@ section{margin-top:48px}
 .section-caption{margin-top:12px}
 .demo:last-child,.attribution:last-child{margin-bottom:12px}
 figcaption,.section-caption,.quantitative caption{font-size:14px;line-height:1.5;color:#666;text-align:center}
+.method-figure{margin:12px 0 0}
+.method-figure img{display:block;width:100%;height:auto}
+.method-figure figcaption{margin-top:10px}

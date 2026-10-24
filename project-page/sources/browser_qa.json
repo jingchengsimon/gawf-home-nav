@@ -39,6 +39,7 @@
   ],
   "page_content": [
     "teaser summary",
+    "three-panel method figure",
     "SR/SPL mean \u00b1 SD table",
     "navigation videos",
     "gradient maps"
@@ -46,6 +47,7 @@
   "sections": [
     "intro",
     "teaser",
+    "method",
     "results",
     "I. Performance",
     "II. navigation",
@@ -155,5 +157,14 @@
     "relative_budget": "about 2.5%",
     "reduction": "about 97.5%",
     "paper_link": "https://arxiv.org/html/2111.09888v2"
+  },
+  "method_figure": {
+    "panels": 3,
+    "placement": "after teaser, before Results",
+    "cell_artwork": "original PDF crop unchanged",
+    "architecture_artwork": "original EmbCLIP Figure 2 with requested labels/photo and GaWF feedback annotation",
+    "shared_input_frame": "recorded RoboTHOR Laptop RGB",
+    "parameters_changed": false,
+    "local_visual_inspection": "pass"
   }
 }
