@@ -13,7 +13,7 @@
     "columns": [
       "HousePlant trajectory",
       "AlarmClock Grad-CAM",
-      "BaseballBat Grad-CAM",
+      "Laptop Grad-CAM",
       "SprayBottle Grad-CAM"
     ],
     "group_titles": [
@@ -28,7 +28,7 @@
     "III. Grad-CAM"
   ],
   "captions": "One below the complete trajectory gallery and one below the complete Grad-CAM gallery.",
-  "quantitative_values": "Verified same-episode metrics across five normally exited seeds per model; mean \u00b1 sample SD.",
+  "quantitative_values": "Two common-Val five-seed rows plus published 200M RoboTHOR-Test reference, explicitly separated by split.",
   "typography_px": {
     "page_title": 32,
     "Results": 30,
@@ -41,5 +41,6 @@
     "color": "#666",
     "text_align": "center"
   },
-  "spacing": "Text-to-image gaps halved; navigation and Grad-CAM part margins remain 48px."
+  "spacing": "Text-to-image gaps halved; navigation and Grad-CAM part margins remain 48px.",
+  "model_labels": "Bold throughout, including diagrams and Grad-CAM"
 }

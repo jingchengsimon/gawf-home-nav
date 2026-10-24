@@ -27,9 +27,11 @@ name. Each model has a full trajectory, a live trajectory and its RGB view. One
 image-mounted play control and an icon beside each object heading start both
 videos; either control pauses the pair. Each method has a gray timeline with a
 red elapsed portion. The shorter video holds its last frame until the longer one
-finishes. Four object cases are shown: BaseballBat, GarbageCan, HousePlant and SprayBottle.
-The new BaseballBat and SprayBottle cases have successful GaWF terminals whose
-RGB targets have been visually checked. All source candidates are retained.
+finishes. Four object cases are shown: Bowl, GarbageCan, HousePlant and SprayBottle.
+Bowl replaces BaseballBat; the GaWF terminal bowl is clearly visible.
+GarbageCan uses a both-successful matched episode (GRU 95 steps, GaWF 47).
+HousePlant retains a selected baseline failure; SprayBottle remains unchanged.
+All source candidates are retained.
 
 Video overlays, scene identifiers, seed selectors, score cards and developer
 annotations are omitted from the visible page. Detailed provenance remains in
@@ -37,7 +39,7 @@ annotations are omitted from the visible page. Detailed provenance remains in
 All source recordings, including unselected and unsuccessful cases, are retained
 in their SJC result leaves. Selected videos and small source snapshots are mirrored
 locally. A two-row teaser combines the enlarged HousePlant full trajectories with AlarmClock,
-BaseballBat and SprayBottle Grad-CAM overlays. Results contains I. Performance (SR/SPL mean ± sample SD),
+Laptop and SprayBottle Grad-CAM overlays. Results contains I. Performance (SR/SPL mean ± sample SD),
 II. four paired navigation demos, and III. two RGB/gradient grids.
 A dashed line separates Trajectory and Grad-CAM groups in the teaser.
 Each visual section has a short introduction and one shared caption. Text-to-image
@@ -62,7 +64,7 @@ recorded in the source snapshots.
 
 The twelve goals are split across two four-by-six image grids. Each row has
 three adjacent RGB/Grad-CAM pairs, with one goal heading shared by each pair.
-Model labels use normal weight and upright text. The grids use each model's own
+Model labels use bold upright text. The grids use each model's own
 successful validation terminal view. Most views are re-rendered from logged poses,
 with recurrent state reconstructed from that model's re-rendered RGB/action
 history. Eleven categories share an episode and initial pose; BaseballBat uses different successful episodes, marked
@@ -151,7 +153,7 @@ are in `sources/performance_validation_snapshot.json`,
 with corresponding copies under `dist/assets/sources/`.
 
 The Performance introduction states that the 5M-step comparison uses about 2.5%
-of the paper’s 200M RoboTHOR budget (97.5% fewer environment steps per seed),
+of the paper’s 200M RoboTHOR budget per seed,
 with a link to Section 4.1. This excludes CLIP pretraining and does not imply
 matching the paper’s full-training or test protocol. Checkpoint/configuration,
 optimizer and recorded-demo checks are in `sources/training_budget_audit.json`.
@@ -170,3 +172,13 @@ The figure and source hashes are recorded in `sources/method_figure.json`.
 `scripts/build_method_figure.py` uses pypdf, reportlab, numpy, Pillow and Poppler
 to compose existing PDF artwork and render the static web image. Its source PDFs
 and checked RGB frame are explicit arguments; no generative drawing is used.
+
+## Presentation revision
+
+The hero title uses MODULATION and names Jingcheng Shi above the GitHub button.
+Model names are bold in prose, diagrams, maps and videos. Teaser group/model
+labels use 22pt bold; Find GarbageCan is italic. The performance table includes
+the original paper’s RoboTHOR-Test reference (200M training, SR 47%, SPL 20%)
+with its split separated from our common-Val rows and no invented standard deviation.
+Video and Grad-CAM examples use different episodes; both sections now say so.
+`comparison_consistency.json` records the exact identities and selected outcomes.

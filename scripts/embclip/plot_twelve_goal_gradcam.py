@@ -32,7 +32,7 @@ def main():
         for row,model in enumerate(('gru1','gawf1')):
             label=fig.add_subplot(grid[row,0]);label.axis('off')
             label.text(0,.5,'EmbCLIP' if row==0 else 'EmbCLIP-\nGaWF',ha='left',va='center',
-                       fontsize=18,fontstyle='normal',fontweight='normal',color='black')
+                       fontsize=18,fontstyle='normal',fontweight='bold',color='black')
             for pair,record in enumerate(records[group*3:(group+1)*3]):
                 target=record['target'];data=record['models'][model]
                 cam_path=args.result/(target+'_'+model+'_cam.npy');rgb_path=args.result/(target+'_'+model+'_rgb.npy')
@@ -57,7 +57,7 @@ def main():
     args.output.parent.mkdir(parents=True,exist_ok=True)
     fig.savefig(args.output,dpi=180,facecolor='white');plt.close(fig)
     receipt=dict(page=args.page,rows=4,columns=6,panels=24,rgb_panels=12,gradient_panels=12,
-                 goal_labels=6,model_labels='normal weight, upright, left aligned',
+                 goal_labels=6,model_labels='bold, upright, left aligned',
                  layout='three adjacent RGB/gradient pairs per row; one shared goal heading per pair',
                  targets=[r['target'] for r in records],comparison_mode=summary['comparison_mode'],
                  source_summary_sha256=hashlib.sha256((args.result/'summary.json').read_bytes()).hexdigest(),

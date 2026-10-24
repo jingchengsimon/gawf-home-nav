@@ -1,6 +1,17 @@
 {
   "dataset": "RoboTHOR ObjectNav Val",
   "training_frames": 5001216,
+  "paper_reference": {
+    "model": "EmbCLIP",
+    "split": "RoboTHOR-Test",
+    "training_environment_steps": 200000000,
+    "sr_percent": 47.0,
+    "spl_percent": 20.0,
+    "source": "https://arxiv.org/html/2111.09888v2",
+    "table": 1,
+    "standard_deviation": "Not reported; no uncertainty is invented.",
+    "role": "Literature reference, not a run on our common validation episode set."
+  },
   "reference_training_budget": {
     "environment_steps": 200000000,
     "source": "https://arxiv.org/html/2111.09888v2",

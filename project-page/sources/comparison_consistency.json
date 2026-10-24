@@ -1,0 +1,103 @@
+{
+  "pairs": [
+    {
+      "target": "Bowl",
+      "video_episode": "FloorPlan_Val2_1_Bowl_8",
+      "video_outcomes": [
+        {
+          "model": "gru1",
+          "steps": 13,
+          "success": false
+        },
+        {
+          "model": "gawf1",
+          "steps": 23,
+          "success": true
+        }
+      ],
+      "gradcam_episodes": {
+        "gawf1": "FloorPlan_Val1_5_Bowl_1",
+        "gru1": "FloorPlan_Val1_5_Bowl_1"
+      },
+      "relationship": "Separate successful Grad-CAM episodes; not frames from the paired navigation recording."
+    },
+    {
+      "target": "GarbageCan",
+      "video_episode": "FloorPlan_Val3_3_GarbageCan_5",
+      "video_outcomes": [
+        {
+          "model": "gru1",
+          "steps": 95,
+          "success": true
+        },
+        {
+          "model": "gawf1",
+          "steps": 47,
+          "success": true
+        }
+      ],
+      "gradcam_episodes": {
+        "gawf1": "FloorPlan_Val2_4_GarbageCan_4",
+        "gru1": "FloorPlan_Val2_4_GarbageCan_4"
+      },
+      "relationship": "Separate successful Grad-CAM episodes; not frames from the paired navigation recording."
+    },
+    {
+      "target": "HousePlant",
+      "video_episode": "FloorPlan_Val3_1_HousePlant_2",
+      "video_outcomes": [
+        {
+          "model": "gru1",
+          "steps": 500,
+          "success": false
+        },
+        {
+          "model": "gawf1",
+          "steps": 32,
+          "success": true
+        }
+      ],
+      "gradcam_episodes": {
+        "gawf1": "FloorPlan_Val2_5_HousePlant_3",
+        "gru1": "FloorPlan_Val2_5_HousePlant_3"
+      },
+      "relationship": "Separate successful Grad-CAM episodes; not frames from the paired navigation recording."
+    },
+    {
+      "target": "SprayBottle",
+      "video_episode": "FloorPlan_Val1_2_SprayBottle_8",
+      "video_outcomes": [
+        {
+          "model": "gru1",
+          "steps": 264,
+          "success": true
+        },
+        {
+          "model": "gawf1",
+          "steps": 49,
+          "success": true
+        }
+      ],
+      "gradcam_episodes": {
+        "gawf1": "FloorPlan_Val3_4_SprayBottle_6",
+        "gru1": "FloorPlan_Val3_4_SprayBottle_6"
+      },
+      "relationship": "Separate successful Grad-CAM episodes; not frames from the paired navigation recording."
+    }
+  ],
+  "explanation": "Cross-section recordings are different episodes. Each video pair shares a matched episode, start pose and seeds. The HousePlant baseline failure is episode-specific, not evidence that the model never learns.",
+  "official_row": {
+    "split": "RoboTHOR-Test",
+    "training_budget_steps": 200000000,
+    "sr_percent": 47,
+    "spl_percent": 20,
+    "source": "https://arxiv.org/html/2111.09888v2",
+    "table": 1,
+    "comparable_to_common_val": false
+  },
+  "endpoint_review": {
+    "Bowl": "GaWF last RGB clearly contains the bowl on the table.",
+    "GarbageCan": "Both last RGB frames clearly contain the garbage can.",
+    "SprayBottle": "Existing selected successful endpoints retained."
+  }
+}

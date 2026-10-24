@@ -2,52 +2,53 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Feedback-gated memory for visual navigation</title>
+<title>Feedback-gated modulation for visual navigation</title>
 <meta name="description" content="EmbCLIP and EmbCLIP-GaWF navigate the same RoboTHOR tasks using RGB observations.">
-<link rel="stylesheet" href="assets/style.css?v=99cc500f541e">
+<link rel="stylesheet" href="assets/style.css?v=a77db8d32ed8">
 </head>
 <body><main>
 <header class="intro">
-<h1>FEEDBACK-GATED MEMORY SUPPORTS VISUAL NAVIGATION</h1>
+<h1>FEEDBACK-GATED MODULATION SUPPORTS VISUAL NAVIGATION</h1>
+<p class="authors">Jingcheng Shi</p>
 <a class="github-button" href="https://github.com/jingchengsimon/gawf-home-nav" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.76-.24.76-.54v-2.08c-3.12.68-3.78-1.32-3.78-1.32-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.73 1.16 1.73 1.16 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.22.71-1.5-2.49-.28-5.1-1.25-5.1-5.54 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15A10.7 10.7 0 0 1 12 6.23c.95 0 1.9.13 2.79.37 2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.71.78 1.15 1.78 1.15 3 0 4.3-2.62 5.25-5.12 5.53.4.35.76 1.03.76 2.08v3.07c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8z"/></svg>GitHub</a>
-<p>We compare <a href="https://github.com/allenai/embodied-clip">EmbCLIP</a> with EmbCLIP-GaWF on unseen RoboTHOR environments. Both agents receive RGB images and a target object category.</p>
+<p>We compare <a href="https://github.com/allenai/embodied-clip"><strong>EmbCLIP</strong></a> with <strong>EmbCLIP-GaWF</strong> on unseen RoboTHOR environments. Both agents receive RGB images and a target object category.</p>
 </header>
 <figure class="teaser">
-<img src="assets/teaser-summary.png?v=21a3bb3df22e" alt="Two model rows compare HousePlant trajectories and Alarm Clock, Baseball Bat and Spray Bottle Grad-CAM overlays.">
-<figcaption>Navigation trajectories and visual sensitivity for EmbCLIP and EmbCLIP-GaWF on RoboTHOR Object Goal Navigation. Grad-CAM uses each agent’s successful view; Baseball Bat uses different episodes.</figcaption>
+<img src="assets/teaser-summary.png?v=8fa5f1ba7c07" alt="Two model rows compare HousePlant trajectories and Alarm Clock, Laptop and Spray Bottle Grad-CAM overlays.">
+<figcaption>Navigation trajectories and visual sensitivity for <strong>EmbCLIP</strong> and <strong>EmbCLIP-GaWF</strong> on RoboTHOR Object Goal Navigation. Grad-CAM uses each agent’s successful view from separate episodes.</figcaption>
 </figure>
 <section id="method">
 <h2>Method</h2>
-<p>We retain EmbCLIP’s frozen CLIP visual encoder and goal-conditioned processing, and replace its GRU with a parameter-matched GaWF module. The previous step’s detached policy logits feed GaWF’s gates, which modulate its input and recurrent weights.</p>
+<p>We retain <strong>EmbCLIP</strong>’s frozen CLIP visual encoder and goal-conditioned processing, and replace its GRU with a parameter-matched GaWF module. The previous step’s detached policy logits feed GaWF’s gates, which modulate its input and recurrent weights.</p>
 <figure class="method-figure">
-<img src="assets/method-overview.png?v=102c3e88b3bb" alt="Three panels show the original GaWF cell, EmbCLIP with a GRU, and EmbCLIP-GaWF with a one-step-delayed feedback arrow from the actor to GaWF. Both navigation diagrams use the same recorded RoboTHOR Laptop frame.">
-<figcaption>GaWF cell extracted from the supplied diagram; navigation architectures adapted from <a href="https://arxiv.org/pdf/2111.09888">EmbCLIP Figure 2</a>. The feedback arrow carries the previous step’s detached policy logits.</figcaption>
+<img src="assets/method-overview.png?v=5ec9f149a8b9" alt="Three panels show the original GaWF cell, EmbCLIP with a GRU, and EmbCLIP-GaWF with a one-step-delayed feedback arrow from the actor to GaWF. Both navigation diagrams use the same recorded RoboTHOR Laptop frame.">
+<figcaption>GaWF cell extracted from the supplied diagram; navigation architectures adapted from <a href="https://arxiv.org/pdf/2111.09888"><strong>EmbCLIP</strong> Figure 2</a>. The feedback arrow carries the previous step’s detached policy logits.</figcaption>
 </figure>
 </section>
 <section id="results">
 <h2>Results</h2>
 <section id="performance">
 <h3>I. Performance</h3>
-<p>With lightweight 5M-step training (about 2.5% of EmbCLIP’s original <a href="https://arxiv.org/html/2111.09888v2">200M-step budget</a>, or 97.5% fewer environment steps), EmbCLIP-GaWF achieves higher validation SR and SPL than EmbCLIP.</p>
+<p>With lightweight 5M-step training (about 2.5% of <strong>EmbCLIP</strong>’s original <a href="https://arxiv.org/html/2111.09888v2">200M-step budget</a>), <strong>EmbCLIP-GaWF</strong> achieves higher validation SR and SPL than <strong>EmbCLIP</strong>.</p>
 <div class="table-scroll"><table class="quantitative">
-<caption>5M-frame training. Mean ± SD across five runs per model on 1,783 shared validation episodes.</caption>
+<caption>5M-frame training. Mean ± SD across five runs per model on 1,783 shared validation episodes. The 200M Test result is reported in <a href="https://arxiv.org/html/2111.09888v2">the original paper, Table 1</a>; it is a separate split and protocol.</caption>
 <thead><tr><th scope="col" rowspan="2">Benchmark</th><th scope="col" rowspan="2">Model</th><th scope="colgroup" colspan="2">Object navigation</th></tr>
 <tr><th scope="col">SR (%) ↑</th><th scope="col">SPL (%) ↑</th></tr></thead>
-<tbody><tr><th scope="rowgroup" rowspan="2">RoboTHOR-Val</th><th scope="row">EmbCLIP</th><td>13.38 ± 2.73</td><td>8.25 ± 1.40</td></tr><tr><th scope="row"><strong>EmbCLIP-GaWF</strong></th><td><strong>19.55 ± 3.09</strong></td><td><strong>10.10 ± 0.93</strong></td></tr></tbody>
+<tbody><tr><th scope="rowgroup" rowspan="2">RoboTHOR-Val</th><th scope="row"><strong>EmbCLIP</strong></th><td>13.38 ± 2.73</td><td>8.25 ± 1.40</td></tr><tr><th scope="row"><strong>EmbCLIP-GaWF</strong></th><td><strong>19.55 ± 3.09</strong></td><td><strong>10.10 ± 0.93</strong></td></tr><tr class="paper-reference"><th scope="rowgroup">RoboTHOR-Test</th><th scope="row"><strong>EmbCLIP</strong> (200M, paper)</th><td>47.00</td><td>20.00</td></tr></tbody>
 </table></div>
 </section>
 <section id="navigation">
 <h3>II. Recurrent Feedback Guides Navigation Toward the Object Goal</h3>
-<p>We compare the agents’ behavior on paired Object Goal Navigation tasks. These selected examples show EmbCLIP-GaWF reaching the target while EmbCLIP stops early or follows a longer route.</p>
+<p>We compare the agents on matched Object Goal Navigation tasks. Both reach GarbageCan and SprayBottle, with <strong>EmbCLIP-GaWF</strong> finishing sooner. The selected Bowl and HousePlant episodes also show <strong>EmbCLIP</strong> failures under the lightweight training budget.</p>
 <div id="demo-gallery"></div>
-<p class="section-caption">Paired trajectories and synchronized first-person views. Each pair uses the same episode, starting pose and random seeds.</p>
+<p class="section-caption">Paired trajectories and synchronized first-person views share the same episode, starting pose and random seeds. Grad-CAM below uses separate successful episodes.</p>
 </section>
 <section id="attention">
 <h3>III. Grad-CAM Reveals Visual Cues Behind the Stopping Decision</h3>
-<p>We analyze the trained agents with Grad-CAM to inspect visual information associated with stopping. The selected successful terminal views show each model’s sensitivity when the target is visible.</p>
+<p>We analyze the trained agents with Grad-CAM to inspect visual information associated with stopping. The selected successful terminal views show each model’s sensitivity when the target is visible. These are separate episodes, not the terminal frames of the videos.</p>
 <div id="attribution-gallery"></div>
 <p class="section-caption">Grad-CAM at successful stops, using each model’s own view and history. Colors are normalized per map; warm regions indicate positive contribution to stopping. Baseball Bat uses different episodes.</p>
 </section>
 </section>
-</main><script src="assets/project-data.js"></script><script src="assets/page.js?v=9431978ddaac"></script></body>
+</main><script src="assets/project-data.js?v=66c4d38feb47"></script><script src="assets/page.js?v=75c68e4d4f05"></script></body>
 </html>

@@ -1,0 +1,384 @@
+{
+  "action_sampling_seed": 0,
+  "actions": [
+    {
+      "index": 2,
+      "name": "RotateRight"
+    },
+    {
+      "index": 2,
+      "name": "RotateRight"
+    },
+    {
+      "index": 0,
+      "name": "MoveAhead"
+    },
+    {
+      "index": 0,
+      "name": "MoveAhead"
+    },
+    {
+      "index": 0,
+      "name": "MoveAhead"
+    },
+    {
+      "index": 0,
+      "name": "MoveAhead"
+    },
+    {
+      "index": 0,
+      "name": "MoveAhead"
+    },
+    {
+      "index": 0,
+      "name": "MoveAhead"
+    },
+    {
+      "index": 2,
+      "name": "RotateRight"
+    },
+    {
+      "index": 0,
+      "name": "MoveAhead"
+    },
+    {
+      "index": 0,
+      "name": "MoveAhead"
+    },
+    {
+      "index": 0,
+      "name": "MoveAhead"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 0,
+      "name": "MoveAhead"
+    },
+    {
+      "index": 2,
+      "name": "RotateRight"
+    },
+    {
+      "index": 0,
+      "name": "MoveAhead"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 2,
+      "name": "RotateRight"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 0,
+      "name": "MoveAhead"
+    },
+    {
+      "index": 0,
+      "name": "MoveAhead"
+    },
+    {
+      "index": 2,
+      "name": "RotateRight"
+    },
+    {
+      "index": 3,
+      "name": "End"
+    }
+  ],
+  "actor_inputs": [
+    "rgb_clip_resnet",
+    "goal_object_type_ind",
+    "recurrent_state"
+  ],
+  "checkpoint_sha256": "a1437e0b5f7d2d016dba8f8dff204af6ec534317d768470fdd821a84526725a8",
+  "episode": {
+    "id": "FloorPlan_Val2_1_Bowl_8",
+    "initial_horizon": 30,
+    "initial_orientation": 270,
+    "initial_position": {
+      "x": 5.0,
+      "y": 0.9009996652603149,
+      "z": -2.5
+    },
+    "object_type": "Bowl",
+    "scene": "FloorPlan_Val2_1",
+    "shortest_path": [
+      {
+        "x": 5.0,
+        "y": 0.006180524826049805,
+        "z": -2.5
+      }
+    ],
+    "shortest_path_length": 0
+  },
+  "evaluator_only": [
+    "top_down_image",
+    "agent_pose",
+    "shortest_path",
+    "metrics"
+  ],
+  "map_projection": {
+    "camera": {
+      "x": 5.566799640655518,
+      "y": 2.6132566928863525,
+      "z": -2.3768393993377686
+    },
+    "height": 300,
+    "orthographic_size": 4.87999963760376,
+    "target_positions": [
+      {
+        "x": 4.7760820388793945,
+        "y": 0.7078922390937805,
+        "z": -1.990993618965149
+      }
+    ],
+    "width": 400
+  },
+  "model": "gawf1",
+  "simulator_seed": 1000,
+  "simulator_seed_action": "SetRandomSeed",
+  "spl": 1.0,
+  "start_actual": {
+    "horizon": 30.000003814697266,
+    "position": {
+      "x": 5.0,
+      "y": 0.9009996652603149,
+      "z": -2.5
+    },
+    "yaw": 270.0
+  },
+  "start_rgb_sha256": "b0da46aa27add58cf9c544512e824603c10b2dfbb3ef7da60c3a34b7a2e56704",
+  "steps": 23,
+  "success": true,
+  "terminal_probe_sha256": "1f09d42895df8a31915677b83570cc03639b229d8b5c5df99727c28cf492556f",
+  "training_seed": 3,
+  "trajectory": [
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 270.0
+    },
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 300.9674987792969
+    },
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 330.9700622558594
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 331.0277404785156
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 331.0608825683594
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 330.51104736328125
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 330.49652099609375
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 330.6950378417969
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 330.4930725097656
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 0.6279813647270203
+    },
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 0.35465821623802185
+    },
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 0.4476381838321686
+    },
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 0.19346356391906738
+    },
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 330.5052490234375
+    },
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 330.7018737792969
+    },
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 0.8887539505958557
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 1.0137444734573364
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 330.87823486328125
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 1.4668962955474854
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 331.381103515625
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 331.21954345703125
+    },
+    {
+      "horizon": 29.999998092651367,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 331.4137268066406
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 1.2340143918991089
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 1.2340143918991089
+    }
+  ],
+  "video": "results/nav-robothor-embclip-minimal-terminal-candidates-sjc-v1-20261023/FloorPlan_Val2_1_Bowl_8/gawf1_rollout0.mp4",
+  "video_sha256": "0062bb366781a982f96af60b2d38c2915deec65202fc306ac2215463c23a9081"
+}

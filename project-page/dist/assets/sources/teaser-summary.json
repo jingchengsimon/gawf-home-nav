@@ -4,7 +4,7 @@
   "label_columns": 1,
   "source_summary_sha256": "9d7eaadf092b17eff67182da40d530a43035c3620c8769401f618b5c04880b6a",
   "raw_rgb_columns": 0,
-  "image_sha256": "21a3bb3df22ec47b89cf23724cc8a49e2752b2b04b6ffef879d3b224975b4889",
+  "image_sha256": "8fa5f1ba7c073bc21176d2f3c78d6f8a7145f78f92dde15408e86c7064a83017",
   "panels": [
     {
       "model": "gru1",
@@ -24,10 +24,10 @@
     {
       "model": "gru1",
       "kind": "gradcam_overlay",
-      "target": "BaseballBat",
-      "episode_id": "FloorPlan_Val1_5_BaseballBat_5",
-      "cam_sha256": "511db5daa32f0d71846e17c39e6b078d9aae711d50354de19b223d7e7e5592f5",
-      "rgb_sha256": "24ce0637c76b8c4c08b2ecd218f246d4077325ffc001f32267994a87d4da97b6"
+      "target": "Laptop",
+      "episode_id": "FloorPlan_Val3_2_Laptop_8",
+      "cam_sha256": "b46553d83b90ef8631bc90782c98efbffc13c3f80900a141ada18ec74d4bf054",
+      "rgb_sha256": "e73ab1d745bdf866ad4ddabfe58808d948c88d832a60ad1fab21964cc18b290c"
     },
     {
       "model": "gru1",
@@ -55,10 +55,10 @@
     {
       "model": "gawf1",
       "kind": "gradcam_overlay",
-      "target": "BaseballBat",
-      "episode_id": "FloorPlan_Val1_2_BaseballBat_3",
-      "cam_sha256": "a68d9b99a796cb92e5c9f9f6897979f79df2ca742977bc468eafe507cd081388",
-      "rgb_sha256": "a13657cde1d5501cedd979fc324c80e5aa266a9dc98e5e83db748ee3652665b5"
+      "target": "Laptop",
+      "episode_id": "FloorPlan_Val3_2_Laptop_8",
+      "cam_sha256": "e15f03ccac1dd2f8bc71863db60987e8a8f7e6033bf0c9aa9f513b94ffc47c46",
+      "rgb_sha256": "16927a507bd7fc6cbd5387390ae0e4ec36bcc6c48bdd7093ebd3be51b3e2dd3d"
     },
     {
       "model": "gawf1",
@@ -83,6 +83,7 @@
     ],
     "dashed_separator": true
   },
+  "emphasis": "Group headings and model labels: Noto Sans Bold, 22pt.",
   "normalization": "Same as full figures: per-map positive maximum, jet overlay alpha 0.48.",
-  "comparison": "Paired trajectory episode; Grad-CAM uses own successful views, different BaseballBat episodes."
+  "comparison": "Paired HousePlant trajectory episode; Grad-CAM uses separate successful episodes and each model's own view."
 }

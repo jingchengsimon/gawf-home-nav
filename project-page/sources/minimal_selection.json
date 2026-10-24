@@ -790,54 +790,57 @@
   "attribution_summary_sha256": "9d7eaadf092b17eff67182da40d530a43035c3620c8769401f618b5c04880b6a",
   "demos": [
     {
-      "action_sampling_seed": 11,
-      "episode_id": "FloorPlan_Val1_2_BaseballBat_3",
+      "action_sampling_seed": 0,
+      "episode_id": "FloorPlan_Val2_1_Bowl_8",
       "models": [
         {
           "model": "gru1",
-          "receipt": "assets/sources/episodes/FloorPlan_Val1_2_BaseballBat_3/gru1_rollout11.json",
-          "source_sha256": "a4e691081a290060f248f8ca4bd01f355d8017553006ff4c836771a7a433b9a7",
-          "source_video": "results/nav-robothor-embclip-baseballbat-demo-candidates-sjc-v2-20261023/FloorPlan_Val1_2_BaseballBat_3/gru1_rollout11.mp4",
+          "receipt": "assets/sources/episodes/FloorPlan_Val2_1_Bowl_8/gru1_rollout0.json",
+          "source_sha256": "ddced838deb81f83dd9afa81c778da79004a7fb7960b70a8663e49af0b2c4742",
+          "source_video": "results/nav-robothor-embclip-minimal-terminal-candidates-sjc-v1-20261023/FloorPlan_Val2_1_Bowl_8/gru1_rollout0.mp4",
           "spl": 0.0,
-          "steps": 8,
+          "steps": 13,
           "success": false
         },
         {
           "model": "gawf1",
-          "receipt": "assets/sources/episodes/FloorPlan_Val1_2_BaseballBat_3/gawf1_rollout11.json",
-          "source_sha256": "e80251799fa140149eb832c3d73234d3c3beed52783d595f8fd21a26092f26ef",
-          "source_video": "results/nav-robothor-embclip-baseballbat-demo-candidates-sjc-v2-20261023/FloorPlan_Val1_2_BaseballBat_3/gawf1_rollout11.mp4",
-          "spl": 0.10167835873160838,
-          "steps": 53,
+          "receipt": "assets/sources/episodes/FloorPlan_Val2_1_Bowl_8/gawf1_rollout0.json",
+          "source_sha256": "0062bb366781a982f96af60b2d38c2915deec65202fc306ac2215463c23a9081",
+          "source_video": "results/nav-robothor-embclip-minimal-terminal-candidates-sjc-v1-20261023/FloorPlan_Val2_1_Bowl_8/gawf1_rollout0.mp4",
+          "spl": 1.0,
+          "steps": 23,
           "success": true
         }
       ],
-      "simulator_seed": 1011,
-      "source_suite": "nav-robothor-embclip-baseballbat-demo-candidates-sjc-v2-20261023",
-      "target": "BaseballBat"
+      "simulator_seed": 1000,
+      "source_suite": "nav-robothor-embclip-minimal-terminal-candidates-sjc-v1-20261023",
+      "target": "Bowl"
     },
     {
-      "episode_id": "FloorPlan_Val1_1_GarbageCan_0",
+      "action_sampling_seed": 0,
+      "episode_id": "FloorPlan_Val3_3_GarbageCan_5",
       "models": [
         {
           "model": "gru1",
-          "receipt": "assets/sources/episodes/FloorPlan_Val1_1_GarbageCan_0/gru1_rollout0.json",
-          "source_sha256": "0779279a295d30f599c12fc20ec765f5709f2126101772f06af670eed2b03c42",
-          "source_video": "results/nav-robothor-embclip-minimal-terminal-candidates-sjc-v1-20261023/FloorPlan_Val1_1_GarbageCan_0/gru1_rollout0.mp4",
-          "spl": 0.0,
-          "steps": 500,
-          "success": false
+          "receipt": "assets/sources/episodes/FloorPlan_Val3_3_GarbageCan_5/gru1_rollout0.json",
+          "source_sha256": "7b9303618ddd5d949a92dae55c7f2e89647c088ff43d455928df7c6f01875f71",
+          "source_video": "results/nav-robothor-embclip-minimal-terminal-candidates-sjc-v1-20261023/FloorPlan_Val3_3_GarbageCan_5/gru1_rollout0.mp4",
+          "spl": 0.8249669342827116,
+          "steps": 95,
+          "success": true
         },
         {
           "model": "gawf1",
-          "receipt": "assets/sources/episodes/FloorPlan_Val1_1_GarbageCan_0/gawf1_rollout0.json",
-          "source_sha256": "b08a39ad7f1288eb1a06f5c4e98f29ae213870fb10b3eed3f69ff5c31d18f56b",
-          "source_video": "results/nav-robothor-embclip-minimal-terminal-candidates-sjc-v1-20261023/FloorPlan_Val1_1_GarbageCan_0/gawf1_rollout0.mp4",
-          "spl": 0.05650484864906054,
-          "steps": 102,
+          "receipt": "assets/sources/episodes/FloorPlan_Val3_3_GarbageCan_5/gawf1_rollout0.json",
+          "source_sha256": "3544605334fa3df43c5a08d158795298f9da8b4bededf35b821891af21ef111a",
+          "source_video": "results/nav-robothor-embclip-minimal-terminal-candidates-sjc-v1-20261023/FloorPlan_Val3_3_GarbageCan_5/gawf1_rollout0.mp4",
+          "spl": 0.796185443120742,
+          "steps": 47,
           "success": true
         }
       ],
+      "simulator_seed": 1000,
+      "source_suite": "nav-robothor-embclip-minimal-terminal-candidates-sjc-v1-20261023",
       "target": "GarbageCan"
     },
     {
@@ -1356,7 +1359,7 @@
       "summary_sha256": "df466e590c71a44e3dccc35c51e64c233965ebc3f88a8fe79bf41106bc72cdc4"
     }
   },
-  "selection": "Four illustrative autonomous paired videos from fixed best checkpoints; identical episode, actual start pose, policy-sampling seed and simulator seed within each pair. All source attempts and historical videos retained.",
+  "selection": "Four illustrative autonomous paired videos from fixed best checkpoints; identical episode, actual start pose, policy-sampling seed and simulator seed within each pair. All source attempts and historical videos retained. Updated: Bowl replaces BaseballBat with a visually checked terminal bowl; GarbageCan uses a both-successful matched episode. HousePlant retains a short-budget baseline failure. Grad-CAM uses separate successful episodes.",
   "source_suites": [
     "nav-robothor-embclip-minimal-terminal-candidates-sjc-v1-20261023",
     "nav-robothor-embclip-baseballbat-demo-candidates-sjc-v2-20261023",

@@ -6,7 +6,7 @@
   "rgb_panels": 12,
   "gradient_panels": 12,
   "goal_labels": 6,
-  "model_labels": "normal weight, upright, left aligned",
+  "model_labels": "bold, upright, left aligned",
   "layout": "three adjacent RGB/gradient pairs per row; one shared goal heading per pair",
   "targets": [
     "AlarmClock",
@@ -18,7 +18,7 @@
   ],
   "comparison_mode": "individual_terminal",
   "source_summary_sha256": "9d7eaadf092b17eff67182da40d530a43035c3620c8769401f618b5c04880b6a",
-  "image_sha256": "18f240ad9a9d118050057fcb06d5688e064944c6e43eda9a33db531dc1e130eb",
+  "image_sha256": "6c8b5ffd09c5b3c1be0bc46ab439f669a97f20a81e83275720340ff77ca5b321",
   "panels_verified": [
     {
       "target": "AlarmClock",

@@ -28,6 +28,7 @@ def main():
     plant = next(row for row in project['demos'] if row['target'] == 'HousePlant')
     records = {row['target']: row for row in summary['records']}
     font = FontProperties(fname=DIST / 'assets/fonts/noto-sans-400.ttf', size=16)
+    emphasis = FontProperties(fname=DIST / 'assets/fonts/noto-sans-700.ttf', size=22)
     fig = plt.figure(figsize=(14.8, 7.2), facecolor='white')
     grid = fig.add_gridspec(2, 5, width_ratios=[.60, 1.72, 1, 1, 1],
                            left=.003, right=.997, top=.84, bottom=.015,
@@ -37,7 +38,7 @@ def main():
     for row, model in enumerate(('gru1', 'gawf1')):
         label = fig.add_subplot(grid[row, 0]); label.axis('off')
         label.text(1, .5, 'EmbCLIP' if row == 0 else 'EmbCLIP-\nGaWF',
-                   ha='right', va='center', fontproperties=font, color='black')
+                   ha='right', va='center', fontproperties=emphasis, color='black')
         path = DIST / next(r for r in plant['models'] if r['model'] == model)['final_path']
         ax = fig.add_subplot(grid[row, 1]); ax.imshow(plt.imread(path)); ax.axis('off')
         ax.set_anchor('W')
@@ -46,7 +47,7 @@ def main():
         checks.append(dict(model=model, kind='full_trajectory', episode_id=plant['episode_id'],
                            source=str(path.relative_to(ROOT)), sha256=digest(path)))
         for column, (target, title) in enumerate((('AlarmClock', 'Alarm Clock'),
-                                                ('BaseballBat', 'Baseball Bat'),
+                                                ('Laptop', 'Laptop'),
                                                 ('SprayBottle', 'Spray Bottle')), start=2):
             record = records[target]['models'][model]
             cam_path = SOURCE / f'{target}_{model}_cam.npy'
@@ -66,14 +67,14 @@ def main():
                                episode_id=record['episode_id'], cam_sha256=digest(cam_path),
                                rgb_sha256=digest(rgb_path)))
     # Align headings above panels despite their different aspect ratios.
-    for ax, title in zip(first_row, ('House Plant', 'Alarm Clock', 'Baseball Bat', 'Spray Bottle')):
+    for ax, title in zip(first_row, ('House Plant', 'Alarm Clock', 'Laptop', 'Spray Bottle')):
         bounds = ax.get_position()
         fig.text((bounds.x0+bounds.x1)/2, .86, title, ha='center', va='bottom', fontproperties=font)
     trajectory, first_cam, _, last_cam = [ax.get_position() for ax in first_row]
     fig.text((trajectory.x0+trajectory.x1)/2, .945, 'Trajectory',
-             ha='center', va='bottom', fontproperties=font)
+             ha='center', va='bottom', fontproperties=emphasis)
     fig.text((first_cam.x0+last_cam.x1)/2, .945, 'Grad-CAM',
-             ha='center', va='bottom', fontproperties=font)
+             ha='center', va='bottom', fontproperties=emphasis)
     divider = (trajectory.x1+first_cam.x0)/2
     fig.add_artist(Line2D([divider, divider], [.015, .985], transform=fig.transFigure,
                           color='#666', linewidth=1, linestyle=(0, (3, 3))))
@@ -83,8 +84,9 @@ def main():
                    raw_rgb_columns=0, image_sha256=digest(output), panels=checks,
                    layout=dict(width_ratios=[.60, 1.72, 1, 1, 1],
                                group_titles=['Trajectory', 'Grad-CAM'], dashed_separator=True),
+                   emphasis='Group headings and model labels: Noto Sans Bold, 22pt.',
                    normalization='Same as full figures: per-map positive maximum, jet overlay alpha 0.48.',
-                   comparison='Paired trajectory episode; Grad-CAM uses own successful views, different BaseballBat episodes.')
+                   comparison='Paired HousePlant trajectory episode; Grad-CAM uses separate successful episodes and each model\'s own view.')
     (DIST / 'assets/sources/teaser-summary.json').write_text(json.dumps(receipt, indent=2) + '\n')
     print(output)
 

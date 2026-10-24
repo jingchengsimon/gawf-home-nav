@@ -42,7 +42,12 @@ def prepare(selection):
                            "asset": str(dest.relative_to(DIST)), "poster": str(poster.relative_to(DIST)),
                            "final_path": str(final.relative_to(DIST))})
         demos.append({"episode_id": item["episode_id"], "target": item["target"], "models": models})
-    data = {"demos": demos, "attribution": selection.get("attribution", [])}
+    attribution = []
+    for row in selection.get("attribution", []):
+        asset = row["asset"].split("?")[0]
+        fingerprint = hashlib.sha256((DIST / asset).read_bytes()).hexdigest()[:12]
+        attribution.append({**row, "asset": asset + "?v=" + fingerprint})
+    data = {"demos": demos, "attribution": attribution}
     (DIST / "assets/project-data.js").write_text("window.PROJECT = " + json.dumps(data, separators=(",", ":")) + ";\n")
     # Full experimental detail stays inspectable without appearing in the layout.
     (DIST / "assets/sources/protocol.json").write_text(json.dumps(selection, indent=2, sort_keys=True) + "\n")

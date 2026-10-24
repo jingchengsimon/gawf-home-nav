@@ -6,7 +6,7 @@
   "rgb_panels": 12,
   "gradient_panels": 12,
   "goal_labels": 6,
-  "model_labels": "normal weight, upright, left aligned",
+  "model_labels": "bold, upright, left aligned",
   "layout": "three adjacent RGB/gradient pairs per row; one shared goal heading per pair",
   "targets": [
     "HousePlant",
@@ -18,7 +18,7 @@
   ],
   "comparison_mode": "individual_terminal",
   "source_summary_sha256": "9d7eaadf092b17eff67182da40d530a43035c3620c8769401f618b5c04880b6a",
-  "image_sha256": "bed3587c7f2d138c0caf5ae772798ea6e2db216620bd42c93d6c5935fade893b",
+  "image_sha256": "c4c3a6e8ed4ae0f245b6e27ecaf70d5346c948bcc5cad7ac98bf3af3fdb83734",
   "panels_verified": [
     {
       "target": "HousePlant",

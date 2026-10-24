@@ -54,6 +54,7 @@ def main():
                           np.round(np.load(raw_frame) * 255).astype('uint8'))
     font = DIST / 'assets/fonts/noto-sans-400.ttf'
     pdfmetrics.registerFont(TTFont('NotoSans', str(font)))
+    pdfmetrics.registerFont(TTFont('NotoSansBold', str(DIST / 'assets/fonts/noto-sans-700.ttf')))
     cell = PdfReader(args.cell_pdf).pages[0]
     architecture = PdfReader(args.paper_pdf).pages[2]
     writer = PdfWriter()
@@ -72,6 +73,7 @@ def main():
     overlay.setFillColorRGB(0, 0, 0)
     overlay.setFont('NotoSans', 15)
     for x, label in ((112, 'GaWF cell'), (437.5, 'EmbCLIP'), (817.5, 'EmbCLIP-GaWF')):
+        overlay.setFont('NotoSans' if label == 'GaWF cell' else 'NotoSansBold', 15)
         overlay.drawCentredString(x, 330, label)
     for x, label in ((255, 'GRU'), (635, 'GaWF')):
         overlay.saveState()

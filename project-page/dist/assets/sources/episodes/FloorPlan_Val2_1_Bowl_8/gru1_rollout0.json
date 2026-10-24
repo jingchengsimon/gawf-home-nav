@@ -1,0 +1,254 @@
+{
+  "action_sampling_seed": 0,
+  "actions": [
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 0,
+      "name": "MoveAhead"
+    },
+    {
+      "index": 1,
+      "name": "RotateLeft"
+    },
+    {
+      "index": 0,
+      "name": "MoveAhead"
+    },
+    {
+      "index": 2,
+      "name": "RotateRight"
+    },
+    {
+      "index": 0,
+      "name": "MoveAhead"
+    },
+    {
+      "index": 3,
+      "name": "End"
+    }
+  ],
+  "actor_inputs": [
+    "rgb_clip_resnet",
+    "goal_object_type_ind",
+    "recurrent_state"
+  ],
+  "checkpoint_sha256": "c4cd40c7c04d74ea238d21b7549250ed56cbf690e492f9d40c942286b91014b3",
+  "episode": {
+    "id": "FloorPlan_Val2_1_Bowl_8",
+    "initial_horizon": 30,
+    "initial_orientation": 270,
+    "initial_position": {
+      "x": 5.0,
+      "y": 0.9009996652603149,
+      "z": -2.5
+    },
+    "object_type": "Bowl",
+    "scene": "FloorPlan_Val2_1",
+    "shortest_path": [
+      {
+        "x": 5.0,
+        "y": 0.006180524826049805,
+        "z": -2.5
+      }
+    ],
+    "shortest_path_length": 0
+  },
+  "evaluator_only": [
+    "top_down_image",
+    "agent_pose",
+    "shortest_path",
+    "metrics"
+  ],
+  "map_projection": {
+    "camera": {
+      "x": 5.566799640655518,
+      "y": 2.6132566928863525,
+      "z": -2.3768393993377686
+    },
+    "height": 300,
+    "orthographic_size": 4.87999963760376,
+    "target_positions": [
+      {
+        "x": 4.7760820388793945,
+        "y": 0.7078922390937805,
+        "z": -1.990993618965149
+      }
+    ],
+    "width": 400
+  },
+  "model": "gru1",
+  "simulator_seed": 1000,
+  "simulator_seed_action": "SetRandomSeed",
+  "spl": 0.0,
+  "start_actual": {
+    "horizon": 30.000003814697266,
+    "position": {
+      "x": 5.0,
+      "y": 0.9009996652603149,
+      "z": -2.5
+    },
+    "yaw": 270.0
+  },
+  "start_rgb_sha256": "bf106a756c11b2c467d7c81c6e3643566a9d175f119f8eb6546783ef7823f066",
+  "steps": 13,
+  "success": false,
+  "terminal_probe_sha256": "b1fb3d3d79b4e307640ac4cce15044ff966e0fb8977db2c27556c089b409588b",
+  "training_seed": 1,
+  "trajectory": [
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 270.0
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 240.96749877929688
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 210.97006225585938
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 181.08543395996094
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 151.18386840820312
+    },
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 121.2501449584961
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 92.5033187866211
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 5.0,
+        "y": 0.9009996652603149,
+        "z": -2.5
+      },
+      "yaw": 61.40364074707031
+    },
+    {
+      "horizon": 30.00000762939453,
+      "position": {
+        "x": 5.220075607299805,
+        "y": 0.9009996652603149,
+        "z": -2.3799080848693848
+      },
+      "yaw": 61.37936019897461
+    },
+    {
+      "horizon": 30.000003814697266,
+      "position": {
+        "x": 5.220075607299805,
+        "y": 0.9009996652603149,
+        "z": -2.3799080848693848
+      },
+      "yaw": 31.332807540893555
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 5.351481914520264,
+        "y": 0.9009996652603149,
+        "z": -2.1657354831695557
+      },
+      "yaw": 31.53130531311035
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 5.351481914520264,
+        "y": 0.9009996652603149,
+        "z": -2.1657354831695557
+      },
+      "yaw": 61.12737274169922
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 5.572893142700195,
+        "y": 0.9009996652603149,
+        "z": -2.044668674468994
+      },
+      "yaw": 61.33033752441406
+    },
+    {
+      "horizon": 30.000001907348633,
+      "position": {
+        "x": 5.572893142700195,
+        "y": 0.9009996652603149,
+        "z": -2.044668674468994
+      },
+      "yaw": 61.33033752441406
+    }
+  ],
+  "video": "results/nav-robothor-embclip-minimal-terminal-candidates-sjc-v1-20261023/FloorPlan_Val2_1_Bowl_8/gru1_rollout0.mp4",
+  "video_sha256": "ddced838deb81f83dd9afa81c778da79004a7fb7960b70a8663e49af0b2c4742"
+}

@@ -43,5 +43,5 @@
   ],
   "feedback": "Previous detached raw policy logits, not sampled actions or privileged observations.",
   "model_parameters_modified": false,
-  "image_sha256": "102c3e88b3bb48ad18eccc1e4d70e1b306d131f8ee3f484a71f8ac6d0fe916c7"
+  "image_sha256": "5ec9f149a8b9e6a1eb990373a83d935b91e48dd54a43f367d033c7b8339f78ae"
 }

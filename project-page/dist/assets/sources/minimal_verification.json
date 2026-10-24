@@ -2,35 +2,35 @@
   "status": "pass",
   "paired_cases": 4,
   "objects": [
-    "BaseballBat",
+    "Bowl",
     "GarbageCan",
     "HousePlant",
     "SprayBottle"
   ],
   "videos": [
     {
-      "asset": "assets/minimal-videos/FloorPlan_Val1_2_BaseballBat_3/gru1-71f073c77872.mp4",
-      "sha256": "6da9473cb1b42bdb8e278f64220b6690927e70d207cddf7af4df87d00ffc113b",
-      "frames": 9,
-      "duration": 0.75
+      "asset": "assets/minimal-videos/FloorPlan_Val2_1_Bowl_8/gru1-e7cbfcf8f35e.mp4",
+      "sha256": "42f051bad39f01a045c918f2a078bf17b851a8b29ff0f013d9aa25e15822b291",
+      "frames": 14,
+      "duration": 1.166016
     },
     {
-      "asset": "assets/minimal-videos/FloorPlan_Val1_2_BaseballBat_3/gawf1-abcbf345a46e.mp4",
-      "sha256": "da709eadfbe3cb2fedf36dd3bf23c6ea6e6b86a11e2f7f12bfc0ebbf607b967d",
-      "frames": 54,
-      "duration": 4.5
+      "asset": "assets/minimal-videos/FloorPlan_Val2_1_Bowl_8/gawf1-2f5c0a861f07.mp4",
+      "sha256": "fcaea57ca01b09d6653eab2c3f564331ff4dfacb06cb1cf96da09947dd68cba8",
+      "frames": 24,
+      "duration": 2.0
     },
     {
-      "asset": "assets/minimal-videos/FloorPlan_Val1_1_GarbageCan_0/gru1-021adb45b086.mp4",
-      "sha256": "3a24cf9f8cb453ebe8149e7beb92c2cb2a06717fe4b28984b00554ddb45e8858",
-      "frames": 501,
-      "duration": 41.75
+      "asset": "assets/minimal-videos/FloorPlan_Val3_3_GarbageCan_5/gru1-0589d1dd47e2.mp4",
+      "sha256": "ba13ea60ca9f8be21ac1c1f590094fe704d294f7597baf9f94a11e81d3f36cf2",
+      "frames": 96,
+      "duration": 8.0
     },
     {
-      "asset": "assets/minimal-videos/FloorPlan_Val1_1_GarbageCan_0/gawf1-4a0d0047fe81.mp4",
-      "sha256": "fabb1205537856d21a35181ad1b0c6abb5f90275bf01f3adc079aa568dbe8ebe",
-      "frames": 103,
-      "duration": 8.583333
+      "asset": "assets/minimal-videos/FloorPlan_Val3_3_GarbageCan_5/gawf1-0dc8bd774c58.mp4",
+      "sha256": "10b3115078802859116389a96779e686a56e11daa2f5700e1c573664040a9aaf",
+      "frames": 48,
+      "duration": 4.0
     },
     {
       "asset": "assets/minimal-videos/FloorPlan_Val3_1_HousePlant_2/gru1-fc4e5adb9b5c.mp4",
@@ -68,7 +68,7 @@
     "rgb_panels": 24,
     "gradient_panels": 24,
     "targets": 12,
-    "model_labels": "normal weight, upright, left aligned",
+    "model_labels": "bold, upright, left aligned",
     "shared_goal_heading_per_pair": true,
     "baseballbat_different_episodes_marked": true
   },
@@ -89,7 +89,7 @@
     "label_columns": 1,
     "source_summary_sha256": "9d7eaadf092b17eff67182da40d530a43035c3620c8769401f618b5c04880b6a",
     "raw_rgb_columns": 0,
-    "image_sha256": "21a3bb3df22ec47b89cf23724cc8a49e2752b2b04b6ffef879d3b224975b4889",
+    "image_sha256": "8fa5f1ba7c073bc21176d2f3c78d6f8a7145f78f92dde15408e86c7064a83017",
     "panels": [
       {
         "model": "gru1",
@@ -109,10 +109,10 @@
       {
         "model": "gru1",
         "kind": "gradcam_overlay",
-        "target": "BaseballBat",
-        "episode_id": "FloorPlan_Val1_5_BaseballBat_5",
-        "cam_sha256": "511db5daa32f0d71846e17c39e6b078d9aae711d50354de19b223d7e7e5592f5",
-        "rgb_sha256": "24ce0637c76b8c4c08b2ecd218f246d4077325ffc001f32267994a87d4da97b6"
+        "target": "Laptop",
+        "episode_id": "FloorPlan_Val3_2_Laptop_8",
+        "cam_sha256": "b46553d83b90ef8631bc90782c98efbffc13c3f80900a141ada18ec74d4bf054",
+        "rgb_sha256": "e73ab1d745bdf866ad4ddabfe58808d948c88d832a60ad1fab21964cc18b290c"
       },
       {
         "model": "gru1",
@@ -140,10 +140,10 @@
       {
         "model": "gawf1",
         "kind": "gradcam_overlay",
-        "target": "BaseballBat",
-        "episode_id": "FloorPlan_Val1_2_BaseballBat_3",
-        "cam_sha256": "a68d9b99a796cb92e5c9f9f6897979f79df2ca742977bc468eafe507cd081388",
-        "rgb_sha256": "a13657cde1d5501cedd979fc324c80e5aa266a9dc98e5e83db748ee3652665b5"
+        "target": "Laptop",
+        "episode_id": "FloorPlan_Val3_2_Laptop_8",
+        "cam_sha256": "e15f03ccac1dd2f8bc71863db60987e8a8f7e6033bf0c9aa9f513b94ffc47c46",
+        "rgb_sha256": "16927a507bd7fc6cbd5387390ae0e4ec36bcc6c48bdd7093ebd3be51b3e2dd3d"
       },
       {
         "model": "gawf1",
@@ -168,8 +168,9 @@
       ],
       "dashed_separator": true
     },
+    "emphasis": "Group headings and model labels: Noto Sans Bold, 22pt.",
     "normalization": "Same as full figures: per-map positive maximum, jet overlay alpha 0.48.",
-    "comparison": "Paired trajectory episode; Grad-CAM uses own successful views, different BaseballBat episodes."
+    "comparison": "Paired HousePlant trajectory episode; Grad-CAM uses separate successful episodes and each model's own view."
   },
   "layout_reference": "codebook_layout_reference.json",
   "font_reference": "codebook_font_reference.json",
@@ -188,6 +189,17 @@
   "performance_table": {
     "dataset": "RoboTHOR ObjectNav Val",
     "training_frames": 5001216,
+    "paper_reference": {
+      "model": "EmbCLIP",
+      "split": "RoboTHOR-Test",
+      "training_environment_steps": 200000000,
+      "sr_percent": 47.0,
+      "spl_percent": 20.0,
+      "source": "https://arxiv.org/html/2111.09888v2",
+      "table": 1,
+      "standard_deviation": "Not reported; no uncertainty is invented.",
+      "role": "Literature reference, not a run on our common validation episode set."
+    },
     "reference_training_budget": {
       "environment_steps": 200000000,
       "source": "https://arxiv.org/html/2111.09888v2",
@@ -263,7 +275,7 @@
       }
     }
   },
-  "training_budget_note": "5M vs 200M environment steps per seed; approximately 2.5% of the original budget and 97.5% fewer steps.",
+  "training_budget_note": "5M environment steps per seed, approximately 2.5% of the paper's 200M budget.",
   "method_figure": {
     "panels": [
       "Unchanged extracted GaWF cell",
@@ -309,6 +321,109 @@
     ],
     "feedback": "Previous detached raw policy logits, not sampled actions or privileged observations.",
     "model_parameters_modified": false,
-    "image_sha256": "102c3e88b3bb48ad18eccc1e4d70e1b306d131f8ee3f484a71f8ac6d0fe916c7"
+    "image_sha256": "5ec9f149a8b9e6a1eb990373a83d935b91e48dd54a43f367d033c7b8339f78ae"
+  },
+  "comparison_consistency": {
+    "pairs": [
+      {
+        "target": "Bowl",
+        "video_episode": "FloorPlan_Val2_1_Bowl_8",
+        "video_outcomes": [
+          {
+            "model": "gru1",
+            "steps": 13,
+            "success": false
+          },
+          {
+            "model": "gawf1",
+            "steps": 23,
+            "success": true
+          }
+        ],
+        "gradcam_episodes": {
+          "gawf1": "FloorPlan_Val1_5_Bowl_1",
+          "gru1": "FloorPlan_Val1_5_Bowl_1"
+        },
+        "relationship": "Separate successful Grad-CAM episodes; not frames from the paired navigation recording."
+      },
+      {
+        "target": "GarbageCan",
+        "video_episode": "FloorPlan_Val3_3_GarbageCan_5",
+        "video_outcomes": [
+          {
+            "model": "gru1",
+            "steps": 95,
+            "success": true
+          },
+          {
+            "model": "gawf1",
+            "steps": 47,
+            "success": true
+          }
+        ],
+        "gradcam_episodes": {
+          "gawf1": "FloorPlan_Val2_4_GarbageCan_4",
+          "gru1": "FloorPlan_Val2_4_GarbageCan_4"
+        },
+        "relationship": "Separate successful Grad-CAM episodes; not frames from the paired navigation recording."
+      },
+      {
+        "target": "HousePlant",
+        "video_episode": "FloorPlan_Val3_1_HousePlant_2",
+        "video_outcomes": [
+          {
+            "model": "gru1",
+            "steps": 500,
+            "success": false
+          },
+          {
+            "model": "gawf1",
+            "steps": 32,
+            "success": true
+          }
+        ],
+        "gradcam_episodes": {
+          "gawf1": "FloorPlan_Val2_5_HousePlant_3",
+          "gru1": "FloorPlan_Val2_5_HousePlant_3"
+        },
+        "relationship": "Separate successful Grad-CAM episodes; not frames from the paired navigation recording."
+      },
+      {
+        "target": "SprayBottle",
+        "video_episode": "FloorPlan_Val1_2_SprayBottle_8",
+        "video_outcomes": [
+          {
+            "model": "gru1",
+            "steps": 264,
+            "success": true
+          },
+          {
+            "model": "gawf1",
+            "steps": 49,
+            "success": true
+          }
+        ],
+        "gradcam_episodes": {
+          "gawf1": "FloorPlan_Val3_4_SprayBottle_6",
+          "gru1": "FloorPlan_Val3_4_SprayBottle_6"
+        },
+        "relationship": "Separate successful Grad-CAM episodes; not frames from the paired navigation recording."
+      }
+    ],
+    "explanation": "Cross-section recordings are different episodes. Each video pair shares a matched episode, start pose and seeds. The HousePlant baseline failure is episode-specific, not evidence that the model never learns.",
+    "official_row": {
+      "split": "RoboTHOR-Test",
+      "training_budget_steps": 200000000,
+      "sr_percent": 47,
+      "spl_percent": 20,
+      "source": "https://arxiv.org/html/2111.09888v2",
+      "table": 1,
+      "comparable_to_common_val": false
+    },
+    "endpoint_review": {
+      "Bowl": "GaWF last RGB clearly contains the bowl on the table.",
+      "GarbageCan": "Both last RGB frames clearly contain the garbage can.",
+      "SprayBottle": "Existing selected successful endpoints retained."
+    }
   }
 }

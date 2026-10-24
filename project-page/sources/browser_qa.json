@@ -2,7 +2,7 @@
   "status": "pass",
   "date": "2026-10-23",
   "case_order": [
-    "BaseballBat",
+    "Bowl",
     "GarbageCan",
     "HousePlant",
     "SprayBottle"
@@ -18,7 +18,7 @@
     "rgb_panels": 24,
     "gradient_panels": 24,
     "targets": 12,
-    "model_labels": "normal weight, upright, left aligned",
+    "model_labels": "bold, upright, left aligned",
     "shared_goal_heading_per_pair": true,
     "baseballbat_different_episodes_marked": true
   },
@@ -64,7 +64,7 @@
   "preview_lifecycle": "detached local HTTP server retained for video playback after the chat turn",
   "model_names": {
     "font_style": "normal",
-    "font_weight": "400"
+    "font_weight": "700"
   },
   "gradient_example_review": {
     "AlarmClock": "Recognizable complete clock face visible in GaWF terminal RGB.",
@@ -102,7 +102,7 @@
     "columns": [
       "HousePlant trajectory",
       "AlarmClock Grad-CAM",
-      "BaseballBat Grad-CAM",
+      "Laptop Grad-CAM",
       "SprayBottle Grad-CAM"
     ],
     "raw_rgb_columns": 0,
@@ -110,11 +110,12 @@
     "group_titles": [
       "Trajectory",
       "Grad-CAM"
-    ]
+    ],
+    "emphasis": "Model names and group headings enlarged to 22pt and bold"
   },
   "quantitative_table": {
     "status": "verified",
-    "models": 2,
+    "models": 3,
     "metrics": [
       "SR (%)",
       "SPL (%)"
@@ -126,11 +127,14 @@
       "13.38 \u00b1 2.73",
       "8.25 \u00b1 1.40",
       "19.55 \u00b1 3.09",
-      "10.10 \u00b1 0.93"
+      "10.10 \u00b1 0.93",
+      "47.00",
+      "20.00"
     ],
     "center_offset_px": 0,
     "vertical_borders": false,
-    "header_separator": true
+    "header_separator": true,
+    "rows": "Two common-Val results plus a separately labelled literature Test reference"
   },
   "visual_section_captions": 2,
   "typography_px": {
@@ -155,7 +159,6 @@
     "actual_budget": "5M environment steps per seed",
     "paper_budget": "200M environment steps per seed",
     "relative_budget": "about 2.5%",
-    "reduction": "about 97.5%",
     "paper_link": "https://arxiv.org/html/2111.09888v2"
   },
   "method_figure": {
@@ -166,5 +169,9 @@
     "shared_input_frame": "recorded RoboTHOR Laptop RGB",
     "parameters_changed": false,
     "local_visual_inspection": "pass"
-  }
+  },
+  "title": "FEEDBACK-GATED MODULATION SUPPORTS VISUAL NAVIGATION",
+  "author": "Jingcheng Shi",
+  "italic_find_heading": "GarbageCan",
+  "separate_video_and_gradcam_episodes_explained": true
 }
