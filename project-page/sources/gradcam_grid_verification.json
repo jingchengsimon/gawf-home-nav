@@ -1,169 +1,304 @@
 {
-  "rows": 4,
+  "status": "pass",
+  "figures": 2,
+  "rows_per_figure": 4,
   "columns": 6,
-  "panels": 24,
-  "layout": "two model pairs of six goals; left-aligned model labels; overlays only",
-  "targets": [
-    "AlarmClock",
-    "Apple",
-    "BaseballBat",
-    "BasketBall",
-    "Bowl",
-    "GarbageCan",
-    "HousePlant",
-    "Laptop",
-    "Mug",
-    "SprayBottle",
-    "Television",
-    "Vase"
-  ],
-  "comparison_mode": "individual_terminal",
-  "source_summary_sha256": "87877e31d4260d8ed38c3023b6fc79c76bed499f1d9f0ec85ce28ba33c4c5264",
-  "image_sha256": "f692127e2e0c38322adb89baba4542127296eabc5a14e4617c12941c34fc8b7a",
-  "panels_verified": [
+  "panels": 48,
+  "rgb_panels": 24,
+  "gradient_panels": 24,
+  "targets": 12,
+  "model_labels": "normal weight, upright, left aligned",
+  "shared_goal_heading_per_pair": true,
+  "baseballbat_different_episodes_marked": true,
+  "source_maps_unchanged": true,
+  "receipts": [
     {
-      "target": "AlarmClock",
-      "model": "gru1",
-      "positive_max": 0.22476232051849365,
-      "episode_id": "FloorPlan_Val1_3_AlarmClock_2"
+      "page": 1,
+      "rows": 4,
+      "columns": 6,
+      "panels": 24,
+      "rgb_panels": 12,
+      "gradient_panels": 12,
+      "goal_labels": 6,
+      "model_labels": "normal weight, upright, left aligned",
+      "layout": "three adjacent RGB/gradient pairs per row; one shared goal heading per pair",
+      "targets": [
+        "AlarmClock",
+        "Apple",
+        "BaseballBat",
+        "BasketBall",
+        "Bowl",
+        "GarbageCan"
+      ],
+      "comparison_mode": "individual_terminal",
+      "source_summary_sha256": "87877e31d4260d8ed38c3023b6fc79c76bed499f1d9f0ec85ce28ba33c4c5264",
+      "image_sha256": "3b35e6e2e15e469d039df2b3d65b2559657bc6d8dcf351d2162fc2ce45f1fdf0",
+      "panels_verified": [
+        {
+          "target": "AlarmClock",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.22476232051849365,
+          "episode_id": "FloorPlan_Val1_3_AlarmClock_2"
+        },
+        {
+          "target": "Apple",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.2453579306602478,
+          "episode_id": "FloorPlan_Val1_3_Apple_6"
+        },
+        {
+          "target": "BaseballBat",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.20476581156253815,
+          "episode_id": "FloorPlan_Val1_5_BaseballBat_5"
+        },
+        {
+          "target": "AlarmClock",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.23356719315052032,
+          "episode_id": "FloorPlan_Val1_3_AlarmClock_2"
+        },
+        {
+          "target": "Apple",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.17360201478004456,
+          "episode_id": "FloorPlan_Val1_3_Apple_6"
+        },
+        {
+          "target": "BaseballBat",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.06626862287521362,
+          "episode_id": "FloorPlan_Val1_2_BaseballBat_3"
+        },
+        {
+          "target": "BasketBall",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.0018527144566178322,
+          "episode_id": "FloorPlan_Val1_2_BasketBall_6"
+        },
+        {
+          "target": "Bowl",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.021383006125688553,
+          "episode_id": "FloorPlan_Val1_5_Bowl_1"
+        },
+        {
+          "target": "GarbageCan",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.004155738279223442,
+          "episode_id": "FloorPlan_Val2_4_GarbageCan_4"
+        },
+        {
+          "target": "BasketBall",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.0004736591945402324,
+          "episode_id": "FloorPlan_Val1_2_BasketBall_6"
+        },
+        {
+          "target": "Bowl",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.07533718645572662,
+          "episode_id": "FloorPlan_Val1_5_Bowl_1"
+        },
+        {
+          "target": "GarbageCan",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.04476364701986313,
+          "episode_id": "FloorPlan_Val2_4_GarbageCan_4"
+        }
+      ]
     },
     {
-      "target": "Apple",
-      "model": "gru1",
-      "positive_max": 0.2453579306602478,
-      "episode_id": "FloorPlan_Val1_3_Apple_6"
-    },
-    {
-      "target": "BaseballBat",
-      "model": "gru1",
-      "positive_max": 0.20476581156253815,
-      "episode_id": "FloorPlan_Val1_5_BaseballBat_5"
-    },
-    {
-      "target": "BasketBall",
-      "model": "gru1",
-      "positive_max": 0.0018527144566178322,
-      "episode_id": "FloorPlan_Val1_2_BasketBall_6"
-    },
-    {
-      "target": "Bowl",
-      "model": "gru1",
-      "positive_max": 0.021383006125688553,
-      "episode_id": "FloorPlan_Val1_5_Bowl_1"
-    },
-    {
-      "target": "GarbageCan",
-      "model": "gru1",
-      "positive_max": 0.004155738279223442,
-      "episode_id": "FloorPlan_Val2_4_GarbageCan_4"
-    },
-    {
-      "target": "AlarmClock",
-      "model": "gawf1",
-      "positive_max": 0.23356719315052032,
-      "episode_id": "FloorPlan_Val1_3_AlarmClock_2"
-    },
-    {
-      "target": "Apple",
-      "model": "gawf1",
-      "positive_max": 0.17360201478004456,
-      "episode_id": "FloorPlan_Val1_3_Apple_6"
-    },
-    {
-      "target": "BaseballBat",
-      "model": "gawf1",
-      "positive_max": 0.06626862287521362,
-      "episode_id": "FloorPlan_Val1_2_BaseballBat_3"
-    },
-    {
-      "target": "BasketBall",
-      "model": "gawf1",
-      "positive_max": 0.0004736591945402324,
-      "episode_id": "FloorPlan_Val1_2_BasketBall_6"
-    },
-    {
-      "target": "Bowl",
-      "model": "gawf1",
-      "positive_max": 0.07533718645572662,
-      "episode_id": "FloorPlan_Val1_5_Bowl_1"
-    },
-    {
-      "target": "GarbageCan",
-      "model": "gawf1",
-      "positive_max": 0.04476364701986313,
-      "episode_id": "FloorPlan_Val2_4_GarbageCan_4"
-    },
-    {
-      "target": "HousePlant",
-      "model": "gru1",
-      "positive_max": 0.09601147472858429,
-      "episode_id": "FloorPlan_Val1_2_HousePlant_2"
-    },
-    {
-      "target": "Laptop",
-      "model": "gru1",
-      "positive_max": 0.2399369776248932,
-      "episode_id": "FloorPlan_Val2_2_Laptop_8"
-    },
-    {
-      "target": "Mug",
-      "model": "gru1",
-      "positive_max": 0.008142819628119469,
-      "episode_id": "FloorPlan_Val3_2_Mug_6"
-    },
-    {
-      "target": "SprayBottle",
-      "model": "gru1",
-      "positive_max": 0.010416090488433838,
-      "episode_id": "FloorPlan_Val3_4_SprayBottle_6"
-    },
-    {
-      "target": "Television",
-      "model": "gru1",
-      "positive_max": 0.049840208142995834,
-      "episode_id": "FloorPlan_Val1_5_Television_3"
-    },
-    {
-      "target": "Vase",
-      "model": "gru1",
-      "positive_max": 0.006023223511874676,
-      "episode_id": "FloorPlan_Val1_1_Vase_1"
-    },
-    {
-      "target": "HousePlant",
-      "model": "gawf1",
-      "positive_max": 0.019116351380944252,
-      "episode_id": "FloorPlan_Val1_2_HousePlant_2"
-    },
-    {
-      "target": "Laptop",
-      "model": "gawf1",
-      "positive_max": 0.002723118755966425,
-      "episode_id": "FloorPlan_Val2_2_Laptop_8"
-    },
-    {
-      "target": "Mug",
-      "model": "gawf1",
-      "positive_max": 0.02655685320496559,
-      "episode_id": "FloorPlan_Val3_2_Mug_6"
-    },
-    {
-      "target": "SprayBottle",
-      "model": "gawf1",
-      "positive_max": 0.09591052681207657,
-      "episode_id": "FloorPlan_Val3_4_SprayBottle_6"
-    },
-    {
-      "target": "Television",
-      "model": "gawf1",
-      "positive_max": 0.13428674638271332,
-      "episode_id": "FloorPlan_Val1_5_Television_3"
-    },
-    {
-      "target": "Vase",
-      "model": "gawf1",
-      "positive_max": 0.04177958518266678,
-      "episode_id": "FloorPlan_Val1_1_Vase_1"
+      "page": 2,
+      "rows": 4,
+      "columns": 6,
+      "panels": 24,
+      "rgb_panels": 12,
+      "gradient_panels": 12,
+      "goal_labels": 6,
+      "model_labels": "normal weight, upright, left aligned",
+      "layout": "three adjacent RGB/gradient pairs per row; one shared goal heading per pair",
+      "targets": [
+        "HousePlant",
+        "Laptop",
+        "Mug",
+        "SprayBottle",
+        "Television",
+        "Vase"
+      ],
+      "comparison_mode": "individual_terminal",
+      "source_summary_sha256": "87877e31d4260d8ed38c3023b6fc79c76bed499f1d9f0ec85ce28ba33c4c5264",
+      "image_sha256": "7cf76948cb82c3e70414d89d7e7d05e14daa334b5ec3bc6920019c1e31931aff",
+      "panels_verified": [
+        {
+          "target": "HousePlant",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.09601147472858429,
+          "episode_id": "FloorPlan_Val1_2_HousePlant_2"
+        },
+        {
+          "target": "Laptop",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.2399369776248932,
+          "episode_id": "FloorPlan_Val2_2_Laptop_8"
+        },
+        {
+          "target": "Mug",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.008142819628119469,
+          "episode_id": "FloorPlan_Val3_2_Mug_6"
+        },
+        {
+          "target": "HousePlant",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.019116351380944252,
+          "episode_id": "FloorPlan_Val1_2_HousePlant_2"
+        },
+        {
+          "target": "Laptop",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.002723118755966425,
+          "episode_id": "FloorPlan_Val2_2_Laptop_8"
+        },
+        {
+          "target": "Mug",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.02655685320496559,
+          "episode_id": "FloorPlan_Val3_2_Mug_6"
+        },
+        {
+          "target": "SprayBottle",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.010416090488433838,
+          "episode_id": "FloorPlan_Val3_4_SprayBottle_6"
+        },
+        {
+          "target": "Television",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.049840208142995834,
+          "episode_id": "FloorPlan_Val1_5_Television_3"
+        },
+        {
+          "target": "Vase",
+          "model": "gru1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.006023223511874676,
+          "episode_id": "FloorPlan_Val1_1_Vase_1"
+        },
+        {
+          "target": "SprayBottle",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.09591052681207657,
+          "episode_id": "FloorPlan_Val3_4_SprayBottle_6"
+        },
+        {
+          "target": "Television",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.13428674638271332,
+          "episode_id": "FloorPlan_Val1_5_Television_3"
+        },
+        {
+          "target": "Vase",
+          "model": "gawf1",
+          "panels": [
+            "rgb",
+            "gradient"
+          ],
+          "positive_max": 0.04177958518266678,
+          "episode_id": "FloorPlan_Val1_1_Vase_1"
+        }
+      ]
     }
   ]
 }

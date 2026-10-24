@@ -20,9 +20,13 @@
   "architecture_audit": "assets/sources/embclip_architecture_audit.json",
   "attribution": [
     {
-      "alt": "Four rows and six columns of Grad-CAM overlays: EmbCLIP and EmbCLIP-GaWF for twelve RoboTHOR target categories",
-      "asset": "assets/gradcam-four-by-six.png",
+      "alt": "Original RGB and Grad-CAM pairs for Alarm Clock, Apple, Baseball Bat, Basketball, Bowl and Garbage Can; four rows, three goals per model row.",
+      "asset": "assets/gradcam-rgb-pairs-1.png",
       "note": "BaseballBat uses different episodes."
+    },
+    {
+      "alt": "Original RGB and Grad-CAM pairs for House Plant, Laptop, Mug, Spray Bottle, Television and Vase; four rows, three goals per model row.",
+      "asset": "assets/gradcam-rgb-pairs-2.png"
     }
   ],
   "attribution_manifest": {
@@ -1012,24 +1016,24 @@
       "target": "HousePlant"
     },
     {
-      "episode_id": "FloorPlan_Val2_1_Vase_3",
+      "episode_id": "FloorPlan_Val1_1_Vase_6",
       "models": [
         {
           "model": "gru1",
-          "receipt": "assets/sources/episodes/FloorPlan_Val2_1_Vase_3/gru1_rollout0.json",
-          "source_sha256": "b5dfd9b28a76c0e88921f65b0e04f0348494257667be72e314169371d1e81b10",
-          "source_video": "results/nav-robothor-embclip-minimal-terminal-candidates-sjc-v1-20261023/FloorPlan_Val2_1_Vase_3/gru1_rollout0.mp4",
+          "receipt": "assets/sources/episodes/FloorPlan_Val1_1_Vase_6/gru1_rollout0.json",
+          "source_sha256": "301a0954327bbeddeb0ebb45e149ab965374bfe2435b661964b9c4bfb26a3f19",
+          "source_video": "results/nav-robothor-embclip-minimal-terminal-candidates-sjc-v1-20261023/FloorPlan_Val1_1_Vase_6/gru1_rollout0.mp4",
           "spl": 0.0,
-          "steps": 23,
+          "steps": 6,
           "success": false
         },
         {
           "model": "gawf1",
-          "receipt": "assets/sources/episodes/FloorPlan_Val2_1_Vase_3/gawf1_rollout0.json",
-          "source_sha256": "059ca28286204747155b527e930c22dcf5eaf44e0781186e7ee71da86074af1c",
-          "source_video": "results/nav-robothor-embclip-minimal-terminal-candidates-sjc-v1-20261023/FloorPlan_Val2_1_Vase_3/gawf1_rollout0.mp4",
-          "spl": 0.5238778264943919,
-          "steps": 71,
+          "receipt": "assets/sources/episodes/FloorPlan_Val1_1_Vase_6/gawf1_rollout0.json",
+          "source_sha256": "89da7bca50330e7f6e4bc525a8cfff7069ffeba11d0038255119d881c3f8f81f",
+          "source_video": "results/nav-robothor-embclip-minimal-terminal-candidates-sjc-v1-20261023/FloorPlan_Val1_1_Vase_6/gawf1_rollout0.mp4",
+          "spl": 0.12481415321370089,
+          "steps": 221,
           "success": true
         }
       ],

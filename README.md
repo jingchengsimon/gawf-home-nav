@@ -8,7 +8,7 @@ GaWF, which gates recurrent weights using feedback from the preceding step.
 - **Gibson PointNav v2:** DD-PPO LSTM vs GaWF, RGB and a fixed initial goal cue,
   1M training frames. No online GPS, compass or depth is supplied to the policy.
 
-The project page presents paired navigation videos and gradient visualizations.
+The project page presents paired navigation videos and twelve goals with paired RGB/gradient views.
 Validation SR/SPL and training figures remain available in the project assets.
 Top-down maps and true poses are used only by
 visualization/evaluation; distance-based rewards are training supervision.

@@ -11,11 +11,15 @@
   "paired_cases": 4,
   "individual_videos": 8,
   "gradient_grid": {
-    "rows": 4,
+    "figures": 2,
+    "rows_per_figure": 4,
     "columns": 6,
-    "panels": 24,
-    "model_labels": "bold italic, left aligned",
-    "overlays_only": true,
+    "panels": 48,
+    "rgb_panels": 24,
+    "gradient_panels": 24,
+    "targets": 12,
+    "model_labels": "normal weight, upright, left aligned",
+    "shared_goal_heading_per_pair": true,
     "baseballbat_different_episodes_marked": true
   },
   "github": "https://github.com/jingchengsimon/gawf-home-nav",
@@ -31,7 +35,8 @@
   "video_errors": [],
   "horizontal_overflow": false,
   "screenshots": [
-    "preview-video-gradient.jpg"
+    "preview-vase-visible.jpg",
+    "preview-rgb-gradient-pairs.jpg"
   ],
   "page_content": [
     "navigation videos",
@@ -57,8 +62,8 @@
       0.54003
     ],
     "Vase": [
-      0.280777,
-      0.279328
+      0.357259,
+      0.35707
     ]
   },
   "pause_verified": true,
@@ -66,5 +71,20 @@
     6.074223,
     6.074211
   ],
-  "preview_lifecycle": "detached local HTTP server retained for video playback after the chat turn"
+  "preview_lifecycle": "detached local HTTP server retained for video playback after the chat turn",
+  "model_names": {
+    "font_style": "normal",
+    "font_weight": "400"
+  },
+  "vase_replacement": {
+    "episode_id": "FloorPlan_Val1_1_Vase_6",
+    "browser_full_playback_verified": true,
+    "terminal_times": [
+      0.583008,
+      18.5
+    ],
+    "both_ended": true,
+    "blue_vase_visible_in_final_rgb": true,
+    "fair_initial_pose_verified": true
+  }
 }

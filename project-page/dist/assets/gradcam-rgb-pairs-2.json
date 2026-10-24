@@ -1,0 +1,144 @@
+{
+  "page": 2,
+  "rows": 4,
+  "columns": 6,
+  "panels": 24,
+  "rgb_panels": 12,
+  "gradient_panels": 12,
+  "goal_labels": 6,
+  "model_labels": "normal weight, upright, left aligned",
+  "layout": "three adjacent RGB/gradient pairs per row; one shared goal heading per pair",
+  "targets": [
+    "HousePlant",
+    "Laptop",
+    "Mug",
+    "SprayBottle",
+    "Television",
+    "Vase"
+  ],
+  "comparison_mode": "individual_terminal",
+  "source_summary_sha256": "87877e31d4260d8ed38c3023b6fc79c76bed499f1d9f0ec85ce28ba33c4c5264",
+  "image_sha256": "7cf76948cb82c3e70414d89d7e7d05e14daa334b5ec3bc6920019c1e31931aff",
+  "panels_verified": [
+    {
+      "target": "HousePlant",
+      "model": "gru1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.09601147472858429,
+      "episode_id": "FloorPlan_Val1_2_HousePlant_2"
+    },
+    {
+      "target": "Laptop",
+      "model": "gru1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.2399369776248932,
+      "episode_id": "FloorPlan_Val2_2_Laptop_8"
+    },
+    {
+      "target": "Mug",
+      "model": "gru1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.008142819628119469,
+      "episode_id": "FloorPlan_Val3_2_Mug_6"
+    },
+    {
+      "target": "HousePlant",
+      "model": "gawf1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.019116351380944252,
+      "episode_id": "FloorPlan_Val1_2_HousePlant_2"
+    },
+    {
+      "target": "Laptop",
+      "model": "gawf1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.002723118755966425,
+      "episode_id": "FloorPlan_Val2_2_Laptop_8"
+    },
+    {
+      "target": "Mug",
+      "model": "gawf1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.02655685320496559,
+      "episode_id": "FloorPlan_Val3_2_Mug_6"
+    },
+    {
+      "target": "SprayBottle",
+      "model": "gru1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.010416090488433838,
+      "episode_id": "FloorPlan_Val3_4_SprayBottle_6"
+    },
+    {
+      "target": "Television",
+      "model": "gru1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.049840208142995834,
+      "episode_id": "FloorPlan_Val1_5_Television_3"
+    },
+    {
+      "target": "Vase",
+      "model": "gru1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.006023223511874676,
+      "episode_id": "FloorPlan_Val1_1_Vase_1"
+    },
+    {
+      "target": "SprayBottle",
+      "model": "gawf1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.09591052681207657,
+      "episode_id": "FloorPlan_Val3_4_SprayBottle_6"
+    },
+    {
+      "target": "Television",
+      "model": "gawf1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.13428674638271332,
+      "episode_id": "FloorPlan_Val1_5_Television_3"
+    },
+    {
+      "target": "Vase",
+      "model": "gawf1",
+      "panels": [
+        "rgb",
+        "gradient"
+      ],
+      "positive_max": 0.04177958518266678,
+      "episode_id": "FloorPlan_Val1_1_Vase_1"
+    }
+  ]
+}

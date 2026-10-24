@@ -20,13 +20,15 @@ name. Each model has a full trajectory, a live trajectory and its RGB view. One
 image-mounted play control and an icon beside each object heading start both
 videos; either control pauses the pair. Each method has a gray timeline with a
 red elapsed portion. The shorter video holds its last frame until the longer one
-finishes. Four object cases are shown: Apple, GarbageCan, HousePlant and Vase.
+finishes. Four object cases are shown: Apple, GarbageCan, HousePlant and Vase. The Vase
+case uses FloorPlan_Val1_1_Vase_6; GaWF succeeds and the recorded terminal RGB
+visibly contains the blue vase.
 
 Video overlays, scene identifiers, seed selectors, score cards and developer
 annotations are omitted from the visible page. Detailed provenance remains in
 `dist/assets/sources/protocol.json`, the experiment manifests and result receipts.
 All source recordings, including unselected and unsuccessful cases, are retained
-locally. The page currently shows four paired demos followed by the gradient grid.
+locally. The page currently shows four paired demos followed by two RGB/gradient grids.
 Quantitative and training figures are retained as assets but are not displayed.
 The title links to the public GitHub repository; there is no footer link list.
 The earlier page source and figures are in `archive/20261023-before-minimal/`;
@@ -45,8 +47,10 @@ an estimate of aggregate performance; the separately retained SR/SPL figure uses
 episode IDs across the evaluated models. Coverage and missing identities are
 recorded in the source snapshots.
 
-The four-by-six gradient grid uses each model's own successful validation
-terminal view, re-rendered from logged poses. Each recurrent state is reconstructed
+The twelve goals are split across two four-by-six image grids. Each row has
+three adjacent RGB/Grad-CAM pairs, with one goal heading shared by each pair.
+Model labels use normal weight and upright text. The grids use each model's own
+successful validation terminal view, re-rendered from logged poses. Each recurrent state is reconstructed
 from that model's re-rendered RGB/action history. Eleven categories share an
 episode and initial pose; BaseballBat uses different successful episodes, marked
 on the page. Visual inputs and histories can differ, and re-rendering is not

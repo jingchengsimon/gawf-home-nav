@@ -1,0 +1,15 @@
+{
+  "episode_id": "FloorPlan_Val1_1_Vase_6",
+  "model": "gawf1",
+  "training_seed": 3,
+  "action_sampling_seed": 0,
+  "simulator_seed": 1000,
+  "success": true,
+  "steps": 221,
+  "terminal_action": "End",
+  "video_sha256": "89da7bca50330e7f6e4bc525a8cfff7069ffeba11d0038255119d881c3f8f81f",
+  "terminal_rgb_review": "Large blue vase visibly occupies the upper-left part of the final RGB frame; reviewed from the actual final recorded frame, not inferred from task metrics.",
+  "comparison": "Same episode and initial pose for both models",
+  "previous_scene": "FloorPlan_Val2_1",
+  "replacement_scene": "FloorPlan_Val1_1"
+}
