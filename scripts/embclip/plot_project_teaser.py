@@ -47,7 +47,7 @@ def main():
         checks.append(dict(model=model, kind='full_trajectory', episode_id=plant['episode_id'],
                            source=str(path.relative_to(ROOT)), sha256=digest(path)))
         for column, (target, title) in enumerate((('AlarmClock', 'Alarm Clock'),
-                                                ('Laptop', 'Laptop'),
+                                                ('Mug', 'Mug'),
                                                 ('SprayBottle', 'Spray Bottle')), start=2):
             record = records[target]['models'][model]
             cam_path = SOURCE / f'{target}_{model}_cam.npy'
@@ -67,7 +67,7 @@ def main():
                                episode_id=record['episode_id'], cam_sha256=digest(cam_path),
                                rgb_sha256=digest(rgb_path)))
     # Align headings above panels despite their different aspect ratios.
-    for ax, title in zip(first_row, ('House Plant', 'Alarm Clock', 'Laptop', 'Spray Bottle')):
+    for ax, title in zip(first_row, ('House Plant', 'Alarm Clock', 'Mug', 'Spray Bottle')):
         bounds = ax.get_position()
         fig.text((bounds.x0+bounds.x1)/2, .86, title, ha='center', va='bottom', fontproperties=font)
     trajectory, first_cam, _, last_cam = [ax.get_position() for ax in first_row]

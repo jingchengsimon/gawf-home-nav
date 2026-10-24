@@ -4,7 +4,7 @@
   "label_columns": 1,
   "source_summary_sha256": "9d7eaadf092b17eff67182da40d530a43035c3620c8769401f618b5c04880b6a",
   "raw_rgb_columns": 0,
-  "image_sha256": "8fa5f1ba7c073bc21176d2f3c78d6f8a7145f78f92dde15408e86c7064a83017",
+  "image_sha256": "117b9483b0ea631c757c76e5a3bcf086ccbe2d5781d93044cc50bcd7713b198a",
   "panels": [
     {
       "model": "gru1",
@@ -24,10 +24,10 @@
     {
       "model": "gru1",
       "kind": "gradcam_overlay",
-      "target": "Laptop",
-      "episode_id": "FloorPlan_Val3_2_Laptop_8",
-      "cam_sha256": "b46553d83b90ef8631bc90782c98efbffc13c3f80900a141ada18ec74d4bf054",
-      "rgb_sha256": "e73ab1d745bdf866ad4ddabfe58808d948c88d832a60ad1fab21964cc18b290c"
+      "target": "Mug",
+      "episode_id": "FloorPlan_Val3_2_Mug_6",
+      "cam_sha256": "bb3dfc2e7e08d7220075642308141e0de14823d010a47567b20f6aa879a2948d",
+      "rgb_sha256": "83f20cfc06a74f0af278427e367caeb1e6efca691515d56174e53113a5391ea2"
     },
     {
       "model": "gru1",
@@ -55,10 +55,10 @@
     {
       "model": "gawf1",
       "kind": "gradcam_overlay",
-      "target": "Laptop",
-      "episode_id": "FloorPlan_Val3_2_Laptop_8",
-      "cam_sha256": "e15f03ccac1dd2f8bc71863db60987e8a8f7e6033bf0c9aa9f513b94ffc47c46",
-      "rgb_sha256": "16927a507bd7fc6cbd5387390ae0e4ec36bcc6c48bdd7093ebd3be51b3e2dd3d"
+      "target": "Mug",
+      "episode_id": "FloorPlan_Val3_2_Mug_6",
+      "cam_sha256": "1e45a6e25b3346f22a026804789700437cb8f0339a4c26b969021c9c9f434230",
+      "rgb_sha256": "efb23192138bfd4517223ed77e8cadaa666ed8f496068f567ae19593a973d94c"
     },
     {
       "model": "gawf1",

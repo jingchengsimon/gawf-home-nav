@@ -43,7 +43,7 @@ annotations are omitted from the visible page. Detailed provenance remains in
 All source recordings, including unselected and unsuccessful cases, are retained
 in their SJC result leaves. Selected videos and small source snapshots are mirrored
 locally. A two-row teaser combines the enlarged HousePlant full trajectories with AlarmClock,
-Laptop and SprayBottle Grad-CAM overlays. Results contains I. Performance (SR/SPL mean ± sample SD),
+Mug and SprayBottle Grad-CAM overlays. Results contains I. Performance (SR/SPL mean ± sample SD),
 II. four paired navigation demos, and III. two RGB/gradient grids.
 A dashed line separates Trajectory and Grad-CAM groups in the teaser.
 Each visual section has a short introduction and one shared caption. Text-to-image
