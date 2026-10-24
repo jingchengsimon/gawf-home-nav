@@ -53,7 +53,7 @@ def main():
     assert all(stats['gawf1'][m]['mean_percent'] > stats['gru1'][m]['mean_percent'] for m in ('sr', 'spl'))
     caption = ('We compare success rate (SR), success weighted by path length (SPL), and '
                'success weighted by episode length (SEL). SEL follows the metric introduced by '
-               '<a href="https://embodied-codebook.github.io/">Codebook</a>.')
+               '<a href="https://embodied-codebook.github.io/">EmbCLIP-Codebook</a>.')
     table = ('<section id="performance">\n<h3>I. Performance</h3>\n'
              '<p>With lightweight 5M-step training (about 2.5% of <strong>EmbCLIP</strong>’s original '
              '<a href="https://arxiv.org/html/2111.09888v2">200M-step budget</a>), '
