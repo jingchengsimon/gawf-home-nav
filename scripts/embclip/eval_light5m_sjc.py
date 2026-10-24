@@ -1,4 +1,4 @@
-"""Evaluate completed light EmbCLIP checkpoints on all RoboTHOR val episodes."""
+"""Evaluate explicitly registered RoboTHOR 5M checkpoints for any seed 0–4."""
 
 import argparse
 from datetime import datetime
@@ -14,8 +14,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[2]
 JOBS = ROOT / "experiments/monitoring/jobs"
-MODELS = {"gru1": 0, "gawf1": 0, "gru3": 1, "gawf3": 1}
-ORDER = {name: index for index, name in enumerate(MODELS)}
+MODELS = {"gru1", "gawf1", "gru3", "gawf3"}
 EVAL_COMPLETE = re.compile(r"\bnum_test_tasks_complete\s+(\d+)")
 
 
@@ -135,15 +134,31 @@ def finalize_metrics(path, run, output, expected_ids, expected_scenes):
     print(f"{status.upper()} {run['experiment_id']} {len(tasks)}/1800 SR={sr:.6f} SPL={spl:.6f}", flush=True)
 
 
-def run_one(path, gpu):
-    run = json.loads(path.read_text())
+def validate_manifest(run, path, gpu):
     model, seed = run["model"]["family"], run["seed"]
     if (run["host"] != "sjc-remote" or run["mode"] != "checkpoint_eval"
             or run["experiment_id"] != path.stem or model not in MODELS
-            or MODELS[model] != gpu or seed not in (0, 1)
+            or seed not in range(5) or (seed > 1 and model not in {"gru1", "gawf1"})
             or run["expected_episodes"] != 1800
-            or run["execution"]["physical_gpu_index"] != gpu):
+            or gpu not in (0, 1) or run["execution"]["physical_gpu_index"] != gpu
+            or run["execution"].get("evaluation_seed", 0) != 0
+            or run["execution"].get("num_test_processes", 15) != 15
+            or run["execution"].get("test_on_validation", True) is not True):
         raise RuntimeError(f"Unexpected evaluation manifest: {path}")
+    if run["status"] not in {"prepared", "queued", "failed"}:
+        raise RuntimeError("Evaluation must be explicitly prepared or queued")
+    runner = str(Path(__file__).relative_to(ROOT))
+    digest = sha256(Path(__file__))
+    if run.get("runner_path") != runner or run.get("runner_sha256") != digest:
+        raise RuntimeError("Manifest must pin the unified evaluation runner")
+    if run["source"]["source_files"].get(runner) != digest:
+        raise RuntimeError("Runner is missing from the pinned evaluation sources")
+
+
+def run_one(path, gpu, validate_only=False):
+    run = json.loads(path.read_text())
+    validate_manifest(run, path, gpu)
+    model, seed = run["model"]["family"], run["seed"]
     source = run["source_checkpoint"]
     train_path = JOBS / (source["training_experiment_id"] + ".json")
     train = json.loads(train_path.read_text())
@@ -165,13 +180,35 @@ def run_one(path, gpu):
     if output.parent.resolve() != (ROOT / "results").resolve() or output.is_symlink():
         raise RuntimeError(f"Unsafe result path: {output}")
     if output.exists():
-        if run["status"] == "failed" and (output / "exit.json").is_file():
-            finalize_metrics(path, run, output, expected_ids, expected_scenes)
-            return
-        raise RuntimeError(f"Result leaf already exists: {output}")
+        raise RuntimeError(f"Result leaf already exists: {output}; use a fresh registered ID")
     python = ROOT / ".envs/embclip-robothor/bin/python"
     if not python.is_file():
         raise RuntimeError(f"Evaluation environment missing: {python}")
+    import torch
+    state = torch.load(checkpoint, map_location="cpu")
+    required = {"model_state_dict", "optimizer_state_dict", "training_pipeline_state_dict",
+                "trainer_seed", "scheduler_state"}
+    if required - state.keys() or int(state["total_steps"]) != 5_001_216 or int(state["trainer_seed"]) != seed:
+        raise RuntimeError("Checkpoint state/seed/step validation failed")
+    del state
+    train_result = ROOT / train["units"][0]["result_path"]
+    if "process exiting with exitcode 0" not in (train_result / "train.log").read_text(errors="replace")[-16384:]:
+        raise RuntimeError("No clean training exit in log")
+    exit_path = train_result / "exit.json"
+    if exit_path.exists() and json.loads(exit_path.read_text())["return_code"] != 0:
+        raise RuntimeError("Training exit receipt is nonzero")
+    import shutil
+    if shutil.disk_usage(ROOT / "results").free < 5 * 1024**3:
+        raise RuntimeError("Less than 5 GiB available")
+    uuid, free = subprocess.check_output(["nvidia-smi", "--id="+str(gpu),
+        "--query-gpu=uuid,memory.free", "--format=csv,noheader,nounits"], text=True).strip().split(",")
+    apps = subprocess.check_output(["nvidia-smi", "--query-compute-apps=gpu_uuid,pid", "--format=csv,noheader"], text=True)
+    if int(free) < 11000 or any(line.split(",")[0].strip() == uuid.strip() for line in apps.splitlines()):
+        raise RuntimeError("Target GPU is occupied or has less than 11000 MiB free")
+    if validate_only:
+        print(json.dumps(dict(status="validated", experiment_id=run["experiment_id"], seed=seed,
+              checkpoint_sha256=source["sha256"], actual_frames=5001216, gpu=gpu)), flush=True)
+        return
     output.mkdir()
     run["status"] = run["units"][0]["status"] = "running"
     write_json(path, run)
@@ -194,38 +231,45 @@ def run_one(path, gpu):
     write_json(output / "launch.json", dict(command=command, physical_gpu=gpu,
                checkpoint_sha256=source["sha256"],
                started_at=datetime.now().astimezone().isoformat()))
-    return_code = run_logged_evaluation(command, output, env, run["expected_episodes"])
-    write_json(output / "exit.json", dict(return_code=return_code,
-               finished_at=datetime.now().astimezone().isoformat()))
-    if return_code != 0:
-        raise RuntimeError(f"AllenAct evaluation exited {return_code}: {output / 'eval.log'}")
-    finalize_metrics(path, run, output, expected_ids, expected_scenes)
+    try:
+        return_code = run_logged_evaluation(command, output, env, run["expected_episodes"])
+        write_json(output / "exit.json", dict(return_code=return_code,
+                   finished_at=datetime.now().astimezone().isoformat()))
+        if return_code != 0:
+            raise RuntimeError(f"AllenAct evaluation exited {return_code}: {output / 'eval.log'}")
+        finalize_metrics(path, run, output, expected_ids, expected_scenes)
+    except Exception as error:
+        run["status"] = run["units"][0]["status"] = "failed"
+        run["failure"] = str(error)
+        write_json(path, run)
+        progress_path = output / "progress.json"
+        progress = json.loads(progress_path.read_text()) if progress_path.exists() else dict(
+            completed_episodes=0, expected_episodes=1800)
+        progress.update(status="failed", updated_at=datetime.now().astimezone().isoformat())
+        write_json(progress_path, progress)
+        raise
+    finally:
+        subprocess.run([sys.executable, "-B", "scripts/rebuild_index.py"], cwd=ROOT, check=True)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("experiment_ids", nargs="+", help="Explicit registered evaluation IDs, in queue order")
     parser.add_argument("--gpu", type=int, choices=(0, 1), required=True)
+    parser.add_argument("--validate-only", action="store_true")
     args = parser.parse_args()
-    files = sorted(JOBS.glob("nav-robothor-embclip-light-*-eval-val1800-sjc-v1-seed[01]-20261022.json"),
-                   key=lambda path: (ORDER[json.loads(path.read_text())["model"]["family"]],
-                                     json.loads(path.read_text())["seed"]))
-    selected = [path for path in files if MODELS[json.loads(path.read_text())["model"]["family"]] == args.gpu]
-    if len(selected) != 4:
-        raise RuntimeError(f"Expected four validation jobs on GPU {args.gpu}, found {len(selected)}")
-    for path in selected:
+    paths = []
+    for experiment_id in args.experiment_ids:
+        if not re.fullmatch(r"[A-Za-z0-9_-]+", experiment_id):
+            raise RuntimeError("Expected an experiment ID, not a path")
+        path = JOBS / (experiment_id + ".json")
         run = json.loads(path.read_text())
-        if run["status"] in ("complete", "partial"):
-            continue
-        try:
-            run_one(path, args.gpu)
-            subprocess.run([sys.executable, "-B", "scripts/rebuild_index.py"], cwd=ROOT, check=True)
-        except Exception as error:
-            run = json.loads(path.read_text())
-            run["status"] = run["units"][0]["status"] = "failed"
-            run["failure"] = str(error)
-            write_json(path, run)
-            print(f"FAILED {path.stem}: {error}", file=sys.stderr, flush=True)
-            raise
+        validate_manifest(run, path, args.gpu)
+        if path in paths:
+            raise RuntimeError("Duplicate evaluation ID")
+        paths.append(path)
+    for path in paths:
+        run_one(path, args.gpu, args.validate_only)
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-"""Run a registered SJC EmbCLIP 5M job with a pinned seed-0 continuation."""
+"""Run a registered SJC EmbCLIP 5M job; read seed 0–4 from its manifest."""
 
 import argparse
 from datetime import datetime
@@ -61,7 +61,7 @@ def verify_checkpoint(path, target, seed):
     if missing:
         raise RuntimeError(f"Incomplete checkpoint {path}: {sorted(missing)}")
     steps = int(state["total_steps"])
-    if steps != checkpoint_step(path) or steps > target:
+    if steps != checkpoint_step(path) or not 0 <= steps <= target + 16 * 128:
         raise RuntimeError(f"Checkpoint step mismatch or beyond target: {path}, {steps}, {target}")
     if int(state["trainer_seed"]) != seed:
         raise RuntimeError(f"Checkpoint seed mismatch: {path}")
@@ -74,24 +74,43 @@ def on_signal(signum, _frame):
         os.killpg(CHILD.pid, signum)
 
 
+def validate_manifest(run, experiment_id):
+    execution = run["execution"]
+    seed = execution["seed"]
+    model = run["model"]["family"]
+    if (run["experiment_id"] != experiment_id or run["host"] != "sjc-remote"
+            or model not in MODELS or execution["physical_gpu_index"] not in (0, 1)
+            or seed not in range(5) or (seed > 1 and model not in {"gru1", "gawf1"})
+            or execution["steps_budget"] != 5_000_000
+            or execution["checkpoint_interval_steps"] != 100_000
+            or execution["global_train_envs"] != 16):
+        raise RuntimeError("Unexpected job identity or training protocol")
+    if seed > 0 and run.get("resume_from"):
+        raise RuntimeError("Seeds 1–4 must start independently")
+    if run["status"] not in {"prepared", "queued", "running", "failed"}:
+        raise RuntimeError("Completed or paused training is not a launch request")
+    sources = run["source"]["source_files"]
+    runner = str(Path(__file__).relative_to(ROOT))
+    if sources.get(runner) != sha256(Path(__file__)):
+        raise RuntimeError("Manifest must pin the unified training runner")
+
+
 def main():
     global CHILD
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("experiment_id")
     args = parser.parse_args()
     manifest_path = ROOT / "experiments/monitoring/jobs" / (args.experiment_id + ".json")
+    if manifest_path.parent != ROOT / "experiments/monitoring/jobs":
+        raise RuntimeError("Expected an experiment ID, not a path")
     run = json.loads(manifest_path.read_text())
+    validate_manifest(run, args.experiment_id)
     execution = run["execution"]
     model = run["model"]["family"]
     target = int(execution["steps_budget"])
     gpu = int(execution["physical_gpu_index"])
     seed = int(execution["seed"])
     interval = int(execution["checkpoint_interval_steps"])
-    if (run["experiment_id"] != args.experiment_id or run["host"] != "sjc-remote"
-            or model not in MODELS or gpu not in (0, 1) or seed not in (0, 1)
-            or target != 5_000_000
-            or interval != 100_000 or execution["global_train_envs"] != 16):
-        raise RuntimeError("Unexpected job identity or training protocol")
     for relative, expected in run["source"]["source_files"].items():
         source = ROOT / relative
         if not source.is_file() or sha256(source) != expected:
@@ -123,8 +142,6 @@ def main():
             raise RuntimeError("Pinned continuation checkpoint missing or changed")
     if seed == 0 and checkpoint is None:
         raise RuntimeError("Seed 0 continuation needs a pinned checkpoint")
-    if seed == 1 and run.get("resume_from"):
-        raise RuntimeError("Seed 1 must start independently")
     starting_steps = verify_checkpoint(checkpoint, target, seed) if checkpoint else 0
     if starting_steps >= target:
         write_json(output / "summary.json", dict(status="complete", global_frames=starting_steps,

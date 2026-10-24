@@ -56,22 +56,13 @@ separate from historical RGB-D or GPS/compass results.
 | Purpose | Entry points |
 | --- | --- |
 | RoboTHOR models | [GRU config](scripts/embclip/light5m_gru1_config.py), [GaWF adapter](scripts/embclip/light_gawf1_config.py), [canonical GaWF core](scripts/embclip/canonical_core/gawf.py) |
-| RoboTHOR training | [seed0/1 driver](scripts/embclip/run_light_5m_sjc.py), [seed2 driver](scripts/embclip/run_light_5m_sjc_seed2.py), [seed3/4 driver](scripts/embclip/run_light_5m_sjc_seed34.py) |
-| RoboTHOR evaluation | [seed0/1 evaluator](scripts/embclip/eval_light5m_sjc.py), [seed2–4 evaluator](scripts/embclip/eval_light5m_sjc_seed234.py), [GaWF seed2/4 completion evaluator](scripts/embclip/eval_light5m_remaining_sjc.py), [official checkpoint evaluator](scripts/embclip/eval_official_val_sjc.py) |
-| Shared-episode metrics | [SR/SPL/SEL comparison](scripts/embclip/compare_official_light_val.py), [table builder](scripts/embclip/build_performance_table.py) |
-| RoboTHOR videos and Grad-CAM | [autonomous recording](scripts/embclip/record_minimal_suite_sjc.py), [logged-trajectory replay](scripts/embclip/render_logged_navigation_sjc.py), [terminal Grad-CAM](scripts/embclip/analyze_terminal_views_sjc.py) |
-| Figure and page assembly | [teaser](scripts/embclip/plot_project_teaser.py), [RGB/Grad-CAM grids](scripts/embclip/plot_twelve_goal_gradcam.py), [video asset assembly](scripts/build_minimal_project_page.py), [page behavior](project-page/dist/assets/page.js) |
-| PointNav RGB-only training | [configuration](configs/pointnav2020/light_rgb/protocol.json), [driver](scripts/run_pointnav2020_light_rgb.py), [trainer](scripts/train_pointnav2020_light_rgb_longrun.py), [GaWF adapter](scripts/pointnav2020_gawf.py) |
-| PointNav RGB-only evaluation | [evaluator](scripts/eval_pointnav2020_light_rgb.py), [validation plot](scripts/plot_pointnav2020_rgb_eval.py) |
+| PointNav core configuration | [RGB-only protocol](configs/pointnav2020/light_rgb/protocol.json), [task](configs/pointnav2020/light_rgb/task.yaml), [DD-PPO](configs/pointnav2020/light_rgb/ddppo.yaml) |
+| Grad-CAM | [analysis](scripts/embclip/analyze_terminal_views_sjc.py), [figure](scripts/embclip/plot_twelve_goal_gradcam.py) |
+| Trajectory visualization | [recording](scripts/embclip/record_minimal_suite_sjc.py), [replay](scripts/embclip/render_logged_navigation_sjc.py) |
 
-Experiment drivers use registered manifests and frozen source hashes, with separate
-output directories for each run. Some recording/evaluation drivers execute frozen
-copies from result directories; they are not generic one-command launchers.
-Read the [RoboTHOR protocol](docs/ROBOTHOR_EMBCLIP.md) or
-[PointNav guide](docs/POINTNAV.md) before preparing a new run. Existing completed
-IDs and output directories should not be reused. Licensed data, checkpoints,
-simulator environments and raw analysis arrays are prepared separately; pinned
-upstream sources are recorded in [vendor/sources.json](vendor/sources.json).
+Setup and execution details: [RoboTHOR](docs/ROBOTHOR_EMBCLIP.md) and
+[PointNav](docs/POINTNAV.md). Data, checkpoints and simulator environments are
+prepared separately.
 
 ## Project page
 

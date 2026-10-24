@@ -54,7 +54,7 @@ def main():
             subprocess.run([sys.executable, "scripts/rebuild_index.py"], cwd=ROOT, check=True)
             python = ROOT / ".envs/embclip-robothor/bin/python"
             os.execv(str(python), [str(python), "-u",
-                                   str(ROOT / "scripts/embclip/run_light_5m_sjc_seed2.py"),
+                                   str(ROOT / "scripts/embclip/run_light_5m_sjc.py"),
                                    experiment_id])
         time.sleep(60)
 

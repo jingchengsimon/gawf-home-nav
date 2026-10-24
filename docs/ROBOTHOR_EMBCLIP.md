@@ -15,6 +15,33 @@ shared episode coverage and entry points are summarized in the
 Read the dated sections below as engineering history: original 60-sampler/200M
 plans, queue states and intermediate progress are not the current experiment status.
 
+## Unified training and evaluation
+
+All five seeds use the same training and evaluation implementations. The seed,
+model, GPU and checkpoint identity come from each registered manifest:
+
+```sh
+python scripts/embclip/run_light_5m_sjc.py <training-id>
+python scripts/embclip/eval_light5m_sjc.py <evaluation-id> --gpu 0 --validate-only
+python scripts/embclip/eval_light5m_sjc.py <evaluation-id> --gpu 0
+```
+
+These are execution-host commands; simulator runs belong on SJC. Evaluation accepts
+multiple explicit IDs in queue order on the selected GPU. It keeps the same 1,800
+Val episodes, evaluation seed 0, 15 samplers and 500-action limit for every training
+seed. Training retains the historical seed0 continuation rule; seeds1–4 start
+independently and can resume their own checkpoints. Final checkpoints may exceed
+5M by at most one 2,048-frame rollout.
+
+The former seed-specific drivers have been consolidated into these two files.
+Historical IDs, source hashes and result snapshots are unchanged; their old source
+versions remain in Git history and the original execution snapshots. A new run
+requires a new registered manifest and current source hashes, including the unified
+runner. Evaluation also requires its `runner_path` and `runner_sha256` fields to
+match the unified evaluator and refuses an existing result leaf. Completed results
+are not rerun by this refactor. The official 130M checkpoint still uses its separate
+evaluator because its model/checkpoint protocol differs from the lightweight runs.
+
 ## Dated engineering record
 
 2026-10-19，EmbCLIP 独立支线。用户停止HM3D-OVON，保留其源码、环境与资源调查，不再下载HM3D或申请Matterport权限。PointNav与历史RGB-D RoboTHOR demo不变。GPU渲染、官方CLIP checkpoint评测及训练功能smoke均在`sjc-remote`执行；Amarel不做EmbCLIP smoke。2026-10-20用户新增三模型正式训练授权，提交详情见下文。
