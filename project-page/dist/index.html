@@ -29,12 +29,12 @@
 <h2>Results</h2>
 <section id="performance">
 <h3>I. Performance</h3>
-<p>With lightweight 5M-step training (about 2.5% of <strong>EmbCLIP</strong>’s original <a href="https://arxiv.org/html/2111.09888v2">200M-step budget</a>), <strong>EmbCLIP-GaWF</strong> achieves higher overall success rate (SR) and success weighted by path length (SPL) than <strong>EmbCLIP</strong>.</p>
+<p>With lightweight 5M-step training (about 2.5% of <strong>EmbCLIP</strong>’s original <a href="https://arxiv.org/html/2111.09888v2">200M-step budget</a>), <strong>EmbCLIP-GaWF</strong> achieves higher overall success rate (SR) and success weighted by path length (SPL) than equally trained <strong>EmbCLIP</strong>.</p>
 <div class="table-scroll"><table class="quantitative">
 <caption>We compare success rate (SR), success weighted by path length (SPL), and success weighted by episode length (SEL). SEL follows the metric introduced by <a href="https://embodied-codebook.github.io/">EmbCLIP-Codebook</a>.</caption>
 <thead><tr><th scope="col" rowspan="2">Benchmark</th><th scope="col" rowspan="2">Model</th><th scope="colgroup" colspan="3">Object navigation</th></tr>
 <tr><th scope="col">SR (%) ↑</th><th scope="col">SPL (%) ↑</th><th scope="col">SEL (%) ↑</th></tr></thead>
-<tbody><tr><th scope="rowgroup" rowspan="2">RoboTHOR-Val</th><th scope="row"><strong>EmbCLIP</strong></th><td>13.38 ± 2.73</td><td>8.25 ± 1.40</td><td>7.43 ± 1.22</td></tr><tr><th scope="row"><strong>EmbCLIP-GaWF</strong></th><td><strong>19.55 ± 3.09</strong></td><td><strong>10.10 ± 0.93</strong></td><td><strong>7.95 ± 1.39</strong></td></tr><tr class="paper-reference"><th scope="rowgroup">RoboTHOR-Test</th><th scope="row"><strong>EmbCLIP</strong> (200M, paper)</th><td>47.00</td><td>20.00</td><td>-</td></tr></tbody>
+<tbody><tr><th scope="rowgroup" rowspan="3">RoboTHOR</th><th scope="row"><strong>EmbCLIP</strong></th><td>13.38 ± 2.73</td><td>8.25 ± 1.40</td><td>7.43 ± 1.22</td></tr><tr><th scope="row"><strong>EmbCLIP-GaWF</strong></th><td><strong>19.55 ± 3.09</strong></td><td><strong>10.10 ± 0.93</strong></td><td><strong>7.95 ± 1.39</strong></td></tr><tr><th scope="row"><strong>EmbCLIP</strong> (130M)</th><td>45.20</td><td>21.54</td><td>24.53</td></tr></tbody>
 </table></div>
 </section>
 <section id="navigation">

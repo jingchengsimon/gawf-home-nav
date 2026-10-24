@@ -40,9 +40,14 @@ def load_run(experiment_id, family, seed, steps):
     if len(rows) != 1 or int(rows[0]['training_steps']) != steps:
         raise RuntimeError('Wrong checkpoint in metrics')
     tasks = rows[0]['tasks']
-    mapping = {t['task_info']['id']: (float(t['success']), float(t['spl'])) for t in tasks}
+    mapping = {t['task_info']['id']: (float(t['success']), float(t['spl']), int(t['ep_length'])) for t in tasks}
     if len(tasks) != len(mapping) or len(tasks) != summary['episode_count']:
         raise RuntimeError('Duplicate or missing task records')
+    expected_summary_hash = manifest['completion_evidence'].get('summary_sha256')
+    if expected_summary_hash and sha(summary_path) != expected_summary_hash:
+        raise RuntimeError('Summary hash mismatch')
+    if any(t['ep_length'] != len(t['task_info']['taken_actions']) or t['ep_length'] < 1 for t in tasks):
+        raise RuntimeError('Action count mismatch')
     for index, metric in enumerate(('success_rate', 'spl')):
         if not math.isclose(statistics.mean(v[index] for v in mapping.values()), summary[metric], abs_tol=1e-12):
             raise RuntimeError('Per-episode and summary scores disagree')
@@ -69,22 +74,55 @@ def main():
     common = set.intersection(*(set(r['tasks']) for r in runs))
     if not common:
         raise RuntimeError('No common episode IDs')
+    reference = ROOT / 'results/nav-robothor-embclip-val-expert-reference-sjc-v2-20261024'
+    behaviour_path = reference / 'behaviour_metrics.json'
+    if sha(behaviour_path) != '60cfea09121cde1b49f52a8ee644f49a07550b4eadbe1b828dcd10f0e8ddf4b1':
+        raise RuntimeError('Previously verified behavior snapshot changed')
+    behaviour = json.loads(behaviour_path.read_text())
+    expert = json.loads((reference / 'summary.json').read_text())
+    if (expert['status'] != 'complete'
+            or json.loads((reference / 'exit.json').read_text())['return_code'] != 0
+            or sha(reference / 'summary.json') != behaviour['expert_summary_sha256']
+            or sha(reference / 'episodes.jsonl') != expert['episodes_sha256']
+            or common != set(behaviour['common_episode_ids'])):
+        raise RuntimeError('Expert reference identity/coverage mismatch')
+    refs = expert['reference_steps']
+    if any(not isinstance(n, int) or n < 1 for n in refs.values()):
+        raise RuntimeError('Invalid expert reference length')
+    sel_ids = common & refs.keys()
+    if sel_ids != set(behaviour['sel_episode_ids']) or len(sel_ids) != 1516:
+        raise RuntimeError('SEL comparison set changed')
+    old_runs = {r['experiment_id']: r for r in behaviour['runs']}
     for run in runs:
         tasks = run.pop('tasks')
         run['common_sr'] = statistics.mean(tasks[e][0] for e in common)
         run['common_spl'] = statistics.mean(tasks[e][1] for e in common)
+        scores = {e: tasks[e][0]*refs[e]/max(refs[e], tasks[e][2]) for e in sel_ids}
+        run['common_sel'] = statistics.mean(scores.values())
+        if run['model'] != 'official':
+            old = old_runs[run['experiment_id']]
+            if (old['metrics_sha256'] != run['metrics_sha256']
+                    or not math.isclose(old['scores']['sel'], run['common_sel'], abs_tol=1e-12)):
+                raise RuntimeError('Previously verified lightweight SEL not reproduced')
+            for row in old['episode_scores']:
+                if row['episode_id'] in scores and not math.isclose(row['sel'], scores[row['episode_id']], abs_tol=1e-12):
+                    raise RuntimeError('Per-episode lightweight SEL not reproduced')
         run['missing_episode_ids'] = sorted(expected-set(tasks))
     aggregate = {}
     for model in ('official', 'gru1', 'gawf1'):
         selected = [r for r in runs if r['model'] == model]
         aggregate[model] = dict(n=len(selected))
-        for metric in ('common_sr', 'common_spl'):
+        for metric in ('common_sr', 'common_spl', 'common_sel'):
             values = [r[metric] * 100 for r in selected]
             aggregate[model][metric] = dict(mean_percent=statistics.mean(values),
                 sample_std_percentage_points=statistics.stdev(values) if len(values)>1 else None,
                 seed_scores_percent=values)
     print(json.dumps(dict(expected_episode_count=1800, common_episode_count=len(common),
         common_episode_ids=sorted(common), common_episode_ids_sha256=hashlib.sha256('\n'.join(sorted(common)).encode()).hexdigest(),
+        sel_episode_count=len(sel_ids), sel_episode_ids=sorted(sel_ids),
+        sel_episode_ids_sha256=hashlib.sha256('\n'.join(sorted(sel_ids)).encode()).hexdigest(),
+        expert_summary_sha256=sha(reference / 'summary.json'),
+        behaviour_source_sha256=sha(behaviour_path), sel_definition=behaviour['sel_definition'],
         standard_deviation='Across five training seeds; sample standard deviation (ddof=1). Official checkpoint has n=1; no seed std.',
         protocol=dict(ai2thor='5.0.0', build='f0825767cd50d69f666c7f282e54abfe58f1e917',
             max_steps=500, evaluation_seed=0, raw_rgb=[400,300], policy_rgb=[224,224], num_test_processes=15),

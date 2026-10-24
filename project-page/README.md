@@ -190,8 +190,9 @@ and checked RGB frame are explicit arguments; no generative drawing is used.
 The hero title uses MODULATION and names Jingcheng Shi above the GitHub button.
 Model names are bold in prose, diagrams, maps and videos. Teaser group/model
 labels use 22pt bold; all four Find headings are italic and centered. The performance table includes
-the original paper’s RoboTHOR-Test reference (200M training, SR 47%, SPL 20%)
-with its split separated from our common-Val rows and no invented standard deviation.
+the released official EmbCLIP checkpoint (130,091,717 steps), measured on the same
+Val episode set as our lightweight models. All three rows share the RoboTHOR label.
+The single official checkpoint has no across-seed standard deviation.
 Video and Grad-CAM examples use different episodes; identities remain in source metadata.
 `comparison_consistency.json` records the exact identities and selected outcomes.
 
@@ -219,6 +220,17 @@ The visible page emphasizes higher overall success under lightweight training.
 Videos illustrate selected task-specific advantages, with no aggregate claim of
 smoother paths or fewer rotations. The table displays SR, SPL and SEL; curvature
 remains available in the analysis records but is not displayed. Its short caption
-credits Codebook for SEL, and the paper Test reference has no reported SEL.
+credits EmbCLIP-Codebook for SEL. The official 130M checkpoint now has a measured SEL.
 Coverage, normalization, split differences and selection identities remain in
 source snapshots and analysis documentation rather than visible captions.
+
+## Official checkpoint Val comparison
+
+The official row replaces the former paper Test reference with actual Val results:
+SR 45.20%, SPL 21.54%, SEL 24.53%. SR/SPL use the same 1,783 episode IDs across
+all eleven runs. SEL uses the same 1,516 successful expert references for all
+eleven runs. The ten lightweight SEL scores were independently reproduced,
+including per-episode values. The shared reference is not guaranteed globally
+shortest. Full coverage, identities, hashes and unrounded results are preserved in
+`sources/official_light_validation.json` and its public source snapshot.
+The page shows no curvature or additional protocol prose.

@@ -1,16 +1,68 @@
 {
   "dataset": "RoboTHOR ObjectNav Val",
   "training_frames": 5001216,
-  "paper_reference": {
+  "official_reference": {
     "model": "EmbCLIP",
-    "split": "RoboTHOR-Test",
-    "training_environment_steps": 200000000,
-    "sr_percent": 47.0,
-    "spl_percent": 20.0,
-    "source": "https://arxiv.org/html/2111.09888v2",
-    "table": 1,
-    "standard_deviation": "Not reported; no uncertainty is invented.",
-    "role": "Literature reference, not a run on our common validation episode set."
+    "split": "RoboTHOR-Val",
+    "training_environment_steps": 130091717,
+    "standard_deviation": "One released checkpoint; no across-seed standard deviation.",
+    "role": "Measured on the same common validation episodes and shared SEL references.",
+    "run": {
+      "checkpoint_sha256": "b7867c833412212d1921ef3b66baae64d0eec18c6a8825ba4a2c5808407d50a2",
+      "common_sel": 0.24527628851706879,
+      "common_spl": 0.21536009039343024,
+      "common_sr": 0.45204711160964667,
+      "episode_count": 1783,
+      "experiment_id": "nav-robothor-embclip-official130m-eval-val1800-sjc-v1-20261024",
+      "metrics_sha256": "b597fb31ac48feebd9dd7aa395f14dd400c607fb60f3f0ed1b105124c3e23378",
+      "missing_episode_ids": [
+        "FloorPlan_Val1_1_Laptop_3",
+        "FloorPlan_Val1_1_Laptop_8",
+        "FloorPlan_Val1_1_Mug_2",
+        "FloorPlan_Val1_1_Vase_5",
+        "FloorPlan_Val1_4_HousePlant_0",
+        "FloorPlan_Val1_4_SprayBottle_1",
+        "FloorPlan_Val1_5_Apple_1",
+        "FloorPlan_Val1_5_BaseballBat_1",
+        "FloorPlan_Val1_5_GarbageCan_5",
+        "FloorPlan_Val1_5_HousePlant_0",
+        "FloorPlan_Val1_5_Laptop_8",
+        "FloorPlan_Val1_5_Mug_2",
+        "FloorPlan_Val1_5_Vase_5",
+        "FloorPlan_Val2_3_Bowl_9",
+        "FloorPlan_Val2_3_SprayBottle_8",
+        "FloorPlan_Val3_3_BasketBall_7",
+        "FloorPlan_Val3_3_Vase_4"
+      ],
+      "model": "official",
+      "summary_sha256": "ad8a99bd883e5f09dc020094a73e0df921e896f8473025acbeea2a654f236bcb",
+      "training_seed": null,
+      "training_steps": 130091717
+    },
+    "statistics": {
+      "sr": {
+        "mean_percent": 45.20471116096466,
+        "sample_std_percentage_points": null,
+        "seed_scores_percent": [
+          45.20471116096466
+        ]
+      },
+      "spl": {
+        "mean_percent": 21.536009039343025,
+        "sample_std_percentage_points": null,
+        "seed_scores_percent": [
+          21.536009039343025
+        ]
+      },
+      "sel": {
+        "mean_percent": 24.52762885170688,
+        "sample_std_percentage_points": null,
+        "seed_scores_percent": [
+          24.52762885170688
+        ]
+      }
+    },
+    "source_snapshot_sha256": "a7bb588afaf4eb11870e5d37c46124a98f6e0fb54aadf78efb1bca559d0c9f44"
   },
   "reference_training_budget": {
     "environment_steps": 200000000,
@@ -31,7 +83,7 @@
     3,
     4
   ],
-  "aggregation": "Per-seed SR/SPL on the intersection across all ten runs; equal-weight mean across seeds.",
+  "aggregation": "SR/SPL on the intersection across all eleven runs; five equal-weight seeds per lightweight model, one official checkpoint. Shared expert-reference subset for SEL.",
   "standard_deviation": "Sample standard deviation across seed scores (ddof=1), not SEM.",
   "units": "SR/SPL/SEL are percentages; curvature is 1/m. SD uses the same unit as each metric.",
   "coverage": "All processes exited normally. Individual coverage is partial; only shared evaluated IDs enter the comparison.",
@@ -133,6 +185,29 @@
         "std": 1.3945873907129478,
         "units": "percent",
         "episode_count": 1516
+      }
+    },
+    "official": {
+      "sr": {
+        "mean_percent": 45.20471116096466,
+        "sample_std_percentage_points": null,
+        "seed_scores_percent": [
+          45.20471116096466
+        ]
+      },
+      "spl": {
+        "mean_percent": 21.536009039343025,
+        "sample_std_percentage_points": null,
+        "seed_scores_percent": [
+          21.536009039343025
+        ]
+      },
+      "sel": {
+        "mean_percent": 24.52762885170688,
+        "sample_std_percentage_points": null,
+        "seed_scores_percent": [
+          24.52762885170688
+        ]
       }
     }
   },
