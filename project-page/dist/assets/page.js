@@ -6,7 +6,6 @@ const pauseIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h5v18H
 function demo(e){
  const section=document.createElement('article');section.className='demo';
  const heading=document.createElement('h4');heading.textContent=`Find ${e.target}`;
- if(e.target==='GarbageCan')heading.classList.add('italic');
  const titlePlay=document.createElement('button');titlePlay.className='control title-play';titlePlay.type='button';heading.append(titlePlay);section.append(heading);
  const pair=document.createElement('div');pair.className='pair';
  const videos=[],fills=[];

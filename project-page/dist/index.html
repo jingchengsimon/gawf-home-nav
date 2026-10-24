@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Feedback-gated modulation for visual navigation</title>
 <meta name="description" content="EmbCLIP and EmbCLIP-GaWF navigate the same RoboTHOR tasks using RGB observations.">
-<link rel="stylesheet" href="assets/style.css?v=a77db8d32ed8">
+<link rel="stylesheet" href="assets/style.css?v=b69758ec7d32">
 </head>
 <body><main>
 <header class="intro">
@@ -29,7 +29,7 @@
 <h2>Results</h2>
 <section id="performance">
 <h3>I. Performance</h3>
-<p>With lightweight 5M-step training (about 2.5% of <strong>EmbCLIP</strong>’s original <a href="https://arxiv.org/html/2111.09888v2">200M-step budget</a>), <strong>EmbCLIP-GaWF</strong> achieves higher validation SR and SPL than <strong>EmbCLIP</strong>.</p>
+<p>With lightweight 5M-step training (about 2.5% of <strong>EmbCLIP</strong>’s original <a href="https://arxiv.org/html/2111.09888v2">200M-step budget</a>), <strong>EmbCLIP-GaWF</strong> achieves higher validation success rate (SR) and success weighted by path length (SPL) than <strong>EmbCLIP</strong>.</p>
 <div class="table-scroll"><table class="quantitative">
 <caption>5M-frame training. Mean ± SD across five runs per model on 1,783 shared validation episodes. The 200M Test result is reported in <a href="https://arxiv.org/html/2111.09888v2">the original paper, Table 1</a>; it is a separate split and protocol.</caption>
 <thead><tr><th scope="col" rowspan="2">Benchmark</th><th scope="col" rowspan="2">Model</th><th scope="colgroup" colspan="2">Object navigation</th></tr>
@@ -39,16 +39,16 @@
 </section>
 <section id="navigation">
 <h3>II. Recurrent Feedback Guides Navigation Toward the Object Goal</h3>
-<p>We compare the agents on matched Object Goal Navigation tasks. Both reach GarbageCan, Laptop and SprayBottle, with <strong>EmbCLIP-GaWF</strong> finishing sooner. The selected HousePlant episode also shows an <strong>EmbCLIP</strong> failure under the lightweight training budget.</p>
+<p>We compare the agents on matched Object Goal Navigation tasks. Both reach GarbageCan, Laptop and SprayBottle, with <strong>EmbCLIP-GaWF</strong> finishing sooner.</p>
 <div id="demo-gallery"></div>
 <p class="section-caption">Paired comparisons share the same episode and starting pose. Laptop replays logged validation trajectories; the other cases are autonomous recordings with shared seeds. Views use the same playback rate. Grad-CAM below uses separate successful episodes.</p>
 </section>
 <section id="attention">
 <h3>III. Grad-CAM Reveals Visual Cues Behind the Stopping Decision</h3>
-<p>We analyze the trained agents with Grad-CAM to inspect visual information associated with stopping. The selected successful terminal views show each model’s sensitivity when the target is visible. These are separate episodes, not the terminal frames of the videos.</p>
+<p>We analyze the trained agents with <a href="https://arxiv.org/abs/1610.02391">Grad-CAM</a> to inspect visual information associated with stopping. The selected successful terminal views show each model’s sensitivity when the target is visible. These are separate episodes, not the terminal frames of the videos.</p>
 <div id="attribution-gallery"></div>
 <p class="section-caption">Grad-CAM at successful stops, using each model’s own view and history. Colors are normalized per map; warm regions indicate positive contribution to stopping. Baseball Bat uses different episodes.</p>
 </section>
 </section>
-</main><script src="assets/project-data.js?v=dc5ab4e31490"></script><script src="assets/page.js?v=75c68e4d4f05"></script></body>
+</main><script src="assets/project-data.js?v=dc5ab4e31490"></script><script src="assets/page.js?v=9431978ddaac"></script></body>
 </html>

@@ -185,7 +185,7 @@ and checked RGB frame are explicit arguments; no generative drawing is used.
 
 The hero title uses MODULATION and names Jingcheng Shi above the GitHub button.
 Model names are bold in prose, diagrams, maps and videos. Teaser group/model
-labels use 22pt bold; Find GarbageCan is italic. The performance table includes
+labels use 22pt bold; all four Find headings are italic and centered. The performance table includes
 the original paper’s RoboTHOR-Test reference (200M training, SR 47%, SPL 20%)
 with its split separated from our common-Val rows and no invented standard deviation.
 Video and Grad-CAM examples use different episodes; both sections now say so.
