@@ -21,10 +21,11 @@ function demo(e){
  }
  const play=document.createElement('button');play.className='control play';play.type='button';play.innerHTML=playIcon;pair.querySelector('.model-row').append(play);section.append(pair);
  const master=e.models[0].steps>=e.models[1].steps?0:1;
- let playing=false,starting=false,raf=0;
+ let playing=false,starting=false,raf=0,request=0;
  const updateControls=()=>{
-  titlePlay.innerHTML=playing?pauseIcon:playIcon;
-  for(const button of [play,titlePlay])button.setAttribute('aria-label',`${playing?'Pause':'Play'} both navigation videos for ${e.target}`);
+  const active=playing||starting;
+  titlePlay.innerHTML=active?pauseIcon:playIcon;
+  for(const button of [play,titlePlay])button.setAttribute('aria-label',`${active?'Pause':'Play'} both navigation videos for ${e.target}`);
  };
  const updateProgress=()=>videos.forEach((v,i)=>{
   const duration=v.duration;
@@ -32,7 +33,7 @@ function demo(e){
   const ratio=Number.isFinite(duration)&&duration>0?Math.min(1,elapsed/duration):0;
   fills[i].style.transform=`scaleX(${ratio})`;
  });
- const pause=()=>{playing=false;videos.forEach(v=>v.pause());pair.classList.remove('playing');cancelAnimationFrame(raf);updateControls();updateProgress();};
+ const pause=()=>{request++;playing=starting=false;videos.forEach(v=>v.pause());pair.classList.remove('playing');cancelAnimationFrame(raf);updateControls();updateProgress();};
  const tick=()=>{
   const t=videos[master].currentTime;
   videos.forEach((v,i)=>{if(i!==master&&Number.isFinite(v.duration)){
@@ -43,16 +44,26 @@ function demo(e){
   if(playing&&!videos[master].ended)raf=requestAnimationFrame(tick);else pause();
  };
  const toggle=async()=>{
-  if(starting)return;
-  if(playing){pause();return;}
+  if(playing||starting){pause();return;}
+  const current=++request;
   starting=true;
+  updateControls();
+  for(const v of videos)if(v.error)v.load();
   if(videos[master].ended)videos.forEach(v=>v.currentTime=0);
-  try{await Promise.all(videos.map(v=>v.ended?Promise.resolve():v.play()));playing=true;pair.classList.add('playing');play.blur();updateControls();tick();}
-  catch{pause();}
-  finally{starting=false;}
+  let timeout;
+  try{
+   await Promise.race([
+    Promise.all(videos.map(v=>v.ended?Promise.resolve():v.play())),
+    new Promise((_,reject)=>{timeout=setTimeout(()=>reject(new Error('Video loading timed out')),15000);})
+   ]);
+   if(current!==request)return;
+   starting=false;playing=true;pair.classList.add('playing');play.blur();updateControls();tick();
+  }
+  catch{if(current===request)pause();}
+  finally{clearTimeout(timeout);}
  };
  pair.addEventListener('click',toggle);titlePlay.addEventListener('click',toggle);
- videos.forEach(v=>{v.addEventListener('loadedmetadata',updateProgress);v.addEventListener('timeupdate',updateProgress);});
+ videos.forEach(v=>{v.addEventListener('loadedmetadata',updateProgress);v.addEventListener('timeupdate',updateProgress);v.addEventListener('error',pause);});
  updateControls();return section;
 }
 [...data.demos].sort((a,b)=>a.target.localeCompare(b.target)||a.episode_id.localeCompare(b.episode_id)).forEach(e=>document.querySelector('#demo-gallery').append(demo(e)));

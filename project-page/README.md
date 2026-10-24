@@ -9,8 +9,9 @@ For an HTTP preview with video seeking, run from the repository root:
 python3 scripts/serve_project_page.py
 ```
 
-Open http://127.0.0.1:8766/ and stop the server with Ctrl-C when finished.
-No public deployment or new GitHub project is claimed.
+Open http://127.0.0.1:8766/. Keep the server running while watching videos;
+cached page text and posters can remain visible after it stops, but video loading
+will fail. The code is published at https://github.com/jingchengsimon/gawf-home-nav.
 
 ## Presentation
 
@@ -25,7 +26,8 @@ Video overlays, scene identifiers, seed selectors, score cards and developer
 annotations are omitted from the visible page. Detailed provenance remains in
 `dist/assets/sources/protocol.json`, the experiment manifests and result receipts.
 All source recordings, including unselected and unsuccessful cases, are retained
-locally. Four paired demos appear together before the quantitative results.
+locally. The page currently shows four paired demos followed by the gradient grid.
+Quantitative and training figures are retained as assets but are not displayed.
 The title links to the public GitHub repository; there is no footer link list.
 The earlier page source and figures are in `archive/20261023-before-minimal/`;
 the original media remain in `dist/assets/videos/`.
@@ -39,11 +41,11 @@ and permitted self-generated recurrent/action history. PointNav uses RGB and a
 fixed initial goal cue. Distance-based rewards remain training supervision.
 
 Qualitative examples are selected to illustrate observed advantages. They are not
-an estimate of aggregate performance; the SR/SPL figure uses common validation
+an estimate of aggregate performance; the separately retained SR/SPL figure uses common validation
 episode IDs across the evaluated models. Coverage and missing identities are
 recorded in the source snapshots.
 
-The two-by-twelve gradient grid uses each model's own successful validation
+The four-by-six gradient grid uses each model's own successful validation
 terminal view, re-rendered from logged poses. Each recurrent state is reconstructed
 from that model's re-rendered RGB/action history. Eleven categories share an
 episode and initial pose; BaseballBat uses different successful episodes, marked

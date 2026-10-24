@@ -11,13 +11,11 @@
   "paired_cases": 4,
   "individual_videos": 8,
   "gradient_grid": {
-    "rows": 2,
-    "columns": 12,
+    "rows": 4,
+    "columns": 6,
     "panels": 24,
+    "model_labels": "bold italic, left aligned",
     "overlays_only": true,
-    "separate_raw_rgb_panels": 0,
-    "nonzero_maps": 24,
-    "comparison_mode": "individual_terminal",
     "baseballbat_different_episodes_marked": true
   },
   "github": "https://github.com/jingchengsimon/gawf-home-nav",
@@ -33,7 +31,40 @@
   "video_errors": [],
   "horizontal_overflow": false,
   "screenshots": [
-    "preview-gradient-grid.jpg",
-    "preview-grouped.jpg"
-  ]
+    "preview-video-gradient.jpg"
+  ],
+  "page_content": [
+    "navigation videos",
+    "gradient maps"
+  ],
+  "sections": [
+    "intro",
+    "demo-gallery",
+    "attention"
+  ],
+  "training_and_result_figures_displayed": false,
+  "playback_checks": {
+    "Apple": [
+      0.267469,
+      0.266304
+    ],
+    "GarbageCan": [
+      0.802789,
+      0.802795
+    ],
+    "HousePlant": [
+      0.540117,
+      0.54003
+    ],
+    "Vase": [
+      0.280777,
+      0.279328
+    ]
+  },
+  "pause_verified": true,
+  "image_control_resume_verified": [
+    6.074223,
+    6.074211
+  ],
+  "preview_lifecycle": "detached local HTTP server retained for video playback after the chat turn"
 }

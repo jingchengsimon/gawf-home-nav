@@ -53,13 +53,15 @@
   "fairness": "Same episode, actual initial pose, action seed and simulator seed; initial RGB difference below recorded thresholds",
   "attribution": "24 End-action Grad-CAM overlays from individual pose-replayed successful validation histories; BaseballBat different episodes marked",
   "gradient_grid": {
-    "rows": 2,
-    "columns": 12,
+    "rows": 4,
+    "columns": 6,
     "panels": 24,
+    "model_labels": "bold italic, left aligned",
     "overlays_only": true,
-    "separate_raw_rgb_panels": 0,
-    "nonzero_maps": 24,
-    "comparison_mode": "individual_terminal",
     "baseballbat_different_episodes_marked": true
-  }
+  },
+  "page_content": [
+    "navigation videos",
+    "gradient maps"
+  ]
 }

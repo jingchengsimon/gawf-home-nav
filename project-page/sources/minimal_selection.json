@@ -20,8 +20,8 @@
   "architecture_audit": "assets/sources/embclip_architecture_audit.json",
   "attribution": [
     {
-      "alt": "Two rows of Grad-CAM overlays: EmbCLIP and EmbCLIP-GaWF, twelve RoboTHOR target categories",
-      "asset": "assets/gradcam-twelve-goals.png",
+      "alt": "Four rows and six columns of Grad-CAM overlays: EmbCLIP and EmbCLIP-GaWF for twelve RoboTHOR target categories",
+      "asset": "assets/gradcam-four-by-six.png",
       "note": "BaseballBat uses different episodes."
     }
   ],

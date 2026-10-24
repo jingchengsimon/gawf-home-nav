@@ -13,21 +13,6 @@
 <p>We compare <a href="https://github.com/allenai/embodied-clip">EmbCLIP</a> with EmbCLIP-GaWF on unseen RoboTHOR environments. Both agents receive RGB images and a target object category.</p>
 </header>
 <div id="demo-gallery"></div>
-<section id="results"><h2>Feedback-gated memory improves validation performance in RoboTHOR.</h2>
-<img class="result" src="assets/embclip-validation.png" alt="RoboTHOR validation success rate and path efficiency">
-</section>
-<section id="method"><h2>The previous decision gates the next memory update.</h2>
-<p>GaWF uses the previous policy output to modulate input and recurrent weights. We compare parameter-matched recurrent models with the same frozen CLIP visual encoder, target-category encoding and lightweight training procedure.</p>
-</section>
-<section id="training"><h2>The models learn to navigate from RGB observations.</h2>
-<p>The lightweight RoboTHOR experiment uses a 5M-frame training budget and the standard train and validation scene split.</p>
-<img class="result" src="assets/embclip-training.png" alt="Training success rate and path efficiency on RoboTHOR">
-</section>
-<section id="pointnav"><h2>RGB-only PointNav remains challenging at a lightweight training budget.</h2>
-<p>On Gibson PointNav v2, both models use RGB and a fixed initial goal cue, with a 1M-frame training budget.</p>
-<img class="result" src="assets/pointnav-validation.png" alt="RGB-only PointNav validation success and path efficiency">
-<img class="result" src="assets/pointnav-training.png" alt="RGB-only PointNav training success and path efficiency">
-</section>
 <section id="attention"><h2>Gradient maps show which image regions influence the stopping decision.</h2>
 <div id="attribution-gallery"></div>
 </section>
