@@ -1,5 +1,22 @@
 # RoboTHOR EmbCLIP GRU baseline
 
+## Current lightweight comparison
+
+The current public comparison is GRU512 versus parameter-matched GaWF1160,
+five seeds per model and 5,001,216 environment steps per seed. It uses all
+60 RoboTHOR training scenes with 16 parallel samplers, RGB plus target category,
+AI2-THOR 5.0.0 and a 500-action episode limit. CLIP ResNet-50 stays frozen;
+the remaining navigation modules start from random initialization.
+
+The released 130,091,717-step official checkpoint has completed Val evaluation
+and is an evaluation reference, not a training initialization. Current scores,
+shared episode coverage and entry points are summarized in the
+[repository README](../README.md) and [source snapshot](../project-page/sources/official_light_validation.json).
+Read the dated sections below as engineering history: original 60-sampler/200M
+plans, queue states and intermediate progress are not the current experiment status.
+
+## Dated engineering record
+
 2026-10-19，EmbCLIP 独立支线。用户停止HM3D-OVON，保留其源码、环境与资源调查，不再下载HM3D或申请Matterport权限。PointNav与历史RGB-D RoboTHOR demo不变。GPU渲染、官方CLIP checkpoint评测及训练功能smoke均在`sjc-remote`执行；Amarel不做EmbCLIP smoke。2026-10-20用户新增三模型正式训练授权，提交详情见下文。
 
 ## 第一步 源码与信息边界
