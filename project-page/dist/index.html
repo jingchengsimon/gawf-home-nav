@@ -19,7 +19,7 @@
 </figure>
 <section id="method">
 <h2>Method</h2>
-<p>We retain EmbCLIP’s goal-conditioned processing and replace its GRU with a parameter-matched GaWF module. The previous step’s detached policy logits feed GaWF’s gates, which modulate its input and recurrent weights. Both 5M models freeze OpenAI-pretrained CLIP RN50 and train the remaining navigation modules from random initialization, without resuming the official 130M checkpoint.</p>
+<p>We retain EmbCLIP’s goal-conditioned processing and replace its GRU with a parameter-matched GaWF module. The previous step’s detached policy logits feed GaWF’s gates, which modulate its input and recurrent weights. Both 5M models freeze pretrained CLIP ResNet-50 and train the remaining navigation modules from random initialization, without resuming the official 130M checkpoint.</p>
 <figure class="method-figure">
 <img src="assets/method-overview.png?v=5ec9f149a8b9" alt="Three panels show the original GaWF cell, EmbCLIP with a GRU, and EmbCLIP-GaWF with a one-step-delayed feedback arrow from the actor to GaWF. Both navigation diagrams use the same recorded RoboTHOR Laptop frame.">
 <figcaption>GaWF cell extracted from the supplied diagram; navigation architectures adapted from <a href="https://arxiv.org/pdf/2111.09888">EmbCLIP Figure 2</a>. The feedback arrow carries the previous step’s detached policy logits.</figcaption>
