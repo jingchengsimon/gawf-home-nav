@@ -39,6 +39,10 @@ def main():
     caption = (f'5M-frame training. Mean ± SD across five runs per model on '
                f'{snapshot["common_episode_count"]:,} shared validation episodes.')
     table = ('<section id="performance">\n<h3>I. Performance</h3>\n'
+             '<p>With lightweight 5M-step training (about 2.5% of EmbCLIP’s original '
+             '<a href="https://arxiv.org/html/2111.09888v2">200M-step budget</a>, '
+             'or 97.5% fewer environment steps), EmbCLIP-GaWF achieves higher validation '
+             'SR and SPL than EmbCLIP.</p>\n'
              '<div class="table-scroll"><table class="quantitative">\n'
              f'<caption>{caption}</caption>\n'
              '<thead><tr><th scope="col" rowspan="2">Benchmark</th>'
@@ -51,6 +55,11 @@ def main():
     assert count == 1
     index.write_text(html)
     receipt = dict(dataset='RoboTHOR ObjectNav Val', training_frames=5001216,
+                   reference_training_budget=dict(environment_steps=200000000,
+                       source='https://arxiv.org/html/2111.09888v2', section='4.1',
+                       actual_budget_percent=5001216/200000000*100,
+                       fewer_environment_steps_percent=(1-5001216/200000000)*100,
+                       excludes='CLIP pretraining and GPU-hours; comparison is per seed.'),
                    common_episode_count=snapshot['common_episode_count'],
                    expected_episode_count=snapshot['expected_episode_count'],
                    common_episode_ids_sha256=snapshot['common_episode_ids_sha256'],

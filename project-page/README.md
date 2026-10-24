@@ -144,3 +144,9 @@ read-only SJC collector snapshot, actual exit receipts and unrounded statistics
 are in `sources/performance_validation_snapshot.json`,
 `sources/performance_validation_exits.json` and `sources/performance_table.json`,
 with corresponding copies under `dist/assets/sources/`.
+
+The Performance introduction states that the 5M-step comparison uses about 2.5%
+of the paper’s 200M RoboTHOR budget (97.5% fewer environment steps per seed),
+with a link to Section 4.1. This excludes CLIP pretraining and does not imply
+matching the paper’s full-training or test protocol. Checkpoint/configuration,
+optimizer and recorded-demo checks are in `sources/training_budget_audit.json`.

@@ -1,0 +1,299 @@
+{
+  "checked_on": "2026-10-23",
+  "pointnav": {
+    "runs": [
+      {
+        "model": "lstm2",
+        "checkpoint_frames": 1000064,
+        "checkpoint_sha256": "a7659d8d23f8eb99fcb25e566a9de36fb3fd098d32b4fb886cff7c5d95ebab0b",
+        "parameters": 8479557,
+        "strict_weight_load": "passed",
+        "all_checkpoint_tensors_finite": true,
+        "source_hashes_match_evaluation_manifest": true,
+        "actor_relevant_config_differences": [],
+        "expected_differences": [
+          "train versus validation scenes/split",
+          "output paths and training-only counters"
+        ],
+        "visual_normalization_buffers_restored": true,
+        "learning_rate": [
+          0.00025
+        ],
+        "adam_steps": 31252.0,
+        "optimizer_nonzero_momentum_tensors": 80,
+        "training_last_rolling_sr": 0.0,
+        "training_last100k_mean_of_logged_rolling_sr": 0.0007403096752217435,
+        "train_sr_scope": "Completed training episodes, rolling window; mean of overlapping logged windows is not a fresh aggregate over episodes.",
+        "validation": {
+          "distance_to_goal": 6.523510148407707,
+          "softspl": 0.0913529357188652,
+          "spl": 0.0,
+          "success": 0.0
+        }
+      },
+      {
+        "model": "gawf2",
+        "checkpoint_frames": 1000064,
+        "checkpoint_sha256": "85d71606d0aaca374e98103e25f9693643625e4846331796ffbf2b3115952e84",
+        "parameters": 8442693,
+        "strict_weight_load": "passed",
+        "all_checkpoint_tensors_finite": true,
+        "source_hashes_match_evaluation_manifest": true,
+        "actor_relevant_config_differences": [],
+        "expected_differences": [
+          "train versus validation scenes/split",
+          "output paths and training-only counters"
+        ],
+        "visual_normalization_buffers_restored": true,
+        "learning_rate": [
+          0.00025
+        ],
+        "adam_steps": 31252.0,
+        "optimizer_nonzero_momentum_tensors": 88,
+        "training_last_rolling_sr": 0.0,
+        "training_last100k_mean_of_logged_rolling_sr": 0.0018996128733829616,
+        "train_sr_scope": "Completed training episodes, rolling window; mean of overlapping logged windows is not a fresh aggregate over episodes.",
+        "validation": {
+          "distance_to_goal": 6.158192088381505,
+          "softspl": 0.040603626430639986,
+          "spl": 0.0002589009248747879,
+          "success": 0.0035211267605633804
+        }
+      }
+    ],
+    "conclusion": "The training policy itself has not reliably solved the task. No actor/sensor configuration mismatch or weight-loading failure was found.",
+    "budget_hypothesis": "Only 1M frames, randomly initialized trainable ResNet18, fixed g0, no depth/online odometry, noisy actions; these make undertraining plausible.",
+    "limitation": "No longer-budget controlled continuation or fresh simulator replay was run in this audit; it does not establish that budget alone is causal."
+  },
+  "embclip": {
+    "shared_configuration": {
+      "sensors": [
+        "rgb_lowres",
+        "goal_object_type_ind"
+      ],
+      "max_steps": 500,
+      "action_space_size": 6,
+      "target_types": [
+        "AlarmClock",
+        "Apple",
+        "BaseballBat",
+        "BasketBall",
+        "Bowl",
+        "GarbageCan",
+        "HousePlant",
+        "Laptop",
+        "Mug",
+        "SprayBottle",
+        "Television",
+        "Vase"
+      ],
+      "env_args": {
+        "width": 400,
+        "height": 300,
+        "commit_id": "f0825767cd50d69f666c7f282e54abfe58f1e917",
+        "stochastic": true,
+        "continuousMode": true,
+        "applyActionNoise": true,
+        "rotateStepDegrees": 30.0,
+        "visibilityDistance": 1.0,
+        "gridSize": 0.25,
+        "snapToGrid": false,
+        "agentMode": "locobot",
+        "fieldOfView": 63.453048374758716,
+        "include_private_scenes": false,
+        "renderDepthImage": false
+      },
+      "reward": {
+        "step_penalty": -0.01,
+        "goal_success_reward": 10.0,
+        "failed_stop_reward": 0.0,
+        "shaping_weight": 1.0
+      },
+      "train_scenes": 60,
+      "num_train_processes": 16,
+      "target_steps": 5000000,
+      "optimizer": "Group(class_type=<class 'torch.optim.adam.Adam'>, kwargs={'lr': 0.0003}, default={})",
+      "rollout_steps": 128,
+      "mini_batches": 1,
+      "update_repeats": 4,
+      "gamma": 0.99,
+      "gae_lambda": 0.95,
+      "max_grad_norm": 0.5,
+      "visual_backbone": "Frozen CLIP RN50 with the same goal-conditioned fusion",
+      "input_rgb_resolution": [
+        224,
+        224
+      ]
+    },
+    "models": [
+      {
+        "name": "EmbCLIP",
+        "recurrent": "GRU512",
+        "trainable_parameters": 3480775
+      },
+      {
+        "name": "EmbCLIP-GaWF",
+        "recurrent": "GaWF1160",
+        "trainable_parameters": 3479807
+      }
+    ],
+    "relative_parameter_difference_percent": 0.027809898657626536,
+    "intended_differences": [
+      "recurrent transition and hidden width",
+      "GaWF receives preceding detached raw policy logits as internal feedback",
+      "actor/critic input width follows hidden width"
+    ],
+    "shared_decoding": "Both sample the categorical policy distribution; neither has an added planner, loop breaker or navigation heuristic.",
+    "source_protocol": "AI2-THOR 5.0.0; not a full-budget replication of the paper.",
+    "scheduler": "Both retain the same vendor 300M-step LR decay schedule; the lightweight stage ends at 5M. The paper reports 200M RoboTHOR environment steps.",
+    "original_budget_steps": 200000000,
+    "actual_steps": 5001216,
+    "actual_budget_percent": 2.500608,
+    "fewer_steps_percent": 97.499392,
+    "reference": "https://arxiv.org/html/2111.09888v2",
+    "reference_section": "4.1",
+    "causal_limit": "A short budget is a plausible contributor to GRU failures, not an isolated causal result. GaWF feedback benefits require ablations to attribute specifically.",
+    "demo_selection": "Illustrative GaWF-favorable episodes, using each model's best completed validation seed; not a random estimate of model behavior frequency.",
+    "demos": [
+      {
+        "target": "BaseballBat",
+        "episode_id": "FloorPlan_Val1_2_BaseballBat_3",
+        "models": [
+          {
+            "model": "gru1",
+            "training_seed": 1,
+            "steps": 8,
+            "success": false,
+            "rotation_actions": 7,
+            "actions": {
+              "RotateLeft": 7,
+              "End": 1
+            },
+            "recording_sha256": "a604898144495d4832cdec49ff59def206cc42f9f1f1a61e7ac1f4f27d462706"
+          },
+          {
+            "model": "gawf1",
+            "training_seed": 3,
+            "steps": 53,
+            "success": true,
+            "rotation_actions": 32,
+            "actions": {
+              "RotateRight": 27,
+              "MoveAhead": 20,
+              "RotateLeft": 5,
+              "End": 1
+            },
+            "recording_sha256": "fe892e62a4fe374424e3cad01fa84a89dc8cee3b412a4f0e1c4633478ddf5fe2"
+          }
+        ]
+      },
+      {
+        "target": "GarbageCan",
+        "episode_id": "FloorPlan_Val1_1_GarbageCan_0",
+        "models": [
+          {
+            "model": "gru1",
+            "training_seed": 1,
+            "steps": 500,
+            "success": false,
+            "rotation_actions": 419,
+            "actions": {
+              "RotateLeft": 309,
+              "MoveAhead": 81,
+              "RotateRight": 110
+            },
+            "recording_sha256": "6f71ba3c4aed1bff7cc37e5b326380565d3e043e822505a53585c76ea6692a34"
+          },
+          {
+            "model": "gawf1",
+            "training_seed": 3,
+            "steps": 102,
+            "success": true,
+            "rotation_actions": 44,
+            "actions": {
+              "RotateLeft": 17,
+              "MoveAhead": 57,
+              "RotateRight": 27,
+              "End": 1
+            },
+            "recording_sha256": "74b0bf22f228fdd64c7faa17dd51434df7f95ecf3f87d744315bdf1df98017fe"
+          }
+        ]
+      },
+      {
+        "target": "HousePlant",
+        "episode_id": "FloorPlan_Val3_1_HousePlant_2",
+        "models": [
+          {
+            "model": "gru1",
+            "training_seed": 1,
+            "steps": 500,
+            "success": false,
+            "rotation_actions": 402,
+            "actions": {
+              "RotateLeft": 388,
+              "MoveAhead": 98,
+              "RotateRight": 14
+            },
+            "recording_sha256": "11bda93c4df757befb17f0ff8750974ac7fc20c8e4c35f75cf18b9a8371655ee"
+          },
+          {
+            "model": "gawf1",
+            "training_seed": 3,
+            "steps": 32,
+            "success": true,
+            "rotation_actions": 9,
+            "actions": {
+              "RotateLeft": 8,
+              "MoveAhead": 22,
+              "RotateRight": 1,
+              "End": 1
+            },
+            "recording_sha256": "8be205fb4300133c92c4031fb3df224d47aa7543d30c9b5442c8a08c5865fd24"
+          }
+        ]
+      },
+      {
+        "target": "SprayBottle",
+        "episode_id": "FloorPlan_Val1_2_SprayBottle_8",
+        "models": [
+          {
+            "model": "gru1",
+            "training_seed": 1,
+            "steps": 264,
+            "success": true,
+            "rotation_actions": 158,
+            "actions": {
+              "RotateLeft": 110,
+              "MoveAhead": 105,
+              "RotateRight": 48,
+              "End": 1
+            },
+            "recording_sha256": "adcfd3202e83124ab22f0b87db85d1e01560b145babad9384e090d0b83f05399"
+          },
+          {
+            "model": "gawf1",
+            "training_seed": 3,
+            "steps": 49,
+            "success": true,
+            "rotation_actions": 32,
+            "actions": {
+              "RotateRight": 28,
+              "MoveAhead": 16,
+              "RotateLeft": 4,
+              "End": 1
+            },
+            "recording_sha256": "f07d9131a7055cb4b2515d92dbb890ed73e30a910397375b035c346fe131f5e1"
+          }
+        ]
+      }
+    ],
+    "initial_rendering": "Recorded start poses and RNG seeds match. Three pairs have small RGB differences (maximum 3/255), so initial renders are not claimed bit-identical."
+  },
+  "inputs_sha256": {
+    "pointnav-checkpoint-audit.json": "73ed0026053b1921c2b6570ad5045241048e06d6bfa4ec8ea04a114c3cd9f387",
+    "pointnav-optimization-audit.json": "9fac6d637444b4cafa381968c4723e4e3465a74ecd975eed2417c34b58f9f1f8",
+    "embclip-config-audit.json": "7ad820c4ef4b5b84a501f3491d3952259d587b81dabbf92f6ac36cee3b9291c1",
+    "training_scalars.json": "b0ef4ff8171eacf231d4f3c0ab841e16abf732217cc1b0875e018e01335e2168"
+  }
+}

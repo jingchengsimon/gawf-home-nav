@@ -34,7 +34,8 @@
     "preview-results-teaser.png",
     "preview-results-hierarchy.png",
     "preview-results-gradcam.png",
-    "preview-performance-table.png"
+    "preview-performance-table.png",
+    "preview-performance-budget.png"
   ],
   "page_content": [
     "teaser summary",
@@ -146,5 +147,13 @@
     48,
     48
   ],
-  "text_to_image_spacing": "halved"
+  "text_to_image_spacing": "halved",
+  "budget_note": {
+    "verified": true,
+    "actual_budget": "5M environment steps per seed",
+    "paper_budget": "200M environment steps per seed",
+    "relative_budget": "about 2.5%",
+    "reduction": "about 97.5%",
+    "paper_link": "https://arxiv.org/html/2111.09888v2"
+  }
 }

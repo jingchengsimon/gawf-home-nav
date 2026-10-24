@@ -188,6 +188,14 @@
   "performance_table": {
     "dataset": "RoboTHOR ObjectNav Val",
     "training_frames": 5001216,
+    "reference_training_budget": {
+      "environment_steps": 200000000,
+      "source": "https://arxiv.org/html/2111.09888v2",
+      "section": "4.1",
+      "actual_budget_percent": 2.500608,
+      "fewer_environment_steps_percent": 97.499392,
+      "excludes": "CLIP pretraining and GPU-hours; comparison is per seed."
+    },
     "common_episode_count": 1783,
     "expected_episode_count": 1800,
     "common_episode_ids_sha256": "970bc90fce9ac8b652c91ccc85d4609f3dfc8b1e33d46430e8e50d3f5b5a4656",
@@ -254,5 +262,6 @@
         }
       }
     }
-  }
+  },
+  "training_budget_note": "5M vs 200M environment steps per seed; approximately 2.5% of the original budget and 97.5% fewer steps."
 }
