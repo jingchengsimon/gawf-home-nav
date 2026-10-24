@@ -43,7 +43,7 @@ annotations are omitted from the visible page. Detailed provenance remains in
 All source recordings, including unselected and unsuccessful cases, are retained
 in their SJC result leaves. Selected videos and small source snapshots are mirrored
 locally. A two-row teaser combines the enlarged HousePlant full trajectories with AlarmClock,
-Mug and SprayBottle Grad-CAM overlays. Results contains I. Performance (SR/SPL mean ± sample SD),
+Mug and SprayBottle Grad-CAM overlays. Results contains I. Performance (SR/SPL/SEL mean ± sample SD),
 II. four paired navigation demos, and III. two RGB/gradient grids.
 A dashed line separates Trajectory and Grad-CAM groups in the teaser.
 Each visual section has a short introduction and one shared caption. Text-to-image
@@ -74,8 +74,8 @@ three adjacent RGB/Grad-CAM pairs, with one goal heading shared by each pair.
 Model labels use bold upright text. The grids use each model's own
 successful validation terminal view. Most views are re-rendered from logged poses,
 with recurrent state reconstructed from that model's re-rendered RGB/action
-history. Eleven categories share an episode and initial pose; BaseballBat uses different successful episodes, marked
-on the page. Visual inputs and histories can differ, and re-rendering is not
+history. Eleven categories share an episode and initial pose; BaseballBat uses different successful episodes, recorded
+in the source metadata. Visual inputs and histories can differ, and re-rendering is not
 claimed pixel-identical to the original evaluation. The Vase and HousePlant GaWF panels use actual saved successful End decisions
 from fixed-seed autonomous validation rollouts; their baselines retain verified
 pose-replayed successful terminal views. Maps show local gradient
@@ -192,7 +192,7 @@ Model names are bold in prose, diagrams, maps and videos. Teaser group/model
 labels use 22pt bold; all four Find headings are italic and centered. The performance table includes
 the original paper’s RoboTHOR-Test reference (200M training, SR 47%, SPL 20%)
 with its split separated from our common-Val rows and no invented standard deviation.
-Video and Grad-CAM examples use different episodes; both sections now say so.
+Video and Grad-CAM examples use different episodes; identities remain in source metadata.
 `comparison_consistency.json` records the exact identities and selected outcomes.
 
 ## Longer-route revision
@@ -212,3 +212,13 @@ Challenge Test scenes; the public Test data hides shortest paths, and the
 legacy scoring endpoint did not resolve during preflight. Table 1–6 eligibility
 and the official comparison values are recorded in
 `experiments/deployment/embclip-test-table-audit-20261024.json`.
+
+## Aggregate-results wording revision
+
+The visible page emphasizes higher overall success under lightweight training.
+Videos illustrate selected task-specific advantages, with no aggregate claim of
+smoother paths or fewer rotations. The table displays SR, SPL and SEL; curvature
+remains available in the analysis records but is not displayed. Its short caption
+credits Codebook for SEL, and the paper Test reference has no reported SEL.
+Coverage, normalization, split differences and selection identities remain in
+source snapshots and analysis documentation rather than visible captions.

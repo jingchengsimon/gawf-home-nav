@@ -69,7 +69,7 @@ section{margin-top:48px}
 .teaser figcaption{margin-top:10px}
 #performance{margin-top:24px}
 .table-scroll{overflow-x:auto}
-.quantitative{margin:12px auto;border-collapse:collapse;width:100%;max-width:960px;min-width:780px;text-align:center;border-top:1.2px solid #333;border-bottom:1.2px solid #333}
+.quantitative{margin:12px auto;border-collapse:collapse;width:100%;max-width:960px;min-width:640px;text-align:center;border-top:1.2px solid #333;border-bottom:1.2px solid #333}
 .quantitative caption{caption-side:bottom;padding-top:8px}
 .quantitative th,.quantitative td{padding:8px 12px;vertical-align:middle;font-variant-numeric:tabular-nums}
 .quantitative thead{border-bottom:1px solid #333}
