@@ -73,7 +73,7 @@ section{margin-top:48px}
 .quantitative caption{caption-side:bottom;padding-top:8px}
 .quantitative th,.quantitative td{padding:8px 12px;vertical-align:middle;font-variant-numeric:tabular-nums}
 .quantitative thead{border-bottom:1px solid #333}
-.quantitative .paper-reference{border-top:1px solid #333}
+.quantitative .budget-reference{border-top:1px solid #333}
 .quantitative thead th[colspan]{border-bottom:1px solid #333}
 .quantitative thead th[rowspan],.quantitative tbody th{text-align:left}
 .quantitative td{white-space:nowrap}

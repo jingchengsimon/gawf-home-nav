@@ -69,7 +69,7 @@ def main():
     stats['official'] = {metric: official['common_'+metric] for metric in ('sr', 'spl', 'sel')}
     assert all(record['sample_std_percentage_points'] is None for record in stats['official'].values())
     cells = ''.join(f'<td>{stats["official"][metric]["mean_percent"]:.2f}</td>' for metric in ('sr', 'spl', 'sel'))
-    rows.append('<tr><th scope="row"><strong>EmbCLIP</strong> (130M)</th>'+cells+'</tr>')
+    rows.append('<tr class="budget-reference"><th scope="row"><strong>EmbCLIP</strong> (130M)</th>'+cells+'</tr>')
     assert all(stats['gawf1'][m]['mean_percent'] > stats['gru1'][m]['mean_percent'] for m in ('sr', 'spl'))
     caption = ('We compare success rate (SR), success weighted by path length (SPL), and '
                'success weighted by episode length (SEL). SEL follows the metric introduced by '
