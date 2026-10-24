@@ -164,10 +164,10 @@ are in `sources/performance_validation_snapshot.json`,
 `sources/performance_validation_exits.json` and `sources/performance_table.json`,
 with corresponding copies under `dist/assets/sources/`.
 
-The Performance introduction states that the 5M-step comparison uses about 2.5%
-of the paper’s 200M RoboTHOR budget per seed,
-with a link to Section 4.1. This excludes CLIP pretraining and does not imply
-matching the paper’s full-training or test protocol. Checkpoint/configuration,
+The Performance introduction compares 5M training with the actual released
+130,091,717-step checkpoint used in the table (about 3.8%). The paper's 200M
+budget remains historical context in audit records and is not the displayed
+reference. This excludes CLIP pretraining. Checkpoint/configuration,
 optimizer and recorded-demo checks are in `sources/training_budget_audit.json`.
 
 ## Method figure

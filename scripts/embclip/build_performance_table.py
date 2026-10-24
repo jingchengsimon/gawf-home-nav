@@ -71,9 +71,11 @@ def main():
     cells = ''.join(f'<td>{stats["official"][metric]["mean_percent"]:.2f}</td>' for metric in ('sr', 'spl', 'sel'))
     rows.append('<tr class="budget-reference"><th scope="row">EmbCLIP (130M)</th>'+cells+'</tr>')
     assert all(stats['gawf1'][m]['mean_percent'] > stats['gru1'][m]['mean_percent'] for m in ('sr', 'spl'))
+    reference_steps = official_runs[0]['training_steps']
+    budget_percent = 5001216 / reference_steps * 100
     table = ('<section id="performance">\n<h3>I. EmbCLIP-GaWF Performs Better Under Lightweight Training</h3>\n'
-             '<p>With lightweight 5M-step training (about 2.5% of EmbCLIP’s original '
-             '<a href="https://arxiv.org/html/2111.09888v2">200M-step budget</a>), '
+             f'<p>With lightweight 5M-step training (about {budget_percent:.1f}% of the released '
+             'EmbCLIP checkpoint’s 130M steps), '
              'EmbCLIP-GaWF achieves higher overall '
              'success rate (SR), success weighted by path length (SPL), and success weighted by '
              'episode length (SEL, suggested by <a href="https://embodied-codebook.github.io/">'
@@ -96,10 +98,11 @@ def main():
                        role='Measured on the same common validation episodes and shared SEL references.',
                        run=official_runs[0],statistics=stats['official'],
                        source_snapshot_sha256=hashlib.sha256(official_path.read_bytes()).hexdigest()),
-                   reference_training_budget=dict(environment_steps=200000000,
-                       source='https://arxiv.org/html/2111.09888v2', section='4.1',
-                       actual_budget_percent=5001216/200000000*100,
-                       fewer_environment_steps_percent=(1-5001216/200000000)*100,
+                   reference_training_budget=dict(environment_steps=reference_steps,
+                       source='https://github.com/allenai/embodied-clip/blob/main/readme_files/baselines_robothor_objectnav.md#using-pretrained-models',
+                       scope='Actual released checkpoint used for the measured comparison.',
+                       actual_budget_percent=budget_percent,
+                       fewer_environment_steps_percent=(1-5001216/reference_steps)*100,
                        excludes='CLIP pretraining and GPU-hours; comparison is per seed.'),
                    common_episode_count=snapshot['common_episode_count'],
                    expected_episode_count=snapshot['expected_episode_count'],

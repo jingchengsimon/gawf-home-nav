@@ -65,11 +65,11 @@
     "source_snapshot_sha256": "a7bb588afaf4eb11870e5d37c46124a98f6e0fb54aadf78efb1bca559d0c9f44"
   },
   "reference_training_budget": {
-    "environment_steps": 200000000,
-    "source": "https://arxiv.org/html/2111.09888v2",
-    "section": "4.1",
-    "actual_budget_percent": 2.500608,
-    "fewer_environment_steps_percent": 97.499392,
+    "environment_steps": 130091717,
+    "source": "https://github.com/allenai/embodied-clip/blob/main/readme_files/baselines_robothor_objectnav.md#using-pretrained-models",
+    "scope": "Actual released checkpoint used for the measured comparison.",
+    "actual_budget_percent": 3.844376963677096,
+    "fewer_environment_steps_percent": 96.15562303632291,
     "excludes": "CLIP pretraining and GPU-hours; comparison is per seed."
   },
   "common_episode_count": 1783,

@@ -11,7 +11,7 @@
 <h1>FEEDBACK-GATED MODULATION SUPPORTS VISUAL NAVIGATION</h1>
 <p class="authors">Jingcheng Shi</p>
 <a class="github-button" href="https://github.com/jingchengsimon/gawf-home-nav" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.76-.24.76-.54v-2.08c-3.12.68-3.78-1.32-3.78-1.32-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.73 1.16 1.73 1.16 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.22.71-1.5-2.49-.28-5.1-1.25-5.1-5.54 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15A10.7 10.7 0 0 1 12 6.23c.95 0 1.9.13 2.79.37 2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.71.78 1.15 1.78 1.15 3 0 4.3-2.62 5.25-5.12 5.53.4.35.76 1.03.76 2.08v3.07c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8z"/></svg>GitHub</a>
-<p>We compare <a href="https://github.com/allenai/embodied-clip">EmbCLIP</a> with EmbCLIP-GaWF on unseen RoboTHOR environments. Both agents receive RGB images from the AI2-THOR simulator and a target object category.</p>
+<p>We compare <a href="https://github.com/allenai/embodied-clip">EmbCLIP</a> with EmbCLIP-GaWF on unseen RoboTHOR environments. Both agents receive RGB images from the AI2-THOR simulator and a target object category. With 5M-step training, EmbCLIP-GaWF achieves higher SR, SPL and SEL than equally trained EmbCLIP. Selected trajectories show reduced redundant turning and faster goal finding, while Grad-CAM examples highlight task-relevant visual cues.</p>
 </header>
 <figure class="teaser">
 <img src="assets/teaser-summary.png?v=117b9483b0ea" alt="Two model rows compare HousePlant trajectories and Alarm Clock, Mug and Spray Bottle Grad-CAM overlays.">
@@ -19,7 +19,7 @@
 </figure>
 <section id="method">
 <h2>Method</h2>
-<p>We retain EmbCLIP’s frozen CLIP visual encoder and goal-conditioned processing, and replace its GRU with a parameter-matched GaWF module. The previous step’s detached policy logits feed GaWF’s gates, which modulate its input and recurrent weights.</p>
+<p>We retain EmbCLIP’s goal-conditioned processing and replace its GRU with a parameter-matched GaWF module. The previous step’s detached policy logits feed GaWF’s gates, which modulate its input and recurrent weights. Both 5M models freeze OpenAI-pretrained CLIP RN50 and train the remaining navigation modules from random initialization, without resuming the official 130M checkpoint.</p>
 <figure class="method-figure">
 <img src="assets/method-overview.png?v=5ec9f149a8b9" alt="Three panels show the original GaWF cell, EmbCLIP with a GRU, and EmbCLIP-GaWF with a one-step-delayed feedback arrow from the actor to GaWF. Both navigation diagrams use the same recorded RoboTHOR Laptop frame.">
 <figcaption>GaWF cell extracted from the supplied diagram; navigation architectures adapted from <a href="https://arxiv.org/pdf/2111.09888">EmbCLIP Figure 2</a>. The feedback arrow carries the previous step’s detached policy logits.</figcaption>
@@ -29,7 +29,7 @@
 <h2>Results</h2>
 <section id="performance">
 <h3>I. EmbCLIP-GaWF Performs Better Under Lightweight Training</h3>
-<p>With lightweight 5M-step training (about 2.5% of EmbCLIP’s original <a href="https://arxiv.org/html/2111.09888v2">200M-step budget</a>), EmbCLIP-GaWF achieves higher overall success rate (SR), success weighted by path length (SPL), and success weighted by episode length (SEL, suggested by <a href="https://embodied-codebook.github.io/">EmbCLIP-Codebook</a>) than equally trained EmbCLIP.</p>
+<p>With lightweight 5M-step training (about 3.8% of the released EmbCLIP checkpoint’s 130M steps), EmbCLIP-GaWF achieves higher overall success rate (SR), success weighted by path length (SPL), and success weighted by episode length (SEL, suggested by <a href="https://embodied-codebook.github.io/">EmbCLIP-Codebook</a>) than equally trained EmbCLIP.</p>
 <div class="table-scroll"><table class="quantitative" aria-label="RoboTHOR object navigation performance">
 <thead><tr><th scope="col" rowspan="2">Benchmark</th><th scope="col" rowspan="2">Model</th><th scope="colgroup" colspan="3">Object navigation</th></tr>
 <tr><th scope="col">SR (%) ↑</th><th scope="col">SPL (%) ↑</th><th scope="col">SEL (%) ↑</th></tr></thead>
@@ -38,7 +38,7 @@
 </section>
 <section id="navigation">
 <h3>II. Recurrent Feedback Guides Navigation Toward the Object Goal</h3>
-<p>Excessive rotations and sudden direction changes can increase energy use and collision risk. SEL evaluates successful navigation while accounting for all actions, including rotations and looking up or down. Under lightweight training, EmbCLIP-GaWF achieves a higher SEL than EmbCLIP. The selected examples below show redundant rotations in the baseline and goal finding with fewer actions in EmbCLIP-GaWF.</p>
+<p>Excessive rotations and sudden direction changes can increase energy use and collision risk. SEL evaluates successful navigation while accounting for all actions, including rotations and looking up or down. Under lightweight training, EmbCLIP-GaWF achieves a higher SEL than EmbCLIP. In the selected examples below, EmbCLIP-GaWF reduces redundant rotations and reaches the goal with fewer actions.</p>
 <div id="demo-gallery"></div>
 <p class="section-caption">In these selected cases, EmbCLIP-GaWF reaches the object goal with fewer actions than EmbCLIP.</p>
 </section>
