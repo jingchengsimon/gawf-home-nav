@@ -16,6 +16,12 @@ These lightweight results are not a reproduction of the original papers' scores.
 
 ## Project page
 
+[Open the project website](https://jingchengsimon.github.io/gawf-home-nav/).
+GitHub Pages publishes `project-page/dist` automatically when its files are
+pushed to `sjc`.
+
+For a local preview:
+
 ```sh
 python3 scripts/serve_project_page.py
 ```

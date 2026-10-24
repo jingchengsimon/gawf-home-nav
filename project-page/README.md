@@ -1,5 +1,10 @@
 # GaWF navigation project page
 
+Published at https://jingchengsimon.github.io/gawf-home-nav/ through
+`.github/workflows/project-page.yml`. Push changes to `project-page/dist` on
+`sjc` to update the site. GitHub Actions uploads the committed static directory;
+no simulator, checkpoint or training dependency is needed for deployment.
+
 Open `dist/index.html`, keeping its `assets/` directory beside it. The page uses
 local assets and buildless JavaScript; it performs no runtime data fetches.
 
