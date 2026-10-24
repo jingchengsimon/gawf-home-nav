@@ -257,3 +257,12 @@ checkpoint and trained with PPO. All ten origin launch receipts start at step 0
 without a navigation checkpoint; seed0 later continues its own 1M run to 5M total.
 The cache hash, initialization receipts and code references are recorded in
 `../experiments/deployment/embclip-lightweight-initialization-audit-20261024.json`.
+
+## SEL in the results prose
+
+The Performance paragraph names SR, SPL and SEL and credits EmbCLIP-Codebook
+using “suggested by”; the table has no visible caption. Part II describes SEL
+and selected redundant-rotation examples, without a curvature claim. Higher SEL
+is better under its formula; no aggregate claim of fewer steps, fewer rotations,
+or measured energy/collision improvements is inferred from it. The opening
+paragraph identifies AI2-THOR as the simulator used for the RoboTHOR RGB inputs.

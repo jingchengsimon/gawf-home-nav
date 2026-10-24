@@ -71,16 +71,14 @@ def main():
     cells = ''.join(f'<td>{stats["official"][metric]["mean_percent"]:.2f}</td>' for metric in ('sr', 'spl', 'sel'))
     rows.append('<tr class="budget-reference"><th scope="row">EmbCLIP (130M)</th>'+cells+'</tr>')
     assert all(stats['gawf1'][m]['mean_percent'] > stats['gru1'][m]['mean_percent'] for m in ('sr', 'spl'))
-    caption = ('We compare success rate (SR), success weighted by path length (SPL), and '
-               'success weighted by episode length (SEL). SEL follows the metric introduced by '
-               '<a href="https://embodied-codebook.github.io/">EmbCLIP-Codebook</a>.')
     table = ('<section id="performance">\n<h3>I. EmbCLIP-GaWF Performs Better Under Lightweight Training</h3>\n'
              '<p>With lightweight 5M-step training (about 2.5% of EmbCLIP’s original '
              '<a href="https://arxiv.org/html/2111.09888v2">200M-step budget</a>), '
              'EmbCLIP-GaWF achieves higher overall '
-             'success rate (SR) and success weighted by path length (SPL) than equally trained EmbCLIP.</p>\n'
-             '<div class="table-scroll"><table class="quantitative">\n'
-             f'<caption>{caption}</caption>\n'
+             'success rate (SR), success weighted by path length (SPL), and success weighted by '
+             'episode length (SEL, suggested by <a href="https://embodied-codebook.github.io/">'
+             'EmbCLIP-Codebook</a>) than equally trained EmbCLIP.</p>\n'
+             '<div class="table-scroll"><table class="quantitative" aria-label="RoboTHOR object navigation performance">\n'
              '<thead><tr><th scope="col" rowspan="2">Benchmark</th>'
              '<th scope="col" rowspan="2">Model</th>'
              '<th scope="colgroup" colspan="3">Object navigation</th></tr>\n'
