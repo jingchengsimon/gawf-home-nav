@@ -1,0 +1,119 @@
+{
+  "status": "verified",
+  "operation": "read-only source, cache and origin launch inspection on SJC",
+  "clip_weights": {
+    "source": "OpenAI CLIP RN50 pretrained release",
+    "url": "https://openaipublic.azureedge.net/clip/models/afeb0e10f9e5a86da6080e35cf09123aca3b358a0c3e3b6c78a7b63bc04b6762/RN50.pt",
+    "loaded_cache": "assets/embclip-robothor/home/.cache/clip/RN50.pt",
+    "actual_sha256": "afeb0e10f9e5a86da6080e35cf09123aca3b358a0c3e3b6c78a7b63bc04b6762",
+    "frozen_implementation": "CLIP embedder eval mode, forward under torch.no_grad; feature preprocessor separate from navigation actor-critic optimizer"
+  },
+  "navigation_initialization": "No official 130M navigation checkpoint loaded; all origin launch receipts have starting_steps=0 and checkpoint_path=null. Seed0 continues its own 1M state to 5M total.",
+  "trainable_modules": [
+    "goal category embedding",
+    "visual feature compression CNN",
+    "goal-conditioned visual fusion CNN",
+    "GRU or GaWF recurrent module",
+    "actor head",
+    "critic head"
+  ],
+  "source_sha256": {
+    "scripts/embclip/light_config.py": "d4c7ced38f56e8374c224e3b98e5a47ace1b9b0906f37fbbdd145a9379b3eb6d",
+    "scripts/embclip/light_gawf1_config.py": "2e8a1474c4aa8032ca283d45bf1b51228175062863ae81fc0cbffce2931184db",
+    "vendor/embclip-allenact/allenact_plugins/clip_plugin/clip_preprocessors.py": "1f3ab3f2faadb33f5f96afadc1c6757e2b303b4cbb6fae3ef7386f42977acee1",
+    "vendor/embclip-allenact/allenact_plugins/navigation_plugin/objectnav/models.py": "9674c00e2606a5a6848cfbdee98a9956226e36f06dcfc5e8e59ca67729151150",
+    "vendor/embclip-allenact/allenact/algorithms/onpolicy_sync/engine.py": "e84e23db69efad5444c5bc1ff41d3e7aa5b5ae4308bff83c93b853c349373043"
+  },
+  "origin_runs": [
+    {
+      "experiment_id": "nav-robothor-embclip-light-gru1-formal1m-sjc-v2-seed0-20261020",
+      "model": "gru1",
+      "seed": 0,
+      "receipt": "results/nav-robothor-embclip-light-gru1-formal1m-sjc-v2-seed0-20261020/attempts/001/launch.json",
+      "observed_starting_steps": 0,
+      "observed_checkpoint_path": null,
+      "observed_checkpoint_arguments": []
+    },
+    {
+      "experiment_id": "nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed1-20261021",
+      "model": "gru1",
+      "seed": 1,
+      "receipt": "results/nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed1-20261021/attempts/001/launch.json",
+      "observed_starting_steps": 0,
+      "observed_checkpoint_path": null,
+      "observed_checkpoint_arguments": []
+    },
+    {
+      "experiment_id": "nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed2-20261022",
+      "model": "gru1",
+      "seed": 2,
+      "receipt": "results/nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed2-20261022/attempts/001/launch.json",
+      "observed_starting_steps": 0,
+      "observed_checkpoint_path": null,
+      "observed_checkpoint_arguments": []
+    },
+    {
+      "experiment_id": "nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed3-20261022",
+      "model": "gru1",
+      "seed": 3,
+      "receipt": "results/nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed3-20261022/attempts/001/launch.json",
+      "observed_starting_steps": 0,
+      "observed_checkpoint_path": null,
+      "observed_checkpoint_arguments": []
+    },
+    {
+      "experiment_id": "nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed4-20261022",
+      "model": "gru1",
+      "seed": 4,
+      "receipt": "results/nav-robothor-embclip-light-gru1-formal5m-sjc-v1-seed4-20261022/attempts/001/launch.json",
+      "observed_starting_steps": 0,
+      "observed_checkpoint_path": null,
+      "observed_checkpoint_arguments": []
+    },
+    {
+      "experiment_id": "nav-robothor-embclip-light-gawf1-formal1m-sjc-v1-seed0-20261020",
+      "model": "gawf1",
+      "seed": 0,
+      "receipt": "results/nav-robothor-embclip-light-gawf1-formal1m-sjc-v1-seed0-20261020/attempts/001/launch.json",
+      "observed_starting_steps": 0,
+      "observed_checkpoint_path": null,
+      "observed_checkpoint_arguments": []
+    },
+    {
+      "experiment_id": "nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed1-20261021",
+      "model": "gawf1",
+      "seed": 1,
+      "receipt": "results/nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed1-20261021/attempts/001/launch.json",
+      "observed_starting_steps": 0,
+      "observed_checkpoint_path": null,
+      "observed_checkpoint_arguments": []
+    },
+    {
+      "experiment_id": "nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed2-20261022",
+      "model": "gawf1",
+      "seed": 2,
+      "receipt": "results/nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed2-20261022/attempts/001/launch.json",
+      "observed_starting_steps": 0,
+      "observed_checkpoint_path": null,
+      "observed_checkpoint_arguments": []
+    },
+    {
+      "experiment_id": "nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed3-20261022",
+      "model": "gawf1",
+      "seed": 3,
+      "receipt": "results/nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed3-20261022/attempts/001/launch.json",
+      "observed_starting_steps": 0,
+      "observed_checkpoint_path": null,
+      "observed_checkpoint_arguments": []
+    },
+    {
+      "experiment_id": "nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed4-20261022",
+      "model": "gawf1",
+      "seed": 4,
+      "receipt": "results/nav-robothor-embclip-light-gawf1-formal5m-sjc-v1-seed4-20261022/attempts/001/launch.json",
+      "observed_starting_steps": 0,
+      "observed_checkpoint_path": null,
+      "observed_checkpoint_arguments": []
+    }
+  ]
+}

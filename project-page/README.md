@@ -188,7 +188,7 @@ and checked RGB frame are explicit arguments; no generative drawing is used.
 ## Presentation revision
 
 The hero title uses MODULATION and names Jingcheng Shi above the GitHub button.
-Model names are plain in prose, captions, table rows and HTML video labels.
+Model names are plain in prose, captions and table rows; HTML video labels are bold.
 Artwork labels retain their existing bold type; section headings keep their hierarchy. Teaser group/model
 labels use 22pt bold; all four Find headings are italic and centered. The performance table includes
 the released official EmbCLIP checkpoint (130,091,717 steps), measured on the same
@@ -240,8 +240,20 @@ The page shows no curvature or additional protocol prose.
 
 Part I is “EmbCLIP-GaWF Performs Better Under Lightweight Training”; Part III
 is “EmbCLIP-GaWF Encodes Important Task-Relevant Information”. Model names have
-no extra bold styling in HTML prose, captions, table rows or video labels. Numeric
+no extra bold styling in HTML prose, captions or table rows; video labels are bold. Numeric
 result emphasis and the existing figure artwork are retained. Object Goal
 Navigation is the shared task family with Codebook; our RoboTHOR training and
 GaWF recurrent feedback are distinct from its ProcTHOR training and codebook
 bottleneck, so the page does not call our representations codebook-bottlenecked.
+
+## Training-budget labels and initialization
+
+The table labels the lightweight rows EmbCLIP (5M) and EmbCLIP-GaWF (5M),
+aligned with EmbCLIP (130M). Video model labels use bold type; surrounding prose
+and captions remain plain. OpenAI-pretrained CLIP RN50 stays frozen during 5M
+training. The goal embedding, feature-compression/fusion CNNs, recurrent module,
+actor and critic are initialized independently of the released 130M navigation
+checkpoint and trained with PPO. All ten origin launch receipts start at step 0
+without a navigation checkpoint; seed0 later continues its own 1M run to 5M total.
+The cache hash, initialization receipts and code references are recorded in
+`../experiments/deployment/embclip-lightweight-initialization-audit-20261024.json`.

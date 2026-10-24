@@ -59,7 +59,7 @@ def main():
             assert abs(mean-verified['mean_percent']) < 1e-12
             assert abs(std-verified['sample_std_percentage_points']) < 1e-12
         benchmark = '<th scope="rowgroup" rowspan="3">RoboTHOR</th>' if model == 'gru1' else ''
-        label = name
+        label = name + ' (5M)'
         rows.append(f'<tr>{benchmark}<th scope="row">{label}</th>{"".join(cells)}</tr>')
     official = comparison['aggregates']['official']
     official_runs = [r for r in comparison['runs'] if r['model'] == 'official']
