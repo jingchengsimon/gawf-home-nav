@@ -55,10 +55,10 @@ separate from historical RGB-D or GPS/compass results.
 
 | Purpose | Entry points |
 | --- | --- |
-| RoboTHOR models | [GRU config](scripts/embclip/light5m_gru1_config.py), [GaWF adapter](scripts/embclip/light_gawf1_config.py), [canonical GaWF core](scripts/embclip/canonical_core/gawf.py) |
+| RoboTHOR models | [GRU config](scripts/training/embclip/config.py), [GaWF adapter](scripts/training/embclip/models.py), [canonical GaWF core](scripts/training/canonical_core/gawf.py) |
 | PointNav core configuration | [RGB-only protocol](configs/pointnav2020/light_rgb/protocol.json), [task](configs/pointnav2020/light_rgb/task.yaml), [DD-PPO](configs/pointnav2020/light_rgb/ddppo.yaml) |
-| Grad-CAM | [analysis](scripts/embclip/analyze_twelve_goals_sjc.py), [selection](scripts/embclip/assemble_terminal_gradcam_selection.py), [figure](scripts/embclip/plot_twelve_goal_gradcam.py) |
-| Trajectory visualization | [recording](scripts/embclip/record_minimal_suite_sjc.py), [replay](scripts/embclip/render_logged_navigation_sjc.py) |
+| Grad-CAM | [analysis and selection](scripts/analysis/embclip/gradcam.py), [figures](scripts/analysis/embclip/plots.py) |
+| Trajectory visualization | [recording and replay](scripts/analysis/embclip/media.py) |
 
 Setup and execution details: [RoboTHOR](docs/ROBOTHOR_EMBCLIP.md) and
 [PointNav](docs/POINTNAV.md). Data, checkpoints and simulator environments are
@@ -74,19 +74,19 @@ not establish that GaWF uses fewer turns/actions on average over all Val episode
 For a local preview, including video seeking:
 
 ```sh
-python3 scripts/serve_project_page.py
+python3 scripts/analysis/project/preview.py
 ```
 
 Open http://127.0.0.1:8766/. GitHub Pages publishes `project-page/dist` when those
 files are pushed to `sjc`. The static assets can be viewed without installing a simulator;
 regenerating figures or recordings additionally requires their source artifacts.
 
-## Preserved history
+## Code organization
 
-Gibson PointNav v2, legacy RGB-D/GPS protocols, training scripts and experiment
-records are retained. Current comparisons use the RGB-only configuration above;
-older configurations and partial-seed plotting scripts are historical references.
-No large directory migration or deletion is part of this documentation update.
+[Current file tree, entry points and file counts](docs/CODE_LAYOUT.md).
+Only the final training/evaluation implementations remain in `scripts/`.
+Historical protocols, manifests, result snapshots and simulator environments are retained;
+retired launchers and duplicate stage implementations remain recoverable from Git history.
 
 Built on [EmbCLIP / AllenAct](https://github.com/allenai/embodied-clip) and
 [Habitat DD-PPO](https://github.com/facebookresearch/habitat-lab).

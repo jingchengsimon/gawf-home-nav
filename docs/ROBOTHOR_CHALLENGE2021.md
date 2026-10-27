@@ -1,5 +1,7 @@
 # RoboTHOR Challenge 2021 Test adaptation
 
+> Historical audit: the unscored Challenge Test experiment is outside the current Val comparison. Its retired scripts are recoverable from Git history; current executable entry points are listed in [CODE_LAYOUT](CODE_LAYOUT.md).
+
 The user authorized an independent official Test adaptation on 2026-10-24.
 The existing AI2-THOR 5.0.0 training and validation environment is retained.
 No training weights, model parameters or project-page scores are changed.

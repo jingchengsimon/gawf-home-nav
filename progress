@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
+cd "$ROOT"
+if [[ "${1:-}" == analysis ]]; then
+  shift
+  exec python3 -B -m scripts.analysis.monitor "$@"
+fi
+exec python3 -B -m scripts.training.monitor "$@"

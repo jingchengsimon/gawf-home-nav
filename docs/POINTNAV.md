@@ -61,13 +61,18 @@ under this budget.
 
 | Purpose | File |
 | --- | --- |
-| Training driver | [run_pointnav2020_light_rgb.py](../scripts/run_pointnav2020_light_rgb.py) |
-| Training implementation | [train_pointnav2020_light_rgb_longrun.py](../scripts/train_pointnav2020_light_rgb_longrun.py) |
-| GaWF recurrent adapter | [pointnav2020_gawf.py](../scripts/pointnav2020_gawf.py) |
-| Evaluation | [eval_pointnav2020_light_rgb.py](../scripts/eval_pointnav2020_light_rgb.py) |
-| Validation figure | [plot_pointnav2020_rgb_eval.py](../scripts/plot_pointnav2020_rgb_eval.py) |
-| Compatibility/runtime | [pointnav2020_runtime.py](../scripts/pointnav2020_runtime.py), [pointnav2020_compat.py](../scripts/pointnav2020_compat.py) |
-| Source/data preflight | [check_pointnav2020.py](../scripts/check_pointnav2020.py) |
+| Training driver | [run.py](../scripts/training/pointnav/run.py) |
+| Training loop / complete checkpoint | [train.py](../scripts/training/pointnav/train.py), [trainer.py](../scripts/training/pointnav/trainer.py) |
+| RGB-only config / compatibility | [runtime.py](../scripts/training/pointnav/runtime.py), [compat.py](../scripts/training/pointnav/compat.py) |
+| GaWF recurrent adapter | [models.py](../scripts/training/pointnav/models.py) |
+| Evaluation | [evaluate.py](../scripts/analysis/pointnav/evaluate.py) |
+| Numeric validation audit | [metrics.py](../scripts/analysis/pointnav/metrics.py) |
+| Validation / training figures | [plots.py](../scripts/analysis/pointnav/plots.py) |
+
+Run from the repository root with `python -B -m scripts.training.pointnav.run <training-id>`
+or `python -B -m scripts.analysis.pointnav.evaluate <evaluation-id>` in the prepared runtime.
+The previous RGB-only longrun wrapper has been folded into the runtime and the
+single complete-state training loop; the DD-PPO optimization and frame budget are unchanged.
 
 Training/evaluation drivers expect the independent PointNav environment, licensed
 data, a matching manifest, unchanged source hashes and machine-specific paths.
@@ -77,9 +82,7 @@ SJC execution paths, so these links identify the implementation rather than prom
 an unconfigured checkout can run immediately. Simulation runs use the project’s
 execution host; this documentation update does not launch any runs.
 
-The preflight script checks the historical full 2020 protocol by default; it is
-not a replacement for the RGB-only runner's observation checks. The plotting script
-expects the already verified local result summaries. Source/dependency versions
+The plotting scripts read verified local result summaries. Source/dependency versions
 are pinned in [vendor/sources.json](../vendor/sources.json); the training source is
 `habitat-lab-2020` commit `959bd45431edd8024832a877bdc8218015d97a7e`.
 
@@ -87,10 +90,10 @@ are pinned in [vendor/sources.json](../vendor/sources.json); the training source
 
 - `configs/pointnav2020/light/`: legacy lightweight RGB-D + fixed `g0`.
 - `configs/pointnav2020/`: historical full-size 2020 RGB-D configurations.
-- The original depth + online GPS/compass inference demo and its scripts/results
-  remain available for provenance; they are outside the current RGB-only comparison.
+- Original depth + online GPS/compass inference results and manifests remain
+  available for provenance. Their retired executable code is recoverable from Git history.
 
-Historical code is retained in place. The dated notes below preserve prior
+Historical executable code has been retired from `scripts/`; see [the current layout](CODE_LAYOUT.md). The dated notes below preserve prior
 protocols, experiments and operational observations. Queue states, permissions,
 GPU availability and words such as “current” within those notes describe their
 original dates, not live state.

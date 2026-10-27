@@ -11,7 +11,7 @@ local assets and buildless JavaScript; it performs no runtime data fetches.
 For an HTTP preview with video seeking, run from the repository root:
 
 ```sh
-python3 scripts/serve_project_page.py
+python3 scripts/analysis/project/preview.py
 ```
 
 Open http://127.0.0.1:8766/. Keep the server running while watching videos;
@@ -106,18 +106,13 @@ Figure 5 is a separate zero-shot architecture with a CLIP text branch.
 ## Source entry points
 
 ```text
-scripts/embclip/eval_light5m_sjc.py
-scripts/embclip/record_minimal_suite_sjc.py
-scripts/embclip/render_logged_navigation_sjc.py
-scripts/embclip/analyze_twelve_goals_sjc.py
-scripts/embclip/analyze_visible_gradcam_candidates_sjc.py
-scripts/embclip/sample_terminal_gradcam_sjc.py
-scripts/embclip/assemble_terminal_gradcam_selection.py
-scripts/embclip/plot_twelve_goal_gradcam.py
-scripts/embclip/collect_project_training.py
-scripts/embclip/plot_gru1_gawf1_val.py
-scripts/build_project_assets.py
-scripts/build_minimal_project_page.py
+scripts/analysis/embclip/evaluate.py
+scripts/analysis/embclip/media.py
+scripts/analysis/embclip/gradcam.py
+scripts/analysis/embclip/plots.py
+scripts/analysis/embclip/metrics.py
+scripts/analysis/project/build_assets.py
+scripts/analysis/project/build_page.py
 ```
 
 Simulator recording and model analysis run only on SJC. New execution sources are
@@ -125,9 +120,9 @@ frozen copies in independent result leaves. Matplotlib figures are regenerated
 locally from verified source snapshots. Media asset names include a source and
 transform fingerprint to avoid reusing videos from different recordings.
 
-The twelve-category Grad-CAM workflow is analysis (`analyze_twelve_goals_sjc.py`),
+The twelve-category Grad-CAM workflow is analysis (`gradcam.py`),
 verified example selection (`assemble_terminal_gradcam_selection.py`), then figure
-rendering (`plot_twelve_goal_gradcam.py`). Candidate-analysis scripts supply the
+rendering (`plots.py`). The same analysis engine also supplies the
 selected replacement views. Earlier terminal-view diagnostics remain in history.
 
 ## Layout and wording reference
@@ -144,7 +139,7 @@ probing and nearest-neighbor results are not claimed. Reference records are in `
 Rebuild the teaser from the existing verified arrays and full trajectories with:
 
 ```sh
-MPLCONFIGDIR=/tmp/gawf-project-mpl python scripts/embclip/plot_project_teaser.py
+MPLCONFIGDIR=/tmp/gawf-project-mpl python -B -m scripts.analysis.embclip.plots teaser
 ```
 
 The teaser uses the same overlay normalization as the full Grad-CAM grids.
@@ -162,7 +157,7 @@ the same 1,516 expert-solved episodes for all ten runs. The built-in expert is
 not guaranteed globally shortest; failed references are never imputed as zero.
 The 5M label describes the 5,001,216-frame training checkpoints.
 
-Rebuild with `python scripts/embclip/build_performance_table.py`. The fresh
+Rebuild with `python scripts/analysis/project/build_table.py`. The fresh
 read-only SJC collector snapshot, actual exit receipts and unrounded statistics
 are in `sources/performance_validation_snapshot.json`,
 `sources/performance_validation_exits.json` and `sources/performance_table.json`,
@@ -185,7 +180,7 @@ a delayed feedback arrow. The description identifies this signal as previous
 detached raw policy logits; no model parameters or training configuration change.
 The figure and source hashes are recorded in `sources/method_figure.json`.
 
-`scripts/build_method_figure.py` uses pypdf, reportlab, numpy, Pillow and Poppler
+`scripts/analysis/project/method_figure.py` uses pypdf, reportlab, numpy, Pillow and Poppler
 to compose existing PDF artwork and render the static web image. Its source PDFs
 and checked RGB frame are explicit arguments; no generative drawing is used.
 
@@ -270,3 +265,6 @@ and selected redundant-rotation examples, without a curvature claim. Higher SEL
 is better under its formula; no aggregate claim of fewer steps, fewer rotations,
 or measured energy/collision improvements is inferred from it. The opening
 paragraph identifies AI2-THOR as the simulator used for the RoboTHOR RGB inputs.
+
+
+Executable entry points were consolidated on 2026-10-27; see [CODE_LAYOUT](../docs/CODE_LAYOUT.md). Bundled `dist/assets/code/` files and source JSON are historical publication snapshots, not executable entry points.

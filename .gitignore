@@ -19,3 +19,5 @@ demos/*.png
 /project-page/preview-*.jpg
 /project-page/dist/assets/videos/
 /project-page/dist/assets/minimal-videos/
+
+.DS_Store

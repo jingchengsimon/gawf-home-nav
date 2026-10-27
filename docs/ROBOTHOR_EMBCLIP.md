@@ -21,9 +21,9 @@ All five seeds use the same training and evaluation implementations. The seed,
 model, GPU and checkpoint identity come from each registered manifest:
 
 ```sh
-python scripts/embclip/run_light_5m_sjc.py <training-id>
-python scripts/embclip/eval_light5m_sjc.py <evaluation-id> --gpu 0 --validate-only
-python scripts/embclip/eval_light5m_sjc.py <evaluation-id> --gpu 0
+python -B -m scripts.training.embclip.train <training-id>
+python -B -m scripts.analysis.embclip.evaluate <evaluation-id> --gpu 0 --validate-only
+python -B -m scripts.analysis.embclip.evaluate <evaluation-id> --gpu 0
 ```
 
 These are execution-host commands; simulator runs belong on SJC. Evaluation accepts
@@ -33,14 +33,22 @@ seed. Training retains the historical seed0 continuation rule; seeds1–4 start
 independently and can resume their own checkpoints. Final checkpoints may exceed
 5M by at most one 2,048-frame rollout.
 
-The former seed-specific drivers have been consolidated into these two files.
+All seed-specific, 1M/200M, profiling and obsolete smoke drivers have been retired.
+Training, evaluation and all-seed collection each have a single implementation.
 Historical IDs, source hashes and result snapshots are unchanged; their old source
 versions remain in Git history and the original execution snapshots. A new run
 requires a new registered manifest and current source hashes, including the unified
 runner. Evaluation also requires its `runner_path` and `runner_sha256` fields to
 match the unified evaluator and refuses an existing result leaf. Completed results
-are not rerun by this refactor. The official 130M checkpoint still uses its separate
-evaluator because its model/checkpoint protocol differs from the lightweight runs.
+are not rerun by this refactor. The official 130M checkpoint uses the same evaluator, selected by
+`source_checkpoint.actual_training_steps=130091717`; it verifies released model state
+instead of requiring a lightweight training manifest. New evaluation manifests pin
+`runner_path=scripts/analysis/embclip/evaluate.py` and the current hash. Both models use
+`scripts/training/embclip/config.py`, with `model=gru1|gawf1` supplied by the runner.
+[Complete code tree and migration notes](CODE_LAYOUT.md).
+
+
+The analysis entry points are `python -B -m scripts.analysis.embclip.metrics {validation,training,compare,behaviour}` and `python -B -m scripts.analysis.embclip.plots {validation,training,gradcam,teaser}`. All training scripts are under `scripts/training`; evaluation, metric collection and figures are under `scripts/analysis`.
 
 ## Dated engineering record
 
